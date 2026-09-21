@@ -1,0 +1,854 @@
+% =========================================================================
+% 《高中數學實驗教材》第一冊（高一上） 
+% 第三章 數的概念
+% =========================================================================
+
+\section{數的概念}\label{sec:ch3}
+
+「自然數系」、「有理數系」和「實數系」，這些「數」是由種種自然界所常見的「量」，歸納其共同性質而得的體系。它們是有效討論各種關於量的問題所不可或缺的工具。上述諸數系的基本性質是數學的基礎與根源所在。本章將詳述數的源起，自然數及有理數的基本性質。由於實數系的一部份性質較為深些，而且在目前並不需要用它，故實數系的基本性質，將留待第二冊才為同學們作一有系統的介紹。
+
+\subsection{\S 3-1\quad 數的源起}\label{sec:3-1}
+
+在第一章的甲段討論數學的題材時，我們已簡略地談到數的源起。對於具有天然個別單元的量，我們只需要「數一數」它們有多少「個」，而自然數也就是用以「計數」個數的工具。同學們都已熟習自然數的加與乘這兩種基本運算，在下一節中我們將詳述自然數系對於加與乘這兩種基本運算所具有的基本性質。現在讓我們簡要地談談加與乘這兩種運算的源起：
+
+\subsubsection*{甲、「+1」運算與加法、乘法}\label{subsec:plus_one}
+
+「$1$」是自然的起點，
+\begin{equation}\label{eq:count_start}
+  2 = 1+1, \quad 3 = 2+1, \quad 4 = 3+1, \quad 5 = 4+1, \quad \dots, \quad 97 = 96+1, \quad \dots
+\end{equation}
+所以「$+1$」（加一）是自然中最原始的運算。
+
+事實上，我們所知道的加法與乘法，通通可以看做是「$+1$」這個運算的推廣，下面我們繼續說明這件事。
+
+假如我們把「$+1$」這種運算做兩遍，如 $(5+1)+1 = 5+2$，或 $(6+1)+1 = 6+2$ 等，這就是「$+2$」的意思\footnote{\label{fn:plus_two}「$(a+1)+1$」這個符號，就是表示把「$a$」這個數，用「$+1$」連做兩遍的意思。小括弧 $(a+1)$ 表示做第一次「$+1$」；做完之後，再「$+1$」一次，豈不是剛好做了兩遍？因此，適當地利用符號，可以將一些要用文字才能說清楚的事，說得更明白。}，亦即「$+2$」的意思是 $((a+1)+1)$。以此類推，「$+3$」就是把「$+1$」重複做三遍，「$+4$」就是把「$+1$」重複做四遍……等等，亦即
+\begin{align}
+  a+3 &= ((a+1)+1)+1 \label{eq:add_three}\\
+  a+4 &= (((a+1)+1)+1)+1 \label{eq:add_four}
+\end{align}
+所以「$a+b$」就是對 $a$ 作 $b$ 次「$+1$」運算的縮寫。
+
+其次讓我們看一看乘法的運算：
+\begin{align*}
+  a &= 1 \times a \\
+  a+a &= 2 \times a \\
+  a+a+a &= 3 \times a \\
+  a+a+a+a &= 4 \times a
+\end{align*}
+由上面諸式，不難看出 $b \times a$ 也就是 $b$ 個 $a$ 相加的縮寫。
+
+\subsubsection*{乙、度量與數系的擴張}\label{subsec:measure_expansion}
+
+在第一章的甲段中，我們也談到另一類不具有「天然單元」的量，如「長度」、「質量」、「體積」等，並以長度為例，討論了如何去度量這一類的量。簡單的說，度量的方法是先取一個人為的單位，然後去求「所要度量的量」和「所取定的單位」間的比值，這種比值是一個「實數」。換言之，「實數系」也是度量的工具。從對長度的度量的討論中，有
+\begin{equation}\label{eq:number_systems_hierarchy}
+  \text{實數系} \supset \text{有理數系} \supset \text{自然數系}
+\end{equation}
+這一重要的相互關係。我們將循序漸進，先去瞭解「自然數系」的性質，然後經由「自然數系」和「有理數系」間的相互關係去瞭解「有理數系」的性質。在第二冊中，我們將再進一步經由「有理數系」和「實數系」間的相互關係去瞭解「實數系」的性質。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.0, >=latex]
+  % 數系包含層級示意圖
+  \draw[thick, fill=blue!8] (0, 0) ellipse (4.5cm and 2.4cm);
+  \draw[thick, fill=blue!18] (-0.3, -0.2) ellipse (3.2cm and 1.7cm);
+  \draw[thick, fill=blue!30] (-0.6, -0.4) ellipse (1.8cm and 1.0cm);
+
+  \node at (-0.6, -0.4) {\textbf{自然數系} $\mathbb{N}$};
+  \node[above] at (-0.3, 0.5) {\textbf{有理數系} $\mathbb{Q}$};
+  \node[above] at (0, 1.4) {\textbf{實數系} $\mathbb{R}$};
+  
+  \node[font=\footnotesize, text=gray!80!black] at (2.4, -0.8) {無理數（如 $\sqrt{2}, \pi$）};
+  \node[font=\footnotesize, text=gray!80!black] at (1.2, 0.4) {負分數、非整數分數};
+  \node[font=\footnotesize, text=gray!80!black] at (-0.6, -1.0) {$1, 2, 3, \dots$};
+\end{tikzpicture}
+\caption{數系的層次包含關係示意圖}\label{fig:number_hierarchy}
+\end{figure}
+
+\subsection{\S 3-2\quad 自然數系的基本性質}\label{sec:3-2}
+
+「數」是討論種種「關於量的問題」的有效工具，但是我們必須先切實瞭解這些「工具」的基本特性才能真正發揮其效用。自然數系是上述「數」中最簡單也是最基本的，所以自然數系的基本性質是整個體系的重要基礎！同學們切不可因為「它們看起來簡單平凡」而忽略它，要知道世間有用的道理就是那些簡單而不凡的道理，要點在於：能心領神會、能活用這些簡單而不凡的道理！
+
+\subsubsection*{甲、本節符號的用法}\label{subsec:nat_notation}
+
+我們將用 $\mathbb{N}$ 表示所有自然數所成的集合，即
+\begin{equation}\label{eq:set_N}
+  \mathbb{N} = \{1, 2, 3, 4, \dots, n, \dots\}
+\end{equation}
+我們將用小寫字母 $a, b, c, \dots$ 等來表示 $\mathbb{N}$ 中的任何一個元素。於是，我們就可以用這樣的符號，很方便地去討論，去描述自然數系的「通性」。譬如：
+\begin{equation}\label{eq:sum_not_one}
+  a+b \neq 1 \qquad (\forall\, a, b \in \mathbb{N})
+\end{equation}
+表示任何兩個自然數的和絕不等於 $1$。換言之，上述一個式子充分地表達了所有下述式子的全體：（注意：零「$0$」不屬於 $\mathbb{N}$。）
+\begin{align*}
+  1+1 \neq 1, \quad 1+2 \neq 1, \quad 1+3 \neq 1, \quad 1+4 \neq 1, \quad \dots \\
+  2+1 \neq 1, \quad 2+2 \neq 1, \quad 2+3 \neq 1, \quad 2+4 \neq 1, \quad \dots \\
+  3+1 \neq 1, \quad 3+2 \neq 1, \quad 3+3 \neq 1, \quad 3+4 \neq 1, \quad \dots \\
+  4+1 \neq 1, \quad 4+2 \neq 1, \quad 4+3 \neq 1, \quad 4+4 \neq 1, \quad \dots
+\end{align*}
+同理，下述諸式：
+\begin{align*}
+  1+1=1+1, \quad 1+2=2+1, \quad 1+3=3+1, \quad 1+4=4+1, \quad 1+5=5+1, \quad \dots \\
+  2+2=2+2, \quad 2+3=3+2, \quad 2+4=4+2, \quad 2+5=5+2, \quad \dots \\
+  3+3=3+3, \quad 3+4=4+3, \quad 3+5=5+3, \quad \dots
+\end{align*}
+就可以簡潔地用 $a+b = b+a$ 總括地加以表達。
+
+\subsubsection*{乙、自然數系基本性質}\label{subsec:nat_axioms}
+
+列述自然數系的基本性質如下：
+\begin{enumerate}[I.]
+  \item 任何一自然數，均可由 $1$ 開始，經有限次「$+1$」運算而得。換句話說，由 $1$ 開始，逐次「$+1$」，即可得到任一自然數，這就叫做「\textbf{數學歸納法（mathematical induction）原理}」。
+  \item $(a+b)+c = a+(b+c)$。（加法結合律）
+  \item $a+b = b+a$。（加法交換律）
+  \item $a+b = c+b \iff a = c$。（$\Rightarrow$ 的部分叫做加法對消律）
+  \item $(a+b) \cdot c = a \cdot c + b \cdot c$。（分配律）
+  \item $a \cdot b = b \cdot a$。（乘法交換律）
+  \item $(a \cdot b) \cdot c = a \cdot (b \cdot c)$。（乘法結合律）
+  \item $a \cdot b = c \cdot b \iff a = c$。（$\Rightarrow$ 的部分叫做乘法對消律，注意：零「$0$」不是自然數，所以 $b \neq 0$。）
+\end{enumerate}
+
+同學們對於自然數的次序都已十分清楚，現在我們來仔細看看甚麼叫做 $3 < 5$。我們知道 $3 < 5$，是因為 $5$ 在自然數中排在 $3$ 的後面，即由 $3$ 出發，經兩次「$+1$」運算就得到 $5$（即 $5 = 3 + 2$）。一般地：
+
+\begin{definition}[自然數的大小次序]\label{def:nat_order}
+設 $a, b \in \mathbb{N}$。若存在一個自然數 $u \in \mathbb{N}$，使得
+\begin{equation}\label{eq:nat_greater}
+  a = b + u
+\end{equation}
+我們就說「$a$ 大於 $b$」，記作 $a > b$；或說「$b$ 小於 $a$」，記作 $b < a$。
+\end{definition}
+
+由次序的定義，當 $a > b$ 時，我們可以逐次從 $a$ 中減去 $b$（即以 $b$ 除 $a$），直到剩下的數小於 $b$ 為止。這就是同學們在小學學過的整數除法：對任意給定之 $a, b \in \mathbb{N}$，存在商數 $q$ 與餘數 $r$，使得 $a = bq + r$。若餘數 $r = 0$，則稱 $b$ 整除 $a$。
+
+\subsection*{習題 3-1}\label{sec:ex3-1}
+\addcontentsline{toc}{subsection}{習題 3-1}
+
+\begin{enumerate}[1., leftmargin=2em]
+  \item 求下列各組數相除的商數與餘數：
+  \begin{enumerate}[(i)]
+    \item $a = 732, \quad b = 24$。
+    \item $a = 365, \quad b = 7$。
+    \item $a = 719415, \quad b = 365$。
+    \item $a = 30, \quad b = 7$。
+    \item $a = 1973, \quad b = 54$。
+  \end{enumerate}
+  \item 一數 $x$ 除以 $7$，餘 $3$；一數 $y$ 除以 $7$，餘 $2$；那麼 $xy$ 除以 $7$ 的餘數是多少呢？
+  \item 一數 $x$ 除以 $9$，餘 $4$；一數 $y$ 除以 $9$，餘 $5$；求 $xy$ 除以 $9$ 的餘數。
+\end{enumerate}
+
+\subsubsection*{丙、數學歸納法}\label{subsec:induction}
+
+我們現在來略為討論一下數學歸納法，數學歸納法是自然數的性質 I 的另一種表示方法，有用處的地方很多，我們今後也會常常用到。現在我們舉例說明如下：
+
+\begin{example}\label{ex:sum_integers}
+求證對所有自然數 $n$，
+\begin{equation}\label{eq:sum_n}
+  1+2+3+\dots+n = \frac{n(n+1)}{2} \qquad \dots\dots (1)
+\end{equation}
+\end{example}
+
+\begin{proof}
+當 $n=1$ 時，我們有
+\begin{equation*}
+  1 = \frac{1(1+1)}{2}
+\end{equation*}
+因此 (1) 式是對的，我們也不難看出在 $n=2, 3, 4$ 時 (1) 式都滿足，但是，我們怎樣才知道 (1) 式是對所有的自然數都對呢？
+
+我們想一想，甚麼叫「所有的自然數」，又，我們怎樣才能得到「所有的自然數」？根據性質 I，所有的自然數可以自 $1$ 開始，一次一次地由「$+1$」而得到，因此，我們來看一看怎樣利用這個性質來證明 (1)。
+
+在 $n=k$ 時，(1) 成為
+\begin{equation}\label{eq:ind_hyp}
+  1+2+\dots+k = \frac{k(k+1)}{2} \qquad \dots\dots (2)
+\end{equation}
+在 $n=k+1$ 時，(1) 的左邊應該是
+\begin{equation}\label{eq:ind_lhs}
+  1+2+\dots+k+(k+1) \qquad \dots\dots (3)
+\end{equation}
+右邊應該是
+\begin{equation}\label{eq:ind_rhs}
+  \frac{(k+1)(k+2)}{2} \qquad \dots\dots (4)
+\end{equation}
+（我們還不知道 (2) 是否成立，也不知道 (3) 是否等於 (4)）但是假如我們：
+\begin{align*}
+  &\text{從 } n=1 \text{ 證到 } n=2 (=1+1) \\
+  &\text{從 } n=2 \text{ 證到 } n=3 (=2+1) \\
+  &\text{從 } n=3 \text{ 證到 } n=4 (=3+1) \\
+  &\dots\dots \\
+  &\text{從 } n=k \text{ 證到 } n=k+1 \qquad \dots\dots (5)
+\end{align*}
+那麼，我們豈不是對「所有的自然數」都證明了 (1)？請注意在這裏 $k$ 是一個典型的自然數。因此，如果我們證明了 (2) $\implies$ (3)=(4)，那麼便等於證明了 (5) 的全體。所以，若是要對所有的自然數證明 (1) 式，我們只要再證明 (2) $\implies$ (3)=(4) 就夠了，這就是數學歸納法的精神。
+
+根據歸納假設 (2)：
+\begin{align*}
+  (3) &= 1 + 2 + \dots + k + (k+1) \\
+  &= (1 + 2 + \dots + k) + (k+1) \\
+  &= \frac{k(k+1)}{2} + (k+1) \\
+  &= (k+1)\left(\frac{k}{2} + 1\right) \\
+  &= (k+1)\left(\frac{k+2}{2}\right) \\
+  &= \frac{(k+1)(k+2)}{2} = (4)
+\end{align*}
+因此，我們用數學歸納法證明了 (1)。
+\end{proof}
+
+有些不等式也可以用數學歸納法證明，讓我們舉一個例子來說明：
+
+\begin{example}[伯努利不等式]\label{ex:bernoulli}
+設 $p > 0$，求證 $(1+p)^n \ge 1+np$，式中 $n$ 為自然數。
+\end{example}
+
+\begin{proof}
+當 $n=1$ 時，上式的左右兩邊都是 $1+p$。所以不等式成立，而實際上這時可以改成等號。
+
+設 $n=k$ 時不等式成立，即 $(1+p)^k \ge 1+kp$。當 $n=k+1$ 時，
+\begin{align*}
+  (1+p)^{k+1} &= (1+p)^k (1+p) \ge (1+kp)(1+p) \\
+  &= 1 + kp + p + kp^2 = 1 + (k+1)p + kp^2
+\end{align*}
+因為 $k \in \mathbb{N}$ 且 $p > 0$，故 $kp^2 > 0$。因此 $1 + (k+1)p + kp^2 > 1 + (k+1)p$，得
+\begin{equation*}
+  (1+p)^{k+1} \ge 1 + (k+1)p
+\end{equation*}
+由數學歸納法原理知，不等式對所有自然數 $n$ 均成立。
+\end{proof}
+
+\begin{example}\label{ex:collinear_fallacy}
+在運用數學歸納法時，必須特別注意推論的邏輯嚴謹性與起步條件。例如有人提出下列命題：「平面上任意給定的 $n$ 個點必共線。」並給出偽證明：當 $n=1, 2$ 時顯然任兩點在一直線上；假定 $n=k$ 時任 $k$ 點共線，則取 $k+1$ 點時，前 $k$ 點共線，後 $k$ 點亦共線，從而推論 $k+1$ 點共線。這個錯誤在於兩組點集的交集必須至少有兩點才能確定同一直線，故在由 $k=2$ 推至 $k=3$ 時即已失效。正確的幾何命題應敘述為：「若平面上任意三點皆在一直線上，則任意 $n$ 點必在同一直線上。」
+\end{example}
+
+\subsection*{習題 3-2}\label{sec:ex3-2}
+\addcontentsline{toc}{subsection}{習題 3-2}
+
+\begin{enumerate}[1., leftmargin=2em]
+  \item 有人用下法證明全世界的人性別都一樣。設一集合 $M_n$ 包含 $n$ 個人，則想證明 $M_n$ 中的人性別都一樣。當 $n=1$ 時，$M_1$ 中只有一個人，當然其性別是唯一的。現在假定命題 $n=k$ 時成立；再假定 $M_{k+1}$ 是包含 $k+1$ 個人的集合，在 $M_{k+1}$ 中選定兩個人 $x$ 和 $y$，則 $M_{k+1} \setminus \{x\}$ 和 $M_{k+1} \setminus \{y\}$ 都是只包含 $k$ 個人的集合，所以其中的人性別都一樣，因而 $x, y$ 和 $M_{k+1} \setminus \{x, y\}$ 中任何人的性別都相同，故 $M_{k+1}$ 中諸位的性別必全相同。請指正這證明錯在哪裡？
+  \item 等差級數求和的公式也可以用數學歸納法證明，你能做出嗎？
+  \item 對任意 $n \in \mathbb{N}$，試說明 $n^2 - n + 41$ 不恆為質數（請找出反例）。
+  \item 試用數學歸納法證明下式：
+  \begin{equation*}
+    1^2 + 2^2 + 3^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}
+  \end{equation*}
+  \item 設 $n$ 為正整數，試證：
+  \begin{equation*}
+    (1^5 + 2^5 + 3^5 + \dots + n^5) + (1^7 + 2^7 + 3^7 + \dots + n^7) = 2 \left[\frac{n(n+1)}{2}\right]^4
+  \end{equation*}
+  \item 試證：
+  \begin{equation*}
+    1^3 + 2^3 + 3^3 + \dots + n^3 = (1+2+3+\dots+n)^2 = \left[\frac{n(n+1)}{2}\right]^2
+  \end{equation*}
+  \item 設 $n$ 是正整數，試證：
+  \begin{equation*}
+    1 + 3 + 5 + \dots + (2n-1) = n^2
+  \end{equation*}
+  \item 試證：
+  \begin{equation*}
+    1 \cdot 2 \cdot 3 + 2 \cdot 3 \cdot 4 + \dots + n(n+1)(n+2) = \frac{n(n+1)(n+2)(n+3)}{4}
+  \end{equation*}
+\end{enumerate}
+
+\subsubsection*{丁、基本性質的推論}\label{subsec:nat_corollaries}
+
+利用上述「自然數系」的基本性質 I--VIII，我們可以推演得所有「自然數系」的重要性質，而且以後我們逐步討論整數系，有理數系及實數系等數系的基本性質時，上述自然數系的基本性質 I--VIII 就是我們的起點。
+
+我們現在列舉幾個基本性質的簡單推論：
+
+\begin{prop}[次序推論 XI]\label{prop:nat_xi}
+設 $a, b, c \in \mathbb{N}$：
+\begin{enumerate}[(1)]
+  \item $a > b \iff a+c > b+c$。
+  \item $a = b \iff a+c = b+c$。
+  \item $a < b \iff a+c < b+c$。
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+$a > b \iff$ 存在 $u \in \mathbb{N}$，使得 $a = b + u$（「$>$」的定義）。
+\begin{align*}
+  &\iff a+c = (b+u)+c \\
+  &\iff a+c = b+(u+c) && \text{〔性質 II 加法結合律〕} \\
+  &\iff a+c = b+(c+u) && \text{〔性質 III 加法交換律〕} \\
+  &\iff a+c = (b+c)+u && \text{〔性質 II 加法結合律〕} \\
+  &\iff a+c > b+c && \text{〔「$>$」的定義〕}
+\end{align*}
+同理可知 $a < b \iff a+c < b+c$。
+\end{proof}
+
+\begin{remark}
+往後證明或運算時，當然不必如上面這樣細項，譬如從 $a+c = (b+u)+c$ 我們可以把上述三步合成一步，導得 $a+c = (b+c)+u$。
+\end{remark}
+
+\begin{prop}[次序推論 XII]\label{prop:nat_xii}
+設 $a, b, c \in \mathbb{N}$（注意：$c \in \mathbb{N}$，所以 $c$ 是正的！）：
+\begin{enumerate}[(1)]
+  \item $a > b \iff a \cdot c > b \cdot c$。
+  \item $a = b \iff a \cdot c = b \cdot c$。
+  \item $a < b \iff a \cdot c < b \cdot c$。
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+我們現在先證明 (1)：
+\begin{align*}
+  a > b &\implies \text{存在 } u \in \mathbb{N} \text{ 使得 } a = b + u && \text{〔「$>$」之定義〕} \\
+  &\implies a \cdot c = (b + u) \cdot c = bc + uc && \text{〔性質 V 分配律〕}
+\end{align*}
+因 $u \in \mathbb{N}, c \in \mathbb{N} \implies uc \in \mathbb{N}$，由「$>$」之定義，得 $ac > bc$。
+
+反之，若 $ac > bc$，我們想證明 $a > b$。因 $a > b, a = b, a < b$ 只有一種、必有一種會成立（三一律），所以我們先看 $a < b$ 會不會成立。假如 $a < b$，則 $b > a$，而由上面的證明可知 $bc > ac$，亦即 $ac < bc$，但是我們假定 $ac > bc$，所以 $a < b$ 不會成立。
+
+再看 $a = b$ 會不會成立呢？由性質 VIII 可知 $a = b \implies ac = bc$，又和我們的假定 $ac > bc$ 矛盾，因此 $a = b$ 也不會成立。因此只有 $a > b$ 會成立，至此我們證明了 (1)。
+
+在 (1) 的敘述中將 $a, b$ 互換，便得到 $b > a \iff bc > ac$，亦即 $a < b \iff ac < bc$。
+\end{proof}
+
+\begin{remark}
+上面最後所用的證明方法，叫做\textbf{窮舉法}（排除法）。當問題的本身有相當的對稱性時，適當地利用這些對稱性有時可以省去很多不必要的麻煩。
+\end{remark}
+
+\begin{prop}[次序遞移律 X]\label{prop:nat_x}
+設 $a, b, c \in \mathbb{N}$。如果 $a > b$ 並且 $b > c$，則 $a > c$。
+\end{prop}
+
+\begin{proof}
+$a > b$ 且 $b > c \implies$ 存在 $u \in \mathbb{N}$ 使 $a = b+u$，且存在 $v \in \mathbb{N}$ 使 $b = c+v$。
+\begin{align*}
+  a &= b + u = (c + v) + u \\
+  &= c + (v + u) && \text{〔性質 II〕} \\
+  &\implies a > c && \text{〔因 $v+u \in \mathbb{N}$〕}
+\end{align*}
+故得證。
+\end{proof}
+
+\begin{prop}[同向不等式相加與相乘]\label{prop:nat_ineq_add_mul}
+設 $a, b, c, d \in \mathbb{N}$：
+\begin{itemize}
+  \item[\textup{(XI')}] 如果 $a > b$ 並且 $c > d$，則 $a+c > b+d$。
+  \item[\textup{(XII')}] 如果 $a > b$ 並且 $c > d$，則 $a \cdot c > b \cdot d$。
+\end{itemize}
+\end{prop}
+
+\begin{example}\label{ex:power_order}
+對於任何自然數 $a, b, n$，如果 $a > b$，那麼 $a^n > b^n$。
+\end{example}
+
+\begin{proof}
+我們利用數學歸納法來證明：當 $n=1$ 時，$a^1 > b^1$ 顯然成立。設 $n=k$ 時 $a^k > b^k$ 成立，由於性質 XII' 和 $a > b$ 的性質，我們有
+\begin{equation*}
+  a^{k+1} = a^k \cdot a > b^k \cdot b = b^{k+1}
+\end{equation*}
+所以對於任何自然數 $n$，這個式子都成立。
+\end{proof}
+
+\subsection*{習題 3-3}\label{sec:ex3-3}
+\addcontentsline{toc}{subsection}{習題 3-3}
+
+\begin{enumerate}[1., leftmargin=2em]
+  \item 試證明上面的性質 (XI') 及 (XII')。
+  \item 試證 $2^{10n} > 3^{2n}$，$n$ 為自然數。
+  \item 試證 $2^{3n} < 10^n$，$n$ 為自然數。
+  \item 利用 $5^2 = 3^2 + 4^2$，證明 $5^n > 3^n + 4^n$（$n > 2$）。
+  \item 當 $n \ge 4$ 時，證明 $3^n > n^3$。〔提示：$(n+1)^3 = n^3 + 3n^2 + 3n + 1$〕
+\end{enumerate}
+
+\subsubsection*{戊、數系性質的初步應用}\label{subsec:nat_app}
+
+學到這裏，許多同學可能會有些「吃悶葫蘆」的感覺，因為我們一直在吹這些如分配律、交換律、結合律、對消律……等數的基本性質多麼要緊，多麼有用，但是它們的要緊性，它們的用處到底在什麼地方呢？我們在這裏先講一個小故事，初步說明一下它們的廣泛應用。
+
+\begin{example}[等差級數求和]\label{ex:gauss_arith}
+據說當年大數學家高斯（C. F. Gauss, 1777--1855）在六、七歲時就是老愛發問，有一次老師給他下面的題目，叫他好好去算，希望他能夠安靜一會兒，題目是：
+\begin{equation*}
+  1+2+3+4+5+\dots+96+97+98+99+100 = ?
+\end{equation*}
+殊不知不到一、兩分鐘，高斯小朋友就迅速而準確地把上面一百個數目加好了，他的算法如下：
+\begin{align*}
+  S &= 1 + 2 + 3 + \dots + 98 + 99 + 100 \\
+  +) \quad S &= 100 + 99 + 98 + \dots + 3 + 2 + 1 \\
+  \hline
+  2S &= 101 + 101 + 101 + \dots + 101 + 101 + 101 \quad (\text{共 } 100 \text{ 個}) \\
+  &= 100 \times 101 = 10100
+\end{align*}
+所以
+\begin{equation*}
+  S = \frac{1}{2} \times 100 \times 101 = 5050
+\end{equation*}
+他的老師對他這麼小小年紀，即能靈活運用數的性質去解決問題，大為賞識器重。
+\end{example}
+
+上述算法也就是「等差級數」的求和法。下列級數叫做「等差級數」：
+\begin{equation}\label{eq:arith_series}
+  a + (a+d) + (a+2d) + \dots + (a+(n-1)d)
+\end{equation}
+$a$ 叫做它的首項，$d$ 叫做它的公差，$n$ 是它的項數，令 $S$ 為其總和，則由下式：
+\begin{align*}
+  S &= a + (a+d) + (a+2d) + \dots + [a+(n-1)d] \\
+  +) \quad S &= [a+(n-1)d] + [a+(n-2)d] + \dots + (a+d) + a \\
+  \hline
+  2S &= [2a+(n-1)d] + [2a+(n-1)d] + \dots + [2a+(n-1)d] \quad (\text{共 } n \text{ 個}) \\
+  &= n[2a+(n-1)d]
+\end{align*}
+故
+\begin{equation}\label{eq:arith_sum_formula}
+  S = \frac{n[2a+(n-1)d]}{2} = \frac{n(\text{首項} + \text{末項})}{2}
+\end{equation}
+
+講到等差級數可以順便提一下「等比級數」：
+\begin{equation}\label{eq:geom_series}
+  a + ar + ar^2 + \dots + ar^{n-1}
+\end{equation}
+其中 $a$ 稱為首項，$r$ 稱為公比，$n$ 是項數，令 $S$ 為其總和，則由下式：
+\begin{align*}
+  S &= a + ar + ar^2 + \dots + ar^{n-1} \\
+  -) \quad rS &= \phantom{a +} ar + ar^2 + \dots + ar^{n-1} + ar^n \\
+  \hline
+  S - rS &= a - ar^n
+\end{align*}
+即 $S(1-r) = a(1-r^n)$。當 $r \neq 1$ 時，可得：
+\begin{equation}\label{eq:geom_sum_formula}
+  S = \frac{a(1-r^n)}{1-r}
+\end{equation}
+
+以上求法有它巧妙整齊的技巧，與等差級數求和的方法類似，但我們亦可以從另一角度來看這問題，這就是下一例題所要用的遞迴證法。
+
+\begin{example}\label{ex:powers_of_two_sum}
+求證 $1+2+4+8+\dots+2^{n-1} = 2^n - 1$。
+\end{example}
+
+\begin{proof}
+我們只要證明：
+\begin{equation}\label{eq:two_pow_recur}
+  1 + (1+2+4+\dots+2^{n-1}) = 2^n \qquad \dots\dots (1)
+\end{equation}
+就夠了。(1) 式的左邊為：
+\begin{align*}
+  &= 1 + 1 + 2 + 2^2 + 2^3 + \dots + 2^{n-1} \\
+  &= (1+1) + 2 + 2^2 + 2^3 + \dots + 2^{n-1} \\
+  &= 2 + 2 + 2^2 + 2^3 + \dots + 2^{n-1} \\
+  &= (2+2) + 2^2 + 2^3 + \dots + 2^{n-1} = 2^2 + 2^2 + 2^3 + \dots + 2^{n-1} \\
+  &= 2^3 + 2^3 + \dots + 2^{n-1} \\
+  &= \dots\dots \\
+  &= 2^{n-1} + 2^{n-1} = 2 \cdot 2^{n-1} = 2^n
+\end{align*}
+故得證。
+\end{proof}
+
+用例~\ref{ex:powers_of_two_sum} 的聚項求和法可以推廣到等比級數求和公式，推廣的步驟留作習題。
+
+以上的例子，有一個有趣的解釋。假如你跟別人賭博，第一次下注 $1$ 元，如果輸了，便下注 $2$ 元；如果再輸了，便下注 $2^2 = 4$ 元；再輸了便下注 $2^3 = 8$ 元……直到你贏一次為止。假如你一直輸了 $n$ 次，而在第 $n+1$ 次才贏，那麼你贏回的錢是 $2^n$，而前 $n$ 次輸掉的總錢數是 $1+2+4+\dots+2^{n-1} = 2^n - 1$。因此淨賺：
+\begin{equation*}
+  2^n - (1+2+4+\dots+2^{n-1}) = 2^n - (2^n - 1) = 1 \text{ 元}
+\end{equation*}
+因此，看起來似乎是：「假如你不停地賭下去，每次賭注加倍，只要贏一次，那麼，你一定會贏一塊錢。」
+
+這也許就是為什麼許多賭徒傾家蕩產的理由！進一步的理由，等到高三機率的時候，可以清楚地向各位同學說明。在這裏，我們只提醒一句：在我們想到「贏一塊錢」的時候，我們還要同時考慮「贏一塊錢的機會與代價」。在另一方面，我們也要提醒大家，在 $n$ 並不很大時，這個數目 $2^n$ 會變得非常大：
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|r|r|}
+\hline
+\textbf{連輸次數 $n$} & \textbf{第 $n$ 次下注額} & \textbf{連輸 $n$ 次後輸的總數} \\ \hline
+1  & $1 = 2^0$      & $1$ \\ \hline
+2  & $2 = 2^1$      & $1+2 = 3$ \\ \hline
+3  & $4 = 2^2$      & $1+2+4 = 7$ \\ \hline
+4  & $8 = 2^3$      & $1+2+4+8 = 15$ \\ \hline
+5  & $16 = 2^4$     & $31$ \\ \hline
+6  & $32 = 2^5$     & $63$ \\ \hline
+7  & $64 = 2^6$     & $127$ \\ \hline
+8  & $128 = 2^7$    & $255$ \\ \hline
+9  & $256 = 2^8$    & $511$ \\ \hline
+10 & $512 = 2^9$    & $1023$ \\ \hline
+11 & $1024 = 2^{10}$ & $2047$ \\ \hline
+12 & $2048 = 2^{11}$ & $4095$ \\ \hline
+13 & $4096 = 2^{12}$ & $8191$ \\ \hline
+14 & $8192 = 2^{13}$ & $16383$ \\ \hline
+15 & $16384 = 2^{14}$ & $32767$ \\ \hline
+16 & $32768 = 2^{15}$ & $65535$ \\ \hline
+\end{tabular}
+\caption{加倍下注賭博模型的指數增長表}\label{tab:gambler_ruin}
+\end{table}
+
+因此，假如你連輸 $15$ 次，你便輸掉 $32767$ 元，而你若在第 $16$ 次下注 $32768$ 元才贏，也不過是把輸掉的補平之後，只淨贏得一元！
+
+\subsection*{習題 3-4}\label{sec:ex3-4}
+\addcontentsline{toc}{subsection}{習題 3-4}
+
+\begin{enumerate}[1., leftmargin=2em]
+  \item 試求 $1+3+5+7+\dots+99$ 的和。
+  \item 仿例~\ref{ex:powers_of_two_sum} 求 $2 + 2 \cdot 3 + 2 \cdot 3^2 + 2 \cdot 3^3 + \dots + 2 \cdot 3^n$ 的和；由此再求出 $1 + 3 + 3^2 + 3^3 + \dots + 3^n$ 的和。
+  \item 例~\ref{ex:powers_of_two_sum} 和第 2 題，可以推廣到下面求和公式：
+  \begin{equation*}
+    1 + x + x^2 + \dots + x^n = \frac{1 - x^{n+1}}{1 - x} \qquad (x \neq 1)
+  \end{equation*}
+  \item 有一個 6 位數，若將最左邊的數字移到最右邊，則得一新六位數，若此新數為原數的 3 倍，問原來的 6 位數是什麼？
+  \item 考慮一個大數字如：$37656289705$，我們知道，因為 $3+7+6+5+6+2+8+9+7+0+5 = 58$，$5+8=13$，$1+3=4$；此數不可能被 9 整除（甚至不可能被 3 整除），這便是有名的「棄九法」，請問棄九法的道理在哪裏？我們也知道最後所得的 4，恰巧是原數除以 9 所得的餘數，請問這又是何道理？
+  \item 設一四位數字 $Z = \overline{z_3 z_2 z_1 z_0}$，其中 $z_3, z_2, z_1, z_0$ 表示 $Z$ 中各位數字，今令 $D = (z_0 + z_2) - (z_1 + z_3)$，試證 $Z - D$ 可被 11 整除。
+  \item 有一自然數 $x$ 可以化成 10 進位的展式，那麼此展式是唯一的，也就是說如果：
+  \begin{align*}
+    x &= a_n \cdot 10^n + a_{n-1} \cdot 10^{n-1} + \dots + a_1 \cdot 10 + a_0 \\
+    &= b_n \cdot 10^n + b_{n-1} \cdot 10^{n-1} + \dots + b_1 \cdot 10 + b_0
+  \end{align*}
+  則 $a_0 = b_0, a_1 = b_1, a_2 = b_2, \dots, a_n = b_n$。其中 $a_i, b_i$ 為 0 到 9 的整數之一。
+  \item 試求下列各式前 $n$ 項的和：
+  \begin{enumerate}[(i)]
+    \item $9 + 99 + 999 + \dots$
+    \item $3 + 33 + 333 + \dots$
+    \item $1 + 11 + 111 + \dots$
+    \item $7 + 77 + 777 + \dots$
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{\S 3-3\quad 整數系}\label{sec:3-3}
+
+自然數系對於「加、乘」這兩種基本代數運算雖然具備了交換律、結合律、分配律、對消律等優良性質，但是在許多代數問題的討論中，每當我們遇到下列簡單方程式如：
+\begin{enumerate}[(i)]
+  \item $a+x=b$，求解 $x=?$
+  \item $b \cdot x = a$（$b \neq 0$），求解 $x=?$
+\end{enumerate}
+就不一定能在自然數系中求得出解。譬如 (i) 式：當 $a=3, b=5$ 時有解 $x=2$；但是當 $a=5, b=3$ 時就無解。一般說來，當 $a \ge b$ 時，(i) 式在自然數系中是無解的\footnote{註：在正整數系中「沒有解」的意思是對任何正整數 $x$，$a+x=b$ 亦即 $5+x=3$ 都不可能成立。（因為若 $x$ 為正整數，則 $5+x > 5 > 3$，所以 $5+x$ 永遠不會等於 $3$）。因此我們知道 $5+x=3$ 在正整數系中沒有解。}。又如 (ii) 式，當 $b=3, a=5$ 時無解，但當 $b=3, a=6$ 時有解 $x=2$。所以對於許多需要解 (i)、(ii) 兩種型式的代數問題來說，自然數系很不夠用，我們要在本節中討論補救辦法。
+
+\subsubsection*{甲、整數的產生}\label{subsec:int_generation}
+
+把自然數系加上「$0$」，即 $\mathbb{N} \cup \{0\}$，就得非負整數集 $\mathbb{Z}^+$，這樣當 $a=b$ 時，(i) 式就有解 $x=0$，滿足 $a+0=a$。
+
+對任一 $a \in \mathbb{N}$，把一個能使 $a+x=0$ 的數 $x$ 記作 $x = -a$，讀成「負 $a$」，即：
+\begin{align*}
+  \text{當 } a = 1, \quad &\text{有 } x = -1 \\
+  \text{當 } a = 2, \quad &\text{有 } x = -2 \\
+  \text{當 } a = 3, \quad &\text{有 } x = -3
+\end{align*}
+這樣得到的量 $x$，統稱為\textbf{負整數}，以符號 $\mathbb{Z}^-$ 記之。在正整數加上 $0$ 與所有負整數，就可以做成\textbf{整數集}：
+\begin{equation}\label{eq:integers_set}
+  \mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}
+\end{equation}
+我們有 $\mathbb{Z} \supset \mathbb{N}$。
+
+這樣當 $a > b$ 時，(i) 式 $a+x=b$ 在 $\mathbb{Z}$ 中就有解 $x = -(a-b)$ 了，其中 $a-b$ 為正整數，故 $x = -(a-b)$ 為負整數；通常記為 $x = b - a$。
+
+\subsubsection*{乙、整數的次序}\label{subsec:int_order}
+
+在自然數系中，我們可以比較任意兩個自然數的大小。如果有一個 $u \in \mathbb{N}$ 使得 $a+u=b$，那麼我們知道在自然數次序的排列中 $a$ 排在 $b$ 的前面，也就是說 $a < b$。因為整數可以自然地排成：
+\begin{equation*}
+  \dots, -3, -2, -1, 0, 1, 2, 3, \dots
+\end{equation*}
+所以我們也可規定：如果兩個整數在上面排列中，$a$ 在 $b$ 的前面，則稱做 $a < b$。這種說法的精神和自然數中的說法一樣，因此我們也可以說，假如有一個 $u \in \mathbb{N}$，使得 $a+u=b$（亦即：自 $a$ 向右數 $u$ 格，便到 $b$），則稱 $a < b$。
+
+用次序的符號來表示「$a$ 是一個負整數」，我們要求 $a \in \mathbb{Z}$ 且 $a < 0$。這個次序可以用一直線來說明：在一水平線上固定一個點，稱為 $O$（原點），取一單位長 $1$，在 $O$ 的兩邊做弧，交於 $A, B$ 兩點，設 $A$ 在 $O$ 之右邊，$B$ 在左邊，$OA = OB = 1$。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.95, >=latex]
+  % 數線軸
+  \draw[<->, thick] (-6.5, 0) -- (6.5, 0) node[right] {數線};
+  
+  % 原點與刻度
+  \filldraw (0, 0) circle (2pt) node[below=4pt] {$O (0)$};
+  
+  \foreach \x in {1, 2, 3, 4, 5} {
+    \draw (\x, 0.15) -- (\x, -0.15) node[below=4pt] {\small $A_\x (\x)$};
+    \filldraw (\x, 0) circle (1.5pt);
+  }
+  \foreach \x in {1, 2, 3, 4, 5} {
+    \draw (-\x, 0.15) -- (-\x, -0.15) node[below=4pt] {\small $B_\x (-\x)$};
+    \filldraw (-\x, 0) circle (1.5pt);
+  }
+
+  % 方向指示
+  \draw[->, blue, thick] (0.2, 0.8) -- (4.5, 0.8) node[midway, above] {\small 向右為正 ($+u$)};
+  \draw[->, red, thick] (-0.2, 0.8) -- (-4.5, 0.8) node[midway, above] {\small 向左為負 ($-u$)};
+\end{tikzpicture}
+\caption{整數與直線上的點一一對應圖解}\label{fig:int_line_corr}
+\end{figure}
+
+以 $A = A_1$ 為中心向右邊做弧交於 $A_2$，使 $A_1 A_2 = 1$，次第做去，對所有 $i \le n$ 均可取得 $A_i$ 點使 $A_{i-1} A_i = 1$。由數學歸納法知，向右可無限做下去；同理以 $B = B_1$ 為中心，向左邊次第做弧，得點 $B_2, B_3, \dots$，使得 $B_{i-1} B_i = 1$，由歸納法知向左亦可無限做下去。
+
+由做法知每兩相鄰的弧點距離均為一單位，若規定向右為正，向左為負，則點 $A_n$ 與 $O$ 點距 $n$ 個單位，與 $B_n$ 距 $-n$ 個單位，這樣可以將整數與直線上的點做一一對應：
+\begin{align*}
+  \mathbb{Z} &= \{\dots, -n, \dots, -2, -1, 0, 1, 2, \dots, n, \dots\} \\
+  \updownarrow \quad & \qquad\quad \updownarrow \quad\qquad \updownarrow \quad\ \updownarrow \ \updownarrow \ \updownarrow \ \updownarrow \qquad \updownarrow \\
+  \text{點集} &= \{\dots, B_n, \dots, B_2, B_1, O, A_1, A_2, \dots, A_n, \dots\}
+\end{align*}
+如此整數的大小順序就是對應點在線上的左右相對位置。標上這些點的直線就是數軸的前身。如此，$a < b$ 的充分必要條件為點 $a$ 在點 $b$ 左，或點 $b$ 在點 $a$ 右。
+
+比較兩數 $a, b$ 的大小，我們還可以說：
+\begin{align*}
+  a < b &\iff b - a > 0 \iff a - b < 0 \\
+  a > b &\iff a - b > 0 \iff b - a < 0
+\end{align*}
+
+\subsection*{習題 3-5}\label{sec:ex3-5}
+\addcontentsline{toc}{subsection}{習題 3-5}
+
+\begin{enumerate}[1., leftmargin=2em]
+  \item 試證任何負整數皆小於任一正整數。
+  \item 試比較下列各組數的大小：
+  \begin{enumerate}[(1)]
+    \item $100, \quad -50$
+    \item $-100, \quad 1$
+    \item $-2, \quad 20$
+    \item $-3, \quad -5$
+    \item $-1000, \quad -5$
+    \item $-1, \quad 1$
+  \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{丙、整數系的性質}\label{subsec:int_properties}
+
+\begin{enumerate}[(A)]
+  \item \textbf{零的特性}：對任何整數 $a \in \mathbb{Z}$，恆有
+  \begin{align*}
+    a + 0 &= 0 + a = a \\
+    a \cdot 0 &= 0 \cdot a = 0
+  \end{align*}
+  \item \textbf{負數和正數的關係}：
+  \begin{align*}
+    1 + (-1) &= (-1) + 1 = 0 \\
+    2 + (-2) &= (-2) + 2 = 0 \\
+    3 + (-3) &= (-3) + 3 = 0 \\
+    n + (-n) &= (-n) + n = 0
+  \end{align*}
+  由於 $n + (-n) = (-n) + n = 0$，我們很自然地可以記 $-(-n) = n$。
+  \item \textbf{符號定則}：我們定義
+  \begin{align*}
+    a \cdot (-b) &= (-b) \cdot a = -(ab) \\
+    (-a) \cdot (-b) &= (-b) \cdot (-a) = a \cdot b
+  \end{align*}
+  （亦即正負得負，負負得正！）。
+  \item \textbf{整數系的基本性質}：對於「加」、「乘」整數滿足下列性質：
+  \begin{enumerate}[(i)]
+    \item $(a+b)+c = a+(b+c), \quad (a \cdot b) \cdot c = a \cdot (b \cdot c)$。〔結合律〕
+    \item $a+b = b+a, \quad a \cdot b = b \cdot a$。〔交換律〕
+    \item $a+0 = 0+a = a, \quad a \cdot 0 = 0 \cdot a = 0$。〔零的特性〕
+    \item $a \cdot (b+c) = a \cdot b + a \cdot c$。〔分配律〕
+    \item 對於任給 $a, b \in \mathbb{Z}$，$a+x=b$ 在 $\mathbb{Z}$ 中恆有解。〔加法可逆性〕（這個解就是 $b + (-a)$，一般簡寫為 $b-a$。）
+    \item 如果 $c \neq 0$ 且 $a \cdot c = b \cdot c$，則 $a = b$。〔乘法對消律〕
+    \item 對於任意二整數 $a, b$，下面的三個關係恰有一個成立：
+    \begin{equation*}
+      (1)\ a < b, \qquad (2)\ a = b, \qquad (3)\ a > b
+    \end{equation*}
+    〔三一律〕
+  \end{enumerate}
+\end{enumerate}
+
+\begin{example}\label{ex:distrib_minus}
+說明 $a(b-c) = ab - ac$。
+\end{example}
+
+\begin{proof}
+\begin{align*}
+  a(b-c) &= a[b + (-c)] \\
+  &= ab + a \cdot (-c) && \text{〔分配律〕} \\
+  &= ab + (-ac) && \text{〔符號定則〕} \\
+  &= ab - ac
+\end{align*}
+故得證。
+\end{proof}
+
+\begin{example}\label{ex:mul_zero_proof}
+說明 $a \cdot 0 = 0$。
+\end{example}
+
+\begin{proof}[證法一]
+$a \cdot 0 = a \cdot (1 - 1) = a \cdot 1 - a \cdot 1 = a - a = 0$。
+\end{proof}
+
+\begin{proof}[證法二]
+$a \cdot 0 = a \cdot (0 + 0) = a \cdot 0 + a \cdot 0$。
+即 $0 + a \cdot 0 = a \cdot 0 + a \cdot 0$，由加法對消律知 $a \cdot 0 = 0$。
+\end{proof}
+
+我們已經證過對於自然數 $a, b, c$，如果 $a > b$ 且 $c > 0$，那麼 $ac > bc$；但對整數來說，如果 $c < 0$，兩邊同乘 $c$ 不等號方向要改變，即 $ac < bc$。
+
+\begin{example}\label{ex:neg_power_order}
+如果 $a, b$ 是負數，而且 $a > b$，那麼當 $k$ 是正偶數時，$a^k < b^k$；而當 $k$ 是正奇數時，$a^k > b^k$。試證之。
+\end{example}
+
+\begin{proof}
+已知 $0 > a > b$。
+\begin{enumerate}[(i)]
+  \item 若 $k$ 是正偶數，令 $k = 2m$（$m \in \mathbb{N}$）。
+  因 $0 > a > b$，兩邊同乘負數，不等號方向改變，得 $0 < -a < -b$。
+  平方後 $(-a)^2 < (-b)^2 \implies a^2 < b^2$。
+  由例~\ref{ex:power_order} 知 $(a^2)^m < (b^2)^m$，即 $a^{2m} < b^{2m}$，故 $a^k < b^k$。
+  \item 若 $k$ 是正奇數，令 $k = 2m+1$。
+  由 (i) 知 $a^{2m} < b^{2m}$。因 $a^{2m}, b^{2m} > 0$ 且 $0 > a > b$，兩式相乘（或同乘以負數）不等號變向：
+  \begin{equation*}
+    a^{2m+1} = a^{2m} \cdot a > b^{2m} \cdot b = b^{2m+1}
+  \end{equation*}
+  即 $a^k > b^k$。
+\end{enumerate}
+\end{proof}
+
+\subsection*{習題 3-6}\label{sec:ex3-6}
+\addcontentsline{toc}{subsection}{習題 3-6}
+
+\begin{enumerate}[1., leftmargin=2em]
+  \item 由例~\ref{ex:mul_zero_proof} 我們可以看出自然數的性質 XII 對於整數不完全成立（乘負數時要變向）。試分別討論 $c > 0$ 與 $c < 0$ 的情形，寫出其規則。
+  \item 自然數性質 XII' 在整數情形下也不成立，請舉例說明各種可能的情形。
+  \item 如果 $a$ 是正數，$b$ 是負數，我們當然有 $a > b$，請討論這時 $a^k$ 與 $b^k$ 的大小關係（$k \in \mathbb{N}$）。
+\end{enumerate}
+
+\subsection{\S 3-4\quad 有理數系}\label{sec:3-4}
+
+有理數就是比數，或稱分數。
+
+\subsubsection*{甲、分數（有理數）}\label{subsec:fractions}
+
+\begin{enumerate}[(i)]
+  \item \textbf{分數的產生}：如 \S 3-3 所說，下列方程式：
+  \begin{equation}\label{eq:linear_eq_bx_a}
+    b \cdot x = a \qquad (b \neq 0)
+  \end{equation}
+  在整數系中不一定有解。為了要使上式有解，我們將 $\mathbb{Z}$ 再加以擴張，引入「分數」。一個分數就是形如 $\frac{a}{b}$（$a, b \in \mathbb{Z}, b \neq 0$）而滿足方程式 $bx = a$ 的數，換句話說：
+  \begin{equation*}
+    b \left(\frac{a}{b}\right) = a
+  \end{equation*}
+  譬如：
+  \begin{itemize}
+    \item $2 \cdot (\frac{1}{2}) = 1$，$\frac{1}{2}$ 為 $2x = 1$ 之解。
+    \item $5 \cdot (\frac{3}{5}) = 3$，$\frac{3}{5}$ 為 $5x = 3$ 之解。
+    \item $3 \cdot (\frac{5}{3}) = 5$，$\frac{5}{3}$ 為 $3x = 5$ 之解。
+    \item $(-3) \cdot (\frac{7}{-3}) = 7$，$\frac{7}{-3}$ 為 $-3x = 7$ 之解。
+    \item $(-6) \cdot (-\frac{5}{6}) = 5$，$-\frac{5}{6}$ 為 $-6x = 5$ 之解。
+  \end{itemize}
+  所有有理數所成的集合，用符號 $\mathbb{Q}$ 表之：
+  \begin{equation}\label{eq:rationals_set}
+    \mathbb{Q} = \left\{\frac{a}{b} \;\middle|\; a, b \in \mathbb{Z}, \; b \neq 0\right\}
+  \end{equation}
+  由於 $1 \cdot a = a$，所以在有理數系中，我們也可以把整數 $a$ 看成 $\frac{a}{1}$ 的另一種寫法，整數便被看成分數的一種特例，換句話說：
+  \begin{equation*}
+    \mathbb{Q} \supset \mathbb{Z}
+  \end{equation*}
+  當 $a=1$ 時，滿足方程式 $bx = 1$ 的數寫成 $\frac{1}{b}$，我們有 $b \cdot \frac{1}{b} = 1$，而稱 $\frac{1}{b}$ 為 $b$ 的\textbf{乘法反元素}（倒數）。顯然，$\mathbb{Z}$ 中的元素除 $\pm 1$ 以外均無乘法反元素，而 $\mathbb{Q}$ 中除了零以外，均有乘法反元素。
+
+  \item \textbf{分數的表法}：\\
+  當 $c \neq 0$ 時，由乘法的對消律可知：
+  \begin{align*}
+    bx = a &\iff c(bx) = ca \iff (cb)x = ca \\
+    &\iff x = \frac{ca}{cb} = \frac{a}{b}
+  \end{align*}
+  所以 $\frac{a}{b}$ 和 $\frac{ca}{cb}$ 是同一分數的兩種表法。由 $\frac{ca}{cb}$ 化成 $\frac{a}{b}$ 叫做\textbf{約分}；反之由 $\frac{a}{b}$ 化成 $\frac{ca}{cb}$ 叫做\textbf{擴分}。
+  
+  有理數的另一種表示法便是「小數」。任何一個有理數皆可化為小數（有限小數或循環小數）；反之，任一有限小數或循環小數，皆可化為一有理數。
+
+  \item \textbf{分數的運算}：\\
+  在小學中，同學們即已熟悉分數的加法與乘法，它們的定義可以用式子表之如下：
+  \begin{align}
+    \frac{a}{b} + \frac{c}{d} &= \frac{ad}{bd} + \frac{bc}{bd} = \frac{ad + bc}{bd} \label{eq:frac_add} \\
+    \frac{a}{b} \cdot \frac{c}{d} &= \frac{ac}{bd} \label{eq:frac_mul}
+  \end{align}
+  我們定義有理數的加法與乘法，當然希望它滿足數系的基本性質，如結合律、交換律、分配律等。在這些要求下，就不得不像上面這樣定義。
+
+  \item \textbf{有理數系的基本性質}：\\
+  對任意有理數 $r, s, t \in \mathbb{Q}$：
+  \begin{itemize}
+    \item $(r+s)+t = r+(s+t), \quad (rs)t = r(st)$。〔結合律〕
+    \item $r+s = s+r, \quad rs = sr$。〔交換律〕
+    \item $r+0 = 0+r = r, \quad r \cdot 1 = 1 \cdot r = r, \quad r \cdot 0 = 0 \cdot r = 0$。〔零與 $1$ 的特性〕
+    \item 對於任何 $r \in \mathbb{Q}$，存在唯一的相反數 $-r$，使得 $r + (-r) = 0$。〔加法可逆性〕
+    \item 對於任給非零有理數 $r \neq 0$，存在唯一的倒數 $\frac{1}{r}$，使得 $r \cdot \frac{1}{r} = 1$。〔乘法可逆性〕
+    \item $r \cdot (s+t) = r \cdot s + r \cdot t$。〔分配律〕
+  \end{itemize}
+
+  \item \textbf{次序關係}：\\
+  像整數一樣，有理數是可以比較大小的，而且對於任給兩數 $r, s \in \mathbb{Q}$，下列三種情形：
+  \begin{equation*}
+    r < s, \qquad r = s, \qquad r > s
+  \end{equation*}
+  恰有一種成立。要比較任意兩個有理數的大小，我們可以把它們分別擴分使分母化為相同的正整數，這時比較分子即可，分子大的分數較大。
+\end{enumerate}
+
+\subsection*{習題 3-7}\label{sec:ex3-7}
+\addcontentsline{toc}{subsection}{習題 3-7}
+
+\begin{enumerate}[1., leftmargin=2em]
+  \item 試算出下列各式的結果，並分別比較它們的大小：
+  \begin{enumerate}[(i)]
+    \item $\left(-\frac{1}{2}\right) + \frac{2}{3} - \left(-\frac{3}{4}\right)$ 和 $\left(-\frac{1}{2}\right)\left(\frac{2}{3}\right) - \left(-\frac{3}{4}\right)\left(-\frac{1}{2}\right)$。
+    \item $\left(\frac{2}{3}\right)\left[\frac{3}{4} + \frac{5}{6} - \left(-\frac{1}{2}\right)\right] \div \frac{4}{12}$ 和 $\left[\left(-\frac{3}{8}\right)\left(-\frac{2}{9}\right) + \frac{1}{6}\right] \div (-6)$。
+  \end{enumerate}
+  \item 算出下列各組數的算術平均數：
+  \begin{enumerate}[(i)]
+    \item $25, \quad -77, \quad 27$。
+    \item $\frac{5}{9}, \quad \frac{1}{10}, \quad \frac{7}{2}, \quad \frac{17}{9}, \quad \frac{2}{3}, \quad \frac{1}{2}$。
+  \end{enumerate}
+  \item 試將下列各數由小到大排成一列：
+  \begin{equation*}
+    -\frac{3}{4}, \quad \frac{5}{8}, \quad -1, \quad -\frac{7}{6}, \quad -1.12, \quad 1.24
+  \end{equation*}
+  \item 設 $a, b$ 為任意兩個有理數且 $a < b$，試證在 $a, b$ 之間必可找到第三個有理數 $c$（例如取算術平均數 $c = \frac{a+b}{2}$ 滿足 $a < c < b$）。
+  \item 試證對於任意有理數 $a, b \in \mathbb{Q}$：
+  \begin{enumerate}[(i)]
+    \item $a < b \iff -a > -b$。
+    \item $\frac{b}{a} > 0 \iff ab > 0$。
+    \item 設 $b, d > 0$，則 $\frac{a}{b} < \frac{c}{d} \iff ad < bc$。
+    \item 若 $\frac{a}{b} < \frac{c}{d}$ 且 $ac > 0$，則 $\frac{b}{a} > \frac{d}{c}$。
+  \end{enumerate}
+  \item 設 $a, b, c$ 為三有理數，且 $a+b+c=0$。試證：
+  \begin{equation*}
+    a\left(\frac{1}{b} + \frac{1}{c}\right) + b\left(\frac{1}{c} + \frac{1}{a}\right) + c\left(\frac{1}{a} + \frac{1}{b}\right) = -3
+  \end{equation*}
+  \item 設 $a, b, c, d$ 為四個正有理數，且 $\frac{a}{b} < \frac{c}{d}$。試證：
+  \begin{equation*}
+    \frac{a}{b} < \frac{a+c}{b+d} < \frac{c}{d}
+  \end{equation*}
+  \item 計算 $0.2 + 0.22 + 0.222 + \dots$ 前 $n$ 項的和。
+  \item 計算 $5.5 + 55.55 + 555.555 + \dots$ 前 $n$ 項的和。〔提示：利用上題及習題 3-4 第 8 題〕
+\end{enumerate}
+
+\subsection{\S 3-5\quad 實數}\label{sec:3-5}
+
+任意兩有理數間有第三個有理數（習題 3-7 第 4 題），而由歸納法可知兩有理數間其實有無數個有理數，這叫做有理數的\textbf{稠密性}。
+
+將這些數標到一條定了基準點的直線上，試問這些點能否把連接所給兩有理點的線段填滿？答案是：\textbf{不可以的}。不但如此，點 $a$ 與點 $b$ 間且有許多（也是無數個）空隙，我們將把這些空隙上的點所對應的量叫做\textbf{無理數}，而這些點又將稱為無理點。這樣一來，加進了無理點之後，原來兩點間就不再有空隙了，而且無理數是不能用分數形式來表示的。（否則……？）
+
+無理數的產生除了可以從以上填充幾何空隙的需要來看，也可如整數及分數的產生是為得到方程式之解（\hyperref[sec:3-3]{\S 3-3}、\hyperref[sec:3-4]{\S 3-4}）的需要來看。即 $\sqrt{2}, \sqrt{3}, \sqrt{5}, \dots$ 不是有理數，它們是為滿足方程式 $x^2 = 2, x^2 = 3, x^2 = 5, \dots$ 而加入的。
+
+有理數集與無理數集合併做成\textbf{實數集} $\mathbb{R}$。有關實數的更深入性質要到下一冊再講。
+
+\begin{definition}[絕對值]\label{def:abs_value}
+對任意實數 $a \in \mathbb{R}$，定義其\textbf{絕對值}（absolute value）$|a|$ 為：
+\begin{equation}\label{eq:abs_definition}
+  |a| = \begin{cases}
+    a, & \text{若 } a \ge 0 \\
+    -a, & \text{若 } a < 0
+  \end{cases}
+\end{equation}
+稱為實數 $a$ 的絕對值。
+\end{definition}
+
+幾何上，$|a|$ 表示數線上點 $a$ 到原點 $O$ 的距離；$|a - b|$ 表示點 $a$ 與點 $b$ 之間的距離。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.1, >=latex]
+  % 實數線與絕對值距離示意
+  \draw[<->, thick] (-4.5, 0) -- (4.5, 0) node[right] {$\mathbb{R}$};
+  
+  \filldraw (0, 0) circle (1.8pt) node[below=3pt] {$O (0)$};
+  \filldraw (-2.5, 0) circle (1.8pt) node[below=3pt] {$-a$};
+  \filldraw (2.5, 0) circle (1.8pt) node[below=3pt] {$a$};
+  
+  \draw[<->, blue, thick] (-2.5, 0.6) -- (0, 0.6) node[midway, above] {\small $|-a| = a$};
+  \draw[<->, blue, thick] (0, 0.6) -- (2.5, 0.6) node[midway, above] {\small $|a| = a$};
+  
+  \draw[dashed, gray] (-2.5, 0) -- (-2.5, 0.6);
+  \draw[dashed, gray] (0, 0) -- (0, 0.6);
+  \draw[dashed, gray] (2.5, 0) -- (2.5, 0.6);
+\end{tikzpicture}
+\caption{絕對值的幾何意義：數線上點到原點的距離}\label{fig:abs_dist}
+\end{figure}
+
+\subsection*{習題 3-8}\label{sec:ex3-8}
+\addcontentsline{toc}{subsection}{習題 3-8}
+
+試利用上面定義，證明下列各題（設 $a, b, x \in \mathbb{R}$）：
+\begin{enumerate}[(i), leftmargin=2.5em]
+  \item $\sqrt{a^2} = |a|$。
+  \item $|ab| = |a| \cdot |b|$。
+  \item $\left|\frac{a}{b}\right| = \frac{|a|}{|b|}$（$b \neq 0$）。
+  \item $-|a| \le a \le |a|$。
+  \item 若 $\delta > 0$，則 $|x| < \delta \iff -\delta < x < \delta$。
+  \item 若 $\delta > 0$，則 $|x| > \delta \iff x > \delta$ 或 $x < -\delta$。
+  \item $|a+b| \le |a| + |b|$（三角不等式）。
+  \item $|a-b| \le |a| + |b|$。
+  \item $\big||a| - |b|\big| \le |a+b|$。
+  \item $\big||a| - |b|\big| \le |a-b|$。
+\end{enumerate}

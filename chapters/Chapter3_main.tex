@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../styles/preamble.tex}
+\input{../styles/Chinese_math_style.tex}
+\input{../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 1 冊}
+  \fancyhead[L]{\small 第 3 章\quad 數的概念}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small 第三章\quad 數的概念}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{第三章\quad 數的概念}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% =========================================================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則 6 整理於目錄之前）
+% =========================================================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第一冊》（高一上）第三章「數的概念」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[sec:3-1]{§ 3-1 頁首} & 
+出現「\texttt{ZA}」等破碎戳記 & 
+原書圖書館藏印、背面透印及舊式排版印跡雜訊，正文中已予剔除。 \\ \hline
+
+\hyperref[subsec:plus_one]{§ 3-1 甲、「+1」運算} & 
+「所以『+1』(加工)是自然中最原始的運算」 & 
+「加工」顯為鉛字「加一」印刷斷筆殘印所致，校正為「加一」。 \\ \hline
+
+\hyperref[subsec:nat_axioms]{§ 3-2 乙、自然數系基本性質} & 
+「對律」 & 
+原書鉛字「對消律」脫漏「消」字，依代數學名詞體系補正為「對消律」。 \\ \hline
+
+\hyperref[prop:nat_xii]{§ 3-2 丁、性質 XII 證明} & 
+「由，可知 a=b」 & 
+原書引用前述性質標籤時字模殘缺脫漏（漏排「性質 VIII」），正文已校補為「性質 VIII」。 \\ \hline
+
+\hyperref[ex:powers_of_two_sum]{§ 3-2 戊、等比級數求和} & 
+賭博表格第 14、15 列中文字排版斷落 & 
+指數上標損毀為一般數字，校訂重繪為規範指數對齊表格。 \\ \hline
+
+\hyperref[subsec:int_generation]{§ 3-3 甲、整數的產生} & 
+「記 x=-c, 讀成『負 a』」 & 
+「-c」為鉛字「-a」印損模糊，正文更正為「$x = -a$」。 \\ \hline
+
+\hyperref[sec:ex3-6]{習題 3-6 第 1 題} & 
+「正整數的性質, XII 對於整數不成立」 & 
+補充負數乘法不等號反轉之幾何與代數推導。 \\ \hline
+
+\hyperref[subsec:fractions]{§ 3-4 甲、分數的表法} & 
+「叫做的分」 & 
+「的分」為鉛字「約分」之缺漏字模，校補為「約分」。 \\ \hline
+
+\hyperref[sec:ex3-8]{習題 3-8 第 (v), (vi) 題} & 
+絕對值不等式印刷斷裂模糊 & 
+符號印損斷裂嚴重，考證為絕對值與開區間之充要條件，校正為「$|x| < \delta \iff -\delta < x < \delta$」。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter3.tex}
+
+\end{document}
