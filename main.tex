@@ -1,0 +1,116 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{styles/preamble.tex}
+\input{styles/Chinese_math_style.tex}
+\input{styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small \leftmark}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{全冊 \LaTeX{} 數位轉錄版}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% =========================================================================
+% 各章掃描檔勘誤、文字校訂與疑難處彙整表（依規則 6 整理於目錄之前）
+% =========================================================================
+\section*{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\addcontentsline{toc}{section}{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\label{sec:master_errata_notes}
+
+本冊依據 1973 年版《高中數學實驗教材 第一冊》（高一上）各章掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第一章\quad 引言}} \\ \hline
+
+\hyperref[sec:1-1]{1.1 頁首} 與 \hyperref[sec:ex1-1]{習題 1-1 頁尾} & 
+出現「\texttt{946}」、「\texttt{白單]飯麵}」、「\texttt{货西東}」等破碎字樣 & 
+此為原書圖書館藏印、流通戳記、背面透印或早期 OCR 掃描所生之雜訊，正文中已予以剔除，恢復正文字樣。 \\ \hline
+
+\hyperref[subsec:number]{1.1 甲、數} & 
+「叫做實系，實數系的性質是數學的重要之基礎之一」 & 
+「實系」顯為「實數系」排版之脫字，正文中校補為「實數系」，使數學名詞體系完整。 \\ \hline
+
+\hyperref[fn:sqrt2]{1.1 甲 註釋} & 
+「由畢氏定理可知 ZM的長度是AB的2倍...證明/不可能是有理！」 & 
+原書根號印損為「2倍」或斜線「/」，且末尾「有理」漏「數」字。依畢氏定理與第二冊代數銜接，校正為「$ZM$ 的長度是 $AB$ 的 $\sqrt{2}$ 倍」及「$\sqrt{2}$ 不可能是有理數」。 \\ \hline
+
+\hyperref[subsec:function]{1.1 乙、函數} & 
+「其『體』即隨之確定」、「『體』與『壓力』成反比」、「相互關可以由...」 & 
+(i)、(ii) 處將「體積」簡印為「體」；(iv) 處「相互關」脫漏「係」或「連」字（應為「相互關係/相互關連」）。正文均予補全。 \\ \hline
+
+\hyperref[def:function]{函數定義 / 虎克定律} & 
+「稱y爲應變數\texttt{*}爲自變數」、「重量用:表示」、「所填之長」 & 
+「\texttt{*}」及「:」均為變數 $x$ 筆劃印損斷裂；「所填之長」實為「所伸之長」之形近排印訛誤，已予校正。 \\ \hline
+
+\hyperref[subsec:space]{1.1 丙、空間} & 
+「弄清楚地到乙地的方向」、「毫無障 硬的平地」 & 
+「清楚地」脫漏「甲」字（應為「清楚甲地」）；「障 硬」為鉛字「障礙」破損，正文補正。 \\ \hline
+
+\hyperref[sec:1-2]{1.2 數學方法} & 
+「過上面向同學們...」、「如此一部有用的機器」、「鑽 管」 & 
+校正贅字、文義銜接與成語「鑽牛角尖」字模脫落。 \\ \hline
+
+\hyperref[sec:ex1-1]{習題 1-1 第 6 題} & 
+「放在盡紙上嗎？」、「把已看成“經過抽象”」 & 
+「盡紙」為「畫紙」之形近誤植；「把已」校正為代名詞「把它」。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第二章\quad 符號用法、基本數學語句及集合的概念}} \\ \hline
+
+\hyperref[subsec:2-3-a]{2.3 甲 康托生卒年} & 
+「康托(George Cantor, 11845-1918)所著」 & 
+原書出生年份「11845」多排一個「1」字模，校正為「1845--1918」。 \\ \hline
+
+\hyperref[subsec:2-3-f]{2.3 己 例 1 新生社團} & 
+題目文字印為「357人三樣都參加」 & 
+題目敘述中之「357人」與下文文氏圖、排容算式「$35$ 人」及總人數「$762$ 人」矛盾，顯為鉛字排印誤植「7」字。依算式邏輯校訂為「35 人三樣都參加」。 \\ \hline
+
+\hyperref[sec:ex2-3]{習題 2-3 頁首書眉} & 
+書眉印為「第二章 符號用法,基本數學語句及集各的概念」 & 
+「集各」為「集合」之排印訛字，正文與書眉校補為「集合」。 \\ \hline
+
+\hyperref[sec:ex2-4]{習題 2-4 第 3(i) 題} & 
+「$\triangle ABC, \angle B=90^\circ$ 的充分必要條件是 $AC^2+BC^2=AC^2$」 & 
+算式中重複出現 $AC^2$，依畢氏定理斜邊應為 $AC$、兩股為 $AB, BC$，校正為 $AB^2+BC^2=AC^2$。 \\ \hline
+
+\hyperref[subsec:2-4-d]{2.4 丁 補集符號} & 
+原書同時使用「$\sim A$」與「$\sim \alpha$」表示補集與否定 & 
+維持原書「$\sim A$」及「$\sim \alpha$」之特殊符號風格，精確反映 1970 年代實驗教材之符號體系。 \\ \hline
+
+\hyperref[sec:ch2-appendix]{附錄：羅馬乘法} & 
+羅馬數字繁複分配律乘法演算 & 
+依原書第 45 頁附錄完整收錄並以對齊數學環境重現，展示印度--阿拉伯記數系統相對於羅馬數字之優越性。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% 各章循序 Include 模組
+\include{chapters/Chapter1} % 第一章 引言
+\include{chapters/Chapter2} % 第二章 符號用法、基本數學語句及集合的概念
+
+\end{document}

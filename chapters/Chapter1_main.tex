@@ -1,0 +1,105 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../styles/preamble.tex}
+\input{../styles/Chinese_math_style.tex}
+\input{../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 1 冊}
+  \fancyhead[L]{\small 第 1 章\quad 引言}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small 第一章\quad 引言}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{第一章\quad 引言}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則 6 整理於目錄之前）
+% ==========================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第一冊》（高一上）第一章「引言」掃描原件轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[sec:1-1]{\S 1-1 頁首} 與 \hyperref[sec:ex1-1]{習題 1-1 頁尾} & 
+出現「\texttt{946}」、「\texttt{白單]飯麵}」、「\texttt{货西東}」等破碎字樣 & 
+此為原書圖書館藏印、流通戳記、背面透印或早期 OCR 掃描所生之雜訊，正文中已予以剔除，恢復正文字樣。 \\ \hline
+
+\hyperref[subsec:number]{\S 1-1 甲、數} & 
+「叫做實系，實數系的性質是數學的重要之基礎之一」 & 
+「實系」顯為「實數系」排版之脫字，正文中校補為「實數系」，使數學名詞體系完整。 \\ \hline
+
+\hyperref[fn:sqrt2]{\S 1-1 甲 註釋} & 
+「由畢氏定理可知 ZM的長度是AB的2倍...證明/不可能是有理！」 & 
+原書根號印損為「2倍」或斜線「/」，且末尾「有理」漏「數」字。依畢氏定理與第二冊代數銜接，校正為「$ZM$ 的長度是 $AB$ 的 $\sqrt{2}$ 倍」及「$\sqrt{2}$ 不可能是有理數」。 \\ \hline
+
+\hyperref[subsec:function]{\S 1-1 乙、函數 (i)-(iv)} & 
+「其『體』即隨之確定」、「『體』與『壓力』成反比」、「相互關可以由...」 & 
+(i)、(ii) 處將「體積」簡印為「體」；(iv) 處「相互關」脫漏「係」或「連」字（應為「相互關係/相互關連」）。正文均予補全。 \\ \hline
+
+\hyperref[def:function]{函數的定義} 與 \hyperref[subsec:function]{\S 1-1 乙 虎克定律} & 
+「且稱y爲應變數\texttt{*}爲自變數」、「重量用:表示」、「從彈簧所填之長算出物重」 & 
+「\texttt{*}」及「:」均為變數 $x$ 筆劃印損斷裂；「所填之長」實為「所伸之長」之形近排印訛誤，已予校正。 \\ \hline
+
+\hyperref[subsec:space]{\S 1-1 丙、空間} & 
+「弄清楚地到乙地的方向」、「毫無障 硬的平地」 & 
+「清楚地」脫漏「甲」字（應為「清楚甲地」）；「障 硬」為鉛字「障礙」破損，正文補正。 \\ \hline
+
+\hyperref[sec:1-2]{\S 1-2 數學方法 引言} & 
+「過上面向同學們簡略地介紹了...談一談討這些題材」 & 
+開頭「過」字為殘留衍字，「談一談討」為「談一談探討」之排印重複脫漏。 \\ \hline
+
+\hyperref[subsec:logic]{\S 1-2 乙、邏輯} & 
+「如此一部有用的機器」、「十之八九你 凑成一具...」 & 
+「如此」依前後文意為「好比」之訛；「十之八九你」後脫漏「會」字，正文已潤飾補正。 \\ \hline
+
+\hyperref[subsec:math_language]{\S 1-2 丙、數學語言} & 
+「討論抽象數學語言...」、「數學語 雖然...」、「鑽 管」 & 
+標點符號脫漏；「數學語」漏「言」字；「鑽 管」為成語「鑽牛角尖」之字模脫落。 \\ \hline
+
+\hyperref[sec:1-3]{\S 1-3} 與 \hyperref[sec:1-4]{\S 1-4} & 
+項目編號印為「(C)」；開頭殘印「媽:」；要點 (二)、(三) 漏編號標籤 & 
+\S 1-3 第二點校訂為 (二)；清除「媽:」污痕，並重整 \S 1-4 四大要領之編號結構。 \\ \hline
+
+\hyperref[sec:ex1-1]{習題 1-1 第 6 題} & 
+「放在盡紙上嗎？」、「把已看成“經過抽象”」 & 
+「盡紙」為「畫紙」之形近誤植；「把已」校正為代名詞「把它」。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter1.tex}
+
+\end{document}

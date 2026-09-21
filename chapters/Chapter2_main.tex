@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../styles/preamble.tex}
+\input{../styles/Chinese_math_style.tex}
+\input{../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 1 冊}
+  \fancyhead[L]{\small 第 2 章\quad 符號用法、基本數學語句及集合的概念}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small 第二章\quad 符號用法、基本數學語句及集合的概念}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{第二章\quad 符號用法、基本數學語句及集合的概念}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 第二章 掃描檔勘誤、文字校訂與疑難處說明（依規則 6 整理於目錄之前）
+% ==========================================
+\section*{【說明】第二章 掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第二章 掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:ch2_errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第一冊》（高一上）第二章「符號用法、基本數學語句及集合的概念」33 頁掃描原件（第 13 頁至第 45 頁）完整轉錄為 \LaTeX{} 格式。依作業規範將掃描檔中出現之排印訛誤、數據手民之誤、符號缺漏、字模損毀及文義疑難處詳細考證彙整於下表：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[subsec:2-3-a]{2.3 甲 康托生卒年} & 
+「康托(George Cantor, 11845-1918)所著」 & 
+出生年份「11845」顯為多排一個「1」之鉛字訛誤，正文校訂為「1845--1918」。 \\ \hline
+
+\hyperref[subsec:2-3-f]{2.3 己 例 1 新生社團} & 
+題目文字印為「357人三樣都參加」 & 
+題目敘述中之「357人」與下文圖形、算式「$35$ 人」及總人數「$762$ 人」矛盾，顯為鉛字排印誤植「7」字。依算式邏輯校訂為「35 人三樣都參加」。 \\ \hline
+
+\hyperref[sec:ex2-3]{習題 2-3 頁首書眉} & 
+書眉印為「第二章 符號用法,基本數學語句及集各的概念」 & 
+「集各」為「集合」之排印訛字，正文與書眉校補為「集合」。 \\ \hline
+
+\hyperref[sec:ex2-4]{習題 2-4 第 3(i) 題} & 
+「$\triangle ABC, \angle B=90^\circ$ 的充分必要條件是 $AC^2+BC^2=AC^2$」 & 
+算式中重複出現 $AC^2$，依畢氏定理斜邊應為 $AC$、兩股為 $AB, BC$，校正為 $AB^2+BC^2=AC^2$。 \\ \hline
+
+\hyperref[subsec:2-4-d]{2.4 丁 補集符號} & 
+原書同時使用「$\sim A$」與波浪號「$\sim$」表示補集與否定 & 
+維持原書「$\sim A$」及「$\sim \alpha$」之特殊符號風格，精確反映 1970 年代實驗教材引進現代邏輯與集合論時之原始語法。 \\ \hline
+
+\hyperref[sec:ch2-appendix]{附錄：羅馬乘法} & 
+羅馬數字繁複分配律乘法演算 & 
+依原書第 45 頁附錄完整收錄並以對齊數學環境重現，展示印度--阿拉伯記數系統相對於羅馬數字之優越性。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter2.tex}
+
+\end{document}
