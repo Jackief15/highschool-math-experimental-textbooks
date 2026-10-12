@@ -1,0 +1,98 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 2 冊}
+  \fancyhead[L]{\small 第 1 章\quad 二次方程式}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第二冊}
+\fancyhead[RO]{\small 第一章\quad 二次方程式}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第二冊}\\[0.5em] \Large\textbf{第一章\quad 二次方程式}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第二冊》（高一下）第一章「二次方程式」掃描原件轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b2-ch1-intro-ceng]{§ 1 頁 1 導言} & 
+「我們會討論一次方程式及其應用」 & 
+「會」字實為「曾」之音近通假或訛字（指第一冊第四章中「我們曾討論……」），正文依原書文字忠實保留，特予備註說明。 \\ \hline
+
+\hyperref[note:b2-ch1-ex3]{§ 1-1 頁 2 例 3} & 
+「在例三中，因為 $g(x)\cdot h(x)$ 有 $(x+1)^2$ 因子……」 & 
+原書例題標籤採用阿拉伯數字「【例3】」，末段行文稱「例三」，正文保留原書行文習慣。 \\ \hline
+
+\hyperref[note:b2-ch1-ex6]{§ 1-1 頁 4 例 6} & 
+「利用配方法（將在 § 2 中說明），上述又可以改寫為」 & 
+教材編者於 § 1-1 提前預告並運用後續 § 1-2 之「配方法」簡化中空方陣方程式，正文忠實照錄前後呼應。 \\ \hline
+
+\hyperref[note:b2-ch1-gravity]{§ 1-1 頁 8 習題 1-1 第 3 題} & 
+「$S = -490t^2 + 16.8t$」 & 
+垂直上拋運動位移公式為 $S = v_0 t - \frac{1}{2}gt^2$。公尺制下 $g \approx 9.8\text{ m/s}^2$，二次項係數應為 $-4.9$；原書排印為 $-490$（係厘米制數值 $980\text{ cm/s}^2$ 脫漏小數點且未除以 2 之複合訛誤），致使代入 $S=14$ 公尺時無實數解。正文維持原刊文字 $-490t^2+16.8t$，並於此說明物理量瑕疵。 \\ \hline
+
+\hyperref[note:b2-ch1-cor2]{§ 1-2 頁 9 推論 2} & 
+「（證明留做習題）」 & 
+推論 2 之齊次式因式分解證明留於「習題 1-2」第 1 題，前後呼應，正文忠實保留。 \\ \hline
+
+\hyperref[note:b2-ch1-ex1-4-q3]{§ 1-4 頁 18 習題 1-4 第 3 題} & 
+「以線段 $\overline{AB}$ 和 $\overline{PB}$ 為一邊各作一正方形」 & 
+題幹前述「設線段 $\overline{AB}$ 的長是 $a$，在 $\overline{AB}$ 上任取一點 $P$」，欲使兩正方形面積和最小，分割線段應為 $\overline{AP}$ 與 $\overline{PB}$，原書印「$\overline{AB}$」顯係「$\overline{AP}$」之誤植。正文維持原印文字 $\overline{AB}$ 特予備註。 \\ \hline
+
+\hyperref[note:b2-ch1-ex1-4-q4]{§ 1-4 頁 19 習題 1-4 第 4 題} & 
+「將 $AP$ 分為三等分，使其實成一正三角形」 & 
+「使其實成」之「實」字為鉛字「圍」字模嚴重破損磨損之印痕，文義確為「使其圍成一正三角形」，正文忠實照錄「使其實成」。 \\ \hline
+
+\hyperref[note:b2-ch1-ex6-sign]{§ 1-4 頁 21 例 6} & 
+「$z = 5\cdot (\frac{1}{5}) - 14 = -15$」 & 
+式中代入 $y=-\frac{1}{5}$ 時，括號內負號脫漏（漏印為正 $\frac{1}{5}$），惟等號右端計算結果正確得出 $-15$（即 $5(-\frac{1}{5})-14 = -15$）。正文保留原印字樣並在此校釋。 \\ \hline
+
+\hyperref[note:b2-ch1-ex1-5-q1-11]{§ 1-4 頁 23 習題 1-5 第 1(xi) 題} & 
+「$(x+1)(2y+1) = 5x+9y=1$」 & 
+比對聯立方程第二式 $(x+2)(3y+1) = 9x+13y+2$，第一式右端原為一次式結構 $5x+9y+1$，字模排印將加號誤植或磨損為等號「$=1$」。正文忠實保留原刊印文字並在此說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter1.tex}
+
+\end{document}

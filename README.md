@@ -16,8 +16,10 @@
 
 ```text
 高中數學實驗教材數位化/
-├── main.tex                    # 全冊總主控檔（含目錄前勘誤彙整表與全書目錄）
-├── main.pdf                    # 全冊編譯產出之高畫質 PDF（目前含第一至三章，共 66 頁）
+├── main.tex                    # 第一冊總主控檔（含第一冊勘誤彙整表與全書目錄，共 186 頁）
+├── main.pdf                    # 第一冊編譯產出之高畫質 PDF（第一至七章完整收錄）
+├── main_B2.tex                 # 第二冊總主控檔（含第二冊勘誤彙整表與全書目錄）
+├── main_B2.pdf                 # 第二冊編譯產出之高畫質 PDF（目前含第一章，共 24 頁）
 ├── README.md                   # 專案架構與編譯導覽說明
 ├── .gitignore                  # Git 忽略設定（排除暫存編譯檔與原始掃描檔）
 │
@@ -26,20 +28,23 @@
 │   ├── Chinese_math_style.tex  # 中文數學專用定理環境設定（definition, theorem, example 等）
 │   └── math_style.tex          # 常用數學運算符號與縮寫指令
 │
-├── chapters/                   # 各章原始碼與獨立編譯測試模組
-│   ├── Chapter1.tex            # 第一章「引言」正文原始碼（完全遵循原書文字與題型）
-│   ├── Chapter1_main.tex       # 第一章獨立編譯主檔
-│   ├── Chapter1_main.pdf       # 第一章單獨產出 PDF（共 6 頁）
-│   ├── Chapter2.tex            # 第二章「符號用法、基本數學語句及集合的概念」正文原始碼
-│   ├── Chapter2_main.tex       # 第二章獨立編譯主檔
-│   ├── Chapter2_main.pdf       # 第二章單獨產出 PDF（完整收錄 33 頁內容）
-│   ├── Chapter3.tex            # 第三章「數的概念」正文原始碼（完整收錄 29 頁內容，含習題 3-1 至 3-8）
-│   ├── Chapter3_main.tex       # 第三章獨立編譯主檔
-│   └── Chapter3_main.pdf       # 第三章單獨產出 PDF（共 26 頁）
+├── chapters/                   # 第一冊各章原始碼與獨立編譯測試模組
+│   ├── Chapter1.tex / Chapter1_main.tex / Chapter1_main.pdf   # 第一章「引言」
+│   ├── Chapter2.tex / Chapter2_main.tex / Chapter2_main.pdf   # 第二章「符號用法、基本數學語句及集合的概念」
+│   ├── Chapter3.tex / Chapter3_main.tex / Chapter3_main.pdf   # 第三章「數的概念」
+│   ├── Chapter4.tex / Chapter4_main.tex / Chapter4_main.pdf   # 第四章「一次方程式」
+│   ├── Chapter5.tex / Chapter5_main.tex / Chapter5_main.pdf   # 第五章「多項式及其運算」
+│   ├── Chapter6.tex / Chapter6_main.tex / Chapter6_main.pdf   # 第六章「整數的因子分解」
+│   ├── Chapter7.tex / Chapter7_main.tex / Chapter7_main.pdf   # 第七章「多項式的因子分解」
+│   │
+│   └── B2/                     # 第二冊各章模組
+│       ├── Chapter1.tex        # 第二冊第一章「二次方程式」正文原始碼
+│       ├── Chapter1_main.tex   # 第二冊第一章獨立編譯主檔
+│       └── Chapter1_main.pdf   # 第二冊第一章單獨產出 PDF（共 24 頁）
 │
 └── original_scans/             # 教材原始高解析度掃描檔（已於 .gitignore 排除）
-    ├── 高中數學實驗教材_第1冊_高一上_1973_修訂版_Ch1.pdf
-    └── ...
+    ├── B1/                     # 第一冊各章原始掃描檔 (Ch1–Ch7)
+    └── B2/                     # 第二冊原始掃描檔 (Ch1–Ch5 及目錄)
 ```
 
 ---
@@ -62,18 +67,37 @@ cd chapters
 xelatex Chapter1_main.tex
 xelatex Chapter2_main.tex
 xelatex Chapter3_main.tex
+xelatex Chapter4_main.tex
+xelatex Chapter5_main.tex
+xelatex Chapter6_main.tex
+xelatex Chapter7_main.tex
 ```
 
 ---
 
 ## 各章進度與收錄狀態
 
+### 第一冊（高一上，1973年修訂版）— 100% 已完成
+
 | 章節 | 章節全名 | 狀態 | 原始掃描頁數 | 產出 PDF 頁數 |
 | :--- | :--- | :---: | :---: | :---: |
 | **第一章** | 引言 | **已完成** | 12 頁 | 6 頁 |
 | **第二章** | 符號用法、基本數學語句及集合的概念 | **已完成** | 33 頁 | 33 頁 |
 | **第三章** | 數的概念 | **已完成** | 29 頁 | 26 頁 |
-| **第四章** | 一次方程式 | 待處理 | 28 頁 | - |
-| **第五章** | 多項式及其運算 | 待處理 | 38 頁 | - |
-| **第六章** | 整數的因子分解 | 待處理 | 22 頁 | - |
-| **第七章** | 多項式的因子分解 | 待處理 | 28 頁 | - |
+| **第四章** | 一次方程式 | **已完成** | 31 頁 | 34 頁 |
+| **第五章** | 多項式及其運算 | **已完成** | 40 頁 | 39 頁 |
+| **第六章** | 整數的因子分解 | **已完成** | 21 頁 | 22 頁 |
+| **第七章** | 多項式的因子分解 | **已完成** | 35 頁 | 35 頁 |
+
+### 第二冊（高一下，1973年初版）— 進行中
+
+全冊總控主檔：`main_B2.tex` / 產出：`main_B2.pdf`
+
+| 章節 | 章節全名 | 狀態 | 原始掃描頁數 | 產出 PDF 頁數 |
+| :--- | :--- | :---: | :---: | :---: |
+| **第一章** | 二次方程式 | **已完成** | 23 頁 | 24 頁 |
+| **第二章** | 次序與極限觀念 | 待轉錄 | 34 頁 | — |
+| **第三章** | 實數系及其基本性質 | 待轉錄 | 20 頁 | — |
+| **第四章** | 指數函數與對數函數 | 待轉錄 | 32 頁 | — |
+| **第五章** | 對數表的用法與計算尺原理* | 待轉錄 | 12+ 頁 | — |
+

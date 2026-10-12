@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../styles/preamble.tex}
+\input{../styles/Chinese_math_style.tex}
+\input{../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 1 冊}
+  \fancyhead[L]{\small 第 6 章\quad 整數的因子分解}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small 第六章\quad 整數的因子分解}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{第六章\quad 整數的因子分解}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% =========================================================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則 6 整理於目錄之前）
+% =========================================================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:master_errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第一冊》（高一上）第六章「整數的因子分解」掃描原件（第 146--166 頁，共 21 頁）完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記及排印疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:ch6-double-equal]{第六章 引言算式} & 
+式中印為「$311467==97 \cdot 3211$」 & 
+原書此處鉛字排版多排一個等號字模，正文校正為單一等號「$=$」，特予備註。 \\ \hline
+
+\hyperref[item:ex6-1-8]{習題 6-1 第 *8 題} & 
+題幹「滿足」後遺漏條件（背頁透印「$0 \le r_2 < 5$」之反面印跡） & 
+原書在「滿足」與逗號之間排版脫漏不等式條件，底層僅見背頁透印之鏡像文字，正文忠實貼緊原書文字並加註說明。 \\ \hline
+
+\hyperref[item:ex6-1-13-2]{習題 6-1 第 13(ii) 題} & 
+式中印為「如果 $a$ 的顯然因素 $a$ 及 1 也算在內」 & 
+「因素」實為「因數」之排印字模異寫（鉛字排為「素」），正文忠實保留原書文字並加註。 \\ \hline
+
+\hyperref[note:ch6-why-euclid]{§ 6-2 乙 原理證明末} & 
+「因此 $(a, b) = (r, b)$。（何故？）」 & 
+忠實保留原書作者啟發學生反思「何故」之設問式對話語句。 \\ \hline
+
+\hyperref[note:ch6-gcd-bracket]{§ 6-2 丙 輔助定理 1} & 
+右端使用方括號記號 $[(a_1, \dots), \dots]$ & 
+此處方括號非指最小公倍數，而係分組後最大公因數再取公因數之結合記號，正文忠實還原。 \\ \hline
+
+\hyperref[note:ch6-prime91]{§ 6-4 質數列表重大訛誤} & 
+1 到 100 的質數列表中印有「91」 & 
+內文列舉 1 到 100 之質數包含「91」，然而 $91 = 7 \times 13$ 實為合數，此為原書重大歷史數學疏漏，正文忠實保留 1973 年原書文字並於註腳及此表詳細考證。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\include{Chapter6}
+
+\end{document}

@@ -1,0 +1,1416 @@
+% =========================================================================
+% 《高中數學實驗教材》第一冊（高一上） 
+% 第五章 多項式及其運算
+% =========================================================================
+
+\section{多項式及其運算}\label{sec:ch5}
+
+在上一章中，我們引入一些符號如 $x, y, z$ 等，用以表示我們在「某一給定問題」中所要求解的未知數，我們也就叫這些符號為\textbf{未知數}。利用這些符號，我們可以把給定問題中，量與量之間的關係用算式表出，這也就是由該問題所產生的方程式。在第四章裏，我們以方程式中最簡單的一次方程式為例，闡述從方程式去解出未知數的基本原理。
+
+一個「未知數」$x$（或 $y$，或 $z$，……等）雖然在未解出之前不知道「它所代表的數等於多少？」但是只要它所代表的是一個數，它在運算上就具有那些任何數皆具有的通性，如分配律、結合律、交換律等等。
+
+所以從運算上著眼，一個未知數 $x$ 就是一個在運算上具有數的通性的符號！同學們可以預想到，對於由一個在運算上具有數的通性的符號（亦即本章 \S 5-1 所定義的不定元）所組成的算式的有系統討論，將是對高次方程式探討的重要基礎！這也就是本章的課題——多項式及其運算。
+
+\subsection{不定元與多項式}\label{sec:5-1}
+
+\subsubsection*{甲、不定元的概念}\label{subsec:5-1-a}
+
+一個不定元就是一個符號（如 $x$，$y$ 或 $z$）。它在運算上具有和數一樣的通性。所以，前面所講到的基本性質，如結合律、交換律、分配律等，在不定元的運算時都可以適用。譬如
+\begin{enumerate}[(i)]
+  \item $x$ 是一個不定元，則
+  \begin{equation*}
+    (x \cdot x) \cdot x = x \cdot (x \cdot x) \quad \text{〔結合律〕}
+  \end{equation*}
+  亦即三個 $x$ 相乘時和括號的括法無關，故可用 $x^3$ 表示之。同理
+  \begin{align*}
+    (x \cdot x) \cdot (x \cdot x) &= x \cdot (x \cdot (x \cdot x)) = ((x \cdot x) \cdot x) \cdot x \\
+    &= x^3 \cdot x = x^4,
+  \end{align*}
+  依此類推，
+  \begin{equation*}
+    x^n = \overbrace{x \cdot x \cdot \cdots \cdot x}^{n\text{ 個}}.
+  \end{equation*}
+  由上述指數的意義，則下述指數定律則仍是結合律的直接結論。
+  \begin{equation}\label{eq:exp_rule_1}
+    x^n \cdot x^m = x^{n+m} \dots\dots\dots
+  \end{equation}
+
+  \item 設 $x, y, z$ 是三個不定元，用結合律和交換律我們可以同樣的把上述「指數定律」推廣為下述形式：
+  \begin{equation}\label{eq:exp_rule_multivar}
+    (x^l \cdot y^m \cdot z^n) \cdot (x^p \cdot y^q \cdot z^r) = x^{l+p} \cdot y^{m+q} \cdot z^{n+r}.
+  \end{equation}
+
+  \item 設 $x, y, z$ 是三個不定元；$a, b$ 是兩個數。則「$a$ 和 $l$ 個 $x$，$m$ 個 $y$，$n$ 個 $z$ 相乘」，其結果是和相乘時的次序與括號的括法無關。故簡潔地可以用符號 $a x^l y^m z^n$ 表示之。譬如\footnote{原書此處掃描檔有歷史墨跡塗抹「$a$ 是個數」字樣，正文中已予剔除還原，見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}
+  \begin{align*}
+    2xy &= (2 \cdot x) \cdot y = y \cdot (2 \cdot x) = (y \cdot 2) \cdot x = (y \cdot x) \cdot 2 \\
+    &= y \cdot (x \cdot 2). \\
+    5x^3 y^2 &= (5 \cdot (x^3 \cdot y^2)) = 5 \cdot ((x \cdot y) \cdot (x^2 \cdot y)) \\
+    &= ((y^2 \cdot 5) \cdot x) \cdot (x \cdot x) = (y \cdot 5 \cdot x^2) \cdot (y \cdot x). \\
+    7x y^2 z^3 &= (7z^2) \cdot (x y^2 z) = (yz)((7xy) \cdot z^2) \\
+    &= (y^2 z) \cdot (7xz^2).
+  \end{align*}
+  一個可以寫成 $a x^l y^m z^n$ 形式的式子叫做\textbf{單項式}，$a$ 叫做該單項式的\textbf{係數}，$l+m+n$ 叫做該單項式對於 $x, y, z$ 的\textbf{次數}，或簡稱為該單項式的次數。$l$ 叫做該單項式對於 $x$ 的次數，$m$ 叫做該單項式對於 $y$ 的次數，$m+n$ 叫做該單項式對於 $y, z$ 的次數，做此類推。
+
+  \item 為了符合數的通性，我們規定
+  \begin{equation*}
+    (-a) x^l y^m z^n = -a x^l y^m z^n.
+  \end{equation*}
+  譬如：
+  \begin{align*}
+    (-1)x &= -x, \\
+    -5x^3 y^4 z^2 &= (-5) x^3 y^4 z^2 = (-5x^3) y^4 z^2.
+  \end{align*}
+  同樣的，由結合律、分配律，我們不難看出兩個單項式的乘積可以計算如下：
+  \begin{equation}\label{eq:mono_prod}
+    a x^l y^m z^n \cdot b x^p y^q z^r = a \cdot b \cdot x^{l+p} \cdot y^{m+q} \cdot z^{n+r} \dots\dots\dots
+  \end{equation}
+  亦即兩個單項式相乘時，其係數相乘，指數相加。所得乘積的次數就等於原來兩個單項式次數的和。
+\end{enumerate}
+
+\paragraph{注意：}
+我們規定
+\begin{equation*}
+  x^0 = y^0 = z^0 = 1,
+\end{equation*}
+則
+\begin{align*}
+  a &= a \cdot x^0 = a \cdot x^0 \cdot y^0 = a \cdot x^0 \cdot y^0 \cdot z^0, \\
+  a x^3 &= a x^3 \cdot y^0 = a x^3 \cdot y^0 \cdot z^0, \\
+  a x y^2 &= a x \cdot y^2 \cdot z^0 \text{ 等。}
+\end{align*}
+所以一個數 $a$，也就可以看成單項式的特例。對於 $x^0, y^0, z^0$ 採取上述規定的好處是：如此定義後，\eqref{eq:mono_prod} 式在 $l, m, n; p, q, r$ 中有些為零時也成立。這也就是我們採取上述規定的理由。
+
+\begin{example}\label{ex:5-1-1}
+$1, -2, 8$ 等是 $0$ 次單項式，\\
+$x, 3y, -z$ 等都是 $1$ 次單項式，\\
+$x^2, 2xy, -3yz$ 等都是 $2$ 次單項式，\\
+$\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots$\\
+$x^6, 2x y^3 z^2, -8 y^2 z^4$ 等都是 $6$ 次單項式。
+\end{example}
+
+\subsubsection*{乙、多項式}\label{subsec:5-1-b}
+
+當我們把不定元和數相乘時，即得種種單項式，如
+\begin{equation*}
+  -5x^3, \; \frac{1}{2}x^5, \; -\frac{5}{37}x^2 y, \; xyz, \; 10x^{10} y^{10} z^{10}, \text{ 等等。}
+\end{equation*}
+假如我們把不定元和數以加和乘這兩種運算作種種組合，究竟能得到什麼樣的式子呢？先讓我們來看幾個例子：
+
+\begin{example}\label{ex:5-1-2}
+我們把幾個單項式相加，如
+\begin{equation}\label{eq:poly_demo_1}
+  2x + (-3)x^3 + (-7)x^5 + \frac{1}{7}x^2 + \frac{1}{5}x + 2x^5 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:poly_demo_2}
+  -x^3 y + 2x^3 y^2 + 3xyz - 5xy^2 + 4x^3 y + 5xyz - 6xy^3 + 7z^2 \dots\dots\dots
+\end{equation}
+\end{example}
+
+這一類的式子，就叫做\textbf{多項式}。（注意：我們把單項式看成是多項式的特例！）只含有一個不定元的多項式通常叫做\textbf{單元多項式}，如 \eqref{eq:poly_demo_1} 式；含有一個以上不定元的多項式叫做\textbf{多元多項式}，如 \eqref{eq:poly_demo_2} 式。由加法交換律可知一個多項式中的各項單項式的次序可以任意交換。平常以「降次」或「升次」\footnote{有些課本用「冪」代「次」，譬如「降冪」、「升冪」等，我們認為「冪」字筆劃較多又不太常見，不如「次」字簡單明瞭。}排列較為方便。例如把 \eqref{eq:poly_demo_1} 重寫為
+\begin{equation*}
+  (-7x^5 + 2x^5) + (-3)x^3 + \frac{1}{7}x^2 + \left(2x + \frac{1}{5}x\right) \dots\dots\dots \text{降次排列}
+\end{equation*}
+或
+\begin{equation*}
+  \left(2x + \frac{1}{5}x\right) + \frac{1}{7}x^2 + (-3)x^3 + (-7x^5 + 2x^5) \dots\dots\dots \text{升次排列}
+\end{equation*}
+再由分配律，有
+\begin{align*}
+  -7x^5 + 2x^5 &= (-7+2) \cdot x^5 = -5x^5, \\
+  2x + \frac{1}{5}x &= \left(2 + \frac{1}{5}\right)x = \frac{11}{5}x,
+\end{align*}
+故 \eqref{eq:poly_demo_1} 式可以化簡為
+\begin{equation}\label{eq:poly_demo_1_simp}
+  -5x^5 - 3x^3 + \frac{1}{7}x^2 + \frac{11}{5}x \dots\dots\dots
+\end{equation}
+
+同樣我們可以把 \eqref{eq:poly_demo_2} 式化簡為
+\begin{equation}\label{eq:poly_demo_2_simp}
+  3x^3 y + 2x^3 y^2 + 8xyz - 5xy^2 - 6xy^3 + 7z^2 \dots\dots\dots
+\end{equation}
+再關於 $x$ 集項，依 $x$ 降次排列
+\begin{equation*}
+  (3y + 2y^2)x^3 + (8yz - 5y^2 - 6y^3)x + 7z^2,
+\end{equation*}
+也可以關於 $y$ 集項，依 $y$ 升次排列
+\begin{equation*}
+  7z^2 + (3x^3 + 8xz)y + (2x^3 - 5x)y^2 - 6x y^3.
+\end{equation*}
+
+\begin{example}\label{ex:5-1-3}
+設 $3x^3 - \frac{1}{2}x^2 + \frac{4}{5}x + 7$ 是另外一個多項式，則它和上述 \eqref{eq:poly_demo_1_simp} 式的和可以求之如下：
+\begin{align*}
+  &\left(3x^3 - \frac{1}{2}x^2 + \frac{4}{5}x + 7\right) + \left(-5x^5 - 3x^3 + \frac{1}{7}x^2 + \frac{11}{5}x\right) \\
+  &= 3x^3 - \frac{1}{2}x^2 + \frac{4}{5}x + 7 - 5x^5 - 3x^3 + \frac{1}{7}x^2 + \frac{11}{5}x \quad \text{〔結合律略去括號〕} \\
+  &= -5x^5 + (3x^3 - 3x^3) + \left(-\frac{1}{2}x^2 + \frac{1}{7}x^2\right) \\
+  &\quad + \left(\frac{4}{5}x + \frac{11}{5}x\right) + 7 \quad \text{〔用交換律以降次排列〕} \\
+  &= -5x^5 + \left(-\frac{1}{2} + \frac{1}{7}\right)x^2 + \left(\frac{4}{5} + \frac{11}{5}\right)x + 7 \quad \text{〔用分配律將對應係數相加〕} \\
+  &= -5x^5 - \frac{5}{14}x^2 + 3x + 7.
+\end{align*}
+\end{example}
+
+從上面的運算，我們發現：
+\begin{quote}
+計算兩個多項式的和時，我們只要把同類項的對應係數相加即可。
+\end{quote}
+所以一個較為簡便的寫法是：
+\begin{equation*}
+\begin{array}{rrrrrr}
+  &  & 3x^3 & -\frac{1}{2}x^2 & +\frac{4}{5}x & +7 \\
++) & -5x^5 & -3x^3 & +\frac{1}{7}x^2 & +\frac{11}{5}x & \\ \hline
+  & -5x^5 & +0x^3 & -\frac{5}{14}x^2 & +3x & +7
+\end{array}
+\end{equation*}
+
+\begin{example}\label{ex:5-1-4}
+現在讓我們來看一看 $x^2+x+1$ 和 $3x^3+x^2-3x-5$ 的乘積是什麼？
+\end{example}
+
+\begin{solution*}
+\begin{align*}
+  &(x^2+x+1) \cdot (3x^3+x^2-3x-5) \\
+  &= x^2 \cdot (3x^3+x^2-3x-5) + x \cdot (3x^3+x^2-3x-5) \\
+  &\quad + 1 \cdot (3x^3+x^2-3x-5) \quad \text{〔分配律〕} \\
+  &= (3x^5+x^4-3x^3-5x^2) + (3x^4+x^3-3x^2-5x) \\
+  &\quad + (3x^3+x^2-3x-5) \quad \text{〔分配律；單項式的乘法〕} \\
+  &= 3x^5 + (1+3)x^4 + (-3+1+3)x^3 + (-5-3+1)x^2 \\
+  &\quad + (-5-3)x - 5 \quad \text{〔多項式的加法〕} \\
+  &= 3x^5 + 4x^4 + x^3 - 7x^2 - 8x - 5.
+\end{align*}
+
+由上面的例子，我們看出「兩個多項式的乘積依然是一個多項式」！而它們的乘積可以先用「分配律」展開，再用加法去「求和」即得。其算法也可以用下列直式簡潔地表示：
+\begin{equation*}
+\begin{array}{rrrrrrr}
+  &  &  & 3x^3 & +x^2 & -3x & -5 \\
+\times) &  &  &  & x^2 & +x & +1 \\ \hline
+  &  &  & 3x^3 & +x^2 & -3x & -5 \quad \longleftarrow 1 \cdot (3x^3+x^2-3x-5) \\
+  &  & 3x^4 & +x^3 & -3x^2 & -5x & \quad \longleftarrow x \cdot (3x^3+x^2-3x-5) \\
++) & 3x^5 & +x^4 & -3x^3 & -5x^2 &  & \quad \longleftarrow x^2 \cdot (3x^3+x^2-3x-5) \\ \hline
+  & 3x^5 & +4x^4 & +x^3 & -7x^2 & -8x & -5
+\end{array}
+\end{equation*}
+
+事實上多項式的加減及乘除可用分離係數的方法求算，亦即上例中的 $(3x^3+x^2-3x-5) \cdot (x^2+x+1)$ 可以這樣做：
+\begin{equation*}
+\begin{array}{rrrrrr}
+  &  & 3 & +1 & -3 & -5 \\
+  &  & 1 & +1 & +1 &  \\ \hline
+  &  & +3 & +1 & -3 & -5 \\
+  & +3 & +1 & -3 & -5 &  \\
++3 & +1 & -3 & -5 &  &  \\ \hline
+3 & 4 & 1 & -7 & -8 & -5
+\end{array}
+\end{equation*}
+雖然省去了不定元 $x$ 的冪次，所有實質都保留了。
+\end{solution*}
+
+綜合上述討論，我們知道兩個單元多項式的「和」與「積」依然是多項式。同理，兩個多元多項式的和與積也依然是多元多項式。其計算的原理與方式和上述單元多項式類似。
+
+\subsection*{習題 5-1}\label{sec:ex5-1}
+\addcontentsline{toc}{subsection}{習題 5-1}
+
+\begin{enumerate}[1.]
+  \item 試將下列各單元多項式化簡後再依升次排列.
+  \begin{enumerate}[(1)]
+    \item $3x^6 + 2x^2 - 4x^6 + x^5 - x^3 + x + 8 + 6x^2 - x^6$.
+    \item $x^5 - x^4 - x^2 + 6 + x + 3x^4$.
+    \item $4x^{100} + x^{99} + 6x^7 - 5x + 8x^{10} + 6x^7 - 7x$.
+  \end{enumerate}
+
+  \item 化簡 $x^3 + 7x^2 z - 9xyz + 10xz^2 + 7x^3 + 100x^2 y^2 - 60xyy + 30xyz^2 + 9z^3$\footnote{原書式中印為「$-60xyy$」，未併為 $-60xy^2$，正文依原書文字忠實收錄。}，並寫出按 $x$ 升次的式子以及按 $z$ 降次的式子.
+
+  \item 求下列各組多項式的和：
+  \begin{enumerate}[(1)]
+    \item $f(x)=x^3+2x^2+x-1$, $g(x)=3x^4+2x^3+2x+4$.
+    \item $f(x)=1-x+x^2-x^3+x^4$, $g(x)=1+x+x^2+x^3+x^4$.
+    \item $f_1(x)=1-x, f_2(x)=x-x^2, f_3(x)=x^2-x^3, \dots, f_n(x)=x^{n-1}-x^n$.
+  \end{enumerate}
+
+  \item 試計算下列各組單元多項式的和與積.
+  \begin{enumerate}[(i)]
+    \item $x^3+x^2+x+1$ 與 $x-1$.
+    \item $-2x^4+x^3-x^2+2x-1$ 與 $2x^4+x^3$.
+    \item $x^2-x+1$ 與 $x+1$.
+    \item $-5x^3+x^2-1$ 與 $5x^3+x^2-1$.
+    \item $x^2-2$ 與 $x^2+2$.
+  \end{enumerate}
+
+  \item 試求下列各組多項式的和與積：
+  \begin{enumerate}[(1)]
+    \item $x^3+y^3+3xy+1$, $2x^2-5xy+6y^2+3x-y+4$.
+    \item $x^3+2x^2 y+x^2-y^2$, $y^3-2xy-3x+5$.
+    \item $x^5+y^4-3x^3 y+xy^2$, $x^2+2xy-3y+2$.
+  \end{enumerate}
+
+  \item 試證下列各式：
+  \begin{enumerate}[(1)]
+    \item $x^3+y^3=(x+y)(x^2-xy+y^2)$.
+    \item $x^3-y^3=(x-y)(x^2+xy+y^2)$.
+    \item $(x+y+z)^2=x^2+y^2+z^2+2xy+2yz+2xz$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{丙、不定元與未知數的異同}\label{subsec:5-1-c}
+
+不定元與未知數常常用相同的符號如 $x, y, z$ 等表示。但是它們的涵義是截然不同的！不定元只是一個符號，但是未知數是表示某一問題中所要求解的一個數，它在該問題的討論過程中是有其確切的涵義的！也許同學們要問：「那麼為什麼把兩種意義不同的事物，卻故意的用相同的符號去表示呢？」在數學中，符號的選用是很講究的，絕不會故意讓同學們混淆的。對於不定元和未知數所以採用相同的符號的原因有二：
+\begin{enumerate}[(i)]
+  \item 不定元和未知數雖然涵義不同，但是它們在運算上具有相同的性質。
+  \item 當我們把 $x$ 用在方程式 $[x^2-2x-15=0]$ 時，$x$ 顯然表示滿足該方程式的一個未知數，當我們把 $x$ 用在多項式 $[x^2-2x-15]$ 時，$x$ 就表示一個不定元，所以上述一個符號的兩種用法是很容易由它所用的地方去判定它應該是屬於那一種，而不至於導致混淆。
+\end{enumerate}
+
+對於以上的說明，同學們恐怕還有疑問。一個未知數總是一個數，能作運算，有確切涵義，這是好懂的了。一個不定元，一方面能作運算，而卻又不一定是個數，這樣的東西是什麼？有什麼用處？為什麼要討論這樣的東西？事實上，在數學裏可以作運算，在運算上與數十分相似，而不是數的東西很多很多。比如「矩陣」，「函數」（以後都會談到）等等都是。而不定元只不過是這類「可資運算」的東西的「通稱」而已。在我們只集中注意力在運算通性而暫不計較它的實質時，我們就用不定元這個名詞，而只說它是一個「符號」。以後有需要的時候，這個符號可以「賦予」種種實際的意義。這樣的做法，有許多方便的地方。不過對於我們初學的人，對於數以外的東西不曾多見，自然會稍覺奇怪了。
+
+\subsection{單元多項式的加、乘及其基本性質}\label{sec:5-2}
+
+\subsubsection*{甲、多項式的係數與符號}\label{subsec:5-2-a}
+
+在上一節中，我們引入不定元這個概念。並且說明用不定元 $x$ 和數，以加、乘這兩種運算作種種組合，所得者皆為 $x$ 的多項式。但是在上一節中我們並沒有明確地說明所用的「數」是取自那一個數系。譬如下列五個多項式：
+\begin{enumerate}[(1)]
+  \item $2x-3x^2+5x+7$.
+  \item $x^2-2$.
+  \item $\frac{1}{3}x^3+\frac{1}{2}x^2+7x-3$.
+  \item $x+\sqrt{2}$.
+  \item $x-\sqrt{2}$.
+\end{enumerate}
+(1)、(2) 的係數皆取自整數系 $\mathbb{Z}$，我們稱之謂整係數多項式；(1)、(2)、(3) 的係數皆取自有理數系 $\mathbb{Q}$，我們稱之謂有理係數多項式；(1)、(2)、(3)、(4)、(5) 的係數皆取自實數系 $\mathbb{R}$，我們稱之謂實係數多項式。由此可見一個整係數多項式也是有理係數多項式或實係數多項式，而一個有理多項式也是實數多項式。
+
+\paragraph{符號用法：}
+在本書中，我們將採用：
+\begin{align*}
+  \mathbb{Z}[x] &: \text{表示所有 $x$ 的整係數多項式所成的集合，} \\
+  \mathbb{Q}[x] &: \text{表示所有 $x$ 的有理係數多項式所成的集合，} \\
+  \mathbb{R}[x] &: \text{表示所有 $x$ 的實係數多項式所成的集合，} \\
+  \mathbb{Z}[x,y] &: \text{表示所有 $x, y$ 的整係數多項式所成的集合，} \\
+  \mathbb{Q}[x,y] &: \text{表示所有 $x, y$ 的有理係數多項式所成的集合，} \\
+  \mathbb{R}[x,y] &: \text{表示所有 $x, y$ 的實係數多項式所成的集合，}
+\end{align*}
+依此類推。
+
+上述諸集合中，顯然有下列關係：
+\begin{align*}
+  \mathbb{R}[x] \supseteq \mathbb{Q}[x] \supseteq \mathbb{Z}[x], \quad &\text{〔因為 $\mathbb{R} \supseteq \mathbb{Q} \supseteq \mathbb{Z}$〕} \\
+  \mathbb{Z}[x,y] \supseteq \mathbb{Z}[x] \supseteq \mathbb{Z} \\
+  \mathbb{Q}[x,y] \supseteq \mathbb{Q}[x] \supseteq \mathbb{Q} \\
+  \mathbb{R}[x,y] \supseteq \mathbb{R}[x] \supseteq \mathbb{R}
+\end{align*}
+〔因為一個 $x$ 的多項式也可以看成 $x, y$ 的多項式；只是它每項關於 $y$ 的次數皆為零；不等於 $0$ 的數可以看成零次多項式，而且我們把 $0$ 看成係數全是 $0$ 的多項式。〕
+
+正如我們在第三章的討論中用 $a, b, c$ 等符號表示某一數系中的一般元素，我們將用 $f(x)$, $g(x)$, $q(x)$, $r(x)$ 等表示 $\mathbb{R}[x]$（或 $\mathbb{Q}[x]$，或 $\mathbb{Z}[x]$）中的一般元素，用 $f(x,y)$, $g(x,y)$, $q(x,y)$, $r(x,y)$ 等表示 $\mathbb{R}[x,y]$（或 $\mathbb{Q}[x,y]$，或 $\mathbb{Z}[x,y]$）中的一般元素。例如 $f(x)$ 是 $\mathbb{Q}[x]$ 中的一個一般元素，則 $f(x)$ 可以寫成下述形式：
+\begin{equation}\label{eq:poly_general_form}
+  f(x) = a_n x^n + a_{n-1} x^{n-1} + a_{n-2} x^{n-2} + \dots + a_1 x + a_0 \dots\dots\dots
+\end{equation}
+其中 $n$ 為一適當的非負整數，$a_n, a_{n-1}, a_{n-2}, \dots, a_1, a_0 \in \mathbb{Q}$。當然上述符號中的 $a_n, \dots, a_1, a_0$ 中有些可以是零。譬如 $x^5+x^2-4$ 就是 $n=5, a_5=1, a_4=0, a_3=0, a_2=1, a_1=0, a_0=-4$ 時，\eqref{eq:poly_general_form} 式所表示者。上述符號 $a_i$ 中右下角的 $i$ 叫做\textbf{足標}\footnote{寫在右下角的表示足標，寫在右上角的表示次，又一般的多項式的次數 $n$ 可以很大，譬如 $n=36000$，如不用足標則我們得要 $36000$ 個字母才夠，是不是？}，我們用它來表示 $x^i$ 的係數，同學們只要在開始時小心些，用慣了是一種又簡明又方便的符號。再者，如果係數不是全等於 $0$，我們可以假設首項係數 $a_n \neq 0$；否則我們可以把 $a_n x^n$ 略去。
+
+\begin{example}\label{ex:5-2-1}
+$0 \in \mathbb{Z}$ 所以 $0$ 屬於 $\mathbb{Z}[x], \mathbb{Q}[x], \mathbb{R}[x], \mathbb{Z}[x,y], \mathbb{Q}[x,y], \mathbb{R}[x,y]$
+\end{example}
+
+\begin{example}\label{ex:5-2-2}
+$x+\frac{1}{2}y \in \mathbb{Q}[x,y]$，但 $x+\frac{1}{2}y \notin \mathbb{Z}[x,y], \mathbb{Q}[x], \mathbb{Q}[y]$。
+\end{example}
+
+\begin{example}\label{ex:5-2-3}
+$\sqrt{2}x \in \mathbb{R}[x], \mathbb{R}[x,y]$；但 $\sqrt{2}x \notin \mathbb{Z}[x], \mathbb{Q}[x], \mathbb{Z}[x,y], \mathbb{Q}[x,y]$。
+\end{example}
+
+\begin{example}\label{ex:5-2-4}
+$\mathbb{Q}[x] \cap \mathbb{Q}[y] = \mathbb{Q}$。
+\end{example}
+
+\subsection*{習題 5-2}\label{sec:ex5-2}
+\addcontentsline{toc}{subsection}{習題 5-2}
+
+\begin{enumerate}[1.]
+  \item 下列多項式各屬於 $\mathbb{Z}[x], \mathbb{Q}[x], \mathbb{R}[x]$ 中那些集合？
+  \begin{enumerate}[(i)]
+    \item $f(x)=\sqrt{2}$.
+    \item $g(x)=2x^2+\frac{7}{3}x+\frac{3}{4}$.
+    \item $h(x)=x^3-5$.
+    \item $\varphi(x)=x^3+\sqrt{2}x^2+\sqrt{2}x+1$.
+    \item $\psi(x)=x+\frac{1}{2}$.
+    \item $F(x)=\sqrt{3}+2x$.
+  \end{enumerate}
+
+  \item 下列諸多項式各屬於 $\mathbb{Z}[x,y], \mathbb{Q}[x,y], \mathbb{R}[x,y]$ 中那些集合？
+  \begin{enumerate}[(i)]
+    \item $f(x)=3x^2+5xy+\frac{1}{2}y^2$.
+    \item $g(x)=\sqrt{2}x^4 y+3x^2 y^2+\sqrt{5}xy^2-7xy^5$.
+    \item $h(x)=6x^5-5x^4 y-3x^2 y^3+y^5$.
+    \item $\varphi(x)=\frac{1}{2}x^3+\frac{3}{5}xy^2-\sqrt{5}y^3$.
+    \item $\psi(x)=5x+2y+6$.
+  \end{enumerate}
+
+  \item 寫出 $\mathbb{Z}[x,y], \mathbb{Q}[x,y], \mathbb{R}[x,y]$ 三個集合的包含關係.
+
+  \item 求下列各交集：
+  \begin{multicols}{2}
+  \begin{enumerate}[(i)]
+    \item $\mathbb{Z}[x,y] \cap \mathbb{Z}[x]$
+    \item $\mathbb{Z}[x] \cap \mathbb{R}$
+    \item $\mathbb{R}[x,y] \cap \mathbb{Q}[x]$
+    \item $\mathbb{Z}[x,y] \cap \mathbb{R}[x]$
+    \item $\mathbb{Q}[x,y] \cap \mathbb{R}$
+    \item $\mathbb{Q}[x] \cap \mathbb{Q}[y]$
+  \end{enumerate}
+  \end{multicols}
+
+  \item $f(x,y) \in \mathbb{Q}[x,y]$，表示 $f(x,y)$ 是 $\mathbb{Q}[x,y]$ 中的一個典型元素，請寫出它的一般形式.
+\end{enumerate}
+
+\subsubsection*{乙、多項式基本運算}\label{subsec:5-2-b}
+
+為了討論多項式運算的通性，我們再將多項式加法與乘法，給一個正式的定義。由於這些定義在 $\mathbb{Z}[x], \mathbb{Q}[x], \mathbb{R}[x]$ 中皆一樣，我們僅需以 $\mathbb{Q}[x]$ 為例，說明如下：
+
+\begin{definition*}
+設 $f(x), g(x) \in \mathbb{Q}[x]$ 為兩個有理係數多項式，
+\begin{align*}
+  f(x) &= a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0, \quad a_n \neq 0, \\
+  g(x) &= b_m x^m + b_{m-1} x^{m-1} + \dots + b_1 x + b_0, \quad b_m \neq 0.
+\end{align*}
+則
+\begin{enumerate}[(i)]
+  \item 兩多項式相等的意思，就是他們的各項係數皆相等。換句話說
+  \begin{equation*}
+    f(x)=g(x) \iff m=n, \text{ 且 } a_n=b_m, a_{n-1}=b_{m-1}, \dots, a_0=b_0.
+  \end{equation*}
+
+  \item 設 $m \le n$，則 $f(x)$ 與 $g(x)$ 的\textbf{和}，定義為
+  \begin{align*}
+    f(x)+g(x) &= a_n x^n + \dots + (a_m+b_m)x^m + (a_{m-1}+b_{m-1})x^{m-1} \\
+    &\quad + \dots + (a_1+b_1)x + (a_0+b_0).
+  \end{align*}
+  （亦即兩個多項式 $f(x), g(x)$ 相加時，其對應項的係數相加。）因此，$f(x)+g(x) \in \mathbb{Q}[x]$。
+
+  \item $f(x)$ 與 $g(x)$ 的「\textbf{積}」，定義為
+  \begin{align*}
+    f(x) \cdot g(x) &= (a_n x^n + a_{n-1} x^{n-1} + \dots + a_0) \cdot (b_m x^m + b_{m-1} x^{m-1} + \dots + b_0) \\
+    &= a_n b_m x^{n+m} + (a_n b_{m-1} + a_{n-1} b_m) x^{n+m-1} + \dots \\
+    &\quad + (a_2 b_0 + a_1 b_1 + a_0 b_2) x^2 + (a_1 b_0 + a_0 b_1) x + a_0 b_0.
+  \end{align*}
+  （亦即 $f(x)$ 和 $g(x)$ 的積可由分配律展開後集項而得，其 $x^k$ 的係數是所有 $a_i b_j$，而 $i+j=k$ 的諸項之和，通常以符號 $\sum_{i+j=k} a_i b_j$ 表之）\footnote{上述的定義只是把同學們在國中所學的多項式的加法與乘法用一般性的符號表達出來，以供在驗證多項式通性時之用。在實例的計算時，仍以直接用直式計算來得方便。\\
+  其中 $\sum$ 表示“和”的意思，通常以 $\sum_{i=1}^n a_i$ 表 $a_1+a_2+\dots+a_n$。}因此，$f(x) \cdot g(x) \in \mathbb{Q}[x]$。
+\end{enumerate}
+\end{definition*}
+
+由上述定義，我們不難驗證下列基本性質：
+\begin{enumerate}[(I)]
+  \item 
+  \begin{align*}
+    f(x)+g(x) &= g(x)+f(x), \\
+    f(x) \cdot g(x) &= g(x) \cdot f(x). \quad \text{〔交換律〕}
+  \end{align*}
+
+  \item 
+  \begin{align*}
+    (f(x)+g(x))+h(x) &= f(x)+(g(x)+h(x)), \\
+    (f(x) \cdot g(x)) \cdot h(x) &= f(x) \cdot (g(x) \cdot h(x)). \quad \text{〔結合律〕}
+  \end{align*}
+
+  \item 
+  \begin{align*}
+    f(x)+0 &= 0+f(x) = f(x), \\
+    f(x) \cdot 0 &= 0 \cdot f(x) = 0. \quad \text{〔0 之特性〕}
+  \end{align*}
+
+  \item 
+  \begin{equation*}
+    1 \cdot f(x) = f(x) \cdot 1 = f(x). \quad \text{〔1 之特性〕}
+  \end{equation*}
+
+  \item 
+  \begin{equation*}
+    f(x) \cdot (g(x)+h(x)) = f(x) \cdot g(x) + f(x) \cdot h(x). \quad \text{〔分配律〕}
+  \end{equation*}
+\end{enumerate}
+
+\begin{definition*}
+當 $f(x)=a_n x^n + a_{n-1} x^{n-1} + \dots + a_0$，而 $a_n \neq 0$ 時，我們定義 $f(x)$ 的\textbf{次數}為 $n$，以 $\deg f(x)$ 記之。
+\end{definition*}
+
+\paragraph{注意：}
+根據上節，一個常數也可以看做是一個多項式，因此「$0$」也是多項式。在需要強調時，我們也稱 $0$ 為\textbf{零多項式}，但需注意在上述的定義中，我們沒有規定零多項式的次數。而在另一方面，一個不等於 $0$ 的常數，是一個次數為 $0$ 的多項式。
+
+\begin{enumerate}[label=(\Roman*), start=6]
+  \item 若 $f(x) \neq 0$ 且 $g(x) \neq 0$，則 $f(x) \cdot g(x) \neq 0$ 並且
+  \begin{equation*}
+    \deg(f(x) \cdot g(x)) = \deg f(x) + \deg g(x).
+  \end{equation*}
+  換言之：$f(x) \cdot g(x) = 0 \implies f(x)=0$ 或 $g(x)=0$。
+\end{enumerate}
+
+\paragraph{注意：}
+在 (VI) 中，$f(x) \neq 0$ 是指「$f(x)$ 不是零多項式」的意思，根據多項式相等的定義，這也就是說 $f(x)$ 至少含有一個係數不為 $0$ 的項。
+
+同樣的，(VI) 中的 $f(x)=0$ 是指「$f(x)$ 等於零多項式的意思」，也就是說 $f(x)$ 的各項係數皆為零。
+
+\begin{example}\label{ex:5-2-5}
+$f(x)=0, g(x)=2x+3$，
+\begin{align*}
+  f(x)+g(x) &= 2x+3 = g(x). \\
+  f(x) \cdot g(x) &= 0.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:5-2-6}
+$f(x)=1, g(x)=x^2+1$，
+\begin{align*}
+  f(x)+g(x) &= x^2+2. \\
+  f(x) \cdot g(x) &= x^2+1 = g(x).
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:5-2-7}
+$f(x)=x^2+1, g(x)=2x^3+x+3$，
+\begin{align*}
+  f(x)+g(x) &= 2x^3+x^2+x+4. \\
+  f(x) \cdot g(x) &= 2x^5+3x^3+3x^2+x+3.
+\end{align*}
+$\deg f(x)=2, \deg g(x)=3$，
+\begin{align*}
+  \deg[f(x)+g(x)] &= 3 = \deg g(x). \\
+  \deg[f(x) \cdot g(x)] &= 5 = \deg f(x) + \deg g(x).
+\end{align*}
+\end{example}
+
+\subsection*{習題 5-3}\label{sec:ex5-3}
+\addcontentsline{toc}{subsection}{習題 5-3}
+
+\begin{enumerate}[1.]
+  \item 展開再整理下列各多項式.
+  \begin{enumerate}[(1)]
+    \item $(x-y)(x-z)$.
+    \item $(2x-3y)^2(x+z)$.
+    \item $(x-y)^3$.
+    \item $(1-x)(1+x+x^2+\dots+x^{n-1})$.
+    \item $(x+y)^3$.\label{item:ex5-3-1-5}
+    \item $(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\dots-y^{n-1})$，$n$ 為偶數。
+    \item $(x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\dots+y^{n-1})$，$n$ 為奇數。
+  \end{enumerate}
+
+  \item 設 $f(x), g(x) \in \mathbb{Z}[x]$，試證 $f(x)+g(x), f(x)g(x) \in \mathbb{Z}[x]$。
+
+  \item 證明多項式的加法交換律，加法結合律，乘法交換律，乘法結合律及分配律。
+
+  \item 試證性質 (VI) 中：
+  \begin{equation*}
+    \deg[f(x) \cdot g(x)] = \deg f(x) + \deg g(x). \quad (f(x) \neq 0, g(x) \neq 0).
+  \end{equation*}
+
+  \item 假設 $f(x), g(x), f(x)+g(x)$，都不是零，證明
+  \begin{equation*}
+    \deg(f(x)+g(x)) \le \text{Max}(\deg f(x), \deg g(x)).
+  \end{equation*}
+  這裏 $\text{Max}(a, b)$ 是指 $a, b$ 中較大的數。
+\end{enumerate}
+
+\subsection{變數與函數，多項式函數}\label{sec:5-3}
+
+\subsubsection*{甲、變數與函數}\label{subsec:5-3-a}
+
+在第一章 \S 1-1 討論「數學的題材」時，我們曾以「氣體的體積、溫度、壓力」這些量之間的相互關係為例，說明函數的概念。在該段的討論中，我們初步的定義函數（function）這個基本概念如下：
+\begin{quote}
+「函數的定義：當某一量 $y$ 隨著另一量 $x$ 的給定而隨之確定時，我們說 $y$ 是 $x$ 的函數，通常以符號 $y=f(x)$ 表示之。」
+\end{quote}
+也許用心的同學們業已注意到，我們原本用來表示「未知數」或「不定元」的符號如 $x, y, z \dots\dots$ 等，在上述函數符號「$y=f(x)$」中顯然又有另外一種用法了！所以我們首先說明一下 $x, y$ 在函數符號「$y=f(x)$」中確切的涵義。
+
+\begin{example}\label{ex:5-3-1}
+今有溫度固定在 $0^\circ\text{C}$ 的氫氣 $2$ 克，設其壓力為 $x$「大氣壓」，其體積為 $y$ 公升，則按波義耳定律，$x$ 與 $y$ 間有下述關係，即
+\begin{equation}\label{eq:boyle_demo}
+  y = (22.4) \cdot \frac{1}{x} \dots\dots\dots
+\end{equation}
+\end{example}
+
+在 \eqref{eq:boyle_demo} 式中，$x$ 是用來表示「該氣體」的壓力有多少大氣壓。該氣體的壓力是可以任意變更的，所以 $x$ 是用來表示一個任意的「正實數」。同樣的，$y$ 在 \eqref{eq:boyle_demo} 式中也是用以表示一個任意的「正實數」（即該氣體的體積有多少公升），而 \eqref{eq:boyle_demo} 式所說明的事實是：「$x, y$ 的值都可以在正實數這個範圍內任意變更，但是『$x$ 的值』和『$y$ 的值』之間須具有 \eqref{eq:boyle_demo} 式所示的關係！」這種由 $x$ 的值可以去確定 $y$ 的值的關係（亦即 $y$ 隨 $x$ 而定的關係），數學的術語稱之為「函數」亦即「$y$ 是 $x$ 的函數」。
+
+\begin{example}\label{ex:5-3-2}
+寄一封航空信的郵資是由該信的重量而定。亦即「航空信的郵資」是「重量」的函數，如以 $x$ 表示重量（以公分計），以 $y$ 表示郵資（以元計），則從臺灣到歐、美、非的「航空信郵資函數」$y=f(x)$ 如下：
+\begin{align*}
+  \text{當 } 0 < x \le 10 \text{ 時} \quad & y = 8 \\
+  10 < x \le 20 \text{ 時} \quad & y = 8+8 \\
+  \dots\dots\dots\dots\dots\dots\dots & \dots\dots\dots\dots\dots \tag{2} \\
+  10 \cdot n < x \le 10 \cdot (n+1) \text{ 時} \quad & y = 8+n \cdot 8
+\end{align*}
+\end{example}
+
+在上述函數中，$x$ 的值可以在「正實數」這個範圍內任意變更。$y$ 的值是一個正整數，它可以由 $x$ 按上述規定計算而得。
+
+\paragraph{注意：}
+對於一個函數 $y=f(x)$，$y$ 的值並不一定隨「$x$ 的值變更」而隨之變更。譬如例 2 中 $x$ 在 $10n$ 和 $10 \cdot (n+1)$ 之間變更時，$y$ 的值都是 $8+n \cdot 8$。要記得在函數的定義中，我們說 $y$ 隨著 $x$ 的給定而隨之確定。（我們並不是說 $y$ 隨著 $x$ 的變更而隨之變更。）
+
+由上述剖析，我們確定變數的定義如下：
+\begin{definition*}
+一個「\textbf{變數}」就是一個符號如 $x, y, z$ 等，用以表示某一範圍的任意一數。（或者說：某一「數集」中的任意一數）故在問題討論的過程中，其所表示之值可以在「該給定範圍」中任意變更。
+\end{definition*}
+
+用上述「變數」這種符號後，我們可以把前面的函數的定義重述如下：
+\begin{definition*}
+設 $x, y$ 為二變數，令 $A, B$ 分別表示 $x$ 與 $y$ 之變動範圍數集，若對每一 $x \in A$，皆有一在 $B$ 中確定之對應數 $y$，則我們說：這一種對應是一個由 $A$ 到 $B$ 的\textbf{函數}，以符號
+\begin{equation*}
+  f: A \longrightarrow B
+\end{equation*}
+表示，或寫為 $y=f(x), x \in A$。以 $f(a)$ 表示 $A$ 中元素 $a$ 的對應值。數集 $A$ 叫做函數 $f$ 的\textbf{定義域}。
+\end{definition*}
+
+\begin{example}\label{ex:5-3-3}
+圓的面積是半徑的函數。設圓的半徑為 $x$，面積為 $y$，則 $y=f(x)=\pi x^2$。
+\end{example}
+
+\begin{example}\label{ex:5-3-4}
+對於任意實數 $x$，$[x]$ 表示不超過 $x$ 的最大整數。例如
+\begin{equation*}
+  \left[\frac{5}{2}\right]=2, \quad [3]=3, \quad [\pi]=3, \quad [-1.5]=-2, \quad [0.6]=0.
+\end{equation*}
+則 $y=f(x)=[x]$ 為一個由 $\mathbb{R}$ 到 $\mathbb{Z}$ 的函數。即 $f: \mathbb{R} \longrightarrow \mathbb{Z}$，$f$ 稱為\textbf{高斯（Gauss）函數}。
+\end{example}
+
+利用這個函數可將例 2 中的航空郵資函數表示如下：
+\begin{equation*}
+  y = f(x) = -8 \left[-\frac{x}{10}\right], \quad x > 0.
+\end{equation*}
+
+有許多人常會這樣的問：為何要學數學？學這些與生活無關，又乏味的數學，到頭來得到了什麼？看不見動機，學習數學的趣味自然提不起來，不是嗎？其實數學是用來解決生活上的問題，就我們所知，一些生活上發生的問題大半可以由數學的處理得到簡單而合理的解決，但是，想想如果我們首先未具備相當的數學能力，當一些生活複雜的問題臨頭時，免不了會感到束手無策，難以應付，（你不也常常想到我們常用極原始的方法解決生活問題嗎？）以下我們舉一個較為複雜的例子，從函數的功用，來認識函數。
+
+譬如：某農民有田 $100$ 畝，全種落花生，在正常的天候下，影響收成的因素很多，例如肥料、人工、農藥、技術及品種等。這些影響收成的因素，經數量化後可視為自變數，分別以 $x, y, z, u, v, w$ 表之，收成量稱為應變數，以 $S$ 表之，其相互關係，以符號 $S=f(x, y, z, u, v, w)$ 表之。這個關係式是不是可以從調查很多農家的耕作情形所得的資料及數據表示呢？當然，我們是想要求這樣的函數關係的，但絕不是為了求這函數而求這函數的。想想看，施肥不足，能致使收成量減少，但施肥過量亦能導致收成量減少（參考生物）。我們當然想知道如何適當地控制其因素，使得其收成量為最大，這就是數學能幫助我們解決生活上的問題的一個實例。
+
+\subsection*{習題 5-4}\label{sec:ex5-4}
+\addcontentsline{toc}{subsection}{習題 5-4}
+
+\begin{enumerate}[1.]
+  \item 設 $A$ 為你的學校高一所有班級的集合，定義 $f: A \longrightarrow \mathbb{N}$ 如下，$x \in A$，$f(x)$ 是 $x$ 班上的學生數目，請你把所有的函數值寫下來。
+  \item 西瓜一斤為 $a$ 元，以 $x$ 表斤數，$f(x)$ 表價錢。寫出此函數 $f(x)$ 的式子來。
+  \item 設 $f(x)=[x]+\left[x+\frac{1}{3}\right]+\left[x+\frac{2}{3}\right]$，試求 $f(0)+f(1)$。
+  \item 試證 $[x-[x]]=0$。
+  \item 函數 $f, g: \{x \mid -1 \le x \le 2\} \longrightarrow \mathbb{R}$ 定義如下：
+  \begin{align*}
+    f: \quad &\text{當 } -1 \le x < \frac{1}{3} \text{ 時} \quad f(x)=2 \\
+    &\text{當 } x = \frac{1}{3} \text{ 時} \quad f(x)=-3 \\
+    &\text{當 } \frac{1}{3} < x < \frac{1}{2} \text{ 時} \quad f(x)=\frac{1}{2} \\
+    &\text{當 } \frac{1}{2} \le x \le 2 \text{ 時} \quad f(x)=0 \\
+    g: \quad &\text{當 } -1 \le x \le 0 \text{ 時} \quad g(x)=0 \\
+    &\text{當 } 0 < x \le \frac{1}{3} \text{ 時} \quad g(x)=\sqrt{2} \\
+    &\text{當 } \frac{1}{3} < x < 2 \text{ 時} \quad g(x)=\frac{1}{3} \\
+    &\text{當 } x = 2 \text{ 時} \quad g(x)=4
+  \end{align*}
+  如果定義函數 $h, k: \{x \mid -1 \le x \le 2\} \longrightarrow \mathbb{R}$ 為 $h(x)=f(x)+g(x)$，$k(x)=f(x) \cdot g(x)$ 請分別寫出 $h(x)$ 和 $k(x)$ 的值來。
+  \item 設函數 $f(x)=-[[x]-x]$，試證：$f(\mathbb{R})=\{0, 1\}$。
+  \item 用 $x$ 表示計程車行走之距離，用 $y$ 表示車費，那麼 $y$ 是 $x$ 的函數，請用高斯符號表示這個函數，例如民國六十年九月車資標準如下：
+  \begin{align*}
+    0 < x < 1, \quad & y = 6. \\
+    1 \le x < \frac{3}{2}, \quad & y = 6+2.50. \\
+    \frac{3}{2} \le x < 2, \quad & y = 6+2 \times 2.50. \\
+    \dots\dots\dots\dots & \dots\dots\dots\dots \\
+    \frac{n}{2} \le x < \frac{n+1}{2}, \quad & y = 6+(n-1)2.50.
+  \end{align*}
+\end{enumerate}
+
+\subsubsection*{乙、多項式函數}\label{subsec:5-3-b}
+
+設有一多項式
+\begin{equation*}
+  f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0
+\end{equation*}
+我們已經說過，$f(x)$ 中的 $x$ 是一個不定元，只是一個符號，我們對 $x$ 的唯一要求，是它的運算與數的運算滿足相同的法則，但 $x$ 是否是一個數，則無關緊要。
+
+現在我們任意選定一數 $c \in \mathbb{R}$，則
+\begin{equation*}
+  a_n c^n + a_{n-1} c^{n-1} + \dots + a_0
+\end{equation*}
+也是 $\mathbb{R}$ 中一個數，這個數由於 $c$ 的給定而隨之確定。換句話說，我們由多項式 $f(x)$ 而得到一個把 $c$ 對應到 $a_n c^n + a_{n-1} c^{n-1} + \dots + a_0$ 的函數，為方便起見，這個函數仍以 $f$ 表示。所以 $c$ 的對應值
+\begin{equation*}
+  f(c) = a_n c^n + a_{n-1} c^{n-1} + \dots + a_0.
+\end{equation*}
+在這個式子中我們把 $c$ 改寫為 $x$，得
+\begin{equation*}
+  f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0, \quad x \in \mathbb{R}.
+\end{equation*}
+這樣一來，$x$ 就不再是一個不定元，而是一個變數了，而原來的多項式也就變成一函數了，叫做\textbf{多項式函數}。我們通常仍以
+\begin{equation*}
+  y = f(x)
+\end{equation*}
+表示由多項式 $f(x)$ 所定義的多項式函數。
+
+\begin{example}\label{ex:5-3-5}
+$f(x)=x^2$ 是一個多項式，$y=f(x)=x^2$ 是一個多項式函數。它的意思是 $y$ 的值可以由 $x$ 的值的平方而得。譬如
+\begin{equation*}
+  f(0)=0^2=0, \; f(1)=1^2=1, \; f(2)=2^2=4, \dots\dots \text{等等.}
+\end{equation*}
+\end{example}
+
+\begin{example}\label{ex:5-3-6}
+「$y=x^2$」表示一個函數。即 $y$ 的值可以由 $x$ 的值平方而得。\\
+「$y=(x+1)^2$」表示一個函數。即 $y$ 的值可以由 $x$ 的值加 $1$ 後再平方而得。\\
+「$y=3x^5-13$」表示一個函數。即 $y$ 的值可以由 $x$ 的值的 $5$ 次方的 $3$ 倍再減 $13$ 而得。
+\end{example}
+
+以此類推，對於任何一個給定的多項式
+\begin{equation*}
+  f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0,
+\end{equation*}
+則
+\begin{equation*}
+  y = f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0,
+\end{equation*}
+表示一個函數。這就是上節中所說把不定元賦予意義。更確切的說，多項式 $f(x)$ 中的不定元 $x$ 賦予意義為數時，就得到一個函數。其實上述式子不但說「$y$ 的值」隨「$x$ 的值」而定，而且告訴我們如何用那些給定係數 $a_n, a_{n-1}, \dots, a_0$ 及「加」、「乘」運算去從 $x$ 的值求得對應的 $y$ 值。這一類函數叫做多項式函數。
+
+\subsubsection*{丙、符號用法}\label{subsec:5-3-c}
+
+\begin{enumerate}[(i)]
+  \item 未知數，不定元，變數常用 $x, y, z$ 等相同的符號表示，但是其所用的場合是截然不同的。譬如
+  \begin{align*}
+    &\text{在 } x^2-x-6=0 \text{ 中，$x$ 表示一個未知數；} \\
+    &\text{在 } x^2-x-6 \text{ 中，$x$ 表示一個不定元；} \\
+    &\text{在 } y=x^2-x-6 \text{ 中，$x$ 表示一個變數。}
+  \end{align*}
+  所以同學們只要隨時注意，是很容量確定式子中 $x, y, z$ 所表示的究竟是未知數、不定元還是變數。
+
+  \item 對於函數 $y=f(x)$，我們用符號 $f(a)$ 表示當 $x$ 的值為 $a$ 時，所隨之而定 $y$ 的值。亦即當 $x=a$ 時 $y=f(a)$。
+\end{enumerate}
+
+\begin{example}\label{ex:5-3-7}
+設 $y=f(x)=x^2-x-6$，則
+\begin{align*}
+  f(0) &= -6, \\
+  f(1) &= -6, \\
+  f(2) &= -4, \\
+  f(3) &= 0, \\
+  f(\sqrt{7}) &= (\sqrt{7})^2 - \sqrt{7} - 6 = 1 - \sqrt{7}.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:5-3-8}
+設
+\begin{equation*}
+  f(x) = \begin{cases}
+    3x-1 & \text{當 } x > 3 \text{ 時} \\
+    x^2-2 & \text{當 } -2 \le x \le 3 \text{ 時} \\
+    2x+3 & \text{當 } x < -2 \text{ 時}
+  \end{cases}
+\end{equation*}
+則
+\begin{align*}
+  f(4) &= 3 \cdot 4 - 1 = 11, \\
+  f(2) &= 2^2 - 2 = 2, \\
+  f(-5) &= 2 \cdot (-5) + 3 = -7.
+\end{align*}
+\end{example}
+
+\paragraph{注意：}
+由 $f(x)$ 的定義可以看出函數 $f$ 的定義域被分成三段，在每一段中，函數由不同的多項式來表示，因此要求函數在某一點的值時，先要看這一點在那一段中。
+
+\begin{enumerate}[label=(\roman*), start=3]
+  \item 在 \S 5-1, \S 5-2 中所敘述的多項式運算中，我們一再說不定元在運算上具有一切數字運算的通性，如結合律、交換律、分配律等。這個事實，有一個重要的結論，就是：在一多項式等式中，將不定元 $x$ 以任何實數「代入」時，仍得一等式。譬如
+  \begin{align*}
+    f(x)+g(x)=h(x) &\implies \text{對於任意數 $a$，有 } f(a)+g(a)=h(a); \\
+    f(x) \cdot g(x)=k(x) &\implies \text{對於任意數 $a$，有 } f(a) \cdot g(a)=k(a).
+  \end{align*}
+\end{enumerate}
+
+同學們要注意，在上面兩式中，左方的等式係指多項式的相等，而右方的等式，係指實數的相等。
+
+\begin{example}\label{ex:5-3-9}
+在 $(x^3+2x+7)+(2x^3+x^2+5x-1)=3x^3+x^2+7x+6$ 中，以 $x=1$ 代入，則得等式
+\begin{equation*}
+  (1^3+2 \cdot 1+7)+(2 \cdot 1^3+1^2+5 \cdot 1-1) = 3 \cdot 1^3+1^2+7 \cdot 1+6
+\end{equation*}
+即
+\begin{equation*}
+  10+7 = 17.
+\end{equation*}
+\end{example}
+
+\begin{example}\label{ex:5-3-10}
+若
+\begin{equation*}
+  g(x) = \begin{cases}
+    x^2-2 & \text{當 } x > 3 \text{ 時} \\
+    3x-1 & \text{當 } -2 \le x \le 3 \text{ 時} \\
+    x+5 & \text{當 } x < -2 \text{ 時}
+  \end{cases}
+\end{equation*}
+而 $f(x)$ 如例 2 中所定義，則因
+\begin{align*}
+  g(4) &= 4^2-2 = 14, \\
+  g(2) &= 3 \cdot 2 - 1 = 5,
+\end{align*}
+故知
+\begin{align*}
+  f(4)+g(4) &= 11+14 = 25, \\
+  f(2)+g(2) &= 2+5 = 7.
+\end{align*}
+而事實上，當 $-2 \le x$ 時，$f(x)+g(x)=x^2+3x-3$；而當 $x < -2$ 時，$f(x)+g(x)=3x+8$。
+\end{example}
+
+利用 (iii)，我們可以進一步由多項式所取的值來定出此多項式的係數。
+
+\begin{example}\label{ex:5-3-11}
+設 $f(x)=ax^2+bx+c$，$u, v, w$ 為相異之數，若 $f(u)=0, f(v)=0, f(w)=0$ 則 $a=b=c=0$。
+\end{example}
+
+\begin{solution*}
+\begin{align}
+  f(u) &= au^2+bu+c = 0 \label{eq:root3_1} \\
+  f(v) &= av^2+bv+c = 0 \label{eq:root3_2} \\
+  f(w) &= aw^2+bw+c = 0 \label{eq:root3_3}
+\end{align}
+$\eqref{eq:root3_1}-\eqref{eq:root3_2}$
+\begin{align}
+  a(u^2-v^2)+b(u-v) &= 0 \notag \\
+  (u-v)\{a(u+v)+b\} &= 0 \notag \\
+  \because u \neq v, \quad \therefore a(u+v)+b &= 0 \label{eq:root3_4}
+\end{align}
+$\eqref{eq:root3_2}-\eqref{eq:root3_3}$
+\begin{align}
+  a(v^2-w^2)+b(v-w) &= 0 \notag \\
+  (v-w)\{a(v+w)+b\} &= 0 \notag \\
+  \because v \neq w, \quad \therefore a(v+w)+b &= 0 \label{eq:root3_5}
+\end{align}
+$\eqref{eq:root3_4}-\eqref{eq:root3_5}$
+\begin{align}
+  a(u-w) &= 0 \notag \\
+  \because u \neq w, \quad \therefore a &= 0 \label{eq:root3_6}
+\end{align}
+\eqref{eq:root3_6} 代入 \eqref{eq:root3_4}
+\begin{equation}\label{eq:root3_7}
+  b = 0
+\end{equation}
+\eqref{eq:root3_6}、\eqref{eq:root3_7} 代入 \eqref{eq:root3_1}
+\begin{equation}\label{eq:root3_8}
+  c = 0
+\end{equation}
+上題表示一個一元二次多項式若在三個不同點取零值，則此二次多項式為零多項式。這個結果是可以推廣到 $n$ 次多項式的，下一節即將講到。
+\end{solution*}
+
+\subsection*{習題 5-5}\label{sec:ex5-5}
+\addcontentsline{toc}{subsection}{習題 5-5}
+
+\begin{enumerate}[1.]
+  \item 設 $y=f(x)=x^3+5x^2-3x-2$\footnote{原書印為「$x^3+5x^2--3x-2$」，重複減號為排印訛誤，正文校正為單減號，見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}，$y=g(x)=(x-1)(x-2)(x-3)$。求 $f(0), f(1), f(3)$；$g(0), g(1), g(3)$。\label{item:ex5-5-1}
+  \item 設 $f(x)=x^2+2x+7, g(x)=2x^3+x^2+5x-1$，$h(x)=f(x) \cdot g(x)$。證明 $f(1) \cdot g(1) = h(1)$。
+  \item 設 $f(x)=5x^4+4x^3+\frac{1}{2}x^2+2$，$g(x)=8x^3+2x^2+6x+4$。且 $h(x)=f(x)+g(x), k(x)=f(x) \cdot g(x)$。求 $h(1), h(2), h(\sqrt{2}), h(-1), k(2), k(\sqrt{2})$。
+  \item 讓我們仍然考慮上題的 $f(x)$ 和 $g(x)$。寫出
+  \begin{align*}
+    h_1(x) &= 3f(x), \quad h_2(x) = -\frac{1}{4}g(x), \\
+    h_3(x) &= 7(h_1(x)+h_2(x)), \\
+    h_4(x) &= 2h_1(x) \cdot h_2(x) \text{ 來，}
+  \end{align*}
+  並且求 $h_1(-3), h_2(4), h_3(11), h_4(-7)$ 的值來。
+  \item 找出兩個二次項式 $f(x), g(x)$ 滿足
+  \begin{enumerate}[(1)]
+    \item $f(0)=g(0), f(1)=g(1)$
+    \item $f(x) \neq g(x)$。
+  \end{enumerate}
+  \item 假如一函數 $f$ 滿足 $f(2x+1)=2x-1$。試求 $f$。
+  \item 設 $f(x)$ 為一二次多項式，$f(2)=5, f(-1)=3, f(-2)=7$，求 $f(x)$。
+  \item \label{item:ex5-5-8} 設
+  \begin{align*}
+    f(x) &= \begin{cases}
+      2x & \text{當 } -5 < x \le -2 \text{ 時} \\
+      4 & \text{當 } -2 < x < 3 \text{ 時} \\
+      \dfrac{2x^2-|x|}{x} & \text{當 } 3 \le x \le 0 \text{ 時}\footnote{原書印為「當 $3 \le x \le 0$ 時」，區間上下限倒置為空集合，顯為排印字模倒誤，正文保留原書文字，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}
+    \end{cases} \\
+    g(x) &= \begin{cases}
+      \dfrac{6}{[x]} & \text{當 } -3 \le x < 0 \text{ 時} \\
+      \sqrt{x^2+7} & \text{當 } 0 \le x \le 3 \text{ 時} \\
+      |x+1|-|2-x| & \text{當 } 3 < x \le 7 \text{ 時}
+    \end{cases}
+  \end{align*}
+  試計算 $(f+g)(-2.5)$，$(f \cdot g)(-4)$，$(f \cdot g)(3)$。
+\end{enumerate}
+
+\subsection{除法，餘式定理}\label{sec:5-4}
+
+\subsubsection*{甲、除法}\label{subsec:5-4-a}
+
+設有二多項式 $f(x), g(x) \in \mathbb{Q}[x]$，我們問：是否存在有理係數多項式 $q(x) \in \mathbb{Q}[x]$ 滿足下列等式，即
+\begin{equation}\label{eq:div_divisible}
+  f(x) = q(x) \cdot g(x) \dots\dots\dots
+\end{equation}
+從下面幾個例子，我們知道上述 $q(x)$ 是不一定存在的。
+
+\begin{example}\label{ex:5-4-1}
+\leavevmode
+\begin{enumerate}[(i)]
+  \item $f(x)=x^3+1, g(x)=x+1$。則 $q(x)=x^2-x+1$，滿足 \eqref{eq:div_divisible} 式。即
+  \begin{equation*}
+    (x^3+1) = (x^2-x+1)(x+1).
+  \end{equation*}
+
+  \item $f(x)=x^3+1, g(x)=x+2$。則上述 $q(x)$ 是不存在的，其理由如次：假定有一 $q(x) \in \mathbb{Q}[x]$ 使得 \eqref{eq:div_divisible} 成立，即
+  \begin{equation}\label{eq:div_contra_1}
+    x^3+1 = q(x) \cdot (x+2) \dots\dots\dots
+  \end{equation}
+  由 \S 5-3 丙的討論，我們以 $x=-2$ 代入 \eqref{eq:div_contra_1} 式，即得
+  \begin{equation}\label{eq:div_contra_2}
+    (-2)^3+1 = q(-2)(-2+2) = q(-2) \cdot 0 = 0 \dots\dots\dots
+  \end{equation}
+  亦即「$-7=0$」，這是顯然不可能的。所以我們原來的假設一定是錯誤的。換言之，滿足 \eqref{eq:div_divisible} 式的 $q(x)$ 不存在。
+\end{enumerate}
+\end{example}
+
+從「加」、「乘」這兩種基本運算著眼，$\mathbb{Q}[x]$ 和 $\mathbb{Z}$ 有很多相似之處。（參看 \S 3-3 丙及 \S 5-2 乙）譬如說：對於任給二整數 $a, b \in \mathbb{Z}$，在整數系中也是不一定存在 $c$，使得 $a=c \cdot b$ 的。（譬如 $a=10, b=3$，則 $10=c \cdot 3$ 在 $\mathbb{Z}$ 中無解。）在整數系中，當 $b$ 不能「整除」$a$ 時，我們依然可以用 $b$ 去除 $a$，得出一個商數 $q$，一個餘數 $r$，使得
+\begin{equation}\label{eq:int_div_alg}
+  a = q \cdot b + r, \quad \text{而且 } 0 < r < b \dots\dots\dots
+\end{equation}
+我們自然可以問：是否在 $\mathbb{Q}[x]$ 中，也存在有類似的「除法」呢？在試著去解答上述問題之前，我們得先給「$\mathbb{Q}[x]$ 中的元素」定義一個相當的概念，用以替代 \eqref{eq:int_div_alg} 式所出現的絕對值。（\S 5-2 乙的習題同學們可以看出「多項式的次數」和「整數的絕對值」具有類似的性質）。假如我們用次數去代替 \eqref{eq:int_div_alg} 式的絕對值，則上述問題就成了：
+\begin{quote}
+「從給定的兩個多項式 $f(x), g(x) \in \mathbb{Q}[x]$ [$g(x) \neq 0$]，是否可以求得一個商式 $q(x)$ 與一個餘式 $r(x)$，使得
+\begin{equation}\label{eq:poly_div_alg}
+  f(x) = q(x) \cdot g(x) + r(x) \dots\dots\dots
+\end{equation}
+其中 $\deg r(x) < \deg g(x)$ 或 $r(x)=0$？」
+\end{quote}
+
+對於上述問題，讓我們先拿幾個例子看看：
+
+\begin{example}\label{ex:5-4-2}
+$f(x)=2x^3+x+1, g(x)=5x^4-7x^2+2x+3$，則顯然 $q(x)=0, r(x)=f(x)$ 滿足 \eqref{eq:poly_div_alg} 式，而且
+\begin{equation*}
+  \deg r(x) < \deg g(x)
+\end{equation*}
+即
+\begin{equation*}
+  2x^3+x+1 = 0 \cdot (5x^4-7x^2+2x+3) + (2x^3+x+1).
+\end{equation*}
+從例 2 可以看出：當 $\deg f(x) < \deg g(x)$ 時，我們只要取 $q(x)=0, r(x)=f(x)$ 即可圓滿解答上述問題。
+\end{example}
+
+\begin{example}\label{ex:5-4-3}
+$f(x)=2x^3+x+1, g(x)=5x^3-7x^2+2x+3$。同學們不難看出，$f(x)$ 和 $\frac{2}{5}g(x)$ 的首項係數相同，故
+\begin{equation*}
+  f(x)-\frac{2}{5}g(x) \text{ 的次數要比 } \deg g(x)=3 \text{ 小。所以我們可以取 } q(x)=\frac{2}{5}.
+\end{equation*}
+\begin{equation*}
+  f(x)-\frac{2}{5}g(x) = \frac{14}{5}x^2+\frac{1}{5}x-\frac{1}{5} = r(x),
+\end{equation*}
+即得
+\begin{align*}
+  f(x) &= \frac{2}{5} \cdot g(x) + r(x) = q(x) \cdot g(x) + r(x). \\
+  &\deg r(x) < \deg g(x).
+\end{align*}
+從例 3 可以看出：當 $\deg f(x)=\deg g(x)$ 時，我們可以取 $q(x)=\frac{a_n}{b_n}$（$a_n, b_n$ 分別為 $f(x), g(x)$ 的首項係數，$n=\deg f(x)=\deg g(x)$），
+\begin{equation*}
+  r(x) = f(x) - \frac{a_n}{b_n}g(x).
+\end{equation*}
+\end{example}
+
+\begin{example}\label{ex:5-4-4}
+$f(x)=x^3+1, g(x)=x+2$。由上述兩個例子的啟示，我們作下列計算：
+\begin{align*}
+  f(x)-x^2 \cdot g(x) &= (x^3+1)-(x^3+2x^2) = -2x^2+1, \\
+  (f(x)-x^2 \cdot g(x)) - (-2x) \cdot g(x) &= (-2x^2+1)-(-2x^2-4x) = 4x+1, \\
+  \{(f(x)-x^2 \cdot g(x))-(-2x) \cdot g(x)\} - 4 \cdot g(x) &= (4x+1)-(4x+8) = -7.
+\end{align*}
+亦即
+\begin{equation*}
+  f(x) - (x^2-2x+4) \cdot g(x) = -7,
+\end{equation*}
+\begin{equation*}
+  \deg(-7)=0 < 1 = \deg g(x).
+\end{equation*}
+故 $x^2-2x+4, -7$ 就是我們所要求的 $q(x), r(x)$。
+\end{example}
+
+綜合上述三個例子的討論，同學們不難猜到關於 $\mathbb{Q}[x]$ 中的除法，應有下面的定理.
+
+\begin{theorem}[除法定理]\label{thm:poly_div}
+對於給定的兩個多項式 $f(x), g(x) \in \mathbb{Q}[x]$ 且 $g(x) \neq 0$，存在唯一的商式 $q(x) \in \mathbb{Q}[x]$ 和唯一的餘式 $r(x) \in \mathbb{Q}[x]$ 使得
+\begin{equation*}
+  f(x) = q(x) \cdot g(x) + r(x), \quad \text{其中 } \deg r(x) < \deg g(x), \text{ 或 } r(x)=0.
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+\leavevmode
+\paragraph{*(i) 存在性：}
+當 $\deg f(x) < \deg g(x)$ 時，取 $q(x)=0, r(x)=f(x)$ 即可。當 $\deg f(x) \ge \deg g(x)$ 時，令 $a_n, b_m$ 分別為 $f(x), g(x)$ 之最高項係數。則
+\begin{equation*}
+  f_1(x) = f(x) - \frac{a_n}{b_m} x^{n-m} \cdot g(x) \text{ 的次數一定比 } f(x) \text{ 的次數小，}
+\end{equation*}
+亦即 $\deg f_1(x) < \deg f(x)$，如 $\deg f_1(x) < \deg g(x)$，則取 $q(x)=\frac{a_n}{b_m} x^{n-m}, r(x)=f_1(x)$ 即可。
+
+如 $n_1 = \deg f_1(x) \ge \deg g(x)$，則我們可用上述步驟，從 $f_1(x)$ 減去 $g(x)$ 的適當倍式，而得一較低次的 $f_2(x)$。如此逐步進行，即得一串多項式 $f_1(x), \dots, f_k(x)$，滿足
+\begin{align*}
+  f_1(x) &= f(x) - q_1(x) \cdot g(x), \\
+  f_2(x) &= f_1(x) - q_2(x) \cdot g(x) = f(x) - (q_1(x)+q_2(x)) \cdot g(x), \\
+  &\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \\
+  f_k(x) &= f_{k-1}(x) - q_k(x) \cdot g(x) = \{f(x) - (q_1(x)+\dots+q_k(x)) \cdot g(x)\}.
+\end{align*}
+\begin{equation*}
+  \deg f(x) > \deg f_1(x) > \deg f_2(x) > \dots > \deg f_{k-1}(x) \ge \deg g(x) > \deg f_k(x) \text{ 或 } f_k(x)=0.\footnote{以例 4 為例，則 $k=3, q_1(x)=x^2, q_2(x)=-2x, q_3(x)=4$，$f_1(x)=-2x^2+1, f_2(x)=4x+1, f_3(x)=-7$。此定理的證明本身不難，只是式子較繁，若逐步展開不得要領宜利用上例表明 $k, q_1, q_2, \dots, r_1, r_2, \dots$ 不必刻板進行。}
+\end{equation*}
+所以我們所求的 $q(x)=q_1(x)+\dots+q_k(x), r(x)=f_k(x)$。
+
+\paragraph{*(ii) 唯一性：}
+設 $q(x), r(x)$ 及 $q'(x), r'(x)$ 是兩組滿足定理 1 的多項式，即
+\begin{align*}
+  f(x) &= q(x) \cdot g(x) + r(x), \quad \deg r(x) < \deg g(x) \text{ 或 } r(x)=0; \\
+  f(x) &= q'(x) \cdot g(x) + r'(x), \quad \deg r'(x) < \deg g(x) \text{ 或 } r'(x)=0.
+\end{align*}
+把上述兩式左右相減，即得
+\begin{align*}
+  0 &= (q(x)-q'(x)) \cdot g(x) + (r(x)-r'(x)) \\
+  \text{亦即 } r'(x)-r(x) &= (q(x)-q'(x)) \cdot g(x).
+\end{align*}
+上述式子只有在 $r'(x)-r(x)=0$ 時才能成立。因為不然的話，則 $r'(x)-r(x) \neq 0$，$q(x)-q'(x) \neq 0$。由上述即得（性質 (VI)）
+\begin{align*}
+  \deg(r'(x)-r(x)) &= \deg(q(x)-q'(x)) + \deg g(x) \\
+  &\ge \deg g(x).
+\end{align*}
+但是由假設，我們又有
+\begin{align*}
+  \deg(r'(x)-r(x)) &\le \text{Max}(\deg r(x), \deg r'(x)) \\
+  &< \deg g(x). \quad \text{〔$\text{Max}(a,b)$ 表示 $(a,b)$ 二數中較大的數〕}
+\end{align*}
+上述兩式是矛盾的，所以 $r'(x)-r(x) \neq 0$ 是不可能的。故
+\begin{equation*}
+  r'(x)-r(x) = 0 \quad \text{亦即} \quad (q(x)-q'(x)) \cdot g(x) = 0.
+\end{equation*}
+但是 $g(x) \neq 0$（假設），故 $q(x)-q'(x)=0$（性質 (VI)）。換言之，
+\begin{equation*}
+  q(x)=q'(x), \quad r(x)=r'(x).
+\end{equation*}
+定理 1 證畢.
+\end{proof}
+
+\subsection*{習題 5-6}\label{sec:ex5-6}
+\addcontentsline{toc}{subsection}{習題 5-6}
+
+在下列各組多項式中，以 $g(x)$ 除 $f(x)$，求商式 $q(x)$ 及餘式 $r(x)$：
+\begin{multicols}{2}
+\begin{enumerate}[1.]
+  \item $f(x)=x^2+7x+12, \quad g(x)=x+3$.
+  \item $f(x)=2x^2+10x+12, \quad g(x)=2x+4$.
+  \item $f(x)=x^3-1, \quad g(x)=x-1$.
+  \item $f(x)=x^4-1, \quad g(x)=x+1$.
+  \item $f(x)=x^2-3x+11, \quad g(x)=x-3$.
+  \item $f(x)=4x^2+x-3, \quad g(x)=x-1$.
+  \item $f(x)=42x^9-13x^7+104x^5+84x^3+9x$,\\
+  $g(x)=6x^4+11x^2+1$.
+  \item $f(x)=5x^3-16x^2+58x-11$,\\
+  $g(x)=x^2-2x+11$.
+\end{enumerate}
+\end{multicols}
+
+\subsubsection*{乙、餘式定理}\label{subsec:5-4-b}
+
+\begin{theorem}[餘式定理]\label{thm:remainder_thm}
+設 $f(x) \in \mathbb{Q}[x], a \in \mathbb{Q}$，則在 $\mathbb{Q}[x]$ 中，$f(x)$ 被 $x-a$ 除的餘式為 $f(a)$，亦即
+\begin{equation*}
+  f(x) = q(x) \cdot (x-a) + f(a).
+\end{equation*}
+\end{theorem}
+
+\begin{proof}
+由定理 1 得知存在唯一的商式 $q(x)$ 和餘式 $r(x)$，使得
+\begin{equation*}
+  f(x) = q(x) \cdot (x-a) + r(x), \quad \deg r(x) < \deg(x-a) = 1, \text{ 或 } r(x)=0
+\end{equation*}
+亦即 $\deg r(x)=0$ 或 $r(x)=0$，故 $r(x)$ 必為一常數 $c$，即有
+\begin{equation*}
+  f(x) = q(x) \cdot (x-a) + c.
+\end{equation*}
+將 $x=a$ 代入上式，即得
+\begin{equation*}
+  f(a) = q(a) \cdot (a-a) + c = q(a) \cdot 0 + c = c.
+\end{equation*}
+定理 2 證畢.
+\end{proof}
+
+從定理 1，2 的證明中，我們不難看出，如果把 $\mathbb{Q}[x]$ 換成 $\mathbb{R}[x]$，這兩個定理仍然成立。
+
+\begin{definition*}
+設 $f(x) \in \mathbb{R}[x], a \in \mathbb{R}$，當 $f(a)=0$ 時，稱 $a$ 為 $f(x)=0$ 的一個\textbf{根}。
+\end{definition*}
+
+定理 2 的重要性在於下列推論：
+
+\begin{corollary}[因式定理]\label{cor:factor_thm}
+\leavevmode
+\begin{enumerate}[(i)]
+  \item $f(a)=0 \iff f(x)=q(x) \cdot (x-a)$.
+  \item $a \neq b, f(a)=f(b)=0 \iff f(x)=q'(x) \cdot (x-a)(x-b)$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+\leavevmode
+\begin{enumerate}[(i)]
+  \item $f(a)=0 \iff f(x)$ 能被 $x-a$ 整除，即 $f(x)=q(x) \cdot (x-a)$，是定理 2 的直接推論。
+  \item 設 $a \neq b$，而 $f(a)=0, f(b)=0$，則由 (i) 有
+  \begin{equation}\label{eq:factor_step_1}
+    f(x) = q(x) \cdot (x-a) \dots\dots\dots
+  \end{equation}
+  再以 $x=b$ 代入上式，即得
+  \begin{equation*}
+    0 = f(b) = q(b) \cdot (b-a).
+  \end{equation*}
+  但是 $b-a \neq 0$，故必有 $q(b)=0$。將 (i) 再用於 $q(x)$，即得
+  \begin{equation}\label{eq:factor_step_2}
+    q(x) = q'(x) \cdot (x-b) \dots\dots\dots
+  \end{equation}
+  以 \eqref{eq:factor_step_2} 式代入 \eqref{eq:factor_step_1} 式，即得
+  \begin{equation*}
+    f(x) = q'(x) \cdot (x-b) \cdot (x-a).
+  \end{equation*}
+  反之，如 $f(x)=q'(x) \cdot (x-b)(x-a)$，則顯然有
+  \begin{align*}
+    f(a) &= q'(a) \cdot (a-b)(a-a) = q'(a)(a-b) \cdot 0 = 0, \\
+    f(b) &= q'(b) \cdot (b-b)(b-a) = q'(b) \cdot 0 \cdot (b-a) = 0. \quad \text{證畢}
+  \end{align*}
+\end{enumerate}
+\end{proof}
+
+以此類推：如 $a_1, a_2, \dots, a_k$ 為 $f(x)=0$ 的 $k$ 個相異的根，則 $f(x)$ 可以為 $(x-a_1) \cdot (x-a_2) \dots\dots (x-a_k)$ 所整除，亦即存在有商式 $q_k(x)$，使得
+\begin{equation*}
+  f(x) = q_k(x) \cdot (x-a_1) \cdot (x-a_2) \dots\dots (x-a_k).
+\end{equation*}
+
+\begin{corollary}\label{cor:root_num_bound}
+設 $f(x)$ 為一個 $n$ 次多項式，則 $f(x)=0$ 至多有 $n$ 個相異根。
+\end{corollary}
+
+\begin{proof}[理由]
+因為一個 $n$ 次多項式不可能為一個 $(n+1)$ 次的多項式所整除。
+\end{proof}
+
+\begin{corollary}\label{cor:ident_poly}
+設 $f(x), g(x)$ 為二多項式，$\deg f(x), \deg g(x) \le n$。如有相異的 $(n+1)$ 個數 $a_1, a_2, \dots, a_{n+1}$ 代入時，它們的數值分別相等，即
+\begin{align*}
+  f(a_1) &= g(a_1) \\
+  f(a_2) &= g(a_2) \\
+  &\dots\dots\dots\dots \\
+  f(a_{n+1}) &= g(a_{n+1})
+\end{align*}
+則 $f(x)=g(x)$（亦即其對應係數都相等）。
+\end{corollary}
+
+\begin{proof}
+令 $F(x)=f(x)-g(x)$（即不是零多項式）假設 $F(x)$ 不恆等於 $0$，因為 $\deg f(x), \deg g(x) \le n$，就有
+\begin{equation*}
+  \deg F(x) \le \text{Max}(\deg f(x), \deg g(x)) \le n.
+\end{equation*}
+但是，由推論的假設我們有
+\begin{equation*}
+  F(a_1) = F(a_2) = \dots\dots\dots = F(a_{n+1}) = 0,
+\end{equation*}
+即 $a_1, a_2, \dots, a_{n+1}$ 是 $F(x)$ 的 $(n+1)$ 個相異根，這與推論 2 矛盾，所以 $F(x)$ 恆等於 $0$，即 $f(x)=g(x)$。
+\end{proof}
+
+\subsubsection*{丙、除法演算}\label{subsec:5-4-c}
+
+計算除法時，我們可以利用「分離係數法」演算，較為簡便，現舉例說明如下：
+
+\begin{example}\label{ex:5-4-5}
+以 $x^2+2x-2$ 除 $x^5-7x^3-4x^2+x-3$。
+\end{example}
+
+\begin{solution*}
+我們將係數分別依次排列，缺項以 $0$ 表示.
+\begin{equation*}
+\begin{array}{r@{\quad}l}
+  1 + 0 - 7 - 4 + 1 - 3 & \vline\quad 1 + 2 - 2 \\ \cline{2-2}
+  1 + 2 - 2 & \vline\quad 1 - 2 - 1 - 6 \\ \cline{1-1}
+  - 2 - 5 - 4 & \\
+  - 2 - 4 + 4 & \\ \cline{1-1}
+  - 1 - 8 + 1 & \\
+  - 1 - 2 + 2 & \\ \cline{1-1}
+  - 6 - 1 - 3 & \\
+  - 6 - 12 + 12 & \\ \cline{1-1}
+  11 - 15 & 
+\end{array}
+\end{equation*}
+$\therefore \quad q(x) = x^3-2x^2-x-6$ \\
+\phantom{$\therefore \quad$} $r(x) = 11x-15$ \\
+所以 $x^5-7x^3-4x^2+x-3 = (x^3-2x^2-x-6)(x^2+2x-2) + 11x-15$。
+\end{solution*}
+
+\begin{example}\label{ex:5-4-6}
+以 $x-2$ 除 $2x^4-7x^3+14x+4$。
+\end{example}
+
+\begin{solution*}
+\begin{equation*}
+\begin{array}{r@{\quad}l}
+  2 - 7 + 0 + 14 + 4 & \vline\quad 1 - 2 \\ \cline{2-2}
+  2 - 4 & \vline\quad 2 - 3 - 6 + 2 \\ \cline{1-1}
+  - 3 + 0 & \\
+  - 3 + 6 & \\ \cline{1-1}
+  - 6 + 14 & \\
+  - 6 + 12 & \\ \cline{1-1}
+  2 + 4 & \\
+  2 - 4 & \\ \cline{1-1}
+  8 & 
+\end{array}
+\end{equation*}
+所以 $2x^4-7x^3+14x+4 = (2x^3-3x^2-6x+2)(x-2) + 8$。
+\end{solution*}
+
+\subsubsection*{丁、綜合除法}\label{subsec:5-4-d}
+
+以一次二項式作除式時，我們還可用一種更簡便的方法「綜合除法」演算，以下面的例子來說明.
+
+\begin{example}\label{ex:5-4-7}
+將前段例 2 用綜合除法演算.
+\end{example}
+
+\begin{solution*}
+\begin{equation*}
+\begin{array}{r@{\quad}l}
+  2 - 7 + 0 + 14 + 4 & \vline\quad 1 - 2 \\ \cline{2-2}
+  - 4 & \vline\quad 2 - 3 - 6 + 2 \\ \cline{1-1}
+  - 3 & \\
+  + 6 & \\ \cline{1-1}
+  - 6 & \\
+  + 12 & \\ \cline{1-1}
+  2 & \\
+  - 4 & \\ \cline{1-1}
+  8 &
+\end{array}
+\end{equation*}
+所以也得到 $q(x)=2x^3-3x^2-6x+2, r(x)=8$。我們再把上面的演算式縮短如下：
+\begin{equation*}
+\begin{array}{r|r}
+  2 - 7 + 0 + 14 + 4 & -2 \\
+  - 4 - 6 + 12 + 4 & \\ \cline{1-1}
+  q(x): \; 2 - 3 - 6 + 2, & +8: \; r(x)
+\end{array}
+\end{equation*}
+$\therefore \quad q(x)=2x^3-3x^2-6x+2, r(x)=8$。
+\end{solution*}
+
+\begin{example}\label{ex:5-4-8}
+以 $3x-2$ 除 $3x^3-11x^2+18x-3$。
+\end{example}
+
+\begin{solution*}
+\begin{equation*}
+\begin{array}{r|r}
+  3 - 11 + 18 - 3 & -\dfrac{2}{3} \\
+  - 2 - 6 + 8 & \\ \cline{1-1}
+  3 - 9 + 12, & +5
+\end{array}
+\end{equation*}
+所以
+\begin{align*}
+  q(x) &= \frac{1}{3}(3x^2-9x+12) = x^2-3x+4. \\
+  r(x) &= 5.
+\end{align*}
+\end{solution*}
+
+\paragraph{注意：}
+例 1 及例 2 之綜合除法，許多教師及學生都會以為是排版錯了，因為
+\begin{equation*}
+\begin{array}{r|r}
+  2 - 7 + 0 + 14 + 4 & -2 \\
+  -) \quad - 4 + 6 + 12 - 4 & \\ \cline{1-1}
+  2 - 3 - 6 + 2, & +8
+\end{array}
+\end{equation*}
+和舊的綜合除法之做法
+\begin{equation*}
+\begin{array}{r|r}
+  2 - 7 + 0 + 14 + 4 & 2 \\
+  +) \quad 4 - 6 - 12 + 4 & \\ \cline{1-1}
+  2 - 3 - 6 + 2, & +8
+\end{array}
+\end{equation*}
+中間一行的符號剛好全部相反，其實完全一樣。只需將上式 $|-2$ 及 $-)-4+6+12-4$ 中的正負號同時變號，即得一般的綜合除法：
+\begin{equation*}
+\begin{array}{r|r}
+  2 - 7 + 0 + 14 + 4 & 2 \\
+  +) \quad 4 - 6 - 12 + 4 & \\ \cline{1-1}
+  2 - 3 - 6 + 2, & +8
+\end{array}
+\end{equation*}
+
+\subsubsection*{戊、多項式的變形}\label{subsec:5-4-e}
+
+由於綜合除法可以迅速的求得多項式除法的商及餘式，所以可以經由它的運作將一多項式表示成為另一多項式的多項式。
+
+如果定 $y=x-1, f(x)=x^3-2x^2-2x-3$，如何才能把 $f(x)$ 化成 $y$ 的多項式呢？假定我們求出來的多項式是
+\begin{align}
+  f(x) &= x^3-2x^2-2x-3 \notag \\
+  &= ay^3+by^2+cy+d \notag \\
+  &= a(x-1)^3+b(x-1)^2+c(x-1)+d \dots\dots\dots \label{eq:taylor_demo_1}
+\end{align}
+將式子兩端各除以 $x-1$，可知
+\begin{align*}
+  &\text{左端之商為 } x^2-x-3, \quad \text{餘數為 } -6. \\
+  &\text{右端之商為 } a(x-1)^2+b(x-1)+c, \quad \text{餘數為 } d.
+\end{align*}
+所以
+\begin{equation}\label{eq:taylor_demo_2}
+  x^2-x-3 = a(x-1)^2+b(x-1)+c \dots\dots\dots, \quad d=-6
+\end{equation}
+再將上式左右兩端各除以 $x-1$，則得
+\begin{align*}
+  &\text{\eqref{eq:taylor_demo_2} 式左端之商為 } x, \quad \text{餘數為 } -3. \\
+  &\text{\eqref{eq:taylor_demo_2} 式右端之商為 } a(x-1)+b, \quad \text{餘數為 } c.
+\end{align*}
+所以
+\begin{equation}\label{eq:taylor_demo_3}
+  x = a(x-1)+b \dots\dots\dots, \quad c=-3.
+\end{equation}
+再將 \eqref{eq:taylor_demo_3} 式兩端除以 $x-1$，得
+\begin{equation*}
+  a=1, \quad b=1
+\end{equation*}
+得出
+\begin{equation*}
+  x^3-2x^2-2x-3 = (x-1)^3+(x-1)^2-3(x-1)-6.
+\end{equation*}
+
+由上面的分析，可知若利用綜合除法連續將 $x^3-2x^2-2x-3$ 除以 $x-1$，則可得出新多項式的各項係數，即
+\begin{equation*}
+\begin{array}{rrrr|r}
+  1 & -2 & -2 & -3 & 1 \\
+    & 1  & -1 & -3 &   \\ \cline{1-4}
+  1 & -1 & -3 & \multicolumn{1}{|r|}{-6} & \\
+    & 1  & 0  & \multicolumn{1}{|r}{1}   & \\ \cline{1-3}
+  1 & 0  & \multicolumn{1}{|r|}{-3} & & \\
+    & 1  & \multicolumn{1}{|r}{1}   & & \\ \cline{1-2}
+  1 & \multicolumn{1}{|r|}{1} & & & 
+\end{array}
+\end{equation*}
+
+所以我們知道，要將一個 $x$ 的多項式變成 $y$ 的多項式（$y=x+t$），則只需將 $x$ 的多項式以綜合除法連續除，求出各個餘數就可以求出 $y$ 多項式的係數。
+
+此外，我們也可以用代入的方法求得，例如於 \eqref{eq:taylor_demo_1} 式中，
+\begin{equation*}
+  y = x-1 \quad \text{則} \quad x = y+1
+\end{equation*}
+所以
+\begin{align*}
+  x^3-2x^2-2x-3 &= (y+1)^3 - 2(y+1)^2 - 2(y+1) - 3
+\end{align*}
+整理後就可以得出
+\begin{equation*}
+  y^3+y^2-3y-6.
+\end{equation*}
+
+\begin{example}\label{ex:5-4-9}
+設 $f(x)=x^5+2x^2-3x-1$。求 $f(2.003)$ 之近似值至小數點以下第三位.
+\end{example}
+
+\begin{solution*}
+\begin{equation*}
+\begin{array}{rrrrrr|r}
+  1 & +0 & +0 & +2 & -3 & -1 & 2 \\
+    & +2 & +4 & +8 & +20 & +34 & \\ \cline{1-6}
+  1 & +2 & +4 & +10 & +17 & \multicolumn{1}{|r|}{+33} & \\
+    & +2 & +8 & +24 & +68 & & \\ \cline{1-5}
+  1 & +4 & +12 & +34 & \multicolumn{1}{|r|}{+85} & & \\
+    & +2 & +12 & +48 & & & \\ \cline{1-4}
+  1 & +6 & +24 & \multicolumn{1}{|r|}{+82} & & & \\
+    & +2 & +16 & & & & \\ \cline{1-3}
+  1 & +8 & \multicolumn{1}{|r|}{+40} & & & & \\
+    & +2 & & & & & \\ \cline{1-2}
+  1 & \multicolumn{1}{|r|}{+10} & & & & &
+\end{array}
+\end{equation*}
+\begin{align*}
+  f(x) &= (x-2)^5 + 10(x-2)^4 + 40(x-2)^3 + 82(x-2)^2 \\
+  &\quad + 85(x-2) + 33 \\
+  \therefore \quad f(2.003) &\fallingdotseq 85(2.003-2) + 33 = 33.255
+\end{align*}
+在上述求近似值的運算中，我們只取最後兩項，因為當 $x=2.003$ 時，$x-2=0.003$ 已是三位小數，它的高次方將是六位以上的小數，對於求近似值至小數點以下第三位的要求，不能產生任何影響，故可省略。
+\end{solution*}
+
+\begin{example}\label{ex:5-4-10}
+多項式 $f(x)$ 以 $(2x+3)^2$ 及 $(x-2)$ 除之所得餘式依次為 $x+6, 78x-99$，若以 $(2x+3)^2(x-2)$ 除之，其餘式是什麼？
+\end{example}
+
+\begin{solution*}
+由假設得
+\begin{align}
+  f(x) &= (2x+3)^2 q_1(x) + x+6 \label{eq:rem_ex2_1} \\
+  f(x) &= (x-2)^2 q_2(x) + 78x-99 \label{eq:rem_ex2_2}
+\end{align}
+又可設
+\begin{equation}\label{eq:rem_ex2_3}
+  f(x) = (2x+3)^2 (x-2) q(x) + a(2x+3)^2 + x+6
+\end{equation}
+因以 $(2x+3)^2(x-2)$ 除 $f(x)$ 所得餘式 $r(x)$ 應為二次式，若
+\begin{align*}
+  r(x) &= lx^2+mx+c \\
+  &= a(2x+3)^2+b(2x+3)+c \quad \text{〔仿例〕} \\
+  \therefore \quad f(x) &= (2x+3)^2(x-2)q(x)+a(2x+3)^2+b(2x+3)+c \\
+  &= (2x+3)^2\{(x-2)q(x)+a\}+2bx+(3b+c) \\
+  &= (2x+3)^2\{(x-2)q(x)+a\}+x+6 \quad \text{〔由 \eqref{eq:rem_ex2_1}〕} \\
+  &= (2x+3)^2(x-2)q(x)+a(2x+3)^2+x+6
+\end{align*}
+今由 \eqref{eq:rem_ex2_2} 知 $f(2)=0+78 \times 2 - 99 = 57$ \\
+由 \eqref{eq:rem_ex2_3} 知 $f(2)=a(2 \times 2 + 3)^2 + 2 + 6 = 57$
+\begin{equation*}
+  \therefore \quad 49a = 49 \implies a = 1
+\end{equation*}
+故所求之餘式為 $1 \cdot (2x+3)^2+x+6 = 4x^2+13x+15$。
+\end{solution*}
+
+\begin{example}\label{ex:5-4-11}
+若 $f(x)=x^5-5mx+4n$ 可被 $(x-1)^2$ 整除，則 $m, n$ 之值各為何？
+\end{example}
+
+\begin{solution*}
+若 $f(x)$ 可被 $(x-1)^2$ 整除，則必可被 $(x-1)$ 整除
+\begin{equation}\label{eq:rem_ex3_a}
+  \therefore \quad f(1) = 1-5m+4n = 0 \implies 4n = 5m-1 \dots\dots\dots (A)
+\end{equation}
+今
+\begin{align*}
+  f(x) &= x^5-5mx+(5m-1) \\
+  &= (x^5-1)-5m(x-1) \\
+  &= (x-1)(x^4+x^3+x^2+x+1-5m)
+\end{align*}
+則因 $(x-1)^2$ 整除 $f(x)$ 故 $(x-1)$ 可整除
+\begin{equation*}
+  g(x) = x^4+x^3+x^2+x+1-5m
+\end{equation*}
+\begin{align*}
+  \therefore \quad g(1) &= 1+1+1+1+1-5m = 0 \\
+  \therefore \quad m &= 1 \quad \text{代入 \eqref{eq:rem_ex3_a} 得 } n=1.
+\end{align*}
+\end{solution*}
+
+\subsection*{習題 5-7}\label{sec:ex5-7}
+\addcontentsline{toc}{subsection}{習題 5-7}
+
+\begin{enumerate}[1.]
+  \item 證明 $f(x)=2x^3-2x+1$ 不能被 $(x-1)(2x-1)$ 整除.
+  \item 用 $x+2$ 去除 $f(x)$，求餘式.
+  \begin{enumerate}[(i)]
+    \item $f(x)=x^3+8$.
+    \item $f(x)=x^4+2x^3+x^2+2x+2$.
+    \item $f(x)=x^5+2$.
+    \item $f(x)=(x^3+5x^2+7x+9)(x^2-4)$.
+    \item $f(x)=(x+3)x^2+5$.
+  \end{enumerate}
+
+  \item 用 $2x+1$ 除 $f(x)$ 求商式及餘式.
+  \begin{enumerate}[(i)]
+    \item $f(x)=2x^2+5$.
+    \item $f(x)=3x^3+x+1$.
+    \item $f(x)=x^4+2x^3+2x+2$.
+    \item $f(x)=x^5+2$.
+    \item $f(x)=(x^3+7x+9)(x^2-4)$.
+  \end{enumerate}
+
+  \item 如果 $n$ 是正整數，那麼 $(x+3)^n-1$ 能被 $x+2$ 所整除.
+  \item 如果 $f(x)=x^4+px^2+qx+a^2$ 能被 $x^2-1$ 所整除，那麼也能被 $x^2-a^2$ 所整除.
+  \item 如果 $n$ 為奇數，那麼 $(x+y)^n-x^n-y^n$ 能被 $xy(x+y)$ 整除.
+  \item 設 $a \neq b$，以 $x-a$ 除 $f(x)$ 所得餘數 $A$，以 $x-b$ 除 $f(x)$ 所得餘數 $B$，求以 $(x-a)(x-b)$ 除 $f(x)$ 所得的餘式.
+  \item 
+  \begin{enumerate}[(i)]
+    \item 求下列恆等式中 $a, b, c, d$ 之值.
+    \begin{equation*}
+      x^4-8x^3+25x^2-30x+8 = a(x-2)^4+b(x-2)^3+c(x-2)^2+d(x-2)+e.
+    \end{equation*}
+    \item $x=1.99$ 時求上式之值.
+  \end{enumerate}
+
+  \item 設 $f(x)$ 為 $n$ 次多項式 $n \in \mathbb{N}, a, b \in \mathbb{R}, a \neq 0$，以 $ax-b$ 除 $f(x)$ 之商為 $Q(x)$，餘式為 $r$，則以 $x-\frac{b}{a}$ 除 $f(x)$ 之商及餘式各為何？
+  \item 設 $a, b, c, d \in \mathbb{R}$，多項式 $3x^3+2x^2+9x+6$ 可表為 $a(3x+2)^3+b(3x+2)^2+c(3x+2)+d$，則 $a, b, c, d$ 之值多少？\\
+  〔提示：\textcircled{1} 用綜合除法。\textcircled{2} 代入法（令 $y=3x+2$，故 $x=(y-2)/3$。）\textcircled{3} 用比較係數法，較不可取。〕
+  \item 設 $f(x)=px^2+2x+q, g(x)=-x^2+rx+4$。若 $f(0)=g(0), f(1)=g(1), f(-2)=g(-2)$。試求 $p+q+r$ 之值.
+  \item 設 $f(x)$ 表 $x$ 之 $n$ 次多項式，以 $x-1$ 除之，餘 $8$，以 $x^2+x+1$ 除之，餘 $7x+16$，則以 $x^3-1$ 除，所得之餘式是什麼？
+\end{enumerate}

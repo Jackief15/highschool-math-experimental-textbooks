@@ -1,0 +1,799 @@
+% !TeX root = Chapter6_main.tex
+\section{整數的因子分解}\label{sec:ch6}
+
+由幾個整數相乘，算得它們的乘積，這種運算叫做乘法，如
+\begin{align*}
+  3 \cdot 5 &= 15 \\
+  3 \cdot 5 \cdot 17 &= 3 \cdot 85 = 5 \cdot 51 = 255 \\
+  13 \cdot 13 \cdot 19 &= 169 \cdot 19 = 247 \cdot 13 = 3211 \dots\dots \text{等.}
+\end{align*}
+相反的，把一個整數表成幾個整數的乘積，這種過程叫做因子分解，如
+\begin{align*}
+  15 &= 3 \cdot 5 \\
+  255 &= 3 \cdot 85 = 15 \cdot 17 = 3 \cdot 5 \cdot 17 \\
+  3211 &= 13 \cdot 247 = 19 \cdot 169 = 19 \cdot 13 \cdot 13 \\
+  311467 &= 97 \cdot 3211 = 97 \cdot 19 \cdot 13 \cdot 13 \dots\dots \text{等.}\footnote{原書印為「$311467==97 \cdot 3211$」，多排一個等號字模，正文校正為單一等號「$=$」，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}
+\end{align*}
+\phantomsection\label{note:ch6-double-equal}
+
+如果對兩個整數 $a$、$b$，存在整數 $c$，使得 $a = b \cdot c$，我們就說「$b$ 是 $a$ 的因數」，或「$a$ 是 $b$ 的倍數」，用符號 $b \mid a$ 表示（讀做 $b$ 約盡 $a$），如果 $b \neq 0$，這等於說「$b$ 可以整除 $a$」，如果 $a \mid b, b \mid c$，則簡寫成 $a \mid b \mid c$。
+
+談到因數，也許同學們還記得用「輾轉相除」去求兩數的最大公因數，本章將詳細的分析輾轉相除的原理，進而討論整數因子分解的唯一性。（參看 \S\ref{sec:6-3}）
+
+\subsection{因數、質數、最大公因數、最小公倍數}\label{sec:6-1}
+
+\subsubsection*{甲、顯然因數與質數}\label{subsec:6-1-a}
+
+設 $a$ 為任一整數，則由 $0$ 與 $1$ 的特性，有
+\begin{equation*}
+  0 = a \cdot 0, \quad a = 1 \cdot a = (-1) \cdot (-a).
+\end{equation*}
+所以任何整數 $a$，都是 $0$ 的因數，而 $+1, -1$ 是任何整數的因數。由於上述事實，在討論整數系的因子分解時，我們將 $0$ 這一特殊情形除外。而當 $a \neq 0$ 時，我們把 $+1, -1, +a, -a$ 叫做 $a$ 的\textbf{顯然因數}。
+
+\begin{definition*}
+一個不等於 $+1$ 或 $-1$ 的整數 $p \in \mathbb{Z}$，若 $p$ 只有 $+1, -1, +p, -p$ 這四個顯然因數，則稱 $p$ 為\textbf{質數}。
+\end{definition*}
+
+\begin{example}\label{ex:6-1-1}
+$\pm 2, \pm 3, \pm 5, \pm 7, \pm 11, \pm 13, \pm 17$ 等均為質數，但是 $0, \pm 10, \pm 12, \pm 123, \pm 147$ 等則不是質數。
+\end{example}
+
+\paragraph{註：}
+依照定義 $\pm 1$ 不是質數。
+
+\begin{definition*}
+如果整數 $d_1$ 同時是 $k$ 個整數 $a_1, a_2, \dots, a_k$ 的因數，則稱 $d_1$ 為 $a_1, a_2, \dots, a_k$ 的一個\textbf{公因數}。若 $d$ 是 $a_1, a_2, \dots, a_k$ 的正公因數，並且 $a_1, a_2, \dots, a_k$ 的任意公因數都能整除 $d$ 則稱 $d$ 是 $a_1, a_2, \dots, a_k$ 的\textbf{最大公因數}。通常以符號 $(a_1, a_2, \dots, a_k)$ 表示 $a_1, a_2, \dots, a_k$ 的最大公因數。
+\end{definition*}
+
+一般而言，我們有
+\begin{equation*}
+  (0, a_1, \dots, a_k) = (a_1, \dots, a_k).
+\end{equation*}
+
+\paragraph{注意：}
+如果 $a_1, \dots, a_k$ 全為 $0$，則任意的整數都是它們的公因數，所以沒有最大公因數。因此 $(a_1, a_2, \dots, a_k)$ 只有當 $a_1, a_2, \dots, a_k$ 不全為 $0$ 時，才有意義。
+
+\begin{example}\label{ex:6-1-2}
+\begin{enumerate}[(i)]
+  \item $36, 60$ 的公因數為：$\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12$。所以 $36, 60$ 的最大公因數是 $12$，即 $(36, 60) = 12$。
+  \item $36, 60, 100$ 的公因數為：$\pm 1, \pm 2, \pm 4$，所以 $36, 60, 100$ 的最大公因數是 $4$，即 $(36, 60, 100) = 4$。
+  \item $27, 96, 100$ 的公因數為：$\pm 1$，所以 $27, 96, 100$ 的最大公因數是 $1$，即 $(27, 96, 100) = 1$。
+  \item $0, 36, 60, 100$ 的公因數與 $36, 60, 100$ 的公因數相同，所以它們的最大公因數也相等，即 $(0, 36, 60, 100) = (36, 60, 100) = 4$。
+  \item 有一長方形的木板長 $36$ 公分，寬 $20$ 公分，想要把它分成相等的正方形，問怎麼樣的分法可以使得所得到的正方形塊數最少？（即正方形之面積最大。）\\
+  因為正方形各邊相等，假定邊長為 $x$ 公分，則 $36 = mx, 20 = nx$，所以 $x$ 為 $36, 20$ 的公因數。\\
+  又因為正方形之面積為最大者，所以 $x$ 為公因數中最大者，也就是 $x = (36, 20) = 4$。
+\end{enumerate}
+\end{example}
+
+\begin{definition*}
+如果整數 $m$ 同時是 $k$ 個整數 $a_1, a_2, \dots, a_k$ 的倍數，那麼 $m$ 叫做它們的\textbf{公倍數}。又如果各 $a_i$ 都不是 $0$，它們的正公倍數中最小的，就叫做它們的\textbf{最小公倍數}，諸 $a_i$ 中有一個是 $0$ 時，它們的最小公倍數規定為 $0$，通常以符號 $[a_1, a_2, \dots, a_k]$ 表示它們的最小公倍數。
+\end{definition*}
+
+\begin{example}\label{ex:6-1-3}
+\begin{align*}
+  [10, 25] &= 50, \\
+  [36, 96, 25] &= 7200, \\
+  [27, 9] &= 27, \\
+  [0, 5, 11] &= 0.
+\end{align*}
+\end{example}
+
+\subsubsection*{乙、因數、倍數關係的基本性質}\label{subsec:6-1-b}
+
+在上面我們介紹了因數、倍數、質數、整除等觀念，現在我們更進一步討論他們的基本性質。
+
+\begin{enumerate}[(i)]
+  \item 如果 $a \mid b$ 且 $b \mid c$，則 $a \mid c$。\\
+  也就是：若 $b$ 是 $a$ 的倍數，$c$ 是 $b$ 的倍數，則 $c$ 是 $a$ 的倍數。（亦即：$a$ 的倍數的倍數，還是 $a$ 的倍數。）當然也可以讀成：若 $a$ 是 $b$ 的因數，$b$ 是 $c$ 的因數；則 $a$ 是 $c$ 的因數。（亦即：$c$ 的因數的因數，還是 $c$ 的因數。）
+  
+  \paragraph{【證明】}
+  $a \mid b$ 和 $b \mid c \overset{\text{定義}}{\implies}$ 存在 $q, q'$，使得 $b=qa, c=q'b$，
+  \begin{align*}
+    \overset{\text{結合律}}{\implies} c = q'b = q'(qa) = (q'q)a \overset{\text{定義}}{\implies} a \mid c.
+  \end{align*}
+  例如：$2 \mid 6, 6 \mid 18$，所以 $2 \mid 18$。
+
+  \item 如果 $a \mid b$ 和 $a \mid c$，則 $a \mid b+c$。\\
+  （也就是 $a$ 的倍數加 $a$ 的倍數還是 $a$ 的倍數，或：$b, c$ 的公因數也一定是 $b+c$ 的公因數。）
+
+  \paragraph{【證明】}
+  $a \mid b$ 和 $a \mid c \overset{\text{定義}}{\implies}$ 存在 $q, q'$，使得 $b=qa, c=q'a$。
+  \begin{align*}
+    \overset{\text{分配律}}{\implies} b+c = qa+q'a = (q+q')a \overset{\text{定義}}{\implies} a \mid b+c.
+  \end{align*}
+  例如：$3 \mid 9, 3 \mid 12$，所以 $3 \mid 21$。
+
+  綜合 (i)、(ii) 即得
+
+  \item 設 $m, n \in \mathbb{Z}$ 是任意整數，$d$ 是 $a, b$ 的任意公因數，則有 $d \mid ma+nb$。
+
+  \paragraph{【證明】}
+  $d$ 是 $a, b$ 的公因數 $\overset{\text{定義}}{\implies} d \mid a$ 和 $d \mid b$，
+  \begin{align*}
+    &\overset{\text{性質(i)}}{\implies} d \mid ma \text{ 和 } d \mid nb, \\
+    &\overset{\text{性質(ii)}}{\implies} d \mid ma+nb.
+  \end{align*}
+  例如：$6 \mid 18, 6 \mid 24$，所以 $6 \mid 18m+24n$。
+\end{enumerate}
+
+\begin{enumerate}[(i')]
+  \item 設 $m_1, m_2, \dots, m_k \in \mathbb{Z}$ 是任意整數，$d$ 是 $a_1, a_2, \dots, a_k$ 的任一公因數，則有
+  \begin{equation*}
+    d \mid m_1 a_1 + m_2 a_2 + \dots + m_k a_k.
+  \end{equation*}
+  (iii') 是 (iii) 的推論，證明顯然和 (iii) 完全一樣。
+\end{enumerate}
+
+\begin{example}\label{ex:6-1-4}
+設 $m, n \in \mathbb{N}$，且 $m > 1$，若 $m \mid 9n+8$，且 $m \mid 6n+5$，則 $m$ 之值為何？
+
+\paragraph{【解】}
+由假設 $m \mid 9n+8$ 且 $m \mid 6n+5$
+\begin{align*}
+  \text{所以} \quad &m \mid 6(9n+8) - 9(6n+5) \\
+  \text{故得} \quad &m \mid 3 \\
+  \text{又因} \quad &m > 1, m \in \mathbb{N} \implies m=3.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:6-1-5}
+設 $a, b, c \in \mathbb{N}$，且 $a^2+b^2=c^2$，若 $a=7$，則 $b, c$ 之值為何？
+
+\paragraph{【解】}
+因 $7^2+b^2=c^2$
+\begin{equation*}
+  \therefore 7^2 = c^2-b^2 = (c-b)(c+b)
+\end{equation*}
+又因 $b, c \in \mathbb{N}, c+b \in \mathbb{N}$，且 $c+b > c-b$
+\begin{align*}
+  &\therefore c+b = 7^2, \quad c-b = 1 \\
+  &\therefore c=25, \quad b=24.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:6-1-6}
+滿足方程式 $xy=6(y-x)$ 之整數解共有幾組？
+
+\paragraph{【解】}
+因
+\begin{align*}
+  xy+6x-6y &= 0 \\
+  x(y+6)-6(y+6) &= -36 \\
+  (x-6)(y+6) &= -36
+\end{align*}
+而因 $36 = 2^2 \cdot 3^2$
+\begin{equation*}
+  \therefore \text{整數解共有 } 2(2+1)(2+1) = 18 \text{ 組。}
+\end{equation*}
+\end{example}
+
+\begin{example}\label{ex:6-1-7}
+設 $x \in \mathbb{N}$，且 $\sqrt{x^2+23} \in \mathbb{N}$，則 $x$ 之值為何？
+
+\paragraph{【解】}
+令 $\sqrt{x^2+23} = k \in \mathbb{N}$
+\begin{align*}
+  &\therefore x^2+23 = k^2 \\
+  &k^2-x^2 = 23 \\
+  \text{即} \quad &(k-x)(k+x) = 23
+\end{align*}
+又因 $k+x > k-x$
+\begin{align*}
+  &\therefore k+x = 23, \quad k-x = 1 \\
+  &\implies k=12, \quad x=11.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:6-1-8}
+一自然數 $n$ 以 $3$ 除之餘 $2$，以 $5$ 除之餘 $3$，以 $7$ 除之餘 $4$，則此自然數 $n$ 之最小值為何？
+
+\paragraph{【解】}
+\begin{align*}
+  n &= 7q_1+4 \\
+  &= 7(5q_2+r_2)+4, \quad 0 \le r_2 < 5 \\
+  &= 5(7q_2+r_2)+2r_2+4, \quad \because 5 \mid (2r_2+4)-3, \text{ 取 } r_2=2 \\
+  \therefore n &= 35q_2+18 \\
+  &= 35(3q_3+r_3)+18, \quad 0 \le r_3 < 3 \\
+  &= 3(35q_3+11r_3+6)+2r_3, \quad \because 3 \mid 2r_3-2, \text{ 取 } r_3=1 \\
+  \therefore n &= 105q_3+53, \quad \text{取 } q_3=0 \\
+  &\ge 53.
+\end{align*}
+\end{example}
+
+\subsubsection*{習題 6-1}\label{sec:ex6-1}
+
+\begin{enumerate}[1.]
+  \item 試將下列各數分解為正質數乘積.
+  \begin{enumerate}[(i)]
+    \item 17325.
+    \item 17400.
+    \item 16796.
+  \end{enumerate}
+
+  \item 求下列各組數的最大公因數：
+  \begin{enumerate}[(i)]
+    \item $3 \times 11^3 \times 19$, $2^4 \times 13 \times 19^2 \times 11$, $3 \times 17 \times 2^4 \times 5 \times 7^2 \times 11$.
+    \item 611, 235.
+    \item 552, 161.
+    \item 14429, 7061.
+  \end{enumerate}
+
+  \item 求下列各數最小公倍數.
+  \begin{enumerate}[(i)]
+    \item 693, 45, 77.
+    \item 128, 1000, 1620, 3200.
+  \end{enumerate}
+
+  \item 如 $p$ 是質數，試證明 $(p, a)$ 是 $|p|$ 或 $1$。
+
+  \item 試證
+  \begin{enumerate}[(i)]
+    \item 一個正整數有 $2$ 的因子的充分必要條件是個位數為偶數.
+    \item 一個正整數有 $5$ 的因子的充分必要條件是個位數為 $0$ 或 $5$.
+    \item 一個正整數有 $3$ 的因子的充分必要條件是各位數的和可以被 $3$ 整除.
+    \item 一個正整數有 $11$ 的因子的充分必要條件是偶數位數字的和減奇數位數字的和有 $11$ 的因數.
+  \end{enumerate}
+
+  \item 假設 $d=(a, b)$ 而且 $d' \mid d$，試證 $\dfrac{d}{d'} = \left(\dfrac{a}{d'}, \dfrac{b}{d'}\right)$。
+
+  \item 設 $a$ 為大於 $1$ 的正整數，若 $a$ 不是質數，試證 $a$ 必定有小於或等於 $\sqrt{a}$ 的因子，用這個理由去找出所有小於 $144$ 的正質數。
+
+  \item \label{item:ex6-1-8} 設整數 $a, b, c, d, e, f$，滿足\footnote{原書「滿足」後遺漏條件（背頁透印「$0 \le r_2 < 5$」之反面印跡），正文保留原書字樣，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}，及 $a \mid b \mid c \mid d \mid e \mid f$，已知 $d=0$，求其他五數。
+
+  \item 如果一個整數 $a$ 滿足條件 $a \mid (a+8), (a-1) \mid (a+11), (a-4) \mid (3a+6)$，請問 $a$ 是多少？
+
+  \item 設 $n$ 為正整數，試證 $9^{n+1}-8n-9$ 是 $64$ 的倍數。
+
+  \item 設 $x \in \mathbb{N}$，我們定義 $f(x)$ 為所有 $x$ 的正因數的個數，試算出
+  \begin{enumerate}[(i)]
+    \item $f(1), f(2), f(3), \dots, f(15)$.
+    \item $f(p), f(p^2), f(p^3)$，$p$ 為質數。
+    \item $f(pq), f(pqr)$，$p, q, r$ 為質數。
+    \item $f(p^l q^m r^n)$，$p, q, r$ 同上，$l, m, n$ 為自然數。
+  \end{enumerate}
+
+  \item 令 $A_n$ 表示 $n$ 的所有正質因數的集合，試求下列各集合之個數。
+  \begin{enumerate}[(i)]
+    \item $n(A_{720} \cap A_{k \times 720}) \quad k \in \mathbb{N}$
+    \item $n(A_{720} \cap A_{1061})$
+  \end{enumerate}
+
+  \item 填空題
+  \begin{enumerate}[(i)]
+    \item 使 $9 \mid 23^n+7$ 的最小正整數 $n$ 為 \underline{\hspace{3em}}。
+    \item \label{item:ex6-1-13-2} $a=2^3 \times 5^2 \times 7^2$，如果 $a$ 的顯然因素\footnote{原書印為「因素」，實為「因數」之訛字，正文忠實貼緊原書文字，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。} $a$ 及 $1$ 也算在內，則 $a$ 之正因數有 \underline{\hspace{3em}} 個。
+    \item $504$ 的正因數之和為 \underline{\hspace{3em}}。
+  \end{enumerate}
+
+  \item 設 $m, n \in \mathbb{N}, m > 1$，若 $m \mid 35n+28$，$m \mid 7n+3$，則 $m$ 之值為何？
+
+  \item 設 $x, y$ 為二整數且均不被 $11$ 整除，已知 $9x+5y$ 可被 $11$ 整除，若 $10x+ky$ 亦可被 $11$ 整除（$k \in \mathbb{Z}$），則下列何者可為 $k$ 之值？
+  \begin{enumerate}[(1)]
+    \item $-2$
+    \item $8$
+    \item $3$
+    \item $11$
+    \item $-1$
+  \end{enumerate}
+
+  \item 某鎮上的人口在某時期為一完全平方數，稍後增加 $100$ 人，人口便比一數的平方多 $1$，不久增加 $100$ 人後，人口又成為一個完全平方數，試問原來人口是什麼數的倍數？
+\end{enumerate}
+
+\subsection{歐基里德輾轉相除法}\label{sec:6-2}
+
+本節將討論 $a_1, a_2, \dots, a_k$ 與他們的最大公因數 $(a_1, a_2, \dots, a_k)$ 之間的關係，以及如何從 $a_1, a_2, \dots, a_k$ 去求得它們的最大公因數。首先讓我們討論 $k=2$ 的情形。
+
+\subsubsection*{甲、輾轉相除法}\label{subsec:6-2-a}
+
+設 $a, b$ 是兩個給定整數，如何去求得 $a, b$ 的最大公因數 $(a, b)$ 呢？譬如以 $a=204379, b=27993$ 為例，驟看起來，$204379$ 和 $27993$ 的最大公因數是不太容易求得的（註：其原因自然是 $204379$ 和 $27993$ 這兩個數目太大，不容易發現他們的因數。）在國中裏學過一種求最大公因數的方法叫做「輾轉相除」法，其求法如下：
+
+以 $b$ 除 $a$，得商數 $q_1=7$，餘數 $r_1=8428$，即
+\begin{equation}
+  a = 204379 = 7 \cdot 27993 + 8428 = q_1 \cdot b + r_1 \label{eq:euclid_step1}
+\end{equation}
+以 $r_1$ 除 $b$，得商數 $q_2=3$，餘數 $r_2=2709$，即
+\begin{equation}
+  b = 27993 = 3 \cdot 8428 + 2709 = q_2 \cdot r_1 + r_2 \label{eq:euclid_step2}
+\end{equation}
+以 $r_2$ 除 $r_1$，得商數 $q_3=3$，餘數 $r_3=301$，即
+\begin{equation}
+  r_1 = 8428 = 3 \cdot 2709 + 301 = q_3 \cdot r_2 + r_3 \label{eq:euclid_step3}
+\end{equation}
+以 $r_3$ 除 $r_2$，得商數 $q_4=9$，餘數 $r_4=0$，亦即 $r_3$ 整除 $r_2$，即
+\begin{equation}
+  r_2 = 2709 = 9 \cdot 301 = q_4 \cdot r_3 \label{eq:euclid_step4}
+\end{equation}
+如此即求得 $a, b$ 的最大公因數 $(a, b) = r_3 = 301$。
+
+為什麼輾轉相除法中最後一個不為零的餘數就是所求的最大公因數呢？讓我們來分析一下其中的道理。
+
+\subsubsection*{乙、輾轉相除法的原理}\label{subsec:6-2-b}
+
+設 $a, b$ 為兩個整數，設以 $b$ 除 $a$ 所得之商數為 $q$，餘數為 $r$（即 $a = q \cdot b + r, 0 \le r < |b|$），則 $a, b$ 的最大公因數與 $r, b$ 的最大公因數相等，也就是
+\begin{equation*}
+  (a, b) = (r, b).
+\end{equation*}
+
+\paragraph{【證明】}
+設 $d$ 是 $a, b$ 的任何公因數，因為 $r = a + (-q) \cdot b$，所以由性質 (iii) 可知 $d$ 也是 $r$ 的因數，因而也是 $r, b$ 的公因數。相反的，任何一個 $r, b$ 的公因數 $d$，也一定是 $a = q \cdot b + r$ 的因數，所以也是 $a, b$ 的公因數。這樣，所有 $a, b$ 的公因數也都是 $r, b$ 的公因數；而所有 $r, b$ 的公因數也都是 $a, b$ 的公因數。因此 $(a, b) = (r, b)$。（何故？）\label{note:ch6-why-euclid}
+
+\begin{example}\label{ex:6-2-1}
+以 $a=204379, b=27993$ 為例，由上述原理即得
+\begin{align*}
+  (a, b) &= (r_1, b) = (r_1, r_2) = (r_3, r_2) = r_3 \quad (\text{因為 } r_3 \mid r_2) \\
+  \text{亦即} \\
+  (204379, 27993) &= (8428, 27993) \\
+  &= (8428, 2709) = (301, 2709) = 301.
+\end{align*}
+這也就是我們所熟悉的「輾轉相除求最大公因數」的方法了。
+\end{example}
+
+\begin{example}\label{ex:6-2-2}
+$a=108, b=72$。\\
+因為 $108 = 1 \cdot 72 + 36$
+\begin{align*}
+  72 &= 2 \cdot 36
+\end{align*}
+所以 $(108, 72) = (72, 36) = 36$。
+\end{example}
+
+\begin{example}\label{ex:6-2-3}
+$a=311467, b=308503$。\\
+我們可以把 $a, b$ 的輾轉相除，用直式計算如下：
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r|r|r|l}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{~~} & \multicolumn{1}{c}{~~} & \\ \cline{2-2}
+$q_1 = 1$ & $311467$ & $308503$ & $104 = q_2$ \\
+          & $308503$ & $2964$   & \\ \cline{2-3}
+$q_3 = 12$ & $\rightarrow 2964$ & $12103$ & \\
+          & $247$    & $11856$  & \\ \cline{2-3}
+          & $494$    & $247 \leftarrow r_2$ & \\
+          & $494$    &          & \\ \cline{2-2}
+          & $0 \leftarrow r_3$ & & 
+\end{tabular}
+\end{center}
+故有 $(311467, 308503) = (2964, 308503) = (2964, 247) = 247$。
+\end{example}
+
+當然，我們可以把「輾轉相除法的原理」改述為 $k$ 個整數的形式。即
+
+設 $a_1, a_2, \dots, a_k$ 為 $k$ 個整數，設以 $a_2$ 除 $a_1$ 所得商數為 $q$，餘數為 $r$（即 $a_1 = q \cdot a_2 + r$），則有
+\begin{equation*}
+  (a_1, a_2, \dots, a_k) = (r, a_2, \dots, a_k).
+\end{equation*}
+
+上述形式的證明和 $k=2$ 時完全一樣。又 $a_1, a_2, \dots, a_k$ 的最大公因數和上述 $k$ 個整數的順序無關，所以我們可以任取 $a_i, a_j$，如果 $a_i = q' \cdot a_j + r'$；則也可以用餘數 $r'$ 去代替 $a_i$，即
+\begin{equation*}
+  (a_1, \dots, a_i, \dots, a_k) = (a_1, \dots, r', \dots, a_k),
+\end{equation*}
+將上式反覆應用，最後即得到 $a_1, a_2, \dots, a_k$ 的最大公因數，舉例說明如下：
+
+\begin{example}\label{ex:6-2-4}
+求 $(311467, 155683, 4951) = ?$
+
+以 $155683$ 除 $311467$，得
+\begin{equation*}
+  311467 = 2 \cdot 155683 + 101,
+\end{equation*}
+以 $101$ 除 $4951$，得
+\begin{equation*}
+  4951 = 49 \cdot 101 + 2,
+\end{equation*}
+以 $2$ 除 $101$，得
+\begin{equation*}
+  101 = 50 \cdot 2 + 1,
+\end{equation*}
+故由上述原理，即得
+\begin{align*}
+  (311467, 155683, 4951) &= (101, 155683, 4951) \\
+  &= (101, 155683, 2) \\
+  &= (1, 155683, 2) = 1.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:6-2-5}
+求 $(1974, 651, 84, 311465) = ?$
+\begin{align*}
+  (1974, 651, 84, 311465) &= (1974, 651, 84, 77) \quad (\text{以第三數除第四數}) \\
+  &= (1974, 651, 7, 77) \quad (\text{以第四數除第三數}) \\
+  &= (0, 0, 7, 0) = 7 \quad (\text{以第三數除其他數，餘數皆為 } 0\text{。})
+\end{align*}
+\end{example}
+
+\subsubsection*{丙、輾轉相除法的涵義}\label{subsec:6-2-c}
+
+輾轉相除法是一種算法，它告訴我們如何從兩個整數 $a, b$ 逐步經由除法去求得 $a, b$ 的最大公因數 $d=(a, b)$。在上面我們用性質 (iii) 說明這種算法的原理，即 $(a, b) = (r_1, b) = \dots = (r_{k-1}, r_k)$。在本節中，我們將再進一步地去討論 $a, b$ 的最大公因數 $d$ 和 $a, b$ 之間的關係。先讓我們分析一下 $a=204379, b=27993$ 這個例子。
+
+\begin{example}\label{ex:6-2-6}
+$a=204379, b=27993$。
+\begin{align}
+  a &= q_1 b + r_1 = 7 \cdot 27993 + 8428 \label{eq:euclid_rel1} \\
+  b &= q_2 r_1 + r_2 = 3 \cdot 8428 + 2709 \label{eq:euclid_rel2} \\
+  r_1 &= q_3 r_2 + r_3 = 3 \cdot 2709 + 301 \label{eq:euclid_rel3}
+\end{align}
+上面三個式子說明了 $a, b$ 和其最大公因數 $d=r_3=301$ 間的關係，假如我們用 $r_2 = b - q_2 r_1, r_1 = a - q_1 b$ 逐次代入 \eqref{eq:euclid_rel3}，即得
+\begin{align*}
+  d = r_3 &= r_1 - q_3 r_2 = r_1 - q_3(b - q_2 r_1) = (1 + q_3 q_2) r_1 - q_3 b \\
+  &= (1 + q_3 q_2)(a - q_1 b) - q_3 b \\
+  &= (1 + q_3 q_2) a - [(1 + q_3 q_2) q_1 + q_3] b \\
+  &= 10 \cdot a - 73 \cdot b.
+\end{align*}
+上式說明 $204379$ 和 $27993$ 的最大公因數 $301$ 可以用 $204379$ 的適當倍數加上 $27993$ 的適當倍數去表記，即
+\begin{equation*}
+  301 = 10 \cdot 204379 + (-73) \cdot 27993.
+\end{equation*}
+注意到上面的表示方法不是唯一的，譬如
+\begin{equation*}
+  301 = 103 \cdot 204379 + (-752) \cdot 27993
+\end{equation*}
+是另一種表法。
+\end{example}
+
+在一般的情形，假如經過 $k$ 次除法才求得 $a, b$ 的最大公因數 $d=(a, b)=r_k$，則 $d$ 和 $a, b$ 之間的關係由下列 $k$ 個式子所表達，即
+\begin{align}
+  a &= q_1 b + r_1 \iff r_1 = a - q_1 b \label{eq:euclid_gen1} \\
+  b &= q_2 r_1 + r_2 \iff r_2 = b - q_2 r_1 \label{eq:euclid_gen2} \\
+  r_1 &= q_3 r_2 + r_3 \iff r_3 = r_1 - q_3 r_2 \label{eq:euclid_gen3} \\
+  &\qquad \dots\dots\dots\dots\dots\dots\dots\dots\dots \notag \\
+  r_{k-2} &= q_k r_{k-1} + r_k \iff d = r_k = r_{k-2} - q_k r_{k-1} \label{eq:euclid_genk}
+\end{align}
+假如我們同樣的逐次把 $r_{k-1}, r_{k-2}, \dots, r_1$ 用上述式子代入 \eqref{eq:euclid_genk} 式，所得的式子可能很繁，但是必定是 $(\dots)a + (\dots)b$ 這種形式，換句話說：$a, b$ 的最大公因數 $d$ 和 $a, b$ 之間具有下述簡潔關係，即
+\begin{equation*}
+  \text{存在適當的整數 } m, n, \text{ 使得 } d = ma + nb.
+\end{equation*}
+
+\begin{theorem}\label{thm:bezout_2}
+設 $d$ 是 $a, b$ 的最大公因數，即 $d=(a, b)$，則必定存在適當的整數 $m, n \in \mathbb{Z}$，使得 $d=ma+nb$。
+\end{theorem}
+
+以上定理可以推廣到任意 $k$ 個數的情形。
+
+\begin{theorem}\label{thm:bezout_k}
+設 $d$ 是 $k$ 個整數 $a_1, a_2, \dots, a_k$ 的最大公因數。即 $d=(a_1, a_2, \dots, a_k)$，則必存在適當的整數 $m_1, m_2, \dots, m_k \in \mathbb{Z}$，使得
+\begin{equation*}
+  d = m_1 a_1 + m_2 a_2 + \dots + m_k a_k.
+\end{equation*}
+\end{theorem}
+
+我們首先注意到下面的事實：
+
+\begin{lemma}\label{lem:gcd_grouping}
+一組數 $a_1, a_2, \dots, a_k$ 的最大公因數，可以如此求得：把這些數分成一小組一小組，先求得各小組的最大公因數，再求這些最大公因數的最大公因數。用式子表示，就是
+\begin{equation*}
+  (a_1, a_2, \dots, a_k) = [(a_1, a_2, \dots, a_{l_1}), (a_{l_1+1}, \dots, a_{l_2}), \dots, (a_{l_m+1}, \dots, a_k)]\footnote{原書右式使用方括號記號 $[\dots]$ 表示分組後最大公因數之公因數運算，正文忠實貼緊原書記號，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}
+\end{equation*}
+\phantomsection\label{note:ch6-gcd-bracket}
+\end{lemma}
+
+\paragraph{【證明】}
+我們把左邊記做 $b$，右邊記做 $c$，那麼 $b$ 可以約盡
+\begin{equation*}
+  d_1 = (a_1, \dots, a_{l_1}), \quad d_2 = (a_{l_1+1}, \dots, a_{l_2}), \quad \dots, \quad d_{m+1} = (a_{l_m+1}, \dots, a_k).
+\end{equation*}
+所以 $b$ 可以約盡 $c=(d_1, d_2, \dots, d_{m+1})$。反過來說，$c$ 可以約盡 $d_1$，所以能約盡 $a_1, \dots, a_{l_1}$；$c$ 又可以約盡 $d_2$，所以 $c$ 可以約盡 $a_{l_1+1}, \dots, a_{l_2}$；依此類推，$c$ 就可以約盡 $d=(a_1, \dots, a_k)$。因此 $c=d$。
+
+我們再引入一個很方便的定義：
+
+\begin{definition*}
+如果 $b = n_1 a_1 + n_2 a_2 + \dots + n_l a_l$，其中 $n_1, n_2, \dots, n_l$ 是整數，我們就說 $b$ 是 $a_1, a_2, \dots, a_l$ 的一個\textbf{整線性組合}。
+\end{definition*}
+
+引進了這個定義後，\cref{thm:bezout_k} 就可以用下面的話來說：
+
+\paragraph{定理 1'：}
+一組整數的最大公因數，一定可以表示成它們的整線性組合。
+
+\paragraph{【證明】}
+已經證明了 $k=2$ 的情形，（即是\cref{thm:bezout_2}），我們很自然地想到用數學歸納法來證明一般的情形。假設 $k=l$ 時的情形，已被驗證了。我們來驗證 $k=l+1$ 時的情形：
+
+現在根據\cref{lem:gcd_grouping}：
+\begin{equation*}
+  d = (a_1, a_2, \dots, a_{l+1}) = (a_1, a_2, \dots, a_{l-1}, a'_l),
+\end{equation*}
+其中 $a'_l = (a_l, a_{l+1})$。所以 $d$ 是 $a_1, a_2, \dots, a_{l-1}, a'_l$ 的整線性組合；就是說，可以找到整數 $n_1, \dots, n_{l-1}, n_l$，使得
+\begin{equation*}
+  d = n_1 a_1 + n_2 a_2 + \dots + n_{l-1} a_{l-1} + n_l a'_l.
+\end{equation*}
+但是，因為 $a'_l = (a_l, a_{l+1})$ 是 $a_l, a_{l+1}$ 的整線性組合（定理 1 也！），$a'_l = m'_l a_l + m'_{l+1} a_{l+1}$，其中 $m'_l$ 及 $m'_{l+1}$ 都是整數，因此
+\begin{equation*}
+  d = n_1 a_1 + n_2 a_2 + \dots + n_{l-1} a_{l-1} + (n_l m'_l) a_l + (n_l m'_{l+1}) a_{l+1}
+\end{equation*}
+因此 $d$ 真的是 $a_1, a_2, \dots, a_{l+1}$ 的整線性組合，因此歸納法行得通。
+
+\begin{example}\label{ex:6-2-7}
+$18, 42, 63$ 的最大公因數是 $3$，它可以表成
+\begin{equation*}
+  3 = (-1) \cdot 18 + (-1) \cdot 42 + 63.
+\end{equation*}
+
+\paragraph{【解】}
+\begin{enumerate}[(i)]
+  \item 因 $(18, 42) = 6, (6, 63) = 3$ \\
+  故有 $((18, 42), 63) = (6, 63) = 3$ \\
+  先找 $m_1, n_1$，使得 $6m_1 + 63n_1 = 3$
+  \begin{equation*}
+    m_1 = -10, \quad n_1 = 1
+  \end{equation*}
+  再找 $m_2, n_2$，使得 $18m_2 + 42n_2 = 6m_1 = -60$ \\
+  觀察知 $m_2 = -1, n_2 = -1$ \hfill 故得證。
+  \item $(18, 63) = 9, ((18, 63), 42) = (9, 42) = 3$ \\
+  先求 $m_1, n_1$，使得 $3 = 9m_1 + 42n_1$ \\
+  觀察知 $m_1 = 5, n_1 = -1$ \\
+  再找 $m_2, n_2$，使得 $18m_2 + 63n_2 = 9m_1 = 45$ \\
+  由觀察知 $m_2 = -1, n_2 = 1$ \hfill 故得證。
+\end{enumerate}
+\end{example}
+
+\begin{example}\label{ex:6-2-8}
+三數 $32, 78, 108$ 的最大公因數是 $2$，它可以表成
+\begin{equation*}
+  2 = (-17) \cdot 32 + 7 \cdot 78 + 0 \cdot 108.
+\end{equation*}
+\end{example}
+
+\begin{example}\label{ex:6-2-9}
+求滿足 $11x - 1971y = 1$ 之一組整數解。
+
+\paragraph{【解】}
+\begin{align*}
+  1971 &= 179 \times 11 + 2 \\
+  11 &= 5 \times 2 + 1 \\
+  2 &= 2 \times 1 \\
+  \therefore 1 &= 11 - 5 \times 2 = 11 - 5(1971 - 11 \times 179) \\
+  &= 11(1 + 5 \times 179) - 5 \times 1971 \\
+  &= 11 \times 896 - 5 \times 1971 \\
+  \therefore \text{可取 } x &= 896, \quad y = 5.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:6-2-10}
+試求滿足 $195x - 100y = 5$ 及 $100 < x < 200$ 之一組整數解。
+
+\paragraph{【解】}
+\begin{align*}
+  195 &= 1 \times 100 + 95 \\
+  100 &= 1 \times 95 + 5 \\
+  95 &= 19 \times 5 \\
+  \therefore 5 &= 100 - 95 = 100 - (195 - 100) \\
+  &= 2 \times 100 - 1 \times 195
+\end{align*}
+故 $y_0 = -2, x_0 = -1$，為此方程式一組解。\\
+設其一般解為 $x = -1 + kt, y = -2 + lt$（$t$ 為任一整數）\\
+代入 $195x - 100y = 5$ 得 $39k - 20l = 0$\\
+取 $k=20, l=39$ 得其一般解為
+\begin{align*}
+  x &= -1 + 20t \\
+  y &= -2 + 39t
+\end{align*}
+$100 < x < 200 \implies t = 6, 7, 8, 9, 10$\\
+故得出其中一解：$\begin{cases} x = 119 \\ y = 232 \end{cases}$。
+\end{example}
+
+\begin{example}\label{ex:6-2-11}
+求滿足 $37x + 7y = 760$ 及 $200 < x < 300$ 之一組解。
+
+\paragraph{【解】}
+因 $(37, 7) = 1$\\
+故有使 $37m + 7n = 1$ 之 $m, n$ 存在
+\begin{equation*}
+  37(760m) + 7(760n) = 760
+\end{equation*}
+\begin{align*}
+  37 &= 5 \times 7 + 2 \\
+  7 &= 3 \times 2 + 1 \\
+  2 &= 2 \times 1 \\
+  \therefore 1 &= 7 - 3 \times 2 = 7 - 3(37 - 5 \times 7) \\
+  &= 7 \times 16 - 3 \times 37
+\end{align*}
+得 $n=16, m=-3$\\
+$x_0 = -2280, y_0 = 12160$\\
+按例 5 的做法得其一般解為
+\begin{align*}
+  x &= -2280 + 7t \\
+  y &= 12160 - 37t
+\end{align*}
+$200 < -2280 + 7t < 300$\\
+$355 \le t \le 368$\\
+其中一解 $\begin{cases} x = 205 \\ y = 975 \end{cases}$。
+\end{example}
+
+\subsubsection*{習題 6-2}\label{sec:ex6-2}
+
+\begin{enumerate}[1.]
+  \item 兩個線段 $a, b$ 分別為某一單位線段的 $8\sqrt{2}, 3\sqrt{2}$ 倍，試以輾轉相除法求一個最長的線段 $d$ 使得 $a, b$ 都是 $d$ 的整數倍。
+
+  \item 試以輾轉相除法求下列各組數的最大公因數.
+  \begin{enumerate}[(i)]
+    \item 288, 1008.
+    \item 1053, 2430.
+    \item 12345, 54321.
+  \end{enumerate}
+
+  \item 設 $a, b$ 是互質的兩個整數，試證明存在有整數 $n_1, n_2$，使得 $1 = n_1 a + n_2 b$。
+
+  \item 求下列各方程式的一組整數解：
+  \begin{enumerate}[(i)]
+    \item $611x + 235y = 47$.
+    \item $422x + 255y = 1$.
+    \item $121x + 13y = 1$.
+  \end{enumerate}
+
+  \item 設 $a=-572, b=819$，求滿足 $ax+by=(a, b)$ 之一組整數解。
+
+  \item 試求整數 $n_1, n_2, n_3$，滿足 $311467n_1 + 155683n_2 + 4951n_3 = 1$。
+
+  \item 試求整數 $m_1, m_2, m_3, m_4$，滿足
+  \begin{equation*}
+    1974m_1 + 651m_2 + 84m_3 + 311465m_4 = 7.
+  \end{equation*}
+
+  \item 設馬一隻之售價為 $3100$ 元，牛一隻之售價為 $2100$ 元，某人購牛及馬共花去 $177000$ 元，問此人可購得牛幾隻，馬幾隻？
+
+  \item 韓信點兵，兵不滿一萬，每 $5$ 人一數，$9$ 人一數，$13$ 人一數，$17$ 人一數，都餘 $3$ 人，問兵有多少？
+
+  \item 設 $n$ 為介於 $400$ 與 $1000$ 間之自然數，已知 $n$ 除以 $7$ 餘 $4$，$n$ 除以 $5$ 餘 $3$，$n$ 除以 $3$ 餘 $2$，問此種 $n$ 有幾個？
+
+  \item 求集合 $\{k \mid k = 851m + 943n, m, n \in I, k > 0\}$ 中最小元素。
+
+  \item 由題 3，可知若 $a, b$ 為互質的兩整數，則集合 $\{k \mid k = am + bn, m, n \in I, k > 0\}$ 中最小元素為何？
+
+  \item 算術除法原理：\\
+  設 $a, b \in I, b \neq 0$，則 $\mathbb{Z}$ 中恰有二元素 $q, r$ 使得 $a = q \cdot b + r$，而 $0 \le r < |b|$。\\
+  試求 $q$ 與 $r$ 而將下列各組數 $a, b$ 表為上式形式。
+  \begin{enumerate}[(i)]
+    \item $a=0, b=2$ 則 $q = \underline{\hspace{3em}}, r = \underline{\hspace{3em}}$
+    \item $a=2, b=4$ 則 $q = \underline{\hspace{3em}}, r = \underline{\hspace{3em}}$
+    \item $a=-3, b=11$ 則 $q = \underline{\hspace{3em}}, r = \underline{\hspace{3em}}$
+    \item $a=87, b=-7$ 則 $q = \underline{\hspace{3em}}, r = \underline{\hspace{3em}}$
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{整數因子分解的唯一性}\label{sec:6-3}
+
+\subsubsection*{甲、質數與整除性質}\label{subsec:6-3-a}
+
+若 $c$ 是 $a$ 的因數或 $c$ 是 $b$ 的因數，則顯然 $c$ 是 $a \cdot b$ 的因數。亦即
+\begin{equation}
+  c \mid a \text{ 或 } c \mid b \implies c \mid a \cdot b. \label{eq:div_product}
+\end{equation}
+\cref{thm:bezout_2} 的一個重要推論是：「當 $c$ 是質數時，\eqref{eq:div_product} 的逆命題亦成立」，亦即
+
+\begin{corollary}\label{cor:prime_div_prod}
+如果一質數 $p$ 可以整除 $a \cdot b$，則 $p$ 可以整除 $a$，或整除 $b$。
+\begin{equation}
+  p \mid a \cdot b \implies p \mid a \text{ 或 } p \mid b. \label{eq:euclid_lemma}
+\end{equation}
+\end{corollary}
+
+\paragraph{【證明】}
+因為 $p$ 是一個質數，$p$ 只有 $\pm 1, \pm p$ 這四個顯然的因數；所以 $p$ 與 $a$ 的最大公因數只有兩種可能，即
+\begin{equation*}
+  (p, a) = \begin{cases} p \text{ 或 } -p \\ 1 \end{cases}
+\end{equation*}
+\begin{enumerate}[(1)]
+  \item 當 $(p, a) = p$ 或 $-p$ 時，則 $p \mid a$（而推論顯然成立）。
+  \item 我們現在來討論 $(p, a) = 1$ 的情形：由\cref{thm:bezout_2}得知存在適當的整數 $m, n \in \mathbb{Z}$，使得
+  \begin{equation}
+    1 = (p, a) = mp + na \label{eq:prime_coprime}
+  \end{equation}
+  將 \eqref{eq:prime_coprime} 式兩端同乘以 $b$，即得
+  \begin{equation}
+    b = (bm)p + n(ab) \label{eq:prime_coprime_mul}
+  \end{equation}
+  但是由假設 $p \mid ab$，故由性質 (iii)，即得 $p \mid b$。
+\end{enumerate}
+
+顯然的，我們可以把推論 1 推廣成下述形式：
+
+\begin{corollary}\label{cor:prime_div_k_prod}
+設 $p$ 為一質數，若 $p \mid a_1 a_2 \dots a_k$，則 $p$ 至少能整除 $a_1, a_2, \dots, a_k$ 中的一個。亦即
+\begin{equation*}
+  p \mid a_1 a_2 \dots a_k \implies \text{存在有一個 } a_j, \text{ 使得 } p \mid a_j.
+\end{equation*}
+\end{corollary}
+
+\paragraph{【證明】}
+\begin{equation*}
+  p \mid a_1 a_2 \dots a_k \implies \begin{cases}
+    p \mid a_1 \\
+    \text{或} \\
+    p \mid a_2 a_3 \dots a_k \implies \begin{cases}
+      p \mid a_2 \\
+      \text{或} \\
+      p \mid a_3 a_4 \dots a_k \implies \begin{cases}
+        \dots\dots \\
+        \dots\dots \text{（依此類推）}
+      \end{cases}
+    \end{cases}
+  \end{cases}
+\end{equation*}
+
+\begin{example}\label{ex:6-3-1}
+$5 \mid 35 \cdot 9$，但 $5 \nmid 9 \implies 5 \mid 35$。
+\end{example}
+
+\begin{example}\label{ex:6-3-2}
+推論 1 中 $p$ 為質數的假設是必須的，如果 $p$ 不是質數，推論 1 是不對的。\\
+例如：$6 \mid 3 \cdot 4$ 但 $6 \nmid 3, 6 \nmid 4$。
+\end{example}
+
+\subsubsection*{乙、因子分解的唯一性}\label{subsec:6-3-b}
+
+當我們作一個整數的因子分解時，首先把它分解成幾個非顯然因數的乘積。如果這些因數不是質數的話，我們還能繼續分解下去，一直分解到各因數都是質數為止，例如：$+60 = 2 \cdot 30 = 2 \cdot 3 \cdot 10 = 2 \cdot 3 \cdot 2 \cdot 5$，$-42 = (-1) \times 2 \times 3 \times 7$。注意到，為了方便起見，我們習慣地把整數分解成正質數的乘積，而把負號提出來，也就是 $a = \pm p_1 \cdot p_2 \dots p_k$（其中 $p_i$ 是正質數；正負號隨 $a$ 的正負而定）。
+
+由整數的乘法交換律可知上述質因數的順序可以任意變更，（例如 $630 = 2 \cdot 3 \cdot 3 \cdot 5 \cdot 7 = 2 \cdot 5 \cdot 3 \cdot 7 \cdot 3$）所以當 $a$ 的兩種分解
+\begin{align*}
+  a &= \pm p_1 p_2 \dots p_k \\
+    &= \pm q_1 q_2 \dots q_k
+\end{align*}
+只是在質因數的次序上有所變更的話，顯然應該看成相同。
+
+\begin{theorem}[因子分解的唯一性]\label{thm:fundamental_arithmetic}
+設 $a$ 為一任給整數，
+\begin{equation}
+  \left. \begin{aligned}
+    a &= \pm p_1 p_2 \dots p_k \\
+      &= \pm q_1 q_2 \dots q_l
+  \end{aligned} \right\} \quad (p_j, q_j \text{ 為正質數}) \label{eq:unique_factorization}
+\end{equation}
+是 $a$ 分解為質因數乘積的兩種因子分解，則 $k=l$，而且上述兩種因子分解，除了各質因數的順序外一定完全相同。
+\end{theorem}
+
+\paragraph{*【證明】}
+由上式顯然有 $p_1 \mid q_1 q_2 \dots q_l$，故由\cref{cor:prime_div_k_prod}可知 $p_1$ 整除 $q_1, q_2, \dots, q_l$ 中的某一個。我們可以變更 $q_1, \dots, q_k$ 的順序（亦即變更其足標）而假設 $p_1 \mid q_1$，但是 $p_1, q_1$ 都是正質數，故
+\begin{equation*}
+  p_1 \mid q_1 \implies p_1 = q_1.
+\end{equation*}
+將 $a$ 除以 $p_1 (=q_1)$，由 \eqref{eq:unique_factorization} 式即得
+\begin{equation}
+  \left. \begin{aligned}
+    \frac{a}{p_1} &= \pm p_2 \dots p_k \\
+    &= \pm q_2 \dots q_l
+  \end{aligned} \right\} \label{eq:unique_factorization_quot}
+\end{equation}
+同理可證（在適當變更足標後），$p_2 = q_2$，依此類推 $p_3 = q_3, \dots, p_k = q_l$（$k=l$ 何故？）即證得\cref{thm:fundamental_arithmetic}。
+
+\subsubsection*{習題 6-3}\label{sec:ex6-3}
+
+\begin{enumerate}[1.]
+  \item 把 1378, 2310 分解為質因數的乘積。
+
+  \item 設 $c \mid ab, (c, a) = 1$，換句話說，$c$ 與 $a$ 互質，且 $c$ 可除盡 $ab$，試證 $c$ 可除盡 $b$。
+
+  \item 對於任意正整數 $a, b$，求證 $(a, b)[a, b] = ab$。
+
+  \item 試舉例說明
+  \begin{equation*}
+    (a, b, c)[a, b, c] \text{ 不一定等於 } abc.
+  \end{equation*}
+
+  \item 一自然數 $n$ 分別以 24, 26, 28, 30 除之，得其餘數依次為 18, 20, 22, 24，則此自然數 $n$ 之最小值為何？
+
+  \item 一自然數 $n$ 以 7 除之餘 2，以 17 除之餘 4，以 $7 \times 17$ 除之，其餘數為何？
+
+  \item 一自然數 $n$ 以 3 除之餘 1，以 4 除之餘 2，以 5 除之餘 4，則此自然數 $n$ 之最小值為何？
+
+  \item 設 $p \in \mathbb{N}$，且 $\dfrac{3p+25}{2p-5} \in \mathbb{N}$，則 $p$ 之值為何？
+
+  \item 設 $n \in \mathbb{N}$，且 $\sqrt{4n^2-11} \in \mathbb{N}$，則 $n$ 之值為何？
+
+  \item 滿足 $x^2 + 5xy + 6y^2 - 3x - 7y = 0$ 之整數解共有幾組？
+\end{enumerate}
+
+\subsection{質數的個數無限}\label{sec:6-4}
+
+從 \S\ref{sec:6-3} 的討論，我們知道任何一個整數 $a$ 都能分解為它的質因子的乘積，且除了順序的變換外，這種分解法只有一種。這個事實顯示了「質數」在整數系中的重要性。因此很自然的，在對於整數系的研究中（這種整數系問題的研究，在數學中通稱為「數論」），我們對質數的性質，最有興趣，數論中最古老的問題，是所謂質數的個數問題。我們知道 $1$ 到 $100$ 之間的質數只有：$2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 91, 97$\footnote{原書質數列表中列有「91」，然而 $91 = 7 \times 13$ 實為合數，此處忠實保留 1973 年版原書之印刷字樣，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}\label{note:ch6-prime91}。
+
+依此類推，當然還有很多質數，所以我們會問：質數到底有多少？是有限還是無限？它的答案，是由歐幾里得最先確定，是「無限」。雖則這樣的結果，看過去對解決實際問題並無補益，但同學們不可眼光過於短小。我們在本書的開始講過，數學的目的之一，是訓練「思考能力」。上述質數個數問題雖然不能用以解二次方程式，但它的證明之簡潔，卻是訓練「思考能力」的最佳實例之一。說穿開來，其方法也並不新奇，就是所謂的「歸謬證法」。同學們在學習平面幾何時，早就見過這種證明法，不知大家是否想到過在其他場合，也能用這種反證法？
+
+\begin{theorem}\label{thm:infinite_primes}
+整數系中，存在無限多個質數。
+\end{theorem}
+
+\paragraph{【注意】}
+用歸謬法假設不然，即假設質數的個數為有限，希望導出矛盾。既然質數的個數為有限，我們可以把它們全部列出，令 $A = \{p_1, p_2, \dots, p_N\}$ 為所有質數的集合。現在考慮整數
+\begin{equation}
+  a = p_1 p_2 \dots p_N + 1 \label{eq:euclid_prime_form}
+\end{equation}
+（注意：這裏的關鍵在於 $A$ 為有限，否則我們無法把 $A$ 中所有的元素都乘在一起。）根據 \S\ref{sec:6-3}，$a$ 應該能分解為質因子的積。既然 $A = \{p_1, p_2, \dots, p_N\}$ 為天下所有的質數，當然 $a$ 的任一質因子，必為 $A$ 中的某一元素。換句話說，$A$ 中的某一元素應該能整除 $a$。但另一方面由 \eqref{eq:euclid_prime_form} 式可以明白看出 $A$ 中的任一元素皆不能整除 $a$（任一 $p$ 除 $a$ 的餘數皆為 $1$）。這就是我們所要的矛盾了。

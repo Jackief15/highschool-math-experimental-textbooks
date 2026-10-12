@@ -1,0 +1,93 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../styles/preamble.tex}
+\input{../styles/Chinese_math_style.tex}
+\input{../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 1 冊}
+  \fancyhead[L]{\small 第 7 章\quad 多項式的因子分解}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small 第七章\quad 多項式的因子分解}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{第七章\quad 多項式的因子分解}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% =========================================================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則 6 整理於目錄之前）
+% =========================================================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:master_errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第一冊》（高一上）第七章「多項式的因子分解」掃描原件（第 167--201 頁，共 35 頁）完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記及排印疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[subsec:7-1-a]{§ 7-1 甲 例 2 最高公因式} & 
+各式分子帶有 $1-x$ 等因式，等號右側結果為 $x-1$ & 
+依教材定義最高公因式以首項係數為正 1 者為代表，故提負號常數後為 $x-1$，正文忠實貼緊原書記號。 \\ \hline
+
+\hyperref[subsec:7-1-b]{§ 7-1 乙 例 5 直式算草} & 
+分離係數法直式雙欄輾轉相除計算算草 & 
+原書以左右雙向分離係數直式展示多項式輾轉相除，正文以規範對齊陣列完整重現原書排印風格。 \\ \hline
+
+\hyperref[prop:primitive_unique]{§ 7-2 丙 命題證明} & 
+有理係數多項式唯一表為正有理數與樸式乘積 & 
+推導中最大公因數相等得 $ab'=a'b$，正文忠實排版並於括號註明兩數均為正有理數。 \\ \hline
+
+\hyperref[lem:gauss]{§ 7-2 丁 高斯引理證明} & 
+展開式中非 $p$ 倍數項 $a_j b_i$ 之足標構造 & 
+證明清晰嚴謹，符號標籤與足標求和結構完全貼合 1973 年教材原始推導。 \\ \hline
+
+\hyperref[cor:rational_root]{§ 7-2 丁 推論 2 有理根定理} & 
+證明末項印為 $a_0 = d_0 \cdot (-b)$ & 
+原書將因式設為 $cx-b$，因而常數項帶負號，導出 $b \mid a_0$，正文忠實還原原書推導細節。 \\ \hline
+
+\hyperref[note:ch7-cx-plus-d]{§ 7-3 乙 例 5 待定係數式} & 
+第一行待定係數曾印為 $\frac{(x+1)}{x^2-x+1}$ & 
+此處為排版初期手稿殘跡誤植，下文通分展開與聯立方程均為一次式 $Cx+D$，正文依算式邏輯校正為 $Cx+D$ 並加註。 \\ \hline
+
+\hyperref[note:ch7-double-minus]{§ 7-3 乙 例 5 雙負號誤植} & 
+式中印為「$(--2A+B-2C+D)x^2$」 & 
+原書鉛字多排一個減號字模形成「$--$」，正文校正為單一負號「$-2A$」特予備註。 \\ \hline
+
+\hyperref[subsec:7-3-b]{§ 7-3 乙 例 4 連續綜合除法} & 
+多重除以 $x-2$ 之連續階梯狀綜合除法表 & 
+原書以五層梯級綜合除法展開 $(x-2)$ 冪次，正文以規整矩陣線條忠實呈現。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\include{Chapter7}
+
+\end{document}

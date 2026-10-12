@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../styles/preamble.tex}
+\input{../styles/Chinese_math_style.tex}
+\input{../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 1 冊}
+  \fancyhead[L]{\small 第 4 章\quad 一次方程式}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small 第四章\quad 一次方程式}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{第四章\quad 一次方程式}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% =========================================================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則 6 整理於目錄之前）
+% =========================================================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:master_errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第一冊》（高一上）第四章「一次方程式」掃描原件（第 75--105 頁，共 31 頁）完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、代數計算筆誤及歷史理論疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[item:ex4-1-4]{習題 4-1 第 4 題} & 
+「十位與個位數置相換後」 & 
+「數置」顯為「位置」之排印字模訛誤（或「數位」之倒誤），正文保留並加註說明。 \\ \hline
+
+\hyperref[subsec:4-2-b2]{§ 4-2 乙、第二段小標} & 
+第 80 頁已有「乙、一元一次方程式的解法」，第 82 頁重複使用「乙、運用數系的通性去解方程式」 & 
+此為原書小標題層級編號排印之重複瑕疵，正文如實保留原書標題文字，並在此註記。 \\ \hline
+
+\hyperref[item:ex4-2-5-1]{習題 4-2 第 5(i) 題} & 
+式子印為 \texttt{'\{[(5x+8)4+7x]3+9x\}4=5x} & 
+最左側帶有鉛字破損雜點 \texttt{'}，考證其括號層級為標準之大、中、小三層嵌套，剔除雜點並以規範數學乘號排版。 \\ \hline
+
+\hyperref[ex:4-3-3]{§ 4-3 甲 例 3 解法} & 
+「由 $(1)+(2)+(3)$，即得」 & 
+原書例 3 之方程式標籤已編為 $(8), (9), (10)$，此處「$(1)+(2)+(3)$」為向前沿用之筆誤，正文校訂為對應方程之運算。 \\ \hline
+
+\hyperref[ex:4-3-5]{§ 4-3 乙 例 2 討論} & 
+展開誤為 $4a^2-4$，並稱「當 $a=1$ 時，(1)、(2) 式可寫成 $x+y=-1$，故有無窮多組解」 & 
+原書展開漏算 $+4a$（實為 $4a^2+4a-4$）；且當 $a=1$ 時，式 (1) 為 $x+y=-1$，式 (2) 為 $x+y=-\frac{1}{3}$，兩者矛盾無解。正文保留原書文字並於註腳揭示此重大歷史編算訛誤。 \\ \hline
+
+\hyperref[item:ex4-4-1-2]{習題 4-4 第 1(2) 題} & 
+第一式印為 $(x-a)(a+b) = (u-b)(y-a)$ & 
+出現未定義之字母 $u$。依一次方程無交叉項之結構，字母 $u$ 實為 $a$ 字模磨損缺頂之誤（即 $(a-b)(y-a)$），特予備註考證。 \\ \hline
+
+\hyperref[item:ex4-4-1-4]{習題 4-4 第 1(4) 題} & 
+第二式印為 $\frac{x-y}{xy} = i$ & 
+字母 $i$ 實為阿拉伯數字「$1$」之字模印損殘跡（本冊尚未引進複數），解得整潔實數解 $x=1, y=\frac{1}{2}$，正文校補為 $1$。 \\ \hline
+
+\hyperref[thm:cramer3]{§ 4-4 乙 定理 2 後說明} & 
+「若 $\Delta=0$，則上式有解的充分必要條件為 $\Delta_x=\Delta_y=\Delta_z=0$」 & 
+此為中學克拉瑪法則常見之「偽定理」：當三平面平行或兩兩交線互相平行（稜柱形）時，$\Delta=\Delta_x=\Delta_y=\Delta_z=0$ 依然無解。此條件僅為必要條件而非充分條件，特加註考證。 \\ \hline
+
+\hyperref[ex:4-4-5]{§ 4-4 乙 例 3 計算} & 
+解 $x$ 與 $z$ 時中間等式寫成 $\frac{-3}{9} = -\frac{1}{3}$ & 
+分母為 $-9$，分子實為 $+3$，原書將分母負號移至分子但誤寫分母為正，最終答案正確，正文校訂其分母符號。 \\ \hline
+
+\hyperref[sec:ex4-7]{習題 4-7 原書頁首書眉} & 
+原書第 105 頁頁首印為「第四篇 一次方程式」 & 
+「篇」為「章」之排印訛字，重排時統一修正為「第四章」。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter4.tex}
+
+\end{document}

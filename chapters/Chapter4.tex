@@ -1,0 +1,1329 @@
+% =========================================================================
+% 《高中數學實驗教材》第一冊（高一上） 
+% 第四章 一次方程式
+% =========================================================================
+
+\section{一次方程式}\label{sec:ch4}
+
+在小學的算術過程中，同學們都已學過整數和分數的加、減、乘、除這四種基本運算。一般說來，利用這四種基本運算（亦稱為四則運算）可以解答的種種「應用問題」統稱為「四則問題」，例如「龜兔問題」、「年齡問題」、「時鐘問題」、「盈虧問題」等等，相信同學們在小學裏一定做過不少。這些四則問題若能詳加解說，使同學們能確實把握其思路，從而用以訓練思考分析的能力，學起來是有趣的、有益處的。但是往往有許多同學只是去「記公式」，然後模仿地去「套公式」；假如題目稍加變化，就難免有花樣繁多、窮於應付之感了。當同學們在國中的數學課程中學到「一次方程式」後，以前的四則問題用一次方程式去解，可就簡單多了，而且無論題目如何變化，用一次方程式的解法是一致的，直截了當的。同樣是四則問題，為什麼代數的解法就會比算術的解法簡明有力呢？代數解法之所以優於算術解法的基本原理何在？這也就是本章要和同學們詳加討論的課題。
+
+在第一節中，我們先舉些簡單的例子，把「代數的」與「算術的」兩種解法詳加分析比較。然後在第二節中把代數解法的基本原理——亦即「未知數」原理——徹底地加以剖析。因為這個看來簡單平凡的原理，也就是代數學的源起之一。所以同學們千萬要耐心細讀，務求徹底明白這一簡單的基本原理。只有心領神會、瞭若指掌的原理用起來才能得心應手，不是？
+
+\subsection{四則問題與一次方程式的關係}\label{sec:4-1}
+
+下面是幾個簡單的例子，它們的算術解法和代數解法都是同學們在小學和國中裏早已熟習的。我們現在把兩者加以比較分析，用以說明未知數的原理。
+
+\begin{example}\label{ex:4-1-1}
+雞兔同籠，共有 $8$ 個頭，$22$ 隻腳。問有雞幾隻？兔幾隻？
+\end{example}
+
+\paragraph{算術的解法：}
+先假設 $8$ 隻都是兔，則應有腳 $4 \times 8 = 32$ 隻。然後每次用一隻雞去換一隻兔時，腳數相減 $4 - 2 = 2$，而我們的問題就是：「要用幾隻雞去換兔後，腳數才從 $32$ 減到 $22$？」故
+\begin{equation}\label{eq:chicken_rabbit_arith}
+  \text{雞數} = (4 \cdot 8 - 22) \div (4 - 2) = (32 - 22) \div 2 = 5 \dots\dots\dots
+\end{equation}
+
+\paragraph{相對應的代數解法是：}
+令「雞數」為 $x$，則「兔數」為 $8-x$。由此去計算「腳數」，即得下述方程式：
+\begin{equation}\label{eq:chicken_rabbit_alg}
+  2 \cdot x + 4 \cdot (8-x) = 22 \dots\dots\dots
+\end{equation}
+\begin{align*}
+  2x + 4 \cdot 8 - 4x &= 22 \quad \text{〔分配律〕} \\
+  &\Downarrow \quad \text{移項} \\
+  4 \cdot 8 - 22 &= (4 - 2)x \\
+  &\Downarrow \\
+  x &= (4 \cdot 8 - 22) \div (4 - 2) = 5 \dots\dots\dots
+\end{align*}
+
+\paragraph{比較與分析：}
+在代數的解法中，我們引進一符號「$x$」用以表示「雞的數目」。利用它去計算腳數，即得等式 \eqref{eq:chicken_rabbit_alg}（叫做方程式）。然後從等式 \eqref{eq:chicken_rabbit_alg}，我們只要直截了當地運用「分配律」、「移項」等基本法則，即可解「雞數」$x$。再者，假如我們在運用分配律、移項等過程中，暫時不把 $4 \cdot 8$，$(4 \cdot 8 - 22)$ 及 $(4 - 2)$ 等算出來，〔亦即並不把 $4 \cdot 8$ 寫成 $32$，$(4 \cdot 8 - 22)$ 寫成 $10$，$(4 - 2)$ 寫成 $2$〕，只是利用括號把 $x$ 表出，即得
+\begin{equation*}
+  x = (4 \cdot 8 - 22) \div (4 - 2)
+\end{equation*}
+這就是在算術的解法中所用以計算雞數的公式了！
+
+現在再讓我們看看算術解法中，是如何導出上述公式的。在算術中，我們逐步解釋 \eqref{eq:chicken_rabbit_arith} 式中所出現的「量」$4 \cdot 8$，$(4 \cdot 8 - 22)$ 及 $(4 - 2)$ 如下：
+\begin{align*}
+  4 \cdot 8 &= \text{假如 $8$ 隻全是兔所應有的腳數.} \\
+  4 \cdot 8 - 22 &= \text{「$8$ 隻全是兔的腳數」和「現有腳數」的差額.} \\
+  4 - 2 &= \text{每次以「一隻雞」換「一隻兔」所產生的腳數差.}
+\end{align*}
+最後，$\text{雞數} = \text{所需「替換」的次數} = (4 \cdot 8 - 22) \div (4 - 2)$。
+
+由上述分析，同學們可以看出兩種解法間的異同與關係如下：
+\begin{enumerate}[(i)]
+  \item 代數中所依據的等式 \eqref{eq:chicken_rabbit_alg} 是腳數為 $22$ 的直接表示法，其中因為雞數是我們所要求取的未知數，所以只是用一個簡單的符號「$x$」代表之。然後由 \eqref{eq:chicken_rabbit_alg} 式，可以利用分配律、移項等基本法則，直截了當地導出 \eqref{eq:chicken_rabbit_arith} 式。解出 $x = 5$。
+  \item 算術中所依據的是公式 \eqref{eq:chicken_rabbit_arith}，但是為了說明為什麼可以用公式 \eqref{eq:chicken_rabbit_arith} 去算出雞數，我們不得不逐步把公式中的每一步計算「找出」一個理由去解釋，這有時是頗費周折的。\footnote{假如同學們要追問算術中的公式 \eqref{eq:chicken_rabbit_arith} 是怎樣「想到的」？這裡有兩個答案：一個是教算術的老師用上述「一次方程式」的方法由 \eqref{eq:chicken_rabbit_alg} 式導出 \eqref{eq:chicken_rabbit_arith} 式，但是因為小學生沒學過「代數」，所以再逐步的把 \eqref{eq:chicken_rabbit_arith} 的量加以分析，解釋給小學生聽。另外一個答案可以叫做實驗歸納法，做題目的人可能用下面的想法：\\
+  假如沒有雞，則有 $8$ 隻兔，腳數應該是 $8 \times 4 = 32$ 隻，\\
+  假如只有一隻雞，則有 $7$ 隻兔，腳數應該是 $1 \times 2 + 7 \times 4 = 30$ 隻，（太多）\\
+  假如是 $2$ 隻雞，則有 $6$ 隻兔，共有腳 $2 \times 2 + 6 \times 4 = 28$ 隻，（也太多）\\
+  假如是 $3$ 隻雞，則有 $5$ 隻兔，共有腳 $3 \times 2 + 5 \times 4 = 26$ 隻，\\
+  假如是 $4$ 隻雞，則有 $4$ 隻兔，共有腳 $4 \times 2 + 4 \times 4 = 24$ 隻，\\
+  假如是 $5$ 隻雞，則有 $3$ 隻兔，共有腳 $5 \times 2 + 3 \times 4 = 22$ 隻，恰好。所以共有 $5$ 隻雞，$3$ 隻兔。但是仔細觀察上面計算，我們發現腳數自 $32, 30, 28, \dots, 24, 22$，慢慢自 $32$ 每次減 $2$，得到 $22$。這個事實用心去想，便能得到公式 \eqref{eq:chicken_rabbit_arith} 了。}
+\end{enumerate}
+
+\begin{example}\label{ex:4-1-2}
+父年是子年的 $5$ 倍，$6$ 年後父年為子年的 $3$ 倍，問父子現在各幾歲？
+\end{example}
+
+\paragraph{代數解法：}
+令「子年」為 $x$，則父年為 $5x$，$6$ 年後子年為 $x+6$，父年為 $5x+6$ 故有
+\begin{equation}\label{eq:father_son_alg}
+  3 \cdot (x+6) = 5x+6 \quad \text{（亦即：$6$ 年後父年為子年的 $3$ 倍）} \dots\dots\dots
+\end{equation}
+\begin{align*}
+  &\Downarrow \quad \text{分配律} \\
+  3x + 3 \cdot 6 &= 5x + 6 \\
+  &\Downarrow \quad \text{移項} \\
+  (3 \cdot 6 - 6) &= (5 - 3) \cdot x \\
+  &\Downarrow \\
+  \text{子年} &= (3 \cdot 6 - 6) \div (5 - 3) = 6 \dots\dots\dots \label{eq:father_son_arith} \\
+  \text{父年} &= 5 \cdot 6 = 30 \text{。}
+\end{align*}
+
+\paragraph{算術解法：}
+一如前面的例子，我們要把它由 \eqref{eq:father_son_alg} 所導出的式子中的「量」逐一加以解釋如下：
+
+假如從「$6$ 年後的父年」減去 $3 \cdot 6$ 歲，即得「子現年」的 $3$ 倍。也就是說從「父現年」減去 $(3 \cdot 6 - 6)$ 歲，即得「子現年」的 $3$ 倍，但是「父現年」是「子現年」的 $5$ 倍，故 $(3 \cdot 6 - 6)$ 恰為子現年的 $(5 - 3)$ 倍，即
+\begin{equation*}
+  \text{子年} = (3 \cdot 6 - 6) \div (5 - 3) = 6
+\end{equation*}
+
+同學們看得懂上面的「解釋」沒有？如果不懂，請不要灰心，看一看下面我們所作的剖析。
+
+$6$ 年後的子年的 $3$ 倍，包括兩部份：
+\begin{enumerate}[(1)]
+  \item 子現年的 $3$ 倍和
+  \item $6 \times 3 = 18$。
+\end{enumerate}
+
+$6$ 年後的父年也包括兩部份：
+\begin{enumerate}[$(1')$]
+  \item 現在子年的 $5$ 倍和
+  \item $6$。
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.88, >=latex]
+  % 第一行：子現年 3 倍 + 18
+  \foreach \i in {0, 1, 2} {
+    \draw[thick] (\i*2.2, 1.8) rectangle ++(2.0, 0.7);
+    \node at (\i*2.2+1.0, 2.15) {\small 子現年};
+  }
+  % 虛線分割與延伸
+  \draw[thick, densely dashed] (6.6, 1.8) -- (6.6, 2.5);
+  % 上方 18 的尺寸標註
+  \draw[|<->|, thick] (6.6, 2.85) -- (12.2, 2.85) node[midway, fill=white] {\small $18$};
+  % 下方 12 與 6 的尺寸標註
+  \draw[|<->|, thick] (6.6, 1.3) -- (10.4, 1.3) node[midway, fill=white] {\small $12$};
+  \draw[|<->|, thick] (10.4, 1.3) -- (12.2, 1.3) node[midway, fill=white] {\small $6$};
+  
+  % 第二行：子現年 5 倍 + 6
+  \foreach \i in {0, 1, 2, 3, 4} {
+    \draw[thick] (\i*2.2, 0) rectangle ++(2.0, 0.7);
+    \node at (\i*2.2+1.0, 0.35) {\small 子現年};
+  }
+  % 虛線分割
+  \draw[thick, densely dashed] (11.0, 0) -- (11.0, 0.7);
+  % 最右側 6 的尺寸標註
+  \draw[|<->|, thick] (10.4, -0.45) -- (12.2, -0.45) node[midway, fill=white] {\small $6$};
+  
+  % 垂直輔助對齊虛線
+  \draw[gray, dotted] (6.6, 2.9) -- (6.6, -0.5);
+  \draw[gray, dotted] (10.4, 1.4) -- (10.4, -0.5);
+  \draw[gray, dotted] (12.2, 2.9) -- (12.2, -0.5);
+\end{tikzpicture}
+\caption{年齡問題之圖解算術}\label{fig:age_diagram}
+\end{figure}
+
+由\cref{fig:age_diagram}，可以看出子現年就是 $12 \div 2 = 6$。上面的解法，在小學中叫做圖解算術。同學們可以注意到，利用圖解算術，事實上便相當於解方程式。這也是為什麼利用圖解方法，往往可以很清楚地解決四則問題的原因。
+
+從上面二個簡單的例子，同學們可以看出，在代數的解法上，「年齡問題」和「雞兔問題」可以說毫無分別，直截了當。但是算術的解法卻得一步步地依題意找「解釋」，相互比較下，顯然代數的解法遠較算術的解法直截而且簡明，在習題中，我們將列舉許多其他類型的「四則問題」，讓同學們自行比較分析兩種解法，這是一種有趣的練習。
+
+\subsection*{習題 4-1}\label{sec:ex4-1}
+\addcontentsline{toc}{subsection}{習題 4-1}
+
+\begin{enumerate}[1.]
+  \item 甲乙兩人共有 $100$ 元，甲比乙多 $28$ 元，問甲、乙各有多少錢？
+  \item 某數加 $5$ 後乘 $4$ 再減 $2$，等於這個數的 $7$ 倍，試求這個數。
+  \item 在溫度計上，華氏與攝氏所示度數相同的溫度是幾度？
+  \item 有一個二位數，它的十位數字加上 $1$ 為個位數的兩倍，十位與個位數置相換後\footnote{此處「數置」實為「位置」之排印訛字，見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}，得一新數，舊數比新數大 $18$，問原來數是多少？\label{item:ex4-1-4}
+  \item 某班男女同學共有 $45$ 人，在某次考試中全班平均分數是 $72$ 分，男生的平均分數是 $70$ 分，女生的平均分數是 $75$ 分，求男生、女生各有多少人？
+  \item 用算數及代數兩種方法做下面的題目。\\
+  四點鐘到五點鐘之間，什麼時候時針與分針 (1) 重合，(2) 成直角，(3) 成直線。
+  \item[$*7.$] 某人放款 $5000$ 元，其一部分的利率為 $6\%$，另一部分是 $4\%$，平均利率為 $5\frac{1}{2}\%$，問這兩部份各多少？（代數與算術兩種方法）。
+\end{enumerate}
+
+\subsection{「未知數」原理——數系通性的應用}\label{sec:4-2}
+
+\subsubsection*{甲、為什麼用一次方程式去解四則問題就遠比算術的解法來得簡單明瞭呢？}\label{subsec:4-2-a}
+
+從表面上看來，好像只是因為在代數的解法中我們引入了「未知數」（通常用 $x$、$y$、$z$ 表之）。因此如果不去仔細分析深究，也許有人就會說：「代數之所以優於算術，是因為代數中有了『未知數』$x$、$y$、$z$ 這些符號的幫助。」這一點雖然不錯，但卻不是根本的原因。譬如在例 1 中用 $x$ 表示「雞數」，這只是一個簡寫，筆劃少些。$x$、$y$、$z$，這些符號本身並無任何神妙之處。再者，當我們引進「未知數」後，按題意去列出方程式（如例 1 中的式子，例 2 中的式子）。這也是利用符號把題義加以翻譯而已。換句話說，方程式只是把題目本身用簡單的符號寫成「看起來清楚些的式子」罷了！代數解法的真正關鍵在於「可以從方程式去解出未知數」這一點上！而且這種解法是直截了當的，簡單明瞭的。
+
+那麼從方程式去解出未知數的原理何在呢？這也就是我們在第一節要和大家仔細討論的。簡括來說：引入未知數，從方程式去解題的基本原理在於活用上一章中向大家介紹的數系基本性質。
+
+\subsubsection*{乙、一元一次方程式的解法}\label{subsec:4-2-b}
+
+一元一次方程式是代數方程式中最簡單的，它們的解法，同學們業已在國中代數課程中學過。（方程式的「元」數和「次」數的意義，也是在國中代數即已教過的，但在本書第五章中將再加解釋。）我們在這裏和大家討論其解法的原理。
+
+譬如我們由某一問題，得出下列方程式：
+\begin{equation}\label{eq:linear_demo_1}
+  2 \left[ \frac{1}{3} (2x-5) - 9x(4-3) \right] - 15 = 100 - 20x \dots\dots\dots
+\end{equation}
+上述算式叫一個小學生去做可能有些棘手。因為老師教他的是先算小括號，再算中括號，……等。而現在有一個小括號是 $(2x-5)$，它是算不出來的，因而也就沒辦法和 $\frac{1}{3}$ 相乘，以下更是無從著手了。那麼為什麼中學生就有辦法去算上述算式，而且從而可以解出「$x=?$」呢？說穿了是簡單不過的：
+
+\begin{quote}
+「『$x$』雖然是個未知數，一個我們不知道它等於多少的數。但是只要它是一個「數」，它在運算上就滿足上一章所列述的如分配律、結合律、交換律這些基本通性，因為這些基本性質是對任何數都成立的！」
+\end{quote}
+
+所以我們不去管 $(2x-5)$ 等於多少！
+\begin{equation*}
+  \frac{1}{3}(2x-5) = \frac{1}{3} \cdot 2 \cdot x - \frac{1}{3} \cdot 5 = \frac{2}{3}x - \frac{5}{3}
+\end{equation*}
+總是成立！所以我們只要懂得去活用有理數系中那些看來又簡單又平凡的基本通性，我們就不再擔心某些小括號或中括號算不出來了。譬如上述 \eqref{eq:linear_demo_1} 式就可逐步化簡成
+\begin{equation}\label{eq:linear_demo_2}
+  \frac{4}{3}x - \frac{10}{3} - 18x - 15 = 100 - 20x \dots\dots\dots
+\end{equation}
+（請同學們檢查一下上述化簡過程中用到那些基本性質）。
+
+將 \eqref{eq:linear_demo_2} 式再加上「移項」和「集項」\footnote{移項的原理在於：「等式兩端同加一數，則所得者依然為一等式。」「集項時我們用了加法交換律和分配律。」}，即得
+\begin{equation*}
+  \left( \frac{4}{3} - 18 + 20 \right) x = 100 + 15 + \frac{10}{3}
+\end{equation*}
+即
+\begin{equation*}
+  \frac{10}{3}x = \frac{355}{3}
+\end{equation*}
+故可解得
+\begin{equation*}
+  x = \frac{71}{2} \text{。}
+\end{equation*}
+
+\subsubsection*{乙、運用數系的通性去解方程式}\label{subsec:4-2-b2}
+
+說明了是一個淺顯而自然的方法，正因為這種解法直接而自然，它是一個簡明的好方法，這裏有一個還算恰當的譬喻：用算術的解法去解四則問題有如練了好些套「花拳繡腿」，演來招式繁多，但是不切實際。而利用數系的通性，列方程式去解四則題，則有如關公的青龍偃月刀，簡單明瞭地砍個正著，過關斬將一切也就迎刃而解了。再者，我們要提醒大家，在一次方程式中，只可以說是數系通性的牛刀小試，它們的妙用還多著呢？希望同學們隨時對這些簡潔的數系通性的種種用法多加注意，用心去體會。
+
+\subsection*{習題 4-2}\label{sec:ex4-2}
+\addcontentsline{toc}{subsection}{習題 4-2}
+
+\begin{enumerate}[1.]
+  \item 如果 $ax+b=cx+d$，在 $x=x_1$ 和 $x=x_2$ ($x_1 \neq x_2$) 時都成立。那麼 $a=c$，$b=d$。
+  \item $a, b, c, d$ 是不同的實數，解下列各方程式：
+  \begin{enumerate}[(i)]
+    \item $ax+c=bx+d$。
+    \item $a(x+b)-b(x+a)=a^2-b^2$。
+  \end{enumerate}
+  \item 如果 $x=-\frac{1}{2}$ 是方程式 $\frac{a(x+2)}{3} - \frac{2-ax}{4} = -2$ 的根，求 $a$。
+  \item 試證一數之一半加上 $a$，除以 $n$，減掉 $\frac{1}{n}$，乘 $2n$，再減 $2a-2$，就是原數。
+  \item 解下列方程式：
+  \begin{enumerate}[(i)]
+    \item $\{ [ (5x+8) \cdot 4 + 7x ] \cdot 3 + 9x \} \cdot 4 = 5x$。\label{item:ex4-2-5-1}
+    \item $5 [ 3x - 9(5x+7) ] - 6x = 2$。
+  \end{enumerate}
+  \item $a, b, c$ 是不等於 $0$ 的實數，解下列各方程式：
+  \begin{enumerate}[(i)]
+    \item $\dfrac{x+a}{b} - \dfrac{x-b}{a} = 2$。
+    \item $\dfrac{x-a}{bc} - \dfrac{x+c}{ab} = \dfrac{2(b-c)}{ab} - \dfrac{x+b}{ac}$。
+    \item $\dfrac{x}{a-b} = \dfrac{x-b}{a}$，($a \neq b$)。
+  \end{enumerate}
+  \item 試解 $(a+2)(a-5)x = a+11-12(x+1)$。\\
+  （提示：須分成 (i) $a \neq 1, a \neq 2$ \quad (ii) $a=1$ \quad (iii) $a=2$ 三種情形討論）
+  \item 某生計算方程式 $6x+10=9x+15$。依下列步驟，
+  \begin{align*}
+    2(3x+5) &= 3(3x+5) \\
+    2 &= 3
+  \end{align*}
+  得到矛盾，請找出錯誤。
+\end{enumerate}
+
+\subsection{二元、三元一次聯立方程式}\label{sec:4-3}
+
+當未知數不只是一個時，我們即得多元方程式。一般說來，方程式的個數和未知數的個數常常是相等的。在這一節中我們將把上節所提出的原理，進一步來討論如何來解二元、三元聯立方程式。（多元一次聯立方程式的一般性理論，將留待高三下和行列式的理論一併討論。）首先，讓我們來看幾個例子：
+
+\subsubsection*{甲、聯立方程式的實例}\label{subsec:4-3-a}
+
+\begin{example}\label{ex:4-3-1}
+雞兔同籠，共有 $8$ 個頭，$22$ 隻腳。問有雞幾隻？兔幾隻？
+\end{example}
+
+這一題我們在一元一次方程式那一節業已詳加討論。那時候我們的解法，是令雞數為 $x$，而將兔數算出為 $8-x$。
+
+對於上述問題一個更自然更直接的解法是令雞數為 $x$，兔數為 $y$，則由「頭數為 $8$」及「腳數為 $22$」兩個條件，分別得下列兩個方程式，即
+\begin{equation}\label{eq:sim_cr_1}
+  x+y = 8 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:sim_cr_2}
+  2x+4y = 22 \dots\dots\dots
+\end{equation}
+假如將 $\eqref{eq:sim_cr_1} \cdot 4 - \eqref{eq:sim_cr_2}$，即得
+\begin{align*}
+  (4-2)x &= 4 \cdot 8 - 22 \\
+  x &= (4 \cdot 8 - 22) \div (4-2)
+\end{align*}
+這便是 \S 4-1 例 1 中的算式。
+
+譬如我們把上述題目改成下列「奇禽怪獸同籠」問題如下：
+
+\begin{example}\label{ex:4-3-2}
+有「九頭奇禽」和「四頭怪獸」同籠，共有頭 $75$ 個，腳 $26$ 個。問有九頭奇禽幾隻？四頭怪獸幾隻？\footnote{「九頭奇禽」顧名思義乃是九頭兩腳的一種飛禽，而「四頭怪獸」應當是一種「四頭四腳」的走獸。這樣的奇禽怪獸相信大家都沒見過，但為了舉例說明起見，做幾個塑膠的，想必不難。}
+\end{example}
+
+\begin{solution*}
+上述例題和雞兔同籠問題完全屬於同一類型。例如用二元一次聯立方程式去解，我們只要令禽數為 $x$，獸數為 $y$。則有
+\begin{equation}\label{eq:monster_1}
+  9x+4y = 75 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:monster_2}
+  2x+4y = 26 \dots\dots\dots
+\end{equation}
+當然我們可以先由 \eqref{eq:monster_1} 式解出 $y$（或 $x$），用以代入 \eqref{eq:monster_2} 式，即得一個一元一次方程式
+\begin{equation}\label{eq:monster_sub}
+  2x + 4 \left( \frac{75-9x}{4} \right) = 26 \dots\dots\dots
+\end{equation}
+從 \eqref{eq:monster_sub} 式化簡，即得
+\begin{equation*}
+  2x - 9x = 26 - 75
+\end{equation*}
+即
+\begin{equation*}
+  -7x = -49
+\end{equation*}
+故
+\begin{equation}\label{eq:monster_sol_x}
+  x = \frac{-49}{-7} = 7 \dots\dots\dots
+\end{equation}
+將 $x=7$ 代入 \eqref{eq:monster_2} 式，即得
+\begin{equation*}
+  14 + 4y = 26
+\end{equation*}
+即
+\begin{equation*}
+  4y = 12
+\end{equation*}
+故
+\begin{equation}\label{eq:monster_sol_y}
+  y = \frac{12}{4} = 3 \dots\dots\dots
+\end{equation}
+但是和前例一樣，上述聯立方程式 \eqref{eq:monster_1} 和 \eqref{eq:monster_2} 的更直接更簡便的解法是將 \eqref{eq:monster_1} 式減去 \eqref{eq:monster_2} 式，即可「消去 $y$」：
+\begin{equation*}
+\begin{array}{r@{\quad}l}
+  & 9x + 4y = 75 \\
+  -) & 2x + 4y = 26 \\ \hline
+  & 7x + 0y = 49
+\end{array}
+\end{equation*}
+馬上就得出 $x=7, y=3$。
+\end{solution*}
+
+\begin{example}\label{ex:4-3-3}
+有九頭奇禽和雞兔同籠，共有頭 $26$ 個，尾 $10$ 條，腳 $30$ 隻。問有九頭奇禽幾隻？雞幾隻？兔幾隻？（按：它們都是單尾動物）。
+\end{example}
+
+\begin{solution*}
+令九頭禽之數為 $x$，雞數為 $y$，兔數為 $z$，則有
+\begin{equation}\label{eq:three_var_1}
+  9x + y + z = 26 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:three_var_2}
+  x + y + z = 10 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:three_var_3}
+  2x + 2y + 4z = 30 \dots\dots\dots
+\end{equation}
+將 \eqref{eq:three_var_1} 式和 \eqref{eq:three_var_2} 式相減\footnote{原書印為「由 $(1)+(2)+(3)$，即得」，實為標籤沿用筆誤，應為 \eqref{eq:three_var_1} 與 \eqref{eq:three_var_2} 兩式運算，見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}，即得
+\begin{equation*}
+  9x - x = 26 - 10 \text{，}
+\end{equation*}
+即
+\begin{equation*}
+  8x = 16 \text{，} \quad \text{故 } x=2 \text{。}
+\end{equation*}
+由 $\eqref{eq:three_var_3} - 2 \times \eqref{eq:three_var_2}$，即得
+\begin{equation*}
+  4z - 2z = 30 - 20 \text{，}
+\end{equation*}
+即
+\begin{equation*}
+  2z = 10 \text{，} \quad \text{故 } z=5 \text{。}
+\end{equation*}
+將 $x=2, z=5$ 代入 \eqref{eq:three_var_2} 式，即得
+\begin{equation*}
+  2 + y + 5 = 10 \text{，}
+\end{equation*}
+即
+\begin{equation*}
+  y = 10 - 2 - 5 \text{，} \quad \text{故 } y=3 \text{。}
+\end{equation*}
+所以有九頭奇禽 $2$ 隻，雞 $3$ 隻，兔 $5$ 隻。
+\end{solution*}
+
+\subsection*{習題 4-3}\label{sec:ex4-3}
+\addcontentsline{toc}{subsection}{習題 4-3}
+
+\begin{enumerate}[1.]
+  \item 甲、乙合做一項工程，十天可以完成，兩人合做 $7$ 天後，甲因病休工，乙再獨做 $5$ 天才完工，問兩人單獨工作，各需要幾天才可以做完？
+  \item 某班男女同學共有 $45$ 人，統計了戴眼鏡的情形，發現下列事實，即女同學中有 $\frac{1}{4}$ 戴眼鏡，男同學有 $\frac{1}{7}$，全班共有 $\frac{1}{5}$ 的同學戴眼鏡，問戴眼鏡的男女同學各有多少人？
+  \item 少棒隊甲、乙兩隊各與丙隊比賽 $26$ 場，甲隊贏丙隊的場數是乙隊贏丙隊的三倍，乙隊輸給丙隊的場數是甲隊輸給丙隊的 $9$ 倍，試問甲、乙隊各贏丙隊幾場？
+  \item 某河上橫跨一橋，由上游垂直划來兩船，船速都是每秒 $3$ 尺，第一艘船長 $20$ 尺，從橋的一側划到另一側需時 $10$ 秒，另一艘船長 $14$ 尺，需要 $8\frac{1}{2}$ 秒，划到另一側，問橋寬和水流的速度。
+  \item 要合成 $40\%$ 的食鹽水 $900$ 公升，需要 $15\%$ 和 $60\%$ 的食鹽水各幾公升？
+  \item 一室中有男女一羣，從男子眼中看去，女人比男人少一人，從女子眼中看去，男人比女人多一倍，問男女各多少人？
+  \item 犬走 $4$ 步，兔走 $5$ 步，而犬走 $2$ 步的距離，等於兔走 $3$ 步，兔先走 $100$ 步後，犬由後追兔，問犬追幾步，才能追到？
+  \item 有一工程，如甲、乙、丙三人合作，$10$ 天可成，如乙、丙合作，$15$ 天可成，如甲做 $15$ 天，餘下由丙來做，要再 $30$ 天才做成，問甲、乙、丙獨做，各需幾天完成？
+\end{enumerate}
+
+\subsubsection*{乙、二元一次聯立方程式的解法}\label{subsec:4-3-b}
+
+二元一次聯立方程式經過化簡後，可以寫成下列型式：
+\begin{equation}\label{eq:2var_gen_1}
+  a_1 x + b_1 y = c_1 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:2var_gen_2}
+  a_2 x + b_2 y = c_2 \dots\dots\dots
+\end{equation}
+在國中代數裏，我們即已學過上列聯立方程式的兩種解法：「代入法」和「消去法」。
+
+\paragraph{代入法：}
+代入法是從一式解出 $x$（或 $y$）代入另一式，即得一個 $y$（或 $x$）的一元一次方程式，從而解得 $y$（或 $x$）。再將解得的 $y$（或 $x$）代入兩式之一，即可解得 $x$（或 $y$）。以上述普遍型式為例，即由 \eqref{eq:2var_gen_1} 式解出 $x$，得
+\begin{equation*}
+  x = \frac{c_1 - b_1 y}{a_1} \quad \text{（當然要在 $a_1 \neq 0$ 時才可以這樣做）}
+\end{equation*}
+代入 \eqref{eq:2var_gen_2} 式，得
+\begin{equation*}
+  a_2 \left( \frac{c_1 - b_1 y}{a_1} \right) + b_2 y = c_2 \text{。}
+\end{equation*}
+化簡後，即得
+\begin{equation*}
+  (a_1 b_2 - a_2 b_1) y = a_1 c_2 - a_2 c_1 \text{。}
+\end{equation*}
+當 $(a_1 b_2 - a_2 b_1) \neq 0$ 時，即得
+\begin{equation*}
+  y = \frac{a_1 c_2 - a_2 c_1}{a_1 b_2 - a_2 b_1} \text{。}
+\end{equation*}
+將上述 $y$ 的值代入 \eqref{eq:2var_gen_1} 式，即得
+\begin{equation*}
+  a_1 x + b_1 \cdot \frac{a_1 c_2 - a_2 c_1}{a_1 b_2 - a_2 b_1} = c_1 \text{。}
+\end{equation*}
+通分後，成
+\begin{align*}
+  a_1 (a_1 b_2 - a_2 b_1) x &= c_1 \cdot (a_1 b_2 - a_2 b_1) - b_1 \cdot (a_1 c_2 - a_2 c_1) \\
+  &= c_1 a_1 b_2 - c_1 a_2 b_1 - b_1 a_1 c_2 + b_1 a_2 c_1 \\
+  &= a_1 (c_1 b_2 - c_2 b_1) \text{。}
+\end{align*}
+故有
+\begin{equation*}
+  x = \frac{c_1 b_2 - c_2 b_1}{a_1 b_2 - a_2 b_1} \text{。}
+\end{equation*}
+
+\paragraph{消去法：}
+由 $a_2 \cdot \eqref{eq:2var_gen_1} - a_1 \cdot \eqref{eq:2var_gen_2}$，即可消去 $x$。即
+\begin{equation*}
+\begin{array}{r@{\quad}l}
+  & a_2 \cdot a_1 x + a_2 \cdot b_1 y = a_2 \cdot c_1 \\
+  -) & a_1 \cdot a_2 x + a_1 \cdot b_2 y = a_1 \cdot c_2 \\ \hline
+  & (a_2 b_1 - a_1 b_2) y = a_2 c_1 - a_1 c_2
+\end{array}
+\end{equation*}
+如 $(a_2 b_1 - a_1 b_2) \neq 0$ 時，即得
+\begin{equation*}
+  y = \frac{a_2 c_1 - a_1 c_2}{a_2 b_1 - a_1 b_2} = \frac{a_1 c_2 - a_2 c_1}{a_1 b_2 - a_2 b_1} \text{。}
+\end{equation*}
+同理，由 $b_2 \cdot \eqref{eq:2var_gen_1} - b_1 \cdot \eqref{eq:2var_gen_2}$，即可消去 $y$，得
+\begin{equation*}
+  x = \frac{c_1 b_2 - c_2 b_1}{a_1 b_2 - a_2 b_1} \text{。}
+\end{equation*}
+
+由上述討論可知，當 $a_1 b_2 - a_2 b_1 \neq 0$ 時，聯立方程式
+\begin{equation*}
+\begin{cases}
+  a_1 x + b_1 y = c_1 \\
+  a_2 x + b_2 y = c_2
+\end{cases}
+\end{equation*}
+的解，可由下述公式寫出，即
+\begin{equation}\label{eq:2var_cramer_formula}
+\begin{cases}
+  x = \dfrac{c_1 b_2 - c_2 b_1}{a_1 b_2 - a_2 b_1} \\[1.2em]
+  y = \dfrac{a_1 c_2 - a_2 c_1}{a_1 b_2 - a_2 b_1}
+\end{cases}
+\end{equation}
+
+\begin{example}\label{ex:4-3-4}
+解聯立方程式
+\begin{equation}\label{eq:ex_2var_1}
+  2x + 3y = 7 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:ex_2var_2}
+  3x - 2y = 5 \dots\dots\dots
+\end{equation}
+\end{example}
+
+\begin{solution*}
+用代入法：由 \eqref{eq:ex_2var_1} 得 $x = \frac{7-3y}{2}$，代入 \eqref{eq:ex_2var_2}
+\begin{equation*}
+  3 \cdot \left( \frac{7-3y}{2} \right) - 2y = 5
+\end{equation*}
+即
+\begin{equation*}
+  21 - 13y = 10
+\end{equation*}
+所以
+\begin{equation*}
+  y = \frac{11}{13}
+\end{equation*}
+代入 \eqref{eq:ex_2var_1} 解出
+\begin{equation*}
+  x = \frac{29}{13} \text{。}
+\end{equation*}
+
+再用消去法：
+\begin{equation*}
+  \eqref{eq:ex_2var_1} \times 3 - \eqref{eq:ex_2var_2} \times 2 \qquad 13y = 11
+\end{equation*}
+所以
+\begin{equation*}
+  y = \frac{11}{13} \text{。}
+\end{equation*}
+\end{solution*}
+
+\begin{example}\label{ex:4-3-5}
+試解
+\begin{equation}\label{eq:ex_param_1}
+  (a-3)x - 2y = 2a \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:ex_param_2}
+  3x + (2a+1)y = a-2 \dots\dots\dots
+\end{equation}
+並就 $a$ 的值討論之。
+\end{example}
+
+\begin{solution*}
+$\eqref{eq:ex_param_1} \cdot (2a+1) + \eqref{eq:ex_param_2} \cdot 2$
+\begin{equation*}
+  (2a^2 - 5a + 3)x = 4a^2 - 4 \footnote{此處原書展開計算訛誤：常數項實為 $2a(2a+1)+2(a-2) = 4a^2+4a-4$，原書脫漏 $+4a$，導致後續對 $a=1$ 之討論產生謬誤，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}
+\end{equation*}
+\begin{equation*}
+  \therefore \quad (2a-3)(a-1)x = 4(a+1)(a-1)
+\end{equation*}
+$\eqref{eq:ex_param_1} \cdot 3 - \eqref{eq:ex_param_2} \cdot (a-3)$
+\begin{equation*}
+  (2a^2 - 5a + 3)y = -(a^2 + 5a - 6)
+\end{equation*}
+\begin{equation*}
+  \therefore \quad (2a-3)(a-1)y = -(a+6)(a-1)
+\end{equation*}
+
+當 $(2a-3)(a-1) \neq 0$ 時，有一組解
+\begin{equation*}
+\begin{cases}
+  x = \dfrac{4(a+1)(a-1)}{(2a-3)(a-1)} \\[1.2em]
+  y = \dfrac{-(a+6)(a-1)}{(2a-3)(a-1)}
+\end{cases}
+\end{equation*}
+
+當 $a=1$ 時，\eqref{eq:ex_param_1}、\eqref{eq:ex_param_2} 式可寫成 $x+y=-1$，故有無窮多組解。\footnote{原書此處斷定「有無窮多組解」，實為前述計算錯誤所致之矛盾結論。事實上當 $a=1$ 時，原方程 \eqref{eq:ex_param_1} 化為 $x+y=-1$，而 \eqref{eq:ex_param_2} 化為 $3x+3y=-1 \implies x+y=-\frac{1}{3}$，兩者矛盾無解。}
+
+當 $a = \frac{3}{2}$ 時，\eqref{eq:ex_param_1}、\eqref{eq:ex_param_2} 式變成
+\begin{equation*}
+\begin{cases}
+  3x+4y = -6 \\
+  3x+4y = -\dfrac{7}{2} \text{，}
+\end{cases}
+\quad \text{故無解。}
+\end{equation*}
+\end{solution*}
+
+\subsection*{習題 4-4}\label{sec:ex4-4}
+\addcontentsline{toc}{subsection}{習題 4-4}
+
+\begin{enumerate}[1.]
+  \item 解下列聯立方程式，並討論之。
+  \begin{enumerate}[(1)]
+    \item 
+    $\begin{cases}
+      ax+by = c \\
+      px = qy
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      (x-a)(a+b) = (u-b)(y-a) \\
+      \dfrac{x}{a^3-b^3} = \dfrac{y}{a^3+b^3}
+    \end{cases}$\footnote{原書第一式中印為 $(u-b)$，顯為英文字母 $a$ 字模殘損缺頂所致，或為 $(a-b)(y-a)$ 之排印訛植，見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}\label{item:ex4-4-1-2}
+    \item 
+    $\begin{cases}
+      \left(\dfrac{1}{a}+\dfrac{1}{b}\right)x + \left(\dfrac{1}{a}-\dfrac{1}{b}\right)y = 4 \\
+      \dfrac{x}{a+b} + \dfrac{y}{a-b} = 2
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      \dfrac{x+y}{xy} = 3 \\
+      \dfrac{x-y}{xy} = 1
+    \end{cases}$\footnote{原書第二式印為 $\frac{x-y}{xy} = i$，實為阿拉伯數字「$1$」之字模印損殘跡，非虛數單位 $i$，見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}\label{item:ex4-4-1-4}
+    \item 
+    $\begin{cases}
+      \dfrac{x+y}{3} + \dfrac{y-x}{2} = 5 \\
+      \dfrac{x}{2} + \dfrac{x+y}{9} = 7
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      \dfrac{x-y}{x+y} = \dfrac{m-n}{m+n} \quad (m+n \neq 0) \text{。} \\
+      nx + my = 1
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      2y = 2 \\
+      4x + \dfrac{1}{y} = 3
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      \dfrac{x}{2} + \dfrac{y}{3} = 1+x \\
+      \dfrac{x}{3} + \dfrac{y}{2} = 1+y
+    \end{cases}$
+  \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{丙、三元一次聯立方程式}\label{subsec:4-3-c}
+
+一個三元一次聯立方程式，經過化簡後，可以寫成下列型式：
+\begin{equation}\label{eq:3var_gen_1}
+  a_1 x + b_1 y + c_1 z = d_1 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3var_gen_2}
+  a_2 x + b_2 y + c_2 z = d_2 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3var_gen_3}
+  a_3 x + b_3 y + c_3 z = d_3 \dots\dots\dots
+\end{equation}
+同樣地，我們也可以有代入法和消去法這兩種解法，譬如我們由 \eqref{eq:3var_gen_1} 式解出 $x = \frac{d_1 - b_1 y - c_1 z}{a_1}$，代入 \eqref{eq:3var_gen_2}、\eqref{eq:3var_gen_3} 兩式，化簡後，即得只含有 $y$、$z$ 的二元聯立方程式，然後再用二元聯立方程式的解法求出 $y$、$z$ 來，再代入上式即得 $x$，這就是代入法。但是通常在計算中，代入法往往不如消去法來得簡便，所以三元以上的聯立方程式，我們通常都用消去法直接去解。消去法的一般討論留待下節，現在舉些例子說明如下：
+
+\begin{example}\label{ex:4-3-6}
+解聯立方程式
+\begin{equation}\label{eq:3var_ex1_1}
+  x+y = 10 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3var_ex1_2}
+  y+z = -2 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3var_ex1_3}
+  z+x = 2 \dots\dots\dots
+\end{equation}
+\end{example}
+
+\begin{solution*}
+由 $\eqref{eq:3var_ex1_1} + \eqref{eq:3var_ex1_2} + \eqref{eq:3var_ex1_3}$，即得
+\begin{equation*}
+  2 \cdot (x+y+z) = 10
+\end{equation*}
+即
+\begin{equation}\label{eq:3var_ex1_sum}
+  x+y+z = 5 \dots\dots\dots
+\end{equation}
+$\eqref{eq:3var_ex1_sum} - \eqref{eq:3var_ex1_1}$，即得 $z=-5$。\\
+$\eqref{eq:3var_ex1_sum} - \eqref{eq:3var_ex1_2}$，即得 $x=7$。\\
+$\eqref{eq:3var_ex1_sum} - \eqref{eq:3var_ex1_3}$，即得 $y=3$。
+\end{solution*}
+
+\begin{example}\label{ex:4-3-7}
+解聯立方程式
+\begin{equation}\label{eq:3var_ex2_1}
+  x+3y+2z = 11 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3var_ex2_2}
+  2x+y+3z = 14 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3var_ex2_3}
+  x+y+z = 6 \dots\dots\dots
+\end{equation}
+\end{example}
+
+\begin{solution*}
+由 $\eqref{eq:3var_ex2_1} - \eqref{eq:3var_ex2_3}$，得
+\begin{equation}\label{eq:3var_ex2_elim1}
+  2y+z = 5 \dots\dots\dots
+\end{equation}
+$\eqref{eq:3var_ex2_2} - 2 \cdot \eqref{eq:3var_ex2_3}$，得
+\begin{equation}\label{eq:3var_ex2_elim2}
+  -y+z = 2 \dots\dots\dots
+\end{equation}
+$\eqref{eq:3var_ex2_elim1} - \eqref{eq:3var_ex2_elim2}$，即得 $3y = 3$，故 $y=1$，代入 \eqref{eq:3var_ex2_elim2}，得 $z=3$。\\
+將 $y=1, z=3$ 代入 \eqref{eq:3var_ex2_3}，即得 $x=2$。
+\end{solution*}
+
+\subsection*{習題 4-5}\label{sec:ex4-5}
+\addcontentsline{toc}{subsection}{習題 4-5}
+
+\begin{enumerate}[1.]
+  \item 解聯立方程式
+  \begin{equation*}
+  \begin{cases}
+    x+2y+3z = 14 \\
+    3x+y+2z = 11 \\
+    2x+3y+z = 11
+  \end{cases}
+  \end{equation*}
+  \item 設 $a \neq 1$，求解
+  \begin{equation*}
+  \begin{cases}
+    ax+y+z = 1 \\
+    x+ay+z = 1 \\
+    x+y+az = 1
+  \end{cases}
+  \end{equation*}
+  \item 解
+  \begin{equation*}
+  \begin{cases}
+    \dfrac{x+2y}{3} = \dfrac{3y+4z}{5} = \dfrac{5z+6x}{7} \\[1em]
+    3(x+y+z) = 7
+  \end{cases}
+  \end{equation*}
+  \item 一個三位數的十位數字等於個位與百位數字的和，而它的個位與十位數字的和是 $8$ 如果個位與百位數字互換，這個數就增加 $99$，求這個數。
+  \item 有一個三位數，各位數字的和是 $18$，交換個位數字與百位數字後就比原數大 $495$，交換十位數字與百位數字，就比原數大 $630$，求這個數。
+  \item 三數的和是 $51$，第一數除以第二數，得到商數 $2$，餘數 $5$，第二數除以第三數，得到商數 $3$，餘數 $2$，問各數多少？
+\end{enumerate}
+
+\subsection{二階、三階行列式及二元、三元聯立方程式的初步討論}\label{sec:4-4}
+
+\subsubsection*{甲、二階行列式與二元聯立方程式}\label{subsec:4-4-a}
+
+在 \S 4-3 乙中，我們初步地討論一個典型的二元一次聯立方程式的解法，我們的結論是：當 $a_1 b_2 - a_2 b_1 \neq 0$ 時，下列聯立方程式
+\begin{equation}\label{eq:det2_system_1}
+  a_1 x + b_1 y = c_1 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:det2_system_2}
+  a_2 x + b_2 y = c_2 \dots\dots\dots
+\end{equation}
+具有唯一的一組解：
+\begin{align*}
+  x &= \frac{c_1 b_2 - c_2 b_1}{a_1 b_2 - a_2 b_1} \\
+  y &= \frac{a_1 c_2 - a_2 c_1}{a_1 b_2 - a_2 b_1}
+\end{align*}
+
+現在讓我們進一步來討論 $a_1 b_2 - a_2 b_1 = 0$ 這種特殊情形。假如我們消去 $y$，即
+\begin{equation*}
+\begin{array}{r@{\quad}l}
+  & b_2 a_1 x + b_2 b_1 y = b_2 c_1 \dots\dots\dots b_2 \times \eqref{eq:det2_system_1} \\
+  -) & b_1 a_2 x + b_1 b_2 y = b_1 c_2 \dots\dots\dots b_1 \times \eqref{eq:det2_system_2} \\ \hline
+  & (b_2 a_1 - b_1 a_2) \cdot x = (b_2 c_1 - b_1 c_2)
+\end{array}
+\end{equation*}
+即
+\begin{equation*}
+  0 = b_2 c_1 - b_1 c_2
+\end{equation*}
+故 $b_2 c_1 - b_1 c_2 = 0$ 是 \eqref{eq:det2_system_1}、\eqref{eq:det2_system_2} 這個聯立方程式有解的一個必要條件。
+
+再者，假如我們消去 $x$，即
+\begin{equation*}
+\begin{array}{r@{\quad}l}
+  & a_2 a_1 x + a_2 b_1 y = a_2 c_1 \dots\dots\dots a_2 \times \eqref{eq:det2_system_1} \\
+  -) & a_1 a_2 x + a_1 b_2 y = a_1 c_2 \dots\dots\dots a_1 \times \eqref{eq:det2_system_2} \\ \hline
+  & (a_2 b_1 - a_1 b_2) y = (a_2 c_1 - a_1 c_2)
+\end{array}
+\end{equation*}
+即
+\begin{equation*}
+  0 = a_2 c_1 - a_1 c_2
+\end{equation*}
+故 $a_2 c_1 - a_1 c_2 = 0$ 是 \eqref{eq:det2_system_1}、\eqref{eq:det2_system_2} 這個聯立方程式有解的另一必要條件。
+
+上述討論的結論是：
+\begin{quote}
+當 $a_1 b_2 - a_2 b_1 = 0$ 時，聯立方程式 \eqref{eq:det2_system_1}、\eqref{eq:det2_system_2} 有解的必要條件是：「$a_1 c_2 - a_2 c_1 = 0$ 和 $b_1 c_2 - b_2 c_1 = 0$」。
+\end{quote}
+
+現在讓我們看一下上述條件是否充分？我們當然可以假設 $a_1, a_2, b_1, b_2$ 這四個數中至少有一個不是零！（因為要不然，\eqref{eq:det2_system_1} 和 \eqref{eq:det2_system_2} 便成為「$0=c_1$ 和 $0=c_2$」，這是沒有什麼討論的價值的。）所以我們可以假設 $a_1 \neq 0$，（其他三種情形在實質上是完全沒有區別的。）將 \eqref{eq:det2_system_1} 式乘以 $\frac{a_2}{a_1}$，即得
+\begin{align*}
+  \frac{a_2}{a_1} (a_1 x + b_1 y) &= \frac{a_2}{a_1} \cdot c_1 \quad \text{（分配律）} \\
+  \implies a_2 x + \frac{a_2 b_1}{a_1} y &= \frac{a_2 c_1}{a_1} \\
+  &\text{（因為由假設有 $a_2 b_1 = a_1 b_2$, $a_2 c_1 = a_1 c_2$。）} \\
+  \implies a_2 x + b_2 y &= c_2
+\end{align*}
+故 \eqref{eq:det2_system_2} 式是 \eqref{eq:det2_system_1} 式的必然結論，亦即 $\eqref{eq:det2_system_1} \implies \eqref{eq:det2_system_2}$。所以任一組滿足 \eqref{eq:det2_system_1} 式的解 $(x_0, y_0)$，也必然滿足 \eqref{eq:det2_system_2} 式。再者，顯然
+\begin{equation*}
+\begin{cases}
+  x = \dfrac{c_1 - b_1 k}{a_1} \\[1.2em]
+  y = k
+\end{cases}
+\end{equation*}
+滿足 \eqref{eq:det2_system_1} 式（所以也滿足 \eqref{eq:det2_system_2} 式），其中 $k$ 是一個任意的數。綜合上述討論的結果，我們有下面的定理：
+
+\begin{theorem}\label{thm:det2_classification}
+對於下述聯立方程式
+\begin{equation*}
+\begin{cases}
+  a_1 x + b_1 y = c_1 \\
+  a_2 x + b_2 y = c_2
+\end{cases}
+\quad (a_1, b_1, a_2, b_2 \text{ 中至少有一個不是零})
+\end{equation*}
+有下列幾個可能性：
+\begin{enumerate}[(i)]
+  \item 當 $a_1 b_2 - a_2 b_1 \neq 0$ 時，上述聯立方程式有唯一的一組解如下：
+  \begin{equation*}
+  \begin{cases}
+    x = \dfrac{c_1 b_2 - c_2 b_1}{a_1 b_2 - a_2 b_1} \\[1.2em]
+    y = \dfrac{a_1 c_2 - a_2 c_1}{a_1 b_2 - a_2 b_1}
+  \end{cases}
+  \end{equation*}
+  \item 當 $a_1 b_2 - a_2 b_1 = 0$ 時，上述聯立方程式有解的必要充分條件是
+  \begin{equation*}
+    \text{「$a_1 c_2 - a_2 c_1 = 0$ 和 $b_1 c_2 - b_2 c_1 = 0$」。}
+  \end{equation*}
+  而且在上述條件滿足時，有無窮多組解。
+\end{enumerate}
+\end{theorem}
+
+同學們若是留心的話，可以發現 $a_1 b_2 - a_2 b_1 = 0$ 是 $a_1 : a_2 = b_1 : b_2$ 的另一種寫法。因此，這一個條件幾乎是可以用觀察法看出的。對於二元一次聯立方程式，這是一個特別方便的地方。
+
+\begin{example}\label{ex:4-4-1}
+今有雞鴨同籠，有頭 $10$ 個，腳 $20$ 隻，問有雞幾隻？鴨幾隻？
+\end{example}
+
+\begin{solution*}
+設雞數為 $x$，鴨數為 $y$，則由題義
+\begin{equation}\label{eq:duck_1}
+  x+y = 10 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:duck_2}
+  2x+2y = 20 \dots\dots\dots
+\end{equation}
+和二元聯立一次方程式一般型式比較，我們有 $a_1=1, b_1=1, c_1=10$，$a_2=2, b_2=2, c_2=20$，因此
+\begin{equation*}
+  a_1 b_2 - a_2 b_1 = 1 \cdot 2 - 2 \cdot 1 = 0
+\end{equation*}
+我們不能利用公式來解 \eqref{eq:duck_1}、\eqref{eq:duck_2}，滿足 \eqref{eq:duck_1}、\eqref{eq:duck_2} 的解事實上有無窮多個，因為凡是滿足 \eqref{eq:duck_1} 的解，也都滿足 \eqref{eq:duck_2}，而滿足 \eqref{eq:duck_1} 的解有無窮多個的緣故（比如 $x=1, y=9$；$x=2, y=8$；$\dots\dots$；$x=10, y=0$；$x=11, y=-1$；$\dots\dots$；$x=100, y=-90$；$\dots\dots$）。
+
+這樣的方程式叫做\textbf{同義方程式}（又叫\textbf{相依方程式}）。但由題義，因雞數和鴨數都是整數，又不能是負數，所以實在只有 $x=0, y=10$；$x=1, y=9$；$x=2, y=8$；$\dots\dots$；$x=9, y=1$；$x=10, y=0$ 等 $11$ 個不同的解。
+
+假如上面的題目改成頭數 $10$，而腳數 $22$，那麼我們便由題義得到
+\begin{equation}\label{eq:duck_contra_1}
+  x+y = 10 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:duck_contra_2}
+  2x+2y = 22 \dots\dots\dots
+\end{equation}
+這樣的聯立方程組沒有任何的解，這是因為凡是滿足 \eqref{eq:duck_contra_1} 式的解，（例如 $x=1, y=9$）都不能滿足 \eqref{eq:duck_contra_2} 式的緣故（例如 $x=1, y=9$ 時，$2x+2y = 2 \cdot 1 + 2 \cdot 9 = 20 \neq 22$）。因為由 \eqref{eq:duck_contra_1} 及 \eqref{eq:duck_contra_2} 兩個已知條件，可以得到互相矛盾的結果（由 $\eqref{eq:duck_contra_2} - 2 \cdot \eqref{eq:duck_contra_1}$ 可以得到 $2 \neq 0$），這樣的方程組叫做\textbf{矛盾方程組}。矛盾方程組都是由具有不合理的條件的題目造成的。（如果雞鴨共有十隻，因為雞鴨的腳數相同，我們不必知道有多少雞多少鴨，也可以算出他們共有 $20$ 隻腳，因此「共有 $22$ 隻腳」是一個不能成立的假定。）
+\end{solution*}
+
+\paragraph{二階行列式：}
+在上述討論中，同學們可以看出 $a_1 b_2 - a_2 b_1$，$a_1 c_2 - a_2 c_1$，$b_1 c_2 - b_2 c_1$ 這些式子的重要性。在數學中，我們習慣用下列符號：
+\begin{align*}
+  \begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix} \quad &\text{表示 } a_1 b_2 - a_2 b_1 \\
+  \begin{vmatrix} a_1 & c_1 \\ a_2 & c_2 \end{vmatrix} \quad &\text{表示 } a_1 c_2 - a_2 c_1 \\
+  \begin{vmatrix} b_1 & c_1 \\ b_2 & c_2 \end{vmatrix} \quad &\text{表示 } b_1 c_2 - b_2 c_1
+\end{align*}
+換句話說
+\begin{equation*}
+  \begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix} = a_1 b_2 - a_2 b_1 \text{，稱之為二階行列式。}
+\end{equation*}
+
+我們定義了二階行列式後，\cref{thm:det2_classification} 中的一組解就可寫為：
+\begin{equation*}
+\begin{cases}
+  x = \dfrac{\begin{vmatrix} c_1 & b_1 \\ c_2 & b_2 \end{vmatrix}}{\begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix}} \\[2em]
+  y = \dfrac{\begin{vmatrix} a_1 & c_1 \\ a_2 & c_2 \end{vmatrix}}{\begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix}}
+\end{cases}
+\end{equation*}
+此處 $\begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix} \neq 0$。
+
+\begin{example}\label{ex:4-4-2}
+解聯立方程式
+\begin{equation*}
+\begin{cases}
+  x+y = 1 \\
+  3x+2y = 5
+\end{cases}
+\end{equation*}
+\end{example}
+
+\begin{solution*}
+因為 $\begin{vmatrix} 1 & 1 \\ 3 & 2 \end{vmatrix} = 2 - 3 = -1 \neq 0$，所以這組方程式有唯一的一組解。
+\begin{align*}
+  x &= \frac{\begin{vmatrix} 1 & 1 \\ 5 & 2 \end{vmatrix}}{-1} = \frac{2-5}{-1} = 3 \text{，} \\
+  y &= \frac{\begin{vmatrix} 1 & 1 \\ 3 & 5 \end{vmatrix}}{-1} = \frac{5-3}{-1} = -2 \text{。}
+\end{align*}
+\end{solution*}
+
+\subsection*{習題 4-6}\label{sec:ex4-6}
+\addcontentsline{toc}{subsection}{習題 4-6}
+
+\begin{enumerate}[1.]
+  \item 試證
+  \begin{multicols}{2}
+  \begin{enumerate}[(i)]
+    \item $\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix} = \begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix}$
+    \item $\begin{vmatrix} a_1 & b_1 \\ a_1 & b_1 \end{vmatrix} = 0$
+    \item $\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix} = - \begin{vmatrix} b_1 & b_2 \\ a_1 & a_2 \end{vmatrix}$
+    \item $\begin{vmatrix} a_1 & b_1 \\ ka_2 & kb_2 \end{vmatrix} = k \begin{vmatrix} a_1 & b_1 \\ a_2 & b_2 \end{vmatrix}$
+  \end{enumerate}
+  \end{multicols}
+  \item 試計算下列各行列式之值：
+  \begin{multicols}{2}
+  \begin{enumerate}[(i)]
+    \item $\begin{vmatrix} 1 & 2 \\ 1 & -1 \end{vmatrix}$
+    \item $\begin{vmatrix} 3 & -9 \\ 4 & 12 \end{vmatrix}$
+    \item $\begin{vmatrix} 4 & 7 \\ 5 & 12 \end{vmatrix}$
+    \item $\begin{vmatrix} 2 & 9 \\ -6 & -18 \end{vmatrix}$
+    \item $\begin{vmatrix} 12 & -1 \\ 1 & 11 \end{vmatrix}$
+    \item $\begin{vmatrix} 2 & 8 \\ 0 & 1 \end{vmatrix}$
+  \end{enumerate}
+  \end{multicols}
+  \item 下列各聯立方程式中，那些是同義的？那些是矛盾的？
+  \begin{multicols}{2}
+  \begin{enumerate}[(i)]
+    \item $\begin{cases} x-y = 4 \\ 2y-2x = -8 \end{cases}$
+    \item $\begin{cases} 2x+y = 3 \\ 4x+2y = 5 \end{cases}$
+    \item $\begin{cases} 2x+y = 5 \\ x+2y = 4 \end{cases}$
+    \item $\begin{cases} \dfrac{1}{u} + \dfrac{1}{v} = 3 \\[1em] \dfrac{1}{2u} + \dfrac{1}{2v} = 2 \end{cases}$
+  \end{enumerate}
+  \end{multicols}
+  \item 利用行列式解第 3 題中 (i), (ii), (iii)。
+  \item 利用行列式解
+  \begin{equation*}
+  \begin{cases}
+    29x + 13y = 23 \\
+    7x + 3y = 5
+  \end{cases}
+  \end{equation*}
+  \item 決定 $a$ 的可能範圍，使得下列聯立方程式有唯一解：
+  \begin{equation*}
+  \begin{cases}
+    2x+3y = 5 \\
+    4x+ay = 7
+  \end{cases}
+  \end{equation*}
+  \item 設
+  \begin{equation*}
+  \begin{cases}
+    (a-5)x + 2y + 3a = 0 \\
+    (a+1)x - y + 5a - 4 = 0
+  \end{cases}
+  \end{equation*}
+  無解，則 $a$ 之值為多少？
+  \item 若
+  \begin{equation*}
+  \begin{cases}
+    3mx + 4y + m = 0 \\
+    (2m-1)x + my + 1 = 0
+  \end{cases}
+  \end{equation*}
+  為相依方程組，則 $m$ 之值為多少？
+\end{enumerate}
+
+\subsubsection*{乙、三階行列式與三元一次聯立方程式}\label{subsec:4-4-b}
+
+現在讓我們來討論下列典型的三元一次聯立方程式：
+\begin{equation}\label{eq:3det_sys_1}
+  a_1 x + b_1 y + c_1 z = d_1 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3det_sys_2}
+  a_2 x + b_2 y + c_2 z = d_2 \dots\dots\dots
+\end{equation}
+\begin{equation}\label{eq:3det_sys_3}
+  a_3 x + b_3 y + c_3 z = d_3 \dots\dots\dots
+\end{equation}
+
+由 $b_2 \times \eqref{eq:3det_sys_1} - b_1 \times \eqref{eq:3det_sys_2}$，即得
+\begin{equation}\label{eq:3det_elim_1}
+  (a_1 b_2 - a_2 b_1) \cdot x + (c_1 b_2 - c_2 b_1) \cdot z = d_1 b_2 - d_2 b_1 \dots\dots\dots
+\end{equation}
+同理，由 $b_3 \times \eqref{eq:3det_sys_2} - b_2 \times \eqref{eq:3det_sys_3}$，即得
+\begin{equation}\label{eq:3det_elim_2}
+  (a_2 b_3 - a_3 b_2) \cdot x + (c_2 b_3 - c_3 b_2) \cdot z = d_2 b_3 - d_3 b_2 \dots\dots\dots
+\end{equation}
+$b_1 \times \eqref{eq:3det_sys_3} - b_3 \times \eqref{eq:3det_sys_1}$，即得
+\begin{equation}\label{eq:3det_elim_3}
+  (a_3 b_1 - a_1 b_3) \cdot x + (c_3 b_1 - c_1 b_3) \cdot z = d_3 b_1 - d_1 b_3 \dots\dots\dots
+\end{equation}
+
+當然，我們可以從 \eqref{eq:3det_elim_1}、\eqref{eq:3det_elim_2}、\eqref{eq:3det_elim_3} 中任選二式，從而消去 $z$ 即可解得 $x$。但是這種解法破壞了形式上的對稱性。一個能保留上述形式上的對稱性的辦法是：去計算「$c_3 \times \eqref{eq:3det_elim_1} + c_1 \times \eqref{eq:3det_elim_2} + c_2 \times \eqref{eq:3det_elim_3}$」，亦即
+\begin{align*}
+  (a_1 b_2 - a_2 b_1) \cdot c_3 \cdot x + (c_1 b_2 - c_2 b_1) \cdot c_3 \cdot z &= (d_1 b_2 - d_2 b_1) \cdot c_3 \\
+  (a_2 b_3 - a_3 b_2) \cdot c_1 \cdot x + (c_2 b_3 - c_3 b_2) \cdot c_1 \cdot z &= (d_2 b_3 - d_3 b_2) \cdot c_1 \\
+  +\,) \quad (a_3 b_1 - a_1 b_3) \cdot c_2 \cdot x + (c_3 b_1 - c_1 b_3) \cdot c_2 \cdot z &= (d_3 b_1 - d_1 b_3) \cdot c_2 \\ \hline
+  \left\{ \begin{aligned}
+    (a_1 b_2 - a_2 b_1) \cdot c_3 \\
+    +\, (a_2 b_3 - a_3 b_2) \cdot c_1 \\
+    +\, (a_3 b_1 - a_1 b_3) \cdot c_2
+  \end{aligned} \right\} \cdot x
+  + \left\{ \begin{aligned}
+    c_1 b_2 c_3 - c_2 b_1 c_3 \\
+    +\, c_2 b_3 c_1 - c_3 b_2 c_1 \\
+    +\, c_3 b_1 c_2 - c_1 b_3 c_2
+  \end{aligned} \right\} \cdot z
+  &= \left\{ \begin{aligned}
+    d_1 b_2 c_3 - d_2 b_1 c_3 \\
+    +\, d_2 b_3 c_1 - d_3 b_2 c_1 \\
+    +\, d_3 b_1 c_2 - d_1 b_3 c_2
+  \end{aligned} \right\} \label{eq:3det_sum_master}
+\end{align*}
+
+上式中，$z$ 的係數恰好為 $0$，所以當上式中 $x$ 的係數
+\begin{equation*}
+  \Delta = a_1 b_2 c_3 + a_2 b_3 c_1 + a_3 b_1 c_2 - a_2 b_1 c_3 - a_3 b_2 c_1 - a_1 b_3 c_2 \neq 0
+\end{equation*}
+我們即可解出 $x$。
+
+\paragraph{三階行列式：}
+上述六項的算式，相當於二元聯立方程式的討論中所出現的 $a_1 b_2 - a_2 b_1$。我們習慣上用符號
+\begin{equation*}
+  \begin{vmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+  \end{vmatrix}
+\end{equation*}
+去表示它，稱之為三階行列式。換言之
+\begin{equation*}
+  \begin{vmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+  \end{vmatrix}
+  = a_1 b_2 c_3 + a_2 b_3 c_1 + a_3 b_1 c_2 - a_2 b_1 c_3 - a_3 b_2 c_1 - a_1 b_3 c_2 \text{。}
+\end{equation*}
+
+採用上式行列式的符號，當 $\Delta \neq 0$ 時，解得的 $x$ 可以寫成
+\begin{equation*}
+  x = \frac{\begin{vmatrix}
+    d_1 & b_1 & c_1 \\
+    d_2 & b_2 & c_2 \\
+    d_3 & b_3 & c_3
+  \end{vmatrix}}{\begin{vmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+  \end{vmatrix}}
+  = \frac{\Delta_x}{\Delta}
+\end{equation*}
+
+請同學們仿照上述消去的過程，試著去求 $y$ 和 $z$，則不難看出
+\begin{equation*}
+  y = \frac{\begin{vmatrix}
+    a_1 & d_1 & c_1 \\
+    a_2 & d_2 & c_2 \\
+    a_3 & d_3 & c_3
+  \end{vmatrix}}{\begin{vmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+  \end{vmatrix}}
+  = \frac{\Delta_y}{\Delta} \text{，} \qquad
+  z = \frac{\begin{vmatrix}
+    a_1 & b_1 & d_1 \\
+    a_2 & b_2 & d_2 \\
+    a_3 & b_3 & d_3
+  \end{vmatrix}}{\begin{vmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+  \end{vmatrix}}
+  = \frac{\Delta_z}{\Delta}
+\end{equation*}
+
+\begin{theorem}\label{thm:cramer3}
+當 $\Delta = \begin{vmatrix}
+  a_1 & b_1 & c_1 \\
+  a_2 & b_2 & c_2 \\
+  a_3 & b_3 & c_3
+\end{vmatrix} \neq 0$ 時，下述三元聯立方程式
+\begin{equation*}
+\begin{cases}
+  a_1 x + b_1 y + c_1 z = d_1 \\
+  a_2 x + b_2 y + c_2 z = d_2 \\
+  a_3 x + b_3 y + c_3 z = d_3
+\end{cases}
+\end{equation*}
+有唯一的一組解，其解可由下述公式表出：
+\begin{equation*}
+\begin{cases}
+  x = \dfrac{\begin{vmatrix}
+    d_1 & b_1 & c_1 \\
+    d_2 & b_2 & c_2 \\
+    d_3 & b_3 & c_3
+  \end{vmatrix}}{\Delta} \\[2.4em]
+  y = \dfrac{\begin{vmatrix}
+    a_1 & d_1 & c_1 \\
+    a_2 & d_2 & c_2 \\
+    a_3 & d_3 & c_3
+  \end{vmatrix}}{\Delta} \\[2.4em]
+  z = \dfrac{\begin{vmatrix}
+    a_1 & b_1 & d_1 \\
+    a_2 & b_2 & d_2 \\
+    a_3 & b_3 & d_3
+  \end{vmatrix}}{\Delta}
+\end{cases}
+\end{equation*}
+\end{theorem}
+
+仿照定理 1 可得：\\
+若 $\Delta = 0$，則上式有解的充分必要條件為
+\begin{equation*}
+  \Delta_x = \Delta_y = \Delta_z = 0 \text{。}\footnote{此處原書聲稱「充分必要條件」存在理論瑕疵：三元方程組當 $\Delta = \Delta_x = \Delta_y = \Delta_z = 0$ 時，可能出現三平面兩兩平行或交成稜柱之「無解」情形，故此條件僅為必要條件而非充分條件，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。}
+\end{equation*}
+而當上述條件滿足時，有無限多組解，但若 $\Delta_x, \Delta_y, \Delta_z$ 中有一不為零，則上述無解。\\
+同學試著自己做做看。
+
+\begin{example}\label{ex:4-4-3}
+如果
+\begin{align*}
+  a_1 A + a_2 B + a_3 C &= 0 \\
+  b_1 A + b_2 B + b_3 C &= 0
+\end{align*}
+且 $\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}$，$\begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix}$，$\begin{vmatrix} a_3 & a_1 \\ b_3 & b_1 \end{vmatrix}$ 中至少有一個 $\neq 0$，則
+\begin{equation*}
+  A : B : C = \begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix} : \begin{vmatrix} a_3 & a_1 \\ b_3 & b_1 \end{vmatrix} : \begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}
+\end{equation*}
+\end{example}
+
+\begin{proof}
+我們可以假定 $\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix} \neq 0$，（至少一個 $\neq 0$）。
+
+將 $C$ 看成常數，解 $A$ 及 $B$，可得
+\begin{equation*}
+  A = \frac{-\begin{vmatrix} a_3 C & a_2 \\ b_3 C & b_2 \end{vmatrix}}{\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}} \text{，} \qquad
+  B = \frac{-\begin{vmatrix} a_1 & a_3 C \\ b_1 & b_3 C \end{vmatrix}}{\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}}
+\end{equation*}
+\begin{align*}
+  \therefore \quad A : B : C &= \frac{C \begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix}}{\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}} : \frac{C \begin{vmatrix} a_3 & a_1 \\ b_3 & b_1 \end{vmatrix}}{\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}} : C \\
+  &= \begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix} : \begin{vmatrix} a_3 & a_1 \\ b_3 & b_1 \end{vmatrix} : \begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}
+\end{align*}
+
+如果上面這三個行列式都不是 $0$，上面的式子又可寫作
+\begin{equation*}
+  \frac{A}{\begin{vmatrix} a_2 & a_3 \\ b_2 & b_3 \end{vmatrix}} = \frac{B}{\begin{vmatrix} a_3 & a_1 \\ b_3 & b_1 \end{vmatrix}} = \frac{C}{\begin{vmatrix} a_1 & a_2 \\ b_1 & b_2 \end{vmatrix}}
+\end{equation*}
+以上的寫法，對於解聯立方程式來講，很是方便。
+\end{proof}
+
+\begin{example}\label{ex:4-4-4}
+解
+\begin{equation*}
+\begin{cases}
+  3x+4y+4z = 0 \\
+  4x+3y-z = 0
+\end{cases}
+\end{equation*}
+\end{example}
+
+\begin{solution*}
+\begin{equation*}
+  \begin{vmatrix} 3 & 4 \\ 4 & 3 \end{vmatrix} = 9 - 16 = -7
+\end{equation*}
+$\therefore$ 依例 1 之結論得
+\begin{align*}
+  x : y : z &= \begin{vmatrix} 4 & 4 \\ 3 & -1 \end{vmatrix} : \begin{vmatrix} 4 & 3 \\ -1 & 4 \end{vmatrix} : \begin{vmatrix} 3 & 4 \\ 4 & 3 \end{vmatrix} \\
+  &= -16 : 19 : -7
+\end{align*}
+即
+\begin{equation*}
+\begin{cases}
+  x = -16k \\
+  y = 19k \\
+  z = -7k
+\end{cases}
+\quad (k \text{ 為任一實數})
+\end{equation*}
+\end{solution*}
+
+\paragraph{注意：}
+行列式的展開，可以用下面的方法記憶：一個二階的行列式，可由「對角相乘」而得到：
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.0, >=latex]
+  % 矩陣元素與外框豎線
+  \node (a1) at (0, 1) {$a_1$};
+  \node (a2) at (1.5, 1) {$a_2$};
+  \node (b1) at (0, 0) {$b_1$};
+  \node (b2) at (1.5, 0) {$b_2$};
+  
+  \draw[thick] (-0.5, 1.3) -- (-0.5, -0.3);
+  \draw[thick] (2.0, 1.3) -- (2.0, -0.3);
+  
+  % 交叉箭頭
+  \draw[->, line width=1.0pt] (a1.south east) -- (b2.north west);
+  \draw[->, line width=1.0pt] (a2.south west) -- (b1.north east);
+  
+  % 右側說明
+  \node[right] at (2.4, 0.5) {$= a_1 b_2 - a_2 b_1 \quad \begin{cases} \text{向右的箭頭所成的項為正號，} \\ \text{向左的箭頭所成的項為負號。} \end{cases}$};
+\end{tikzpicture}
+\caption{二階行列式對角展開記憶法}\label{fig:det2_diag}
+\end{figure}
+
+對於三階的行列式可看成
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.1, >=latex]
+  % 行列式元素
+  \node (a1) at (0, 2) {$a_1$};
+  \node (a2) at (1.2, 2) {$a_2$};
+  \node (a3) at (2.4, 2) {$a_3$};
+  
+  \node (b1) at (0, 1) {$b_1$};
+  \node (b2) at (1.2, 1) {$b_2$};
+  \node (b3) at (2.4, 1) {$b_3$};
+  
+  \node (c1) at (0, 0) {$c_1$};
+  \node (c2) at (1.2, 0) {$c_2$};
+  \node (c3) at (2.4, 0) {$c_3$};
+  
+  % 兩側豎線
+  \draw[thick] (-0.5, 2.4) -- (-0.5, -0.4);
+  \draw[thick] (2.9, 2.4) -- (2.9, -0.4);
+  
+  % 向右下（正號項）實線箭頭
+  % 1. a1 -> b2 -> c3
+  \draw[->, thick, blue] (a1) -- (b2) -- (c3);
+  % 2. a2 -> b3 -> 循環繞到底部至 c1
+  \draw[thick, blue] (a2) -- (b3);
+  \draw[->, thick, blue] (b3) to[out=-45, in=0] (3.3, 0.2) to[out=-90, in=-45] (1.2, -0.8) to[out=135, in=-90] (c1);
+  % 3. a3 -> 循環穿過 b1 -> c2
+  \draw[thick, blue] (a3) to[out=-30, in=0] (3.6, 0.5) to[out=-90, in=-30] (1.8, -1.0) to[out=150, in=-90] (-0.3, -0.2) to[out=90, in=-135] (b1);
+  \draw[->, thick, blue] (b1) -- (c2);
+  
+  % 向左下（負號項）虛線/紅色箭頭
+  % 1. a3 -> b2 -> c1
+  \draw[->, thick, red] (a3) -- (b2) -- (c1);
+  % 2. a2 -> b1 -> 循環繞至 c3
+  \draw[thick, red] (a2) -- (b1);
+  \draw[->, thick, red] (b1) to[out=-135, in=180] (-0.9, 0.2) to[out=-90, in=225] (1.2, -0.8) to[out=45, in=-90] (c3);
+  % 3. a1 -> 循環穿過 b3 -> c2
+  \draw[thick, red] (a1) to[out=-150, in=180] (-1.2, 0.5) to[out=-90, in=210] (0.6, -1.0) to[out=30, in=-90] (2.7, -0.2) to[out=90, in=-45] (b3);
+  \draw[->, thick, red] (b3) -- (c2);
+  
+  % 右側展開式
+  \node[right] at (3.8, 1.0) {$\begin{aligned}
+    = &a_1 b_2 c_3 + b_1 c_2 a_3 + a_2 b_3 c_1 \\
+      &- a_3 b_2 c_1 - a_2 b_1 c_3 - a_1 b_3 c_2
+  \end{aligned}$};
+\end{tikzpicture}
+\caption{三階行列式展開之循環記憶法}\label{fig:det3_sarrus}
+\end{figure}
+
+同樣的，向右的箭頭所成的項都冠以正號，向左的箭頭所成的項都冠以負號。
+
+關於三元或更多元一次聯立方程式的進一步討論，將留待以後再述。
+
+\begin{example}\label{ex:4-4-5}
+解聯立方程式
+\begin{equation*}
+\begin{cases}
+  2x+y = 0 \\
+  -x+3y+z = 2 \\
+  4x+3y-z = 1
+\end{cases}
+\end{equation*}
+\end{example}
+
+\begin{solution*}
+因為
+\begin{equation*}
+  \begin{vmatrix}
+    2 & 1 & 0 \\
+    -1 & 3 & 1 \\
+    4 & 3 & -1
+  \end{vmatrix}
+  = -6 + 4 - 1 - 6 = -9 \neq 0
+\end{equation*}
+所以這組聯立方程式有唯一的一組解。
+\begin{align*}
+  x &= \frac{\begin{vmatrix} 0 & 1 & 0 \\ 2 & 3 & 1 \\ 1 & 3 & -1 \end{vmatrix}}{-9} = \frac{3}{-9} = -\frac{1}{3} \text{，}\footnote{原書等式中間誤印為 $\frac{-3}{9} = -\frac{1}{3}$，分子符號錯置，但最終數值正確，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。} \\
+  y &= \frac{\begin{vmatrix} 2 & 0 & 0 \\ -1 & 2 & 1 \\ 4 & 1 & -1 \end{vmatrix}}{-9} = \frac{-6}{-9} = \frac{2}{3} \text{，} \\
+  z &= \frac{\begin{vmatrix} 2 & 1 & 0 \\ -1 & 3 & 2 \\ 4 & 3 & 1 \end{vmatrix}}{-9} = \frac{3}{-9} = -\frac{1}{3} \text{。}
+\end{align*}
+\end{solution*}
+
+\subsection*{習題 4-7}\label{sec:ex4-7}
+\addcontentsline{toc}{subsection}{習題 4-7}
+
+\begin{enumerate}[1.]
+  \item 解下列三元方程式：
+  \begin{enumerate}[(i)]
+    \item 
+    $\begin{cases}
+      2x-3y-z = 4 \\
+      x+y-z = 2 \\
+      4x-y+3z = 1
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      2x+3y-5z = 3 \\
+      x-2y+z = 0 \\
+      3x+y+3z = 7
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      2x+4y-3z = 3 \\
+      3x-8y+6z = 1 \\
+      8x-2y-9z = 4
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      x+y+z = l+m+n \\
+      lx+my+nz = mn+ln+lm \quad (l, m, n \text{ 不等}) \\
+      (m-n)x + (n-l)y + (l-m)z = 0
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      \dfrac{6}{x} + \dfrac{2}{y} - \dfrac{5}{z} = 13 \\[1em]
+      \dfrac{3}{x} + \dfrac{3}{y} - \dfrac{2}{z} = 13 \\[1em]
+      \dfrac{7}{x} + \dfrac{5}{y} - \dfrac{3}{z} = 26
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      \dfrac{v+w}{4} = \dfrac{w+u}{3} \\[1em]
+      \dfrac{v+w}{4} = \dfrac{u+v}{2} \\[1em]
+      u+v+w = 27
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      3x-2y = 5 \\
+      4x-3y+2z = 11 \\
+      x-2y-5z = -7
+    \end{cases}$
+    \item 
+    $\begin{cases}
+      5x+3y-6z = 4 \\
+      3x-y+2z = 8 \\
+      x-2y-2z = 2
+    \end{cases}$
+  \end{enumerate}
+
+  \item 試證下列各式：
+  \begin{enumerate}[(i)]
+    \item $\begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix} = \begin{vmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{vmatrix}$
+    \item $\begin{vmatrix} a_1 & b_1 & c_1 \\ a_1 & b_1 & c_1 \\ a_3 & b_3 & c_3 \end{vmatrix} = 0$
+    \item $\begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix} = - \begin{vmatrix} b_1 & b_2 & b_3 \\ a_1 & a_2 & a_3 \\ c_1 & c_2 & c_3 \end{vmatrix}$
+    \item $\begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ kc_1 & kc_2 & kc_3 \end{vmatrix} = k \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}$
+    \item $\begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix} = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1-ka_1 & b_2-ka_2 & b_3-ka_3 \\ c_1-ma_1 & c_2-ma_2 & c_3-ma_3 \end{vmatrix}$
+  \end{enumerate}
+
+  \item 試計算下列各式：
+  \begin{multicols}{2}
+  \begin{enumerate}[(i)]
+    \item $\begin{vmatrix} 3 & 7 & 5 \\ 6 & -9 & 4 \\ -3 & 2 & 7 \end{vmatrix}$
+    \item $\begin{vmatrix} 2 & 3 & 4 \\ 7 & -\dfrac{1}{5} & \dfrac{1}{2} \\ 6 & -\dfrac{9}{7} & 9 \end{vmatrix}$
+    \item $\begin{vmatrix} 4 & 8 & 9 \\ -8 & -16 & -18 \\ 3 & -5 & 1 \end{vmatrix}$
+    \item $\begin{vmatrix} 3 & 12 & 3 \\ \dfrac{1}{9} & 5 & 8 \\ 16 & 15 & 4 \end{vmatrix}$
+  \end{enumerate}
+  \end{multicols}
+
+  \item 設 $a \in \mathbb{R}$。若方程組
+  \begin{equation*}
+  \begin{cases}
+    3x+y-2z = ax \\
+    2x+2y-3z = az \\
+    2x-5y+2z = ay
+  \end{cases}
+  \end{equation*}
+  有異於 $(0,0,0)$ 之解，則 $a$ 為多少？\footnote{原書第二、三式右端順序為 $az$ 與 $ay$，此處忠實依原書文字收錄。}
+
+  \item 設 $9x-4y+3z = -7x+2y+15z = 13x-8y-z$ 且 $xyz \neq 0$，求
+  \begin{equation*}
+    \frac{3x^2-2y^2+z^2-5xy}{4x^2-5y^2-6z^2+2xz} \text{ 之值。}
+  \end{equation*}
+  （提示：仿例 2，利用例 1 之結論）。
+\end{enumerate}

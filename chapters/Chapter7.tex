@@ -1,0 +1,1232 @@
+% !TeX root = Chapter7_main.tex
+\section{多項式的因子分解}\label{sec:ch7}
+
+有理係數單元多項式具有類似於整數系的除法。我們可以同樣的用輾轉相除法去求兩個多項式 $f(x), g(x) \in \mathbb{Q}[x]$ 的最高公因式。所以有理係數單元多項式系 $\mathbb{Q}[x]$ 和整數系 $\mathbb{Z}$ 在因子分解的理論上具有相似的定理。在 \S\ref{sec:7-1} 中，我們利用 $\mathbb{Q}[x]$ 和 $\mathbb{Z}$ 這兩個體系在形式上的相似性，把上一章對整數因子分解的結果推廣到有理係數單元多項式。
+
+整係數單元多項式系 $\mathbb{Z}[x]$ 是有理係數單元多項式系 $\mathbb{Q}[x]$ 的部分集合。但是當兩個整係數單元多項式 $f(x), g(x) \in \mathbb{Z}[x]$ 相除時，所得的商式 $q(x)$ 和餘式 $r(x)$ 往往不再是整係數多項式。即
+\begin{align*}
+  f(x) &= q(x) \cdot g(x) + r(x), \\
+  \deg r(x) &< \deg g(x) \text{ 或 } r(x) = 0
+\end{align*}
+的解中，$q(x)$ 和 $r(x)$ 不一定是整係數的（參看 \S\ref{sec:7-2} 例）。上述事實使得 $\mathbb{Z}[x]$ 的因子分解唯一性的討論較為複雜。解決這個困難的關鍵是 \S\ref{sec:7-2} 所證的高斯引理。多項式因子分解的唯一性是代數學的重要基礎。而從整數因子分解到多元多項式因子分解，所作的逐步比較與分析，也是代數學中探討問題的方法論上的一個好例子。
+
+\subsection{有理係數單元多項式的因子分解}\label{sec:7-1}
+
+在第三、五章中，我們分別介紹了整數系 $\mathbb{Z}$ 及有理係數單元多項式系 $\mathbb{Q}[x]$ 中的加、減、乘、除運算。在形式上 $\mathbb{Z}$ 與 $\mathbb{Q}[x]$ 這兩個體系對於這四種運算具有相同的性質。譬如它們對於加法與乘法都滿足交換律、對消律、分配律；它們都具有除法。在上一章中，我們詳細地分析了整數系的除法與因子分解間的關係，也充分的說明了除法在因子分解的討論上的重要性。所以，在本節著手討論 $\mathbb{Q}[x]$ 的因子分解時，我們首先把 $\mathbb{Q}[x]$ 中的除法與 $\mathbb{Z}$ 中的除法作一比較。
+
+\subsubsection*{甲、多項式除法與整數除法間的比較}\label{subsec:7-1-a}
+
+在第五章中 \S\ref{sec:5-4} 的定理 1，我們證明了：\\
+對於兩個有理係數多項式 $f(x), g(x) \in \mathbb{Q}[x]$（$g(x) \neq 0$）存在唯一的商式 $q(x) \in \mathbb{Q}[x]$ 和餘式 $r(x) \in \mathbb{Q}[x]$ 使得
+\begin{equation}
+  f(x) = q(x) \cdot g(x) + r(x) \quad \text{其中 } \deg r(x) < \deg g(x) \text{ 或 } r(x) = 0 \label{eq:poly_div_uniq}
+\end{equation}
+從 $f(x), g(x)$ 去求商式 $q(x)$ 和餘式 $r(x)$ 的算法叫做多項式除法。整數系的除法是從兩個整數 $a, b \in \mathbb{Z}$，求得其商數 $q$ 和餘數 $r$，使得
+\begin{equation}
+  a = q \cdot b + r, \quad 0 \le r < |b| \label{eq:int_div_uniq}
+\end{equation}
+比較上述兩種體系中的除法，我們可以看出它們在形式上的相似性，而且也可以看出多項式的次數和整數的絕對值是互相對應的觀念，所以相對於整數因子分解中的最大公因數，在多項式因子分解的討論中是最高公因式。
+
+\begin{definition*}
+假設 $f(x), g(x), q(x) \in \mathbb{Q}[x]$ 是三個多項式，而且 $f(x) = q(x) \cdot g(x)$，我們就說 $g(x)$ 是 $f(x)$ 的\textbf{因式}；或 $f(x)$ 是 $g(x)$ 的\textbf{倍式}；（上述兩種說法的意義完全相同），以符號 $g(x) \mid f(x)$ 表示。如果 $g(x) \neq 0$，這等於說 $g(x)$ 整除 $f(x)$。
+\end{definition*}
+
+\paragraph{注意：}
+$0 = 0 \cdot f(x)$，所以 $0$（零多項式）是任何多項式的倍式，因此在討論多項式因子分解時，我們也是將「$0$」這一特殊情形除外。再者，所有零次多項式 $a_0 \in \mathbb{Q}[x]$（也就是不等於 $0$ 的常數）皆能整除任何多項式 $f(x)$，（即 $f(x) = a_0 \cdot \left(\frac{1}{a_0} \cdot f(x)\right)$）。所以在討論多項式因子分解時，零次多項式 $a_0 \in \mathbb{Q}[x]$ 相當於整數系的 $\{+1, -1\}$。在討論整數因子分解時，$+a$ 和 $-a$ 是沒有實質上的區別的；同樣的，在討論多項式因子分解時，$f(x)$ 和它的常數倍 $a \cdot f(x)$ 也是沒有實質上的區別的。
+
+\begin{definition*}
+如果 $d(x)$ 同時是 $f(x)$ 和 $g(x)$ 的因式，那麼 $d(x)$ 就叫做 $f(x)$ 和 $g(x)$ 的\textbf{公因式}。以此類推，如果 $d(x)$ 同時是 $f_1(x), f_2(x), \dots, f_k(x)$ 的因式，那麼 $d(x)$ 就叫做 $f_1(x), f_2(x), \dots, f_k(x)$ 的公因式。
+\end{definition*}
+
+\begin{definition*}
+不全為 $0$ 的多項式 $f_1(x), f_2(x), \dots, f_k(x)$ 其公因式中次數最高的最任一個，叫做 $f_1(x), f_2(x), \dots, f_k(x)$ 的\textbf{最高公因式}，通常以 $(f_1(x), f_2(x), \dots, f_k(x))$ 表示首項係數為 $1$ 的那個。如果最高公因式為可逆元，（見 \S\ref{subsec:7-1-c}）（也就是不等於 $0$ 的有理數），即 $(f_1(x), \dots, f_k(x)) = 1$，那就說諸 $f_i$ \textbf{互質}。
+\end{definition*}
+
+\begin{example}\label{ex:7-1-1}
+$(4x^2-1, (2x+1)^2) = x + \dfrac{1}{2}$。
+\end{example}
+
+\begin{example}\label{ex:7-1-2}
+$\left(\dfrac{1-x}{2}, \dfrac{1-x^2}{6}, \dfrac{1-x^3}{12}, \dfrac{1-x^4}{5}\right) = x-1$。
+\end{example}
+
+\subsubsection*{習題 7-1}\label{sec:ex7-1}
+
+\begin{enumerate}[1.]
+  \item 試求下列各數之最高公因式.
+  \begin{enumerate}[(i)]
+    \item $12x^2 y^3 z^5, 4x^5 y z^3, 5x^4 y^3 z^5$.
+    \item $a^2-1, a^2+2a+1, a^3+1$.
+    \item $a^2-b^2, a^3 b-a b^3, a^3+a^2 b-a b^2-b^3$.
+    \item $x^4-y^4, x^6+y^6$.
+  \end{enumerate}
+
+  \item 試將多項式 $f(x) = (9x^2-1)(2x+3) - (4x^2-9)(3x+1)$ 分解為質因式乘積.
+
+  \item 試證下式：
+  \begin{equation*}
+    (ax+by)(cu+dv) - (au+bv)(cx+dy) = (ad-bc)(xv-yu).
+  \end{equation*}
+
+  \item 求 $x^3+6x^2+11x+6$ 與 $x^4+x^3-4x^2-4x$ 之最高公因式與最低公倍式.
+
+  \item 如果 $x^3+A$ 與 $x^3+3Ax+2$ 不是互質，那麼 $A = ?$
+
+  \item 如果 $x^4+bx^3+cx^2+dx+1$ 和 $x^4+dx^3+cx^2+bx+1$ 有二次公因式，那麼 $b, c, d$ 之間有什麼關係？
+
+  \item 如果 $x+c$ 是 $x^2+px+q$ 及 $x^2+rx+c$ 的最高公因式，那麼二者的最低公倍式是 $x^3+(p+r-c)x^2+(pr-c^2)x+(p-c)(r-c)c$。
+\end{enumerate}
+
+\subsubsection*{乙、最高公因式與輾轉相除}\label{subsec:7-1-b}
+
+由於 $\mathbb{Q}[x]$ 和 $\mathbb{Z}$ 具有同樣的性質，所以我們也同樣的可以用多項式的輾轉相除除去求 $f(x), g(x)$ 的最高公因式 $d(x)$。而這種用輾轉相除除去求得最高公因式的算法所依據的原理也是和整數系的情形完全一樣。（參看第六章 \S\ref{sec:6-2}）
+
+\begin{example}\label{ex:7-1-3}
+假設 $f(x) = x^5+1, g(x) = x^3+1$，那麼\\
+以 $g(x)$ 除 $f(x)$ 得：
+\begin{align*}
+  f(x) &= x^5+1 = x^2 \cdot (x^3+1) + (-x^2+1) \\
+  &= q_1(x) \cdot g(x) + r_1(x),
+\end{align*}
+以 $r_1(x)$ 除 $g(x)$ 得：
+\begin{align*}
+  g(x) &= x^3+1 = (-x) \cdot (-x^2+1) + (x+1) \\
+  &= q_2(x) \cdot r_1(x) + r_2(x),
+\end{align*}
+以 $r_2(x)$ 除 $r_1(x)$ 得：
+\begin{align*}
+  r_1(x) &= -x^2+1 = (-x+1)(x+1) \\
+  &= q_3(x) \cdot r_2(x)
+\end{align*}
+這樣得到 $x^5+1$ 和 $x^3+1$ 的最高公因式 $x+1$。
+\end{example}
+
+輾轉相除是一種算法，像在整數系的情形一樣，它真正的涵意與重要性乃是說明最高公因式 $d(x)$ 和 $f(x), g(x)$ 之間的關係。相對於上一章 \S\ref{sec:6-2} 中的定理 1'，在多項式 $\mathbb{Q}[x]$ 的情形有下列定理。
+
+\begin{theorem}\label{thm:poly_bezout}
+設 $d(x)$ 是 $k$ 個不全為 $0$ 的有理係數多項式 $f_1(x), f_2(x), \dots, f_k(x) \in \mathbb{Q}[x]$ 的最高公因式，則必定存在適當的有理係數多項式 $m_1(x), m_2(x), \dots, m_k(x) \in \mathbb{Q}[x]$，使得
+\begin{equation*}
+  d(x) = m_1(x) \cdot f_1(x) + m_2(x) \cdot f_2(x) + \dots + m_k(x) \cdot f_k(x).
+\end{equation*}
+\end{theorem}
+
+\paragraph{【證明】}
+這個定理的證明和上章 \S\ref{sec:6-2} 定理 1' 的情形完全一樣。我們首先考慮 $k=2$ 的情形（相當於 \S\ref{sec:6-2} 定理 1）。這時 $f(x)$ 和 $g(x)$ 的最高公因式 $d(x)$ 可由輾轉相除法求得，我們假設 $d(x)$ 是第 $l$ 次的餘式，則
+\begin{align*}
+  f(x) &= q_1(x) g(x) + r_1(x), \\
+  g(x) &= q_2(x) r_1(x) + r_2(x), \\
+  &\quad \dots\dots\dots\dots\dots\dots\dots\dots, \\
+  r_{l-2}(x) &= q_l(x) r_{l-1}(x) + r_l(x), \\
+  r_{l-1}(x) &= q_{l+1}(x) r_l(x), \quad r_l(x) \equiv d(x).
+\end{align*}
+利用歸納法，我們可以證明 $r_1(x), r_2(x), \dots, r_l(x)$ 都是 $f(x)$ 和 $g(x)$ 的「線性組合」，就是說，都可以表示成 $r_i(x) = m_i(x) f(x) + n_i(x) g(x), m_i(x), n_i(x) \in \mathbb{Q}[x]$ 的形式。至於一般的情形，我們可以逐句照抄 \S\ref{sec:6-2} 的相對應的部份，只要把 $a_1, a_2, \dots, d_1, d_2, \dots, n_1, n_2, \dots$ 等均看做多項式就行了。
+
+\begin{example}\label{ex:7-1-4}
+設 $f(x) = x^3+ax^2+11x+6$ 與 $g(x) = x^3+bx^2+14x+8$ 有二次公因式，試求 $a, b$ 之值。
+
+\paragraph{【解】}
+$f(x)-g(x) = (a-b)x^2-3x-2$，又 $4f(x)-3g(x) = [x^2+(4a-3b)x+2]x$，二者均有那個二次公因式，因此 $(a-b)x^2-3x-2$ 和 $x^2+(4a-3b)x+2$ 互成倍數，即
+\begin{equation*}
+  a-b = -1, \quad 4a-3b = 3. \quad \text{從而 } a=6, b=7.
+\end{equation*}
+\end{example}
+
+\begin{example}\label{ex:7-1-5}
+設 $f(x) = x^5+1$ 及 $g(x) = x^3+1$，試找出 $p(x), q(x)$ 使 $p(x)f(x)+q(x)g(x) = x+1$。
+
+\paragraph{【解】}
+因
+\begin{align*}
+  r_2(x) &= x+1 \\
+  &= g(x) - q_2(x)[f(x) - q_1(x)g(x)] \\
+  &= g(x)[1+q_2(x)q_1(x)] - q_2(x)f(x).
+\end{align*}
+故有
+\begin{align*}
+  p(x) &= -q_2(x) = +x. \\
+  q(x) &= 1+q_1(x)q_2(x) \\
+  &= 1-x^3.
+\end{align*}
+其中 $q_1(x) = x^2$ 與 $q_2(x) = -x$ 均照定理 1 之證明求得。
+\end{example}
+
+\begin{example}\label{ex:7-1-6}
+已知 $f(x) = x^3+cx^2-x+2c, g(x) = x^2+cx-2$。\\
+設 $f(x)$ 與 $g(x)$ 之最高公因式為一次，試求 $c$ 之值。
+
+\paragraph{【解】}
+若 $f(x), g(x)$ 之最高公因式為 $h(x)$，則依定理 1 知存在 $p(x), q(x)$，使
+\begin{equation*}
+  p(x)f(x)+q(x)g(x) = h(x)
+\end{equation*}
+現在 $f(x)-xg(x) = x+2c$\\
+即 $p(x) = 1, q(x) = -x$\\
+且因 $x+2c$ 為一次式，知 $f(x), g(x)$ 之最高公因式為 $x+2c$。\\
+又因 $x+c$ 為 $g(x)$ 之因式，所以 $g(-2c) = 0$\\
+得 $c = \pm 1$\\
+其中當 $c=1$，$f(x)$ 與 $g(x)$ 之最高公因式為 $x+2$，\\
+$c=-1$，$f(x)$ 與 $g(x)$ 之最高公因式為 $x-2$。
+\end{example}
+
+\begin{example}\label{ex:7-1-7}
+試求二多項 $m(x), n(x)$ 使
+\begin{equation*}
+  F(x)m(x)+G(x)n(x) = H(x).
+\end{equation*}
+其中 $H(x)$ 為 $F(x)$ 與 $G(x)$ 之最高公因式。\\
+而
+\begin{enumerate}[(i)]
+  \item $F(x) = x^4+x^3+2x^2+x+1, G(x) = x^3-1$.
+  \item $F(x) = x^4+1, G(x) = x^3-1$.
+\end{enumerate}
+
+\paragraph{【解】}
+(i) 應用綜合除法，求出 $F(x), G(x)$ 之最高公因式
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r|rrrrr|rrrr|l}
+\multicolumn{1}{c}{} & \multicolumn{5}{c}{} & \multicolumn{4}{c}{} & $\frac{1}{2} - \frac{1}{2}$ \\ \cline{2-10}
+$1+1$ & 1 & +1 & +2 & +1 & +1 & 1 & +0 & +0 & -1 & \\
+      & 1 & +0 & +0 & -1 &    & 1 & +1 & +1 &    & \\ \cline{2-10}
+      &   & 1  & +2 & +2 & +1 &   & -1 & -1 & -1 & \\
+      &   & 1  & +0 & +0 & -1 &   & -1 & -1 & -1 & \\ \cline{2-10}
+      &   &    & 2  & +2 & +2 &   &    &    & 0  &
+\end{tabular}
+\end{center}
+$\therefore H(x) = x^2+x+1$\\
+\begin{align*}
+  F(x) &= (x+1)(x^3-1) + 2x^2+2x+2 \\
+  \therefore -(2x^2+2x+2) &= (x+1)(x^3-1) - F(x) \\
+  &= (x+1)G(x) - F(x) \\
+  \therefore x^2+x+1 &= -\left(\frac{x+1}{2}\right)G(x) + \frac{1}{2}F(x)
+\end{align*}
+即 $m(x) = \dfrac{1}{2}, \quad n(x) = -\dfrac{(x+1)}{2}$。
+
+(ii)
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r|rrrrr|rrrr|l}
+\multicolumn{1}{c}{} & \multicolumn{5}{c}{} & \multicolumn{4}{c}{} & \\ \cline{2-10}
+$1$ & 1 & +0 & +0 & +0 & +1 & 1 & +0 & +0 & -1 & $1-1+1$ \\
+    & 1 & +0 & +0 & -1 &    & 1 & +1 &    &    & \\ \cline{2-10}
+    &   &    &    & 1  & +1 &   & -1 & +0 &    & \\
+    &   &    &    &    &    &   & -1 & -1 &    & \\ \cline{7-10}
+    &   &    &    &    &    &   &    & 1  & -1 & \\
+    &   &    &    &    &    &   &    & 1  & +1 & \\ \cline{7-10}
+    &   &    &    &    &    &   &    &    & -2 &
+\end{tabular}
+\end{center}
+$\therefore H(x) = 1$\\
+因
+\begin{align*}
+  F(x) &= xG(x) + x+1 \\
+  G(x) &= (x+1)(x^2-x+1) - 2 \\
+  \therefore 2 &= (x+1)(x^2-x+1) - G(x) \\
+  &= [F(x)-xG(x)](x^2-x+1) - G(x) \\
+  &= (x^2-x-1)F(x) - (x^3-x^2+x+1)G(x) \\
+  \therefore m(x) &= \frac{1}{2}(x^2-x-1), \\
+  n(x) &= -\frac{1}{2}(x^3-x^2+x+1).
+\end{align*}
+\end{example}
+
+\subsubsection*{習題 7-2}\label{sec:ex7-2}
+
+\begin{enumerate}[1.]
+  \item 將定理 1 中，用歸納法證明 $r_1(x), r_2(x), \dots, r_l(x)$ 是 $f(x), g(x)$ 的整線性組合的部份，詳細寫出來.
+
+  \item 試求下列各式之最高公因式：
+  \begin{enumerate}[(i)]
+    \item $x^3-2x^2-2x-3, 2x^3+x^2+x-1$.
+    \item $3x^3+8x^2-4x-15, 6x^4+10x^3-3x^2-2x+5$.
+    \item $x^4-x^3-3x^2+x+2, 2x^4+3x^3-x^2-3x-1$.
+    \item $3x^3-x^2-12x+4, x^3-2x^2-5x+2, 7x^3+19x^2+8x-4$.
+    \item $x^3+ax^2-3x-3a, x^3-x^2-3x+3, x^3+x^2-3x-3$.
+  \end{enumerate}
+
+  \item 將下列各式之最高公因式表成原來各式之線性組合：
+  \begin{enumerate}[(i)]
+    \item $2x^3-3x^2-11x+6, 4x^3+3x^2-9x+2$.
+    \item $x^3+2x^2-5x-6, 6x^3-5x^2-17x+6$.
+    \item $x^3+x^2-4x-4, x^3-x^2-4x+4, x^3-x^2-x-2$.
+  \end{enumerate}
+
+  \item 求 $x^4+x^3-9x^2-3x+18, x^5+6x^2-49x+42$ 之最高公因式，從而求最低公倍式.
+
+  \item 求 $x^6-1, x^4+x^2+1, x^8+x^4+1$ 之最高公因式與最低公倍式.
+
+  \item 求下列各式中的 $m(x), n(x)$：
+  \begin{enumerate}[(i)]
+    \item $m(x) \cdot (1+x^2) + n(x) \cdot (1+x^3) = 1$.
+    \item $m(x) \cdot (1+x^3) + n(x) \cdot (1+x^4) = 1$.
+    \item $m(x) \cdot (1+x^3) + n(x) \cdot x^4 = 1$.
+  \end{enumerate}
+
+  \item 設 $f(x) = x^3+ax^2+11x+6, g(x) = x^3+bx+14x+8$，有公因式 $x^2+px+q$ 的形式，則 $a, b, p, q$ 之值為何？
+
+  \item 設 $f(x) = ax^2+bx+c, g(x) = a'x^2+b'x+c'$，若 $f(x)$ 與 $g(x)$ 恰有一一次公因式，則其充要條件是什麼？
+\end{enumerate}
+
+\subsubsection*{丙、質式}\label{subsec:7-1-c}
+
+\begin{definition*}
+一個有理係數多項式 $p(x) \in \mathbb{Q}[x]$，本身不是可逆元，而且每當寫成乘積 $q(x) \cdot r(x) = p(x)$，($q(x), r(x) \in \mathbb{Q}[x]$) 時，$q(x), r(x)$ 兩者中，必有一個是可逆元，那麼 $p(x)$ 叫做（$\mathbb{Q}[x]$ 中的）\textbf{質式}。
+\end{definition*}
+
+\begin{example}\label{ex:7-1-8}
+$\dfrac{1}{3}x+4, x^2+\dfrac{1}{2}x+1, x^3-2$ 都是 $\mathbb{Q}[x]$ 中的質式。（$x^3-2$ 是質式的證明比較困難，請參考 (2-3) 推論 3 例題。）\\
+$x^3-3x^2+3x-1, x^n-1 (n \ge 2), \dfrac{x^2}{4}-\dfrac{5}{2}x+6$ 都不是質式。
+\end{example}
+
+\paragraph{註：}
+依照定義，任何常數 $a \in \mathbb{Q}$ 都不是 $\mathbb{Q}[x]$ 中的質式。
+
+\begin{corollary}\label{cor:poly_prime_div}
+如果質式 $p(x)$ 是 $f(x) \cdot g(x)$ 的一個因式，那麼 $p(x)$ 是 $f(x)$ 或者是 $g(x)$ 的因式。也就是說
+\begin{equation*}
+  p(x) \mid f(x) \cdot g(x) \implies p(x) \mid f(x) \text{ 或 } p(x) \mid g(x).
+\end{equation*}
+\end{corollary}
+
+\begin{example}\label{ex:7-1-9}
+設 $p(x) = x^2+1, f(x) = x+1, g(x) = x^7-x^6+x^5-x^4+x^3-x^2+x-1$。
+\begin{align*}
+  f(x) \cdot g(x) &= x^8-1, \\
+  p(x) &\mid f(x) \cdot g(x), \text{ 但 } p(x) \nmid f(x), \text{ 所以} \\
+  p(x) &\mid g(x), \\
+  \text{即} \quad x^2+1 &\mid x^7-x^6+x^5-x^4+x^3-x^2+x-1.
+\end{align*}
+\end{example}
+
+推論 1 的證明和上一章 \S\ref{sec:6-3} 中推論 1 的證明完全一樣。由推論 1，也同樣的可以證明下述定理：
+
+\begin{theorem}[因子分解的唯一性]\label{thm:poly_unique_factorization}
+假設
+\begin{align*}
+  f(x) &= p_1(x) \cdot p_2(x) \dots p_k(x), \\
+  &= q_1(x) \cdot q_2(x) \dots q_l(x), \quad (p_j(x), q_j(x) \text{ 為質式})
+\end{align*}
+是有理係數多項式 $f(x)$ 的兩種質因式分解。那麼 $k=l$，而且把足標作適當調整後，$p_j(x)$ 和 $q_j(x)$ 只差一個常數倍。
+\end{theorem}
+
+\begin{example}\label{ex:7-1-10}
+\begin{enumerate}[(i)]
+  \item $x^6-1 = (x+1)(x-1)(x^2+x+1)(x^2-x+1)$.
+  \item 
+  \begin{align*}
+    36x^4-13x^2+1 &= (2x+1)(2x-1)(3x+1)(3x-1) \\
+    &= 36\left(x+\frac{1}{2}\right)\left(x-\frac{1}{2}\right)\left(x+\frac{1}{3}\right)\left(x-\frac{1}{3}\right).
+  \end{align*}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{習題 7-3}\label{sec:ex7-3}
+
+\begin{enumerate}[1.]
+  \item 試證明定理 1 的推論 1.
+
+  \item 下列各式中那些是 $\mathbb{Q}[x]$ 中的質式？
+  \begin{enumerate}[(i)]
+    \item $3x^2+\dfrac{5}{2}x+\dfrac{1}{2}$.
+    \item $x^2+6$.
+    \item $2x^2+4x+8$.
+    \item $3x^4+\dfrac{16}{27}$.
+    \item $x^3-9$.
+  \end{enumerate}
+
+  \item 寫出下列各式之質因式分解：
+  \begin{enumerate}[(i)]
+    \item $x^4-1$.
+    \item $x^4+1$.
+    \item $4x^3-9x$.
+    \item $1+x+x^2+x^3+x^4+x^5$.
+    \item $x^3-3x^2+3x-1$.
+  \end{enumerate}
+
+  \item 利用質因式分解，求下列各組多項式的最高公因式：
+  \begin{enumerate}[(i)]
+    \item $f(x) = 6x^2+5x+1, g(x) = x^2-\dfrac{1}{4}$.
+    \item $f(x) = x^6+1, g(x) = x^6-1, h(x) = x^2-1$.
+    \item $f(x) = 4x^3-9x, g(x) = x^2-\dfrac{3}{2}x, h(x) = 12x+9$.
+    \item $f(x) = x^3-3x^2+3x-1, g(x) = x^3-x^2-x+1, h(x) = (x^2-1)^2$.
+    \item $f(x) = x^3-2, g(x) = x^4-4, h(x) = x^2+2$.
+  \end{enumerate}
+
+  \item 
+  \begin{enumerate}[(i)]
+    \item $2x-6$ 在下列何者之中為非質式.
+    \begin{enumerate}[(1)]
+      \item $\mathbb{Z}[x]$ \quad (2) $\mathbb{Q}[x]$ \quad (3) $\mathbb{R}[x]$ \quad (4) $\mathbb{C}[x]$
+    \end{enumerate}
+    \item $7$ 在下列何者之中為質數或質式
+    \begin{enumerate}[(1)]
+      \item $\mathbb{Z}$ \quad (2) $\mathbb{Z}[x]$ \quad (3) $\mathbb{Q}$ \quad (4) $\mathbb{Q}[x]$
+    \end{enumerate}
+  \end{enumerate}
+
+  \item 下列敘述何者不正確？
+  \begin{enumerate}[(i)]
+    \item $\mathbb{Z}$ 中之可逆元恰有兩個，即 $\pm 1$.
+    \item $\mathbb{Z}[x]$ 中之可逆元恰有兩個，即 $\pm 1$.
+    \item $\mathbb{Q}$ 中之不可逆元恰有一個，即 $0$.
+    \item $\mathbb{Q}[x]$ 中之不可逆元恰有一個，即 $0$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{整係數多項式的因子分解}\label{sec:7-2}
+
+\subsubsection*{甲、多項式的因子分解與整數的因子分解類似}\label{subsec:7-2-a}
+
+多項式的因子分解與整數的因子分解類似，只是在討論多項式的因子分解時，首先得弄清楚係數的許可範圍。譬如以 $x^2-2$ 為例，假如只允許用有理數作為係數，那麼多項式 $x^2-2$ 是個質式，但是假如允許用實數係數，那麼多項式 $x^2-2 = (x+\sqrt{2})(x-\sqrt{2})$ 就不再是質式了。換句話說，$x^2-2$ 在 $\mathbb{Q}[x]$ 中不能分解成較低次的因式的乘積，所以 $x^2-2$ 是 $\mathbb{Q}[x]$ 中的質式，但是 $x^2-2$ 在 $\mathbb{R}[x]$（實係數多項式系）中就可以分解成 $(x+\sqrt{2}) \cdot (x-\sqrt{2})$，所以 $x^2-2$ 不是 $\mathbb{R}[x]$ 中的質式。
+
+\begin{example}\label{ex:7-2-1}
+$x^3+5$ 在 $\mathbb{Q}[x]$ 中是一個質式，（為什麼？）但是在 $\mathbb{R}[x]$ 中，$x^3+5$ 可以分解成 $x^3+5 = (x+\sqrt[3]{5})(x^2-\sqrt[3]{5}x+\sqrt[3]{25})$，所以不是質式了。
+\end{example}
+
+\begin{example}\label{ex:7-2-2}
+$x^2+1$ 在 $\mathbb{Q}[x]$ 中是質式，在 $\mathbb{R}[x]$ 中依然是質式，但是在 $\mathbb{C}[x]$（複素數係數多項式系）中 $x^2+1 = (x+\sqrt{-1})(x-\sqrt{-1})$，所以不是質式了。
+\end{example}
+
+\begin{example}\label{ex:7-2-3}
+一次式 $4x+2$ 在 $\mathbb{Z}[x]$ 中不是質式，因為 $4x+2 = 2(2x+1)$，$2$ 及 $2x+1$ 都不是 $\mathbb{Z}[x]$ 中的可逆元，而是 $\mathbb{Q}[x]$ 中的質式。
+\end{example}
+
+這一節要研究整係數多項式系 $\mathbb{Z}[x]$ 中的因子分解，這裏的問題就在係數的範圍是 $\mathbb{Z}$，不是 $\mathbb{Q}$！所有像因子，可逆元，質式等等概念都是相對於一個系統來說的，譬如說，$3$ 在 $\mathbb{Z}$ 中，不是 $1$ 的因子，因此，$3$ 不是 $\mathbb{Z}$ 中的可逆元，但在 $\mathbb{Q}$ 中 $3$ 是 $1$ 的因子，$1 = 3 \cdot \dfrac{1}{3}$，所以在 $\mathbb{Z}$ 中 $3$ 是質數，但在 $\mathbb{Q}$ 中，$3$ 不是質數。（因為是可逆元！）
+
+我們現在問 $\mathbb{Z}[x]$ 中的可逆元是什麼？\\
+如果 $p(x) \cdot q(x) = 1$，而 $p(x), q(x) \in \mathbb{Z}[x]$，那麼 $p(x), q(x)$ 均必為零次式，從而為非零整數，所以只能是 $+1$ 或 $-1$，它們也確是可逆元（何故？）也就是說 $\mathbb{Z}[x]$ 的可逆元只有 $\{\pm 1\}$（和 $\mathbb{Z}$ 一樣！）
+
+$\mathbb{Z}[x]$ 中的質式 $p(x)$ 乃是在分解為乘積 $p(x) = q(x) \cdot r(x)$ 時，$q(x), r(x)$ 中必有可逆元 $+1$ 或 $-1$ 者，根據這個定義有許多在 $\mathbb{Z}[x]$ 中是質式，在 $\mathbb{Q}[x]$ 中卻不是，例如 $7$ 是 $\mathbb{Z}[x]$ 的質式，（為什麼？）但不是 $\mathbb{Q}[x]$ 中的質式！又 $\mathbb{Z}[x]$ 中所有的 $0$ 次質式一下子就可以找出來：這些就是 $\mathbb{Z}$ 中的質數。（何故？）
+
+\paragraph{注意 1：}
+在前一章整數的因數分解中，$+1$ 與 $-1$ 是整數系 $\mathbb{Z}$ 中僅有的可逆元（何故？）因為當時的情形特別簡單，所以我們並沒有（也不需要）引入可逆元這個觀念。
+
+\paragraph{注意 2：}
+多項式 $0$ 是任何多項式的倍式，因此在討論多項式的因子分解時，$0$ 通常要特別小心處理。
+
+\paragraph{注意 3：}
+$\mathbb{Q}[x]$ 中的可逆元是什麼？$0$ 不可能是可逆元，而由 $f(x) \cdot g(x) = 1$ 可知 $\deg f(x) + \deg g(x) = 0$，因此，可逆元為 $0$ 次多項式，或即非 $0$ 的常數；當然囉，非 $0$ 的常數也必是可逆元，換句話說，這些就是相當於 $\mathbb{Z}$ 中的 $-1, +1$。
+
+\paragraph{注意 4：}
+兩個整係數多項式 $f(x), g(x)$ 在 $\mathbb{Z}[x]$ 中的最高公因式，是指它們的公因式中包含因子最多的，例如 $f(x) = 4x(x+1)^2(x+2), g(x) = 10x(x+1)(x+3)$。它們的最高公因式是 $\pm 2x(x+1)$（因為 $\mathbb{Z}[x]$ 中的可逆元只有 $\pm 1$ 兩個，所以在 $\mathbb{Z}[x]$ 中的最高公因式也只有兩個）。對於三個或更多個多項式可同樣的討論。
+
+總之，當討論多項式的因子分解時，同學們一定得先認清係數的許可範圍。
+
+在理論中，公倍式不如公因式重要，因此我們把對應的定義留給同學們自己寫，不過，我們舉一個題目做例子：
+
+\begin{example}\label{ex:7-2-4}
+若 $x^4-3ax^2+bx+4$ 是 $x+1$ 和 $x-2$ 的公倍式，試求 $a, b$ 之值。
+
+\paragraph{【解】}
+由餘式定理 $f(-1) = 0 = f(2)$，因此
+\begin{align*}
+  -3a-b+5 = 0, \quad \text{且 } -12a+2b+20 = 0.
+\end{align*}
+$\therefore a = \dfrac{5}{3}, \quad b = 0$。
+\end{example}
+
+\begin{example}\label{ex:7-2-5}
+求 $(2x+3)^3+(3x+2)^3$ 的因式。
+
+\paragraph{【解】}
+\begin{align*}
+  \text{原式} &= (2x+3+3x+2)[(2x+3)^2-(2x+3)(3x+2)+(3x+2)^2] \\
+  &= 5(x+1)(7x^2+11x+7).
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:7-2-6}
+已知兩多項式 $f(x)$ 與 $g(x)$ 之最高公因式為 $2x+1$，最低公倍式為 $6x^3-7x^2-9x-2$，求 $f(x)$ 及 $g(x)$。
+
+\paragraph{【解】}
+與整數系 $\mathbb{Z}[x]$ 類似，在 $\mathbb{Q}[x]$ 中最高公因式與最低公倍式亦有類似的關係
+\begin{equation*}
+  |f(x) \cdot g(x)| = (f(x), g(x)) \cdot [f(x), g(x)]
+\end{equation*}
+由假設可設
+\begin{align*}
+  f(x) &= (2x+1)p(x) \\
+  g(x) &= (2x+1)q(x)
+\end{align*}
+其中 $p(x)$ 與 $q(x)$ 互質\\
+則
+\begin{align*}
+  (2x+1)p(x) \cdot (2x+1)q(x) &= (2x+1)(6x^3-7x^2-9x-2) \\
+  \text{而 } p(x)q(x) &= \frac{6x^3-7x^2-9x-2}{2x+1} \\
+  &= 3x^2-5x-2 \\
+  &= (3x+1)(x-2)
+\end{align*}
+$\therefore$ 可取
+\begin{enumerate}[(1)]
+  \item $p(x) = 3x+1, q(x) = x-2$\\
+  故
+  \begin{align*}
+    f(x) &= (2x+1)(3x+1) \\
+    g(x) &= (2x+1)(x-2)
+  \end{align*}
+  或
+  \item $p(x) = 1, q(x) = (2x+1)(3x^2-5x-2)$\\
+  則
+  \begin{align*}
+    f(x) &= 2x+1 \\
+    g(x) &= (2x+1)(3x^2-5x-2).
+  \end{align*}
+\end{enumerate}
+\end{example}
+
+\subsubsection*{習題 7-4}\label{sec:ex7-4}
+
+\begin{enumerate}[1.]
+  \item 求下列各多項式在 $\mathbb{Z}[x], \mathbb{Q}[x]$ 及 $\mathbb{R}[x]$ 中的質因式分解：
+  \begin{enumerate}[(i)]
+    \item $2x^2+4x-6$.
+    \item $3x^2-9$.
+    \item $4x^2-4x+3$.
+    \item $(7x+5)^3+(5x+7)^3$.
+    \item $(2x+1)^3-3(2x+1)^2+3(2x+1)-1$.
+  \end{enumerate}
+
+  \item 寫出多項式 $3x^2+6x+3$ 在 $\mathbb{Z}[x]$ 中所有的質因式.
+
+  \item 設下列各多項式都是 $x$ 和 $x-1$ 的公倍式，求其中的 $a, b$.
+  \begin{enumerate}[(i)]
+    \item $3x^2+ax+b$.
+    \item $(ax+b)^3-7x-1$.
+    \item $(x+a)^2-b$.
+  \end{enumerate}
+
+  \item 求下列各組多項式在 $\mathbb{Z}[x]$ 中的最高公因式.
+  \begin{enumerate}[(i)]
+    \item $6, -3x$.
+    \item $4(x-1), 2(x-1)^2, 6(x^2-1)$.
+    \item $1-x^2, 1-x^3, 1-x^4$.
+    \item $4x^2+2x, 12x, -16x^2$.
+  \end{enumerate}
+
+  \item 試寫出公倍式的定義.
+
+  \item 已知 $x^2-x+p$ 與 $x^3+x^2+x+3+p$ 的最低公倍式為四次式，求此最低公倍式.
+\end{enumerate}
+
+\subsubsection*{乙、$\mathbb{Z}[x]$ 和 $\mathbb{Q}[x]$ 在性質上的比較}\label{subsec:7-2-b}
+
+整數系 $\mathbb{Z}$ 是有理數系 $\mathbb{Q}$ 的一部份，所以整係數多項式系 $\mathbb{Z}[x]$ 也是有理係數多項式系 $\mathbb{Q}[x]$ 的一部份，即
+\begin{equation*}
+  (\mathbb{Z}[x] \subseteq \mathbb{Q}[x]).
+\end{equation*}
+因為整數系 $\mathbb{Z}$ 對於加、減、乘，已經完整無缺，（也就是任意兩個整數 $a, b$ 的和 $a+b$，差 $a-b$，積 $a \cdot b$ 依然是整數。）所以 $\mathbb{Z}[x]$ 對於加、減、乘也是完整的。但是對於除法來說，$\mathbb{Z}[x]$ 與 $\mathbb{Z}$ 一樣，就有了缺點，現在舉例說明如下：
+
+\begin{example}\label{ex:7-2-7}
+考慮兩個多項式 $f(x) = x^3+x^2-5x+3, g(x) = 2x^2-3x+7$，在 $\mathbb{Q}[x]$ 中，以後者除前者就得到商式 $q(x) = \dfrac{1}{2}x+\dfrac{5}{4}$，餘式 $r(x) = -\dfrac{19}{4}x-\dfrac{23}{4}$。也就是說
+\begin{align}
+  &x^3+x^2-5x+3 = q(x) \cdot (2x^2-3x+7) + r(x), \notag \\
+  &\text{其中 } \deg r(x) < 2 \text{ 或 } r(x) = 0 \label{eq:z_div_defect}
+\end{align}
+在 $\mathbb{Q}[x]$ 中的唯一的一組解是
+\begin{equation*}
+  q(x) = \frac{1}{2}x+\frac{5}{4}, \quad r(x) = -\frac{19}{4}x-\frac{23}{4}.
+\end{equation*}
+注意上述 $q(x), r(x)$ 的係數不再是整數，所以上述除式唯一的一組解不屬於 $\mathbb{Z}[x]$。換句話說，上述例子說明了除式
+\begin{align*}
+  &f(x) = q(x) \cdot g(x) + r(x), \quad f(x), g(x) \in \mathbb{Z}[x], \\
+  &\text{其中 } \deg r(x) < \deg g(x) \text{ 或 } r(x) = 0
+\end{align*}
+在 $\mathbb{Z}[x]$ 中不一定有解。
+\end{example}
+
+在上一節中，我們談到如何用輾轉相除，能求得兩個有理係數多項式 $f(x), g(x)$ 在 $\mathbb{Q}[x]$ 中的最高公因式 $d(x)$，並且說明了由除法可以證明定理 1（參看 \S\ref{sec:7-1}）。但是在 $\mathbb{Z}[x]$ 中，除式不一定有解，所以也就無法再用輾轉相除去求兩個整係數多項式在 $\mathbb{Z}[x]$ 中的最高公因式。從下面的例子，同學們可以看出「在 $\mathbb{Z}[x]$ 中，相當於 $\mathbb{Q}[x]$ 中定理 1 的事實是不一定成立的」。
+
+\begin{example}\label{ex:7-2-8}
+$2x+5$ 和 $7x+10$ 在 $\mathbb{Z}[x]$ 中的最高公因式是 $1$，但是下式
+\begin{equation}
+  1 = m_1(x) \cdot (2x+5) + m_2(x) \cdot (7x+10) \label{eq:no_bezout_z}
+\end{equation}
+中的 $m_1(x), m_2(x)$ 在 $\mathbb{Z}[x]$ 中無解。所以定理 1 在 $\mathbb{Z}[x]$ 中不成立。
+
+\paragraph{【證明】}
+我們在這裏用歸謬法來證明，假設在 $\mathbb{Z}[x]$ 中存在有整係數多項式 $m_1(x), m_2(x)$ 滿足 \eqref{eq:no_bezout_z} 式，以 $x=0$ 代入 \eqref{eq:no_bezout_z} 式，就得到
+\begin{align*}
+  1 &= m_1(0) \cdot (2 \cdot 0+5) + m_2(0) \cdot (7 \cdot 0+10) \\
+  &= m_1(0) \cdot 5 + m_2(0) \cdot 10 \\
+  &= 5 \cdot (m_1(0)+2 \cdot m_2(0))
+\end{align*}
+即 $1$ 是 $5$ 的整數倍，（註 1）這顯然是不可能的，所以 \eqref{eq:no_bezout_z} 式在 $\mathbb{Z}[x]$ 中無解。\\
+（$m_1(0), m_2(0)$ 也就是 $m_1(x), m_2(x)$ 的常數項，所以由 $m_1(x), m_2(x) \in \mathbb{Z}[x]$ 的假設，知道 $m_1(0), m_2(0) \in \mathbb{Z}$。）
+\end{example}
+
+\begin{example}\label{ex:7-2-9}
+在多變數多項式系中的因子分解，問題要複雜得多，關於因式、倍式、可逆元、質式等等概念的定義，同學們可以依樣畫葫蘆的寫下來，但是，「像輾轉相除法等等的可行性，完全的答案要在大學的代數課才來講，我們只注意到像 $f(x, y) = x$ 及 $g(x, y) = y$ 兩式互質，但我們不能找到多項式 $p(x, y), q(x, y)$ 使 $f(x, y)p(x, y)+g(x, y)q(x, y) = 1$。（考慮兩邊次數就夠了！）
+\end{example}
+
+\subsubsection*{習題 7-5}\label{sec:ex7-5}
+
+\begin{enumerate}[1.]
+  \item 在 $\mathbb{Z}[x]$ 中，$(2, x) = 1$，問是否可找到 $\mathbb{Z}[x]$ 中的兩元 $p(x), g(x)$，使得 $2p(x)+xg(x) = 1$。
+
+  \item 試證方程式
+  \begin{equation*}
+    m(x) \cdot (5x+3) + n(x) \cdot (x-5) = 1
+  \end{equation*}
+  中的 $m(x), n(x)$ 在 $\mathbb{Z}[x]$ 中無解。
+
+  \item 試證方程式
+  \begin{equation*}
+    m(x) \cdot (x^2+1) + n(x) \cdot (x+2) = 1
+  \end{equation*}
+  中的 $m(x), n(x)$ 在 $\mathbb{Z}[x]$ 中無解。
+
+  \item 設 $m(x) = ax+b, n(x) = cx+1 \in \mathbb{Z}[x]$，滿足方程式
+  \begin{equation*}
+    m(x) \cdot (1+x) + n(x) \cdot x^2 = 1,
+  \end{equation*}
+  求 $a, b, c$.
+
+  \item 設 $m(x) = ax^2+bx+c, n(x) = x+d \in \mathbb{Z}[x]$，滿足方程式
+  \begin{equation*}
+    m(x) \cdot (1+x^2) + n(x) \cdot x^3 = 1.
+  \end{equation*}
+  求 $a, b, c, d$.
+
+  \item 二多項式 $f(x) = x^3+2x^2-29x-25, g(x) = x^2-4x-4$
+  \begin{enumerate}[(i)]
+    \item 若 $f(x) = (Ax+B)g(x)+Lx+M$\\
+    $g(x) = (Cx+D)(Lx+M)+N$\\
+    求 $A, B, C, D, L, M, N$.
+    \item 求二多項式 $J(x)$ 與 $K(x)$，使之滿足
+    \begin{equation*}
+      J(x)f(x)+K(x)g(x) = 1.
+    \end{equation*}
+  \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{丙、整係數多項式與有理係數多項式間的關係}\label{subsec:7-2-c}
+
+\begin{definition*}
+如果整係數多項式 $f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ 的係數間的最大公因數為 $1$，即 $(a_n, a_{n-1}, \dots, a_1, a_0) = 1$，那麼 $f(x)$ 就叫做\textbf{素模多項式}，簡稱\textbf{樸式}。
+\end{definition*}
+
+\begin{example}\label{ex:7-2-10}
+$2x^2+5x-3, x^3-5x+1$ 都是樸式。\\
+$2x+10, 7x^4-21x$ 就不是樸式。
+\end{example}
+
+\paragraph{注意：}
+任何整係數多項式都是某一個樸式的整數倍，這個整數可以取為原來多項式係數的最大公因數。
+
+\begin{example}\label{ex:7-2-11}
+\begin{align*}
+  2x+10 &= 2 \cdot (x+5), \\
+  7x^4+14x^3-21x+49 &= 7 \cdot (x^4+2x^3-3x+7),
+\end{align*}
+其中 $x+5$ 和 $x^4+2x^3-3x+7$ 都是樸式。
+\end{example}
+
+現在我們轉到有理係數多項式的討論，對於任何一個有理係數多項式 $f(x)$，乘上一個適當的整數 $a$（譬如 $f(x)$ 係數分母的最小公倍數），我們就得到一個整係數多項式 $g(x) = af(x)$。利用上面的「注意」，$g(x)$ 是某一個樸式 $h(x)$ 的整數倍，即 $g(x) = bh(x), b \in \mathbb{Z}$。所以 $f(x) = \dfrac{b}{a} h(x)$，也就是說，任何一個有理係數多項式都是某一個樸式的有理數倍。
+
+當有理係數多項式寫成一個樸式的有理數倍時，我們可進一步要求此有理數為正。這樣，我們就可得到以下的結果：
+
+\begin{prop}\label{prop:primitive_unique}
+任意有理係數多項式都可唯一地寫成一個正有理數與一樸式的乘積。
+\end{prop}
+
+\paragraph{【證明】}
+要證明這件事，也就是要證明如 $f(x) \in \mathbb{Q}[x]$，且 $f(x) = \dfrac{a}{b} g(x) = \dfrac{a'}{b'} g'(x)$，那麼 $\dfrac{a}{b} = \dfrac{a'}{b'}$，且 $g(x) = g'(x)$，如果我們將兩邊乘上 $bb'$，就得到 $ab' g(x) = a'b g'(x)$，考慮 $ab' g(x)$ 各種係數的最大公因數，我們可以看出就是 $ab'$（為什麼？）另一方面，$a'b g'(x)$ 的最大公因數是 $a'b$。因為 $ab' g(x) = a'b g'(x)$，所以這兩個最大公因數當然相等，也就是 $ab' = a'b$（註），所以 $\dfrac{a}{b} = \dfrac{a'}{b'}$，將 $\dfrac{a}{b}$ 約掉就得到 $g(x) = g'(x)$。\\
+（註：$\dfrac{a}{b}, \dfrac{a'}{b'}$ 都是正有理數！）
+
+\begin{example}\label{ex:7-2-12}
+\begin{align*}
+  \frac{5}{2}x^2-\frac{10}{3}x+\frac{15}{6} &= \frac{1}{6}(15x^2-20x+15) = \frac{5}{6}(3x^2-4x+3). \\
+  -\frac{3}{49}x^2+\frac{9}{7}x+\frac{33}{49} &= +\frac{1}{49}(-3x^2+63x+33) = +\frac{3}{49}(-x^2+21x+11).
+\end{align*}
+\end{example}
+
+\subsubsection*{習題 7-6}\label{sec:ex7-6}
+
+\begin{enumerate}[1.]
+  \item 試判別下列多項式什麼是樸式，什麼不是。如果不是樸式，就將它分解為樸式與整數之乘積.
+  \begin{enumerate}[(i)]
+    \item $2x^2+5x+3$.
+    \item $6x^2-4x+10$.
+    \item $6x^3-8x^2+14x-26$.
+    \item $9x^3+12x^2-210x-78$.
+    \item $2x^4+6x^3-11x-7$.
+  \end{enumerate}
+
+  \item 將下列有理係數多項式分解為樸式與有理之乘積.
+  \begin{enumerate}[(i)]
+    \item $\dfrac{12}{5}x^2-\dfrac{18}{5}x+\dfrac{6}{5}$.
+    \item $\dfrac{3}{2}x^4-x^3-\dfrac{5}{2}x^2+5$.
+    \item $-\dfrac{5}{4}x^4+\dfrac{15}{2}x^3+\dfrac{35}{4}x^2-10x+24$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{*丁、高斯引理及其推論}\label{subsec:7-2-d}
+
+設 $f(x) \in \mathbb{Z}[x]$ 是一個整係數樸式，若 $f(x)$ 能分解成幾個整係數多項式的乘積，那麼每個因式也是整係數樸式，原因是任何因式係數的公因數也是 $f(x)$ 係數的公因數，所以
+\begin{equation*}
+  \text{整係數樸式的因式必定也是整係數樸式。}
+\end{equation*}
+
+\begin{example}\label{ex:7-2-13}
+設
+\begin{align*}
+  f(x) &= a_2 x^2+a_1 x+a_0 = 3x^2+4x+2, \\
+  g(x) &= b_2 x^2+b_1 x+b_0 = 4x^2+4x+3
+\end{align*}
+它們都是樸式，乘積
+\begin{align*}
+  f(x) \cdot g(x) &= (a_2 b_2)x^4+(a_2 b_1+a_1 b_2)x^3+(a_2 b_0+a_1 b_1+a_0 b_2)x^2+(a_1 b_0+a_0 b_1)x+a_0 b_0 \\
+  &= 12x^4+28x^3+33x^2+20x+6
+\end{align*}
+也是樸式。在 $f(x)$ 中 $a_0, a_1$ 是 $2$ 的倍數，但 $a_2$ 不是 $2$ 的倍數；在 $g(x)$ 中 $b_0$ 不是 $2$ 的倍數，所以在乘積 $f(x) \cdot g(x)$ 中 $a_1 b_1, a_0 b_2$ 是 $2$ 的倍數，而 $a_2 b_0$ 不是 $2$ 的倍數。
+\end{example}
+
+\begin{lemma}[高斯引理]\label{lem:gauss}
+兩個整係數樸式 $f(x), g(x)$ 的乘積必定也是一個整係數樸式。也就是當 $f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0, g(x) = b_m x^m + b_{m-1} x^{m-1} + \dots + b_0$ 是兩個整係數樸式時，即 $(a_n, a_{n-1}, \dots, a_0) = 1$，和 $(b_m, b_{m-1}, \dots, b_0) = 1$。則 $f(x), g(x)$ 的乘積
+\begin{align*}
+  f(x) \cdot g(x) &= C_{n+m} x^{n+m} + C_{n+m-1} x^{n+m-1} + \dots + C_1 x + C_0, \\
+  \text{其係數} \quad &\begin{cases}
+    C_{n+m} = a_n \cdot b_m \\
+    C_{n+m-1} = a_n \cdot b_{m-1} + a_{n-1} \cdot b_m \\
+    \dots\dots\dots\dots\dots\dots\dots \\
+    C_0 = a_0 \cdot b_0
+  \end{cases}
+\end{align*}
+的最大公因數 $(C_{n+m}, \dots, C_1, C_0) = 1$。
+\end{lemma}
+
+\paragraph{【證明】}
+我們打算證明 $C_{n+m}, C_{n+m-1}, \dots, C_0$ 不含有共同的質因數，換句話說，對任意的一個質數 $p$，我們想要找一個不能被 $p$ 整除的 $C_j$；因為 $(a_n, a_{n-1}, \dots, a_0) = 1$，所以有些 $a_i$ 不能被 $p$ 整除。我們找足標最小的一個，叫它做 $a_j$；也就是說，$a_0, \dots, a_{j-1}$ 都是 $p$ 的倍數，但是 $a_j$ 不是 $p$ 的倍數。同理，可以找到 $b_i$，使得 $b_0, \dots, b_{i-1}$ 都是 $p$ 的倍數，但是 $b_i$ 不是 $p$ 的倍數。由多項式乘法，有
+\begin{align*}
+  C_{i+j} &= (a_{i+j} \cdot b_0 + a_{i+j-1} b_1 + \dots + a_{j+1} b_{i-1}) + a_j b_i \\
+  &\quad + (a_{j-1} b_{i+1} + \dots + a_0 b_{i+j}).
+\end{align*}
+因為 $b_0, b_1, \dots, b_{i-1}$ 都是 $p$ 的倍數，所以
+\begin{equation*}
+  a_{i+j} b_0 + a_{i+j-1} b_1 + \dots + a_{j+1} b_{i-1} \text{ 也是 $p$ 的倍數。}
+\end{equation*}
+同理，因為 $a_0, \dots, a_{j-1}$ 都是 $p$ 的倍數，所以
+\begin{equation*}
+  a_{j-1} b_{i+1} + \dots + a_0 b_{i+j} \text{ 也是 $p$ 的倍數。}
+\end{equation*}
+但是 $a_j, b_i$ 都不是 $p$ 的倍數，所以 $a_j b_i$ 也不是 $p$ 的倍數，因此 $C_{i+j}$ 不是 $p$ 的倍數。
+
+\begin{corollary}\label{cor:gauss_1}
+如果次數大於 $0$ 的整係數多項式 $p(x)$ 在 $\mathbb{Z}[x]$ 中是一個質式，那麼 $p(x)$ 在 $\mathbb{Q}[x]$ 中依然是一個質式，而且 $p(x)$ 一定是一個樸式。
+\end{corollary}
+
+\paragraph{【證明】}
+因為一個不是樸式的整係數多項式 $f(x)$ 至少可以分解成 $f(x) = d \cdot \tilde{p}(x)$，（$d$ 是 $f(x)$ 係數的最大公因數）所以 $\mathbb{Z}[x]$ 中的質式必定是樸式。
+
+現在假定 $p(x)$ 在 $\mathbb{Q}[x]$ 中不是質式，則 $p(x)$ 可以分解成較低次因式的乘積
+\begin{equation}
+  p(x) = g(x) \cdot h(x) \label{eq:gauss_q_split}
+\end{equation}
+（注意：$g(x), h(x) \in \mathbb{Q}[x]$，所以一般說來，不一定是整係數的。）\\
+令 $\tilde{g}(x), \tilde{h}(x)$ 分別是 $g(x), h(x)$ 所對應的整係數樸式，則 $g(x) = r\tilde{g}(x), h(x) = s\tilde{h}(x)$。其中 $r, s \in \mathbb{Q}$ 是兩個適當的正有理數，代入 \eqref{eq:gauss_q_split} 式，即得
+\begin{equation}
+  p(x) = rs \tilde{g}(x) \tilde{h}(x). \label{eq:gauss_prim_prod}
+\end{equation}
+由高斯引理，知道 $\tilde{g}(x)\tilde{h}(x)$ 也是「整係數樸式」，但是 $p(x)$ 和樸式 $\tilde{g}(x)\tilde{h}(x)$ 只差一個常數倍 $r \cdot s$，所以 $\tilde{g}(x)\tilde{h}(x)$ 就是 $p(x)$ 所對應的樸式，即 $\tilde{g}(x)\tilde{h}(x) = \tilde{p}(x)$，但是我們已經證得 $p(x)$ 本身也是整係數樸式，即 $\tilde{p}(x) = p(x)$，所以有
+\begin{equation}
+  p(x) = \tilde{p}(x) = \tilde{g}(x)\tilde{h}(x) \label{eq:gauss_prim_factor}
+\end{equation}
+比較 \eqref{eq:gauss_prim_prod}, \eqref{eq:gauss_prim_factor} 也就是說 $r \cdot s = 1$。而 \eqref{eq:gauss_prim_factor} 和 \eqref{eq:gauss_q_split} 所不同的是：\\
+\eqref{eq:gauss_q_split} 式中的 $g(x), h(x)$ 不一定是整係數的，但是 \eqref{eq:gauss_prim_factor} 式中的 $\tilde{g}(x), \tilde{h}(x)$ 是整係數樸式，所以 \eqref{eq:gauss_prim_factor} 式是 $\mathbb{Z}[x]$ 中的因式分解。這與 $p(x)$ 是 $\mathbb{Z}[x]$ 中的質式的假定矛盾。
+
+\begin{theorem}\label{thm:z_unique_factor}
+一個不等於零的整係數多項式在 $\mathbb{Z}[x]$ 中的不可約因子分解，除了順序及符號外，是唯一的。
+\end{theorem}
+
+\paragraph{【證明】}
+設 $f(x) \in \mathbb{Z}[x]$ 是一個任意整係數多項式，$\tilde{f}(x)$ 是其對應的整係數樸式 $f(x) = a\tilde{f}(x), a > 0$。設
+\begin{align}
+  f(x) &= a\tilde{f}(x) = p_1 p_2 \dots p_k g_1(x) \dots g_s(x) \notag \\
+  &= q_1 q_2 \dots q_l h_1(x) \dots h_t(x) \label{eq:z_poly_two_factor}
+\end{align}
+是 $f(x)$ 在 $\mathbb{Z}[x]$ 中的兩種不可約因子分解，其中 $p_i, q_j$ 是次數為 $0$ 的質式（也就是質數），$g_i(x), h_j(x)$ 是次數大於 $0$ 的質式。由推論 1，$g_i(x), h_j(x)$ 都是整係數樸式。由高斯引理得知：
+\begin{equation*}
+  g_1(x) \dots g_s(x), \quad h_1(x) \dots h_t(x)
+\end{equation*}
+皆為整係數樸式，由 \eqref{eq:z_poly_two_factor} 式即得
+\begin{align}
+  a &= \pm p_1 p_2 \dots p_k = \pm q_1 q_2 \dots q_l \label{eq:z_int_factors} \\
+  \tilde{f}(x) &= \pm g_1(x) \dots g_s(x) = \pm h_1(x) \dots h_t(x). \label{eq:z_poly_prim_factors}
+\end{align}
+由整數系中因子分解的唯一性可知 $k=l$，而且將足標適當調整後 $p_j = \pm q_j$。再者，由推論 1 可知 $g_i(x), h_j(x)$ 也是 $\mathbb{Q}[x]$ 中的質式，所以 \eqref{eq:z_poly_prim_factors} 也可以看成 $\tilde{f}(x)$ 在 $\mathbb{Q}[x]$ 中的兩種不可約因子分解。由 $\mathbb{Q}[x]$ 中因子分解的唯一性（即定理 2）可知 $s=t$，而且將足標適當調整後，$g_i(x)$ 和 $h_j(x)$ 互為因式，也就是 $g_i(x)$ 和 $h_j(x)$ 至多只差一個符號。
+
+\begin{example}\label{ex:7-2-14}
+\begin{align*}
+  24x^2-12x-12 &= 2 \cdot 2 \cdot 3 \cdot (x-1)(2x+1) \\
+  &= (-2) \cdot 2 \cdot 3 \cdot (2x+1)(1-x).
+\end{align*}
+\end{example}
+
+\begin{corollary}\label{cor:rational_root}
+設 $\dfrac{b}{c}$ 是整係數方程式 $f(x) = a_n x^n + \dots + a_0 = 0$ 的一個有理根，其中 $c > 0$，而且 $(b, c) = 1$ 那麼，$b$ 必定是 $a_0$ 的因數，$c$ 必定是 $a_n$ 的因數。
+\end{corollary}
+
+\paragraph{【證明】}
+由餘式定理（參看 \S\ref{sec:5-4}）可知 $f(x)$ 必定能被 $x-\dfrac{b}{c}$ 所整除，即
+\begin{equation*}
+  f(x) = q(x) \cdot \left(x-\frac{b}{c}\right).
+\end{equation*}
+由假設 $(b, c) = 1$，所以 $cx-b$ 是 $x-\dfrac{b}{c}$ 所對應的整係數樸式，所以 $cx-b$ 是 $f(x)$ 在 $\mathbb{Z}[x]$ 中的因式，即存在適當的 $+d_{n-1}, \dots, d_0 \in \mathbb{Z}$，使得
+\begin{equation*}
+  f(x) = a_n x^n + \dots + a_0 = (d_{n-1} x^{n-1} + \dots + d_0)(cx-b).
+\end{equation*}
+比較兩端首項及末項係數即得
+\begin{equation*}
+  a_n = d_{n-1} \cdot c \text{ 和 } a_0 = d_0 \cdot (-b).
+\end{equation*}
+換句話說，$c \mid a_n, b \mid a_0$。
+
+\paragraph{註：}
+這個推論叫做\textbf{有理根鑑定法}，在討論方程式的問題時十分有用。
+
+\begin{corollary}\label{cor:monic_root}
+當整係數多項式 $f(x)$ 的首項係數 $a_n = 1$ 時，$f(x) = 0$ 的任何有理根必定是整數。（因為 $c$ 是 $a_n = 1$ 的正因數，故 $c=1$。）
+\end{corollary}
+
+\begin{example}\label{ex:7-2-15}
+$x^2-2 = 0$ 沒有有理根（亦即 $\pm\sqrt{2}$ 不是有理根）。
+
+\paragraph{【證明】}
+由推論 3，方程式唯一可能的有理根是 $\pm 1, \pm 2$，但是將 $\pm 1, \pm 2$ 代入時，顯然不能滿足 $x^2-2 = 0$。所以方程式沒有有理根。
+\end{example}
+
+\begin{example}\label{ex:7-2-16}
+試求 $x^3-2x^2-2x-3 = 0$ 的有理根。
+
+\paragraph{【解】}
+由推論 3，我們只要把 $\pm 1, \pm 3$ 分別代入方程式。得
+\begin{align*}
+  f(1) &= 1-2-2-3 = -6, \\
+  f(-1) &= -1-2+2-3 = -4, \\
+  f(3) &= 27-18-6-3 = 0, \\
+  f(-3) &= -27-18+6-3 = -42.
+\end{align*}
+所以 $x^3-2x^2-2x-3 = 0$ 只有一個有理根 $x=3$。
+\end{example}
+
+\begin{example}\label{ex:7-2-17}
+試求 $2x^3+5x+3 = 0$ 的有理根。
+
+\paragraph{【解】}
+由推論 3，我們只需要把 $\pm 1, \pm 3, \pm\dfrac{1}{2}, \pm\dfrac{3}{2}$ 代入，即可求得，但上述方程式的係數都是正的，所以用 $+1, +3, +\dfrac{1}{2}, +\dfrac{3}{2}$ 代入時顯然得正值（當然不等於 $0$）。\\
+因此我們只要試著用 $x = -1, -3, -\dfrac{1}{2}, -\dfrac{3}{2}$ 代入即可。
+\begin{align*}
+  f(-1) &= -2-5+3 = -4, \\
+  f(-3) &= -54-15+3 = -66, \\
+  f\left(-\frac{1}{2}\right) &= -\frac{1}{4}-\frac{5}{2}+3 = +\frac{1}{4}, \\
+  f\left(-\frac{3}{2}\right) &= -\frac{27}{4}-\frac{15}{2}+3 = -\frac{45}{4}.
+\end{align*}
+所以 $2x^3+5x+3 = 0$ 沒有有理根。
+\end{example}
+
+\subsubsection*{習題 7-7}\label{sec:ex7-7}
+
+\begin{enumerate}[1.]
+  \item 試求方程式 $x^5+3x^4-15x^3-35x^2+54x+72 = 0$ 的有理根.
+
+  \item 試證明方程式 $3x^3-3x+1 = 0$ 不含任何有理數根.
+
+  \item 試證 $-5$ 和 $\dfrac{1}{3}$ 均為方程式 $45x^6+357x^5+233x^4-1946x^3+939x^2-35x-25 = 0$ 的二重根.
+
+  \item 證證 $4$ 為方程式 $2x^4-21x^3+60x^2+16x-192 = 0$ 的三重根.
+
+  \item 找出下列方程式的有理根：
+  \begin{enumerate}[(i)]
+    \item $2x^3+3x^2-2x+3 = 0$.
+    \item $6x^2-x-12 = 0$.
+    \item $5x^4+4x^3+5x+4 = 0$.
+    \item $4x^4-17x^2+4 = 0$.
+    \item $4x^5-9x^3+4x^2-9 = 0$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{分式與分項分式}\label{sec:7-3}
+
+從本章 \S\ref{sec:7-1} 的討論中，我們知道 $\mathbb{Q}[x]$（有理係數多項式系）在四則運算與因子分解上和整數系 $\mathbb{Z}$ 具有完全同樣的性質。考慮兩個整數 $a, b$ 的比（$b \neq 0$），就得一分數 $\dfrac{a}{b}$。同樣的，兩個有理係數多項式 $f(x), g(x)$（$g(x) \neq 0$）的比 $\dfrac{f(x)}{g(x)}$，就是一個\textbf{有理係數分式}，簡稱\textbf{分式}。如 $\dfrac{x^3-1}{x^2+1}, \dfrac{x^2-x+1}{x+3}, \dfrac{x^4-x^2+x+1}{x^6}$ 等都是分式，注意我們把多項式 $f(x) = \dfrac{f(x)}{1}$ 看成分式的特殊情形。
+
+\subsubsection*{甲、分式的運算及其性質}\label{subsec:7-3-a}
+
+分數系是整數系的推廣，它的各種運算與整數系運算有密切的關係。同樣的，分式系是有理式系的推廣，如果我們知道有理式系的運算，照分數的辦法，依樣畫葫蘆，也就得到分式的運算演，我們舉例如下：
+
+\begin{example}\label{ex:7-3-1}
+化簡 $\dfrac{ax^2-a^2 x}{x^2-2ax+a^2}, \dfrac{x^2-3x-10}{x^2-2x-15}$。
+
+\paragraph{【解】}
+\begin{align*}
+  \frac{ax^2-a^2 x}{x^2-2ax+a^2} &= \frac{ax(x-a)}{(x-a)^2} = \frac{ax}{x-a}, \\
+  \frac{x^2-3x-10}{x^2-2x-15} &= \frac{(x+2)(x-5)}{(x+3)(x-5)} = \frac{x+2}{x+3}.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:7-3-2}
+化簡 $\dfrac{1}{x-3} + \dfrac{3}{x+1} - \dfrac{3}{x-1} - \dfrac{1}{x+3}$。
+
+\paragraph{【解】}
+\begin{align*}
+  \text{原式} &= \frac{1}{x-3} - \frac{1}{x+3} + \frac{3}{x+1} - \frac{3}{x-1} \\
+  &= \frac{x+3-(x-3)}{(x-3)(x+3)} + \frac{3(x-1)-3(x+1)}{(x+1)(x-1)} \\
+  &= \frac{6}{x^2-9} + \frac{-6}{x^2-1} \\
+  &= \frac{6(x^2-1-x^2+9)}{(x^2-9)(x^2-1)} = \frac{48}{(x^2-9)(x^2-1)}.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:7-3-3}
+$\dfrac{x^2+2x+1}{x^3-1} \cdot \dfrac{x^2+x+1}{4x^7} \cdot \dfrac{x}{x^2-2x+1}$。
+
+\paragraph{【解】}
+\begin{align*}
+  \text{原式} &= \frac{(x+1)^2}{(x-1)(x^2+x+1)} \cdot \frac{x^2+x+1}{4x^7} \cdot \frac{x}{(x-1)^2} \\
+  &= \frac{(x+1)^2}{4x^6(x-1)^3}.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:7-3-4}
+$\dfrac{x^2+2x-15}{x^2+8x-33} \div \dfrac{x^2+9x+20}{x^2+7x-44}$。
+
+\paragraph{【解】}
+\begin{align*}
+  \text{原式} &= \frac{(x+5)(x-3)}{(x+11)(x-3)} \div \frac{(x+4)(x+5)}{(x+11)(x-4)} \\
+  &= \frac{(x+5)(x-3)}{(x+11)(x-3)} \times \frac{(x+11)(x-4)}{(x+4)(x+5)} \\
+  &= \frac{x-4}{x+4}.
+\end{align*}
+\end{example}
+
+當然囉！不用說大家也猜得到像分數一樣，這些運算滿足結合律、交換律等等種種性質，我們在此也就無需多說，請大家參考分數的情形就行了。
+
+\subsubsection*{乙、分項分式}\label{subsec:7-3-b}
+
+從上節分式加法的幾個例子中，我們發現幾個分式的和的分母，常常是原來這幾個分式的分母的乘積。例如：
+\begin{equation*}
+  \frac{1}{x-1} + \frac{1}{x+1} = \frac{2x}{x^2-1},
+\end{equation*}
+我們可以反問一個分式 $\dfrac{f(x)}{g_1(x)g_2(x)}$，可不可以寫成 $\dfrac{f_1(x)}{g_1(x)} + \dfrac{f_2(x)}{g_2(x)}$ 這樣的分式和呢？這就是本節所要討論的問題。
+
+由 \S\ref{sec:7-1} 中的定理 1，我們可以推論得下述定理 3。
+
+\begin{theorem}\label{thm:partial_fractions}
+設 $\dfrac{f(x)}{g_1(x)g_2(x)}$ 為一滿足下列條件的有理係數分式，
+\begin{enumerate}[(i)]
+  \item 分子的次數小於分母的次數，即
+  \begin{equation*}
+    \deg f(x) < \deg(g_1(x)g_2(x)).
+  \end{equation*}
+  \item $g_1(x), g_2(x)$ 互質，即 $(g_1(x), g_2(x)) = 1$。
+\end{enumerate}
+那麼存在唯一的一組解 $f_1(x), f_2(x) \in \mathbb{Q}[x]$，滿足下列條件：
+\begin{equation*}
+  \frac{f(x)}{g_2(x)g_1(x)} = \frac{f_1(x)}{g_1(x)} + \frac{f_2(x)}{g_2(x)},
+\end{equation*}
+而且 $\deg f_1(x) < \deg g_1(x), \deg f_2(x) < \deg g_2(x)$。
+\end{theorem}
+
+\paragraph{*【證明】}
+我們先證上述 $f_1(x), f_2(x)$ 的存在性。\\
+由假設 $(g_1(x), g_2(x)) = 1$ 和定理 1 可知存在適當的 $m_1(x), m_2(x) \in \mathbb{Q}[x]$ 使得
+\begin{equation}
+  1 = m_1(x)g_1(x) + m_2(x)g_2(x) \label{eq:partial_bezout}
+\end{equation}
+將 \eqref{eq:partial_bezout} 式兩端同乘 $f(x)$，即得
+\begin{equation}
+  f(x) = (f(x)m_1(x))g_1(x) + (f(x)m_2(x))g_2(x) \label{eq:partial_mul_f}
+\end{equation}
+以 $g_1(x)g_2(x)$ 除 \eqref{eq:partial_mul_f} 式，就得到
+\begin{equation}
+  \frac{f(x)}{g_1(x)g_2(x)} = \frac{f(x)m_1(x)}{g_2(x)} + \frac{f(x)m_2(x)}{g_1(x)} \label{eq:partial_split_unreduced}
+\end{equation}
+如果 $f(x)m_1(x)$ 被 $g_2(x)$ 除所得的商是 $q_1(x)$，餘式是 $r_1(x)$，就得到
+\begin{equation}
+  \frac{f(x)m_1(x)}{g_2(x)} = q_1(x) + \frac{r_1(x)}{g_2(x)} \label{eq:partial_div_g2}
+\end{equation}
+同樣地，我們有多項式 $q_2(x), r_2(x)$ 使
+\begin{equation}
+  \frac{f(x)m_2(x)}{g_1(x)} = q_2(x) + \frac{r_2(x)}{g_1(x)} \label{eq:partial_div_g1}
+\end{equation}
+由 \eqref{eq:partial_split_unreduced}, \eqref{eq:partial_div_g2}, \eqref{eq:partial_div_g1}，我們導得
+\begin{equation}
+  \frac{f(x)}{g_1(x)g_2(x)} = [q_1(x)+q_2(x)] + \frac{r_1(x)g_1(x)+r_2(x)g_2(x)}{g_1(x)g_2(x)} \label{eq:partial_collected}
+\end{equation}
+由於 $\deg r_1(x) < \deg g_2(x), \deg r_2(x) < \deg g_1(x)$，我們容易得到
+\begin{equation}
+  \deg(r_1(x)g_1(x)+r_2(x)g_2(x)) < \deg(g_1(x)g_2(x)) \label{eq:partial_deg_ineq}
+\end{equation}
+由餘式定理，\eqref{eq:partial_collected} 和 \eqref{eq:partial_deg_ineq} 告訴我們的是：\\
+以 $g_1(x)g_2(x)$ 除 $f(x)$ 時，商式必為 $q_1(x)+q_2(x)$，餘式為 $r_1(x)g_1(x)+r_2(x)g_2(x)$，但是我們的假定是 $\deg f(x) < \deg(g_1(x)g_2(x))$，而餘式定理說在這種情況下，商式一定為 $0$。〔參看餘式定理證明〕換句話說，
+\begin{equation*}
+  q_1(x)+q_2(x) = 0
+\end{equation*}
+因此 \eqref{eq:partial_collected} 式變為
+\begin{equation*}
+  \frac{f(x)}{g_1(x)g_2(x)} = \frac{r_1(x)}{g_2(x)} + \frac{r_2(x)}{g_1(x)},
+\end{equation*}
+$\deg r_1(x) < \deg g_2(x), \deg r_2(x) < \deg g_1(x)$。正是我們需要的結論。
+
+其次讓我們來證唯一性：設 $\{f_1(x), f_2(x)\}$ 和 $\{h_1(x), h_2(x)\}$ 是滿足定理 3 的二組解，即
+\begin{equation}
+  \frac{f(x)}{g_1(x)g_2(x)} = \frac{f_1(x)}{g_1(x)} + \frac{f_2(x)}{g_2(x)} = \frac{h_1(x)}{g_1(x)} + \frac{h_2(x)}{g_2(x)} \label{eq:partial_two_sols}
+\end{equation}
+而且
+\begin{equation}
+  \left. \begin{aligned}
+    \deg f_1(x), \deg h_1(x) &\text{ 都小於 } \deg g_1(x) \\
+    \deg f_2(x), \deg h_2(x) &\text{ 都小於 } \deg g_2(x)
+  \end{aligned} \right\} \label{eq:partial_deg_cond}
+\end{equation}
+由 \eqref{eq:partial_two_sols}，可以得到
+\begin{equation}
+  \frac{f_1(x)-h_1(x)}{g_1(x)} = \frac{h_2(x)-f_2(x)}{g_2(x)} \label{eq:partial_diff}
+\end{equation}
+即
+\begin{equation}
+  (f_1(x)-h_1(x))g_2(x) = g_1(x)(h_2(x)-f_2(x)) \label{eq:partial_cross_mul}
+\end{equation}
+由 \eqref{eq:partial_cross_mul}，顯然有
+\begin{equation}
+  g_1(x) \mid (f_1(x)-h_1(x))g_2(x). \label{eq:partial_div_cond}
+\end{equation}
+但是 $g_1(x), g_2(x)$ 互質（假設），所以必定有
+\begin{equation}
+  g_1(x) \mid (f_1(x)-h_1(x)) \label{eq:partial_div_final}
+\end{equation}
+但是 $f_1(x), h_1(x)$ 的次數都比 $g_1(x)$ 的次數低，所以只有
+\begin{equation}
+  f_1(x)-h_1(x) = 0 \text{ 才能使 \eqref{eq:partial_div_final} 成立，也就是 } f_1(x) = h_1(x). \label{eq:partial_f1_unique}
+\end{equation}
+代入 \eqref{eq:partial_diff} 式，即得，
+\begin{equation*}
+  h_2(x)-f_2(x) = 0, \quad \text{即 } f_2(x) = h_2(x).
+\end{equation*}
+
+\paragraph{注意 1：}
+定理 3 中要求 $g_1(x), g_2(x)$ 互質，這個條件是十分要緊的，不然解不一定存在，譬如下式：
+\begin{equation*}
+  \frac{2x+3}{(x-1)(x-1)^2} = \frac{f_1(x)}{(x-1)} + \frac{f_2(x)}{(x-1)^2}
+\end{equation*}
+中的 $f_1(x), f_2(x)$ 無解，不然的話
+\begin{align*}
+  2x+3 &= f_1(x)(x-1)^2 + f_2(x)(x-1) \\
+  &= (x-1)[f_1(x)(x-1)+f_2(x)]
+\end{align*}
+則 $x-1$ 是 $2x+3$ 的因式，這顯然是矛盾的！
+
+\paragraph{注意 2：}
+定理 3 中，如果 $g_1(x), g_2(x)$ 不互質，那麼定理 4 中的解的唯一性也完蛋了，譬如：
+\begin{align*}
+  \frac{2x}{x^2-1} + \frac{2x^2+3x+1}{x^3-1} &= \left(\frac{1}{x+1}+\frac{1}{x-1}\right) + \left(\frac{2}{x-1}+\frac{1}{x^2+x+1}\right) \\
+  &= \left(\frac{1}{x+1}+\frac{2}{x-1}\right) + \left(\frac{1}{x-1}+\frac{1}{x^2+x+1}\right) \\
+  &= \frac{3x+1}{x^2-1} + \frac{x^2+2x}{x^3-1}.
+\end{align*}
+
+\paragraph{註：}
+把分式 $\dfrac{f(x)}{g_1(x)g_2(x)}$ 表成 $\dfrac{f_1(x)}{g_1(x)} + \dfrac{f_2(x)}{g_2(x)}$ 這種算法叫做\textbf{分項分式}。分項分式在微積分的討論計算中是不可或缺的工具。有的書上稱此表法為\textbf{部分分式法}。
+
+\begin{example}\label{ex:7-3-5}
+化 $\dfrac{5x+1}{(x-1)(x+2)}$ 為分項分式。
+
+\paragraph{【解】}
+設 $\dfrac{5x+1}{(x-1)(x+2)} = \dfrac{A}{x-1} + \dfrac{B}{x+2}$\\
+那麼
+\begin{align}
+  5x+1 &= A(x+2)+B(x-1) \label{eq:pf_ex1_id} \\
+  &= (A+B)x+(2A-B). \notag
+\end{align}
+因此，我們知道
+\begin{align*}
+  A+B &= 5, \\
+  2A-B &= 1.
+\end{align*}
+解這個聯立方程式就得
+\begin{equation*}
+  A=2, \quad B=3.
+\end{equation*}
+所以
+\begin{equation*}
+  \frac{5x+1}{(x-1)(x+2)} = \frac{2}{x-1} + \frac{3}{x+2}.
+\end{equation*}
+\end{example}
+
+\paragraph{註：}
+從 \eqref{eq:pf_ex1_id} 式求 $A, B$ 也可以用代入法，就是說用 $x=1$ 代入 \eqref{eq:pf_ex1_id} 式，就得
+\begin{equation*}
+  6 = 3A, \quad \text{或 } A=2.
+\end{equation*}
+再用 $x=-2$ 代入 \eqref{eq:pf_ex1_id} 式，即得
+\begin{equation*}
+  -9 = -3B, \quad \text{或 } B=3.
+\end{equation*}
+
+\paragraph{注意：}
+有的同學也許會覺得奇怪，在下式中
+\begin{equation*}
+  \frac{5x+1}{(x-1)(x+2)} = \frac{A}{x-1} + \frac{B}{x+2}
+\end{equation*}
+顯然已假定 $x \neq 1, x \neq -2$ 所以才可以化成
+\begin{equation*}
+  5x+1 = A(x+2)+B(x-1)
+\end{equation*}
+為什麼求 $A, B$ 時又以 $x=1, x=-2$ 代入呢，因 $A, B$ 有確定的值，所以化成 \eqref{eq:pf_ex1_id} 式後它已成為恆等式，雖然可用例如 $x=5$ 或 $x=6$ 等數值代入求 $A, B$ 之值？但若以 $x=1, x=-2$ 代入以求出 $A, B$ 之值更容易，所以可以使用它。
+
+\begin{example}\label{ex:7-3-6}
+化 $\dfrac{(a-b)(b-c)(c-a)}{(x-a)(x-b)(x-c)}$ 為分項分式。
+
+\paragraph{【解】}
+設 $\dfrac{(a-b)(b-c)(c-a)}{(x-a)(x-b)(x-c)} = \dfrac{A}{x-a} + \dfrac{B}{x-b} + \dfrac{C}{x-c}$\\
+那麼
+\begin{align*}
+  (a-b)(b-c)(c-a) &= A(x-b)(x-c) + B(x-a)(x-c) \\
+  &\quad + C(x-a)(x-b).
+\end{align*}
+用 $x=a$ 代入，就有
+\begin{align*}
+  (a-b)(b-c)(c-a) &= A(a-b)(a-c), \\
+  \therefore A &= -(b-c).
+\end{align*}
+用 $x=b$ 代入，就有
+\begin{align*}
+  (a-b)(b-c)(c-a) &= B(b-a)(b-c), \\
+  \therefore B &= -(c-a).
+\end{align*}
+用 $x=c$ 代入，就有
+\begin{align*}
+  (a-b)(b-c)(c-a) &= C(c-a)(c-b), \\
+  \therefore C &= -(a-b).
+\end{align*}
+所以
+\begin{equation*}
+  \frac{(a-b)(b-c)(c-a)}{(x-a)(x-b)(x-c)} = \frac{c-b}{x-a} + \frac{a-c}{x-b} + \frac{b-a}{x-c}.
+\end{equation*}
+\end{example}
+
+\begin{example}\label{ex:7-3-7}
+化 $\dfrac{x+1}{x(x-1)^2}$ 為分項分式。
+
+\paragraph{【解】}
+設
+\begin{equation*}
+  \frac{x+1}{x(x-1)^2} = \frac{A}{x} + \frac{f(x)}{(x-1)^2}.
+\end{equation*}
+那麼 $x+1 = A(x-1)^2 + x \cdot f(x)$。\\
+如果以 $x=0$ 代入，就得
+\begin{equation*}
+  1 = A(-1)^2 = A.
+\end{equation*}
+用 $A=1$ 再代入上式，得
+\begin{align*}
+  x+1 &= (x-1)^2 + xf(x) \\
+  \text{或 } xf(x) &= -x^2+3x. \\
+  \therefore f(x) &= -x+3.
+\end{align*}
+所以
+\begin{equation}
+  \frac{x+1}{x(x-1)^2} = \frac{1}{x} + \frac{-x+3}{(x-1)^2} \label{eq:pf_rep_step1}
+\end{equation}
+其實 $\dfrac{-x+3}{(x-1)^2}$ 還可以進一步分析開來：\\
+由 $-x+3 = -(x-1)+2$ 得到
+\begin{equation*}
+  \frac{-x+3}{(x-1)^2} = \frac{-1}{x-1} + \frac{2}{(x-1)^2},
+\end{equation*}
+所以
+\begin{equation}
+  \frac{x+1}{x(x-1)^2} = \frac{1}{x} - \frac{1}{x-1} + \frac{2}{(x-1)^2} \label{eq:pf_rep_step2}
+\end{equation}
+\end{example}
+
+\paragraph{注意：}
+當分母有重複的因子時，通常分項分式是指 \eqref{eq:pf_rep_step2} 式而不是 \eqref{eq:pf_rep_step1} 式。
+
+最後我們再介紹一種利用綜合除法解分母具有重因式之連乘積的方法
+
+\begin{example}\label{ex:7-3-8}
+化 $\dfrac{x^5+x-1}{(x-2)^3}$ 為分項分式。
+
+\paragraph{【解】}
+應用綜合除法，先將 $x^5+x-1$ 化為 $y=x-2$ 之多項式
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{rrrrrr|l}
+1 & +0 & +0 & +0 & +1 & -1 & 2 \\
+  & 2  & +4 & +8 & +16 & +34 & \\ \cline{1-6}
+1 & +2 & +4 & +8 & +17 & \multicolumn{1}{|r}{+33} & \\
+  & 2  & +8 & +24 & +64 & \multicolumn{1}{|l}{} \\ \cline{1-5}
+1 & +4 & +12 & +32 & \multicolumn{1}{|r}{+81} & \multicolumn{1}{|l}{} \\
+  & 2  & +12 & +48 & \multicolumn{2}{|l}{} \\ \cline{1-4}
+1 & +6 & +24 & \multicolumn{1}{|r}{+80} & \multicolumn{2}{|l}{} \\
+  & 2  & +16 & \multicolumn{3}{|l}{} \\ \cline{1-3}
+1 & +8 & \multicolumn{1}{|r}{+40} & \multicolumn{3}{|l}{} \\
+  & +2 & \multicolumn{4}{|l}{} \\ \cline{1-2}
+1 & \multicolumn{1}{|r}{+10} & \multicolumn{4}{|l}{}
+\end{tabular}
+\end{center}
+即
+\begin{align*}
+  x^5+x-1 &= (x-2)^5 + 10(x-2)^4 + 40(x-2)^3 \\
+  &\quad + 80(x-2)^2 + 81(x-2) + 33 \\
+  \therefore \frac{x^5+x-1}{(x-2)^3} &= \frac{(x-2)^5+10(x-2)^4+40(x-2)^3+80(x-2)^2+81(x-2)+33}{(x-2)^3} \\
+  &= (x-2)^2 + 10(x-2) + 40 + \frac{80}{x-2} + \frac{81}{(x-2)^2} + \frac{33}{(x-2)^3} \\
+  &= x^2+6x+24 + \frac{80}{x-2} + \frac{81}{(x-2)^2} + \frac{33}{(x-2)^3}.
+\end{align*}
+\end{example}
+
+\begin{example}\label{ex:7-3-9}
+化 $\dfrac{x^2+x-3}{(x-1)^2(x^2-x+1)}$ 為分項分式。
+
+\paragraph{【解】}
+設
+\begin{align*}
+  \frac{x^2+x-3}{(x-1)^2(x^2-x+1)} &= \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{Cx+D}{x^2-x+1}\footnote{原書此處印刷字模曾誤排為 $\frac{(x+1)}{x^2-x+1}$，下文展開式及解聯立時則為規範之 $Cx+D$，正文依數學脈絡校正為 $Cx+D$ 並於\hyperref[sec:master_errata_notes]{目錄前勘誤表}詳細說明。} \\
+  \text{則} \quad x^2+x-3 &= A(x-1)(x^2-x+1) + B(x^2-x+1) \\
+  &\quad + (Cx+D)(x-1)^2 \\
+  &= (A+C)x^3 + (-2A+B-2C+D)x^2\footnote{原書印為「$(--2A+B-2C+D)$」，多排一個負號字模，正文校正為單一負號「$-2A$」，詳見\hyperref[sec:master_errata_notes]{目錄前勘誤表}。} \\
+  &\quad + (2A-B+C-2D)x + D \\
+  \therefore \quad &A+C = 0 \\
+  &-2A+B-2C+D = 1 \\
+  &2A-B+C-2D = 1 \\
+  &D = 3 \\
+  \text{解得} \quad &A = 5 \\
+  &B = -2 \\
+  &C = -5 \\
+  &D = 3.
+\end{align*}
+\phantomsection\label{note:ch7-cx-plus-d}
+\phantomsection\label{note:ch7-double-minus}
+\end{example}
+
+\subsubsection*{習題 7-8}\label{sec:ex7-8}
+
+\begin{enumerate}[1.]
+  \item 化 $\dfrac{1}{(x-1)(x-2)(x-3)}$ 為分項分式.
+
+  \item 化 $\dfrac{12}{x^4-5x^2+4}$ 為分項分式.
+
+  \item 設 $\dfrac{x^2}{(x^2+x+1)(x^2+1)} = \dfrac{ax+b}{x^2+x+1} + \dfrac{cx+d}{x^2+1}$，求 $a, b, c, d$ 之值.
+
+  \item 化 $\dfrac{x^4-12}{(x+2)^2(x^2-3)}$ 為分項分式.
+
+  \item 化 $\dfrac{5x^3+6x^2+5x}{(x^2-1)(x+1)^3}$ 為分項分式.
+
+  \item 化 $\dfrac{x^4-3x^3-3x^2+10}{(x+1)^2(x-3)}$ 為分項分式.
+
+  \item 化 $\dfrac{5x^2-4x+16}{(x-3)(x^2-x+1)^2}$ 為分項分式.
+
+  \item 化 $\dfrac{x^4+x^3-8x^2+6x-3}{(x-2)^5}$ 為分項分式.
+
+  \item 化 $\left(\dfrac{x+1}{x-1}\right)^3$ 為分項分式.
+
+  \item 二多項式 $f(x) = x^3+2x^2-29x-25, g(x) = x^2-4x-4$
+  \begin{enumerate}[(i)]
+    \item 若 $f(x) = (Ax+B)g(x)+Lx+M$\\
+    $g(x) = (Cx+D)(Lx+M)+N$\\
+    求 $A, B, C, D, L, M, N$.
+    \item 求滿足下示二多項式 $J(x)$ 與 $K(x)$
+    \begin{equation*}
+      J(x)f(x)+K(x)g(x) = 1
+    \end{equation*}
+    \item 求滿足下式實數值 $P, Q, R, S, T$
+    \begin{equation*}
+      \frac{x}{f(x)g(x)} = \frac{Px^2+Qx+R}{f(x)} + \frac{Sx+T}{g(x)}.
+    \end{equation*}
+  \end{enumerate}
+\end{enumerate}

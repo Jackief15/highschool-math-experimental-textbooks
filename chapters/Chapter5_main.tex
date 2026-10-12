@@ -1,0 +1,93 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../styles/preamble.tex}
+\input{../styles/Chinese_math_style.tex}
+\input{../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 1 冊}
+  \fancyhead[L]{\small 第 5 章\quad 多項式及其運算}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small 第五章\quad 多項式及其運算}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{第五章\quad 多項式及其運算}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% =========================================================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則 6 整理於目錄之前）
+% =========================================================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:master_errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第一冊》（高一上）第五章「多項式及其運算」掃描原件（第 106--145 頁，共 40 頁）完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記及排印疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[subsec:5-1-a]{§ 5-1 甲 (iii) 單項式} & 
+文字出現紅色塗抹雜跡 & 
+原書流傳過程中讀者之歷史紅筆塗畫墨跡，正文中已予剔除，恢復「$a$ 是個數」之原始正文字樣。 \\ \hline
+
+\hyperref[sec:ex5-1]{習題 5-1 第 2 題} & 
+式中印為「$-60xyy$」 & 
+此項尚未合併同類項，鉛字直接排為 $xyy$（即 $xy^2$），正文忠實貼緊原書文字，特加註記。 \\ \hline
+
+\hyperref[subsec:5-2-b]{§ 5-2 乙 註三 卷積記號} & 
+多項式乘積項係數記為 $\sum_{i+j=k} a_i b_j$ & 
+此為現代抽象代數標準之 Cauchy 乘積求和記號，正文忠實排版並於註腳說明 $\sum$ 求和意義。 \\ \hline
+
+\hyperref[item:ex5-3-1-5]{習題 5-3 第 1(5) 題} & 
+題號印為 \texttt{'5)} & 
+左括號印損斷裂，正文中規範化為標準題號 (5)。 \\ \hline
+
+\hyperref[item:ex5-5-1]{習題 5-5 第 1 題} & 
+式子印為 $y=f(x)=x^3+5x^2--3x-2$ & 
+「$--$」顯為排字工人重複置放減號字模之印刷訛誤，正文校正為單減號「$-3x$」。 \\ \hline
+
+\hyperref[item:ex5-5-8]{習題 5-5 第 8 題} & 
+$f(x)$ 第三段定義域印為「當 $3 \le x \le 0$ 時」 & 
+區間下限 3 大於上限 0，為空集合，顯為排版字模倒置或誤植（推測原意為 $3 \le x \le 6$ 等實數區間），正文保留原書字樣並註記。 \\ \hline
+
+\hyperref[subsec:5-4-d]{§ 5-4 丁 綜合除法符號} & 
+「新式綜合除法」與「舊式綜合除法」正負號對照 & 
+原書特別列出兩套綜合除法算法之加減號轉換機制，正文以雙欄直式陣列完整忠實呈現。 \\ \hline
+
+\hyperref[sec:ex5-7]{習題 5-7 第 8(i) 題} & 
+右端恆等式末項為 $+e$，但題幹僅求 $a,b,c,d$ 之值 & 
+原書常數項印為 $+e$ 但題幹問「求 $a,b,c,d$ 之值」，顯漏列 $e$，正文忠實保留題目原始文字。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter5.tex}
+
+\end{document}
