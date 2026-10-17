@@ -1,0 +1,134 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 3 冊（自然組）}
+  \fancyhead[L]{\small 第 3 章\quad 向量幾何的基礎及其代數的運算體系}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第三冊（自然組）}
+\fancyhead[RO]{\small 第三章\quad 向量幾何的基礎及其代數的運算體系}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第三冊（自然組）}\\[0.5em] \Large\textbf{第三章\quad 向量幾何的基礎及其代數的運算體系}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第三章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第三章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b3_ch3}
+
+本章依據 1975 年再版《高中數學實驗教材 第三冊（自然組）》（高二上）第三章「向量幾何的基礎及其代數的運算體系」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b3-ch3-p74-space-font]{§ 3-1 頁 74 空間文字殘損} & 
+「設在玄間中相關於...」 & 
+「玄」實為「空」之字模殘缺印刷瑕疵。正文照原文字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p76-fig-ref]{§ 3-2 頁 76 圖號指涉} & 
+「例如圖 3-7，$\vec{AB},\vec{CD}$ 起點雖然不同...」 & 
+圖 3-5 原印為單向量，次頁圖 3-6 始為兩向量同向等長圖，行文誤指為圖 3-7。正文保留原印字樣並註記。 \\ \hline
+
+\hyperref[note:b3-ch3-p78-fig3-9]{§ 3-2 頁 78--79 圖號指涉} & 
+「由右圖 3-9，知 $A,B,D,C$ 構成一平面上的四邊形」 & 
+右側平面描點圖實際印刷編號為「圖 3-8」，而「圖 3-9」為次頁平移示意圖。正文保留原刊字樣並註記說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p83-sec-ref]{§ 3-3 頁 83 章節引述} & 
+「由 §3-1 提過的平行四邊形的基本原理知」 & 
+平行四邊形原理實敘述於 § 3-2 乙（頁 78【論例 1】）。正文保留原刊字樣並加註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p87-fig-ref]{§ 3-3 頁 87 圖號指涉} & 
+「其中（如圖 3-20）」 & 
+空間三軸分向量示意圖實際印刷標號為「圖 3-19」。正文照原印字樣錄入並加註。 \\ \hline
+
+\hyperref[note:b3-ch3-p88-fig-ref]{§ 3-3 頁 88 圖號指涉} & 
+「下圖 3-21-1, 圖 3-21-2 顯示平面上兩向量...」 & 
+次頁對應之插圖實際印刷標號為「圖 3-20-1」與「圖 3-20-2」。正文照原書字樣錄入並加註。 \\ \hline
+
+\hyperref[note:b3-ch3-p90-fig-ref]{§ 3-3 頁 90 圖號指涉} & 
+「在圖 3-22 中，可以看出...」 & 
+該向量減法幾何圖形實際印刷標號為「圖 3-21」。正文保留原印字樣並加註。 \\ \hline
+
+\hyperref[note:b3-ch3-p93-fig-ref]{§ 3-4 頁 93 圖號指涉} & 
+「（見圖 3-25-1）」與「（見圖 3-25-2）」 & 
+次頁兩圖實際印刷標號為「圖 3-24-1」與「圖 3-24-2」。正文照原印字樣錄入並加註。 \\ \hline
+
+\hyperref[note:b3-ch3-p94-alpha-c-typo]{§ 3-4 頁 94 算式訛字} & 
+「$c.\mathbf{a} = \vec{OB}$」 & 
+「$c.$」實為純量係數「$\alpha$」之排版訛字。正文照原印字樣錄入並加註。 \\ \hline
+
+\hyperref[note:b3-ch3-p95-ex2-ref]{§ 3-4 頁 95 節號與圖號指涉} & 
+「由 §3-2 丁中論例 2」及「由圖 3-26，易知」 & 
+實為「§3-3 丁中論例 2」，且插圖實為本頁上方之「圖 3-25」。正文保留原文並加註。 \\ \hline
+
+\hyperref[note:b3-ch3-p100-qr-typo]{§ 3-4 頁 100 算式字跡脫落} & 
+「$\vec{QR} = (\quad 3, 0, 3)$」 & 
+負號與數字 2 印刷模糊脫落，依題設座標及後文運算校訂為 $(-2, 0, 3)$。 \\ \hline
+
+\hyperref[note:b3-ch3-p102-ge-typo]{§ 3-4 頁 102 頂點標記訛字} & 
+「$CG'' = 2G''E$ 之點」 & 
+$G''$ 位於中線 $CF$ 上，右端點「$E$」實為「$F$」之排印訛字。正文照原書字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p104-prob7-typo]{§ 3-4 頁 104 括號訛誤} & 
+「及 $\text{'' }\mathbf{c}-\mathbf{a}$）時」 & 
+引號與括號殘缺倒置，實為 $(\mathbf{c}-\mathbf{a})$。正文保留原書字樣並加註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p109-tau-typo]{§ 3-5 頁 109 圓周率字模訛誤} & 
+「故相差 $2n\tau$ 不致發生問題」 & 
+「$\tau$」實為「$\pi$」之殘字印刷訛誤。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p113-cos-theta-typo]{§ 3-5 頁 113 夾角符號訛字} & 
+「$\mathbf{a}\cdot\mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos v$」 & 
+「$v$」實為夾角符號「$\theta$」之字模排印訛字。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p116-ac-bc-zero]{§ 3-5 頁 116 數字印為字母} & 
+「$x^2+y^2-r^2 = C$ 即 $\vec{AC}\perp\vec{BC}$」 & 
+等號右端「$C$」顯為數字「$0$」之印刷訛字。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p123-cust2-typo]{§ 3-6 頁 123 函數記號訛字} & 
+「$\text{cus } t_2$」 & 
+英文餘弦記號「$\cos$」誤植為「cus」。正文照原刊字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch3-p127-double-eq]{§ 3-7 頁 127 雙等號誤植} & 
+「$\mathbf{b} == (a_{21}, a_{22}, a_{23})$」 & 
+誤植連用兩個等號。正文照原刊字樣錄入並加註。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter3.tex}
+
+\end{document}

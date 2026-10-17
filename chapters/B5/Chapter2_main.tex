@@ -1,0 +1,176 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+\newenvironment{example-non}[1][]{\vspace{0.8em}\noindent\textbf{#1}\quad}{\vspace{0.8em}}
+\newenvironment{solution}{\par\noindent\textbf{解}\quad}{\par\vspace{0.8em}}
+
+\usepackage{xltabular}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns,decorations.pathreplacing,decorations.markings,decorations.shapes,decorations.pathmorphing,calc,3d}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 5 冊（自然組）}
+  \fancyhead[L]{\small 第 2 章\quad 排列組合}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第五冊（自然組）}
+\fancyhead[RO]{\small 第二章\quad 排列組合}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第五冊（自然組）}\\[0.5em] \Large\textbf{第二章\quad 排列組合}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b5_ch2}
+
+本章依據 1975 年再版《高中數學實驗教材 第五冊（自然組）》（高三上）第二章「排列組合」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{xltabular}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\caption{第二章掃描檔勘誤、疑難處與文義校訂表}\label{tab:errata_b5_ch2} \\
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endfirsthead
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endhead
+\hline
+\endfoot
+
+\hyperref[note:b5-ch2-p58-k]{§ II-1 頁 58 基本計數原則} & 
+「如果 $A_1, A_2, \cdots, A_k$ 是個有限集合」 & 
+原書漏印集合個數「$k$」，脫漏作「是個有限集合」，茲據文義校補為「是 $k$ 個有限集合」． \\ \hline
+
+\hyperref[note:b5-ch2-p60-a3]{§ II-1 頁 60 路線走法說明} & 
+「由 $A_0$ 經 $A_1, A_2$ 到 $A^3$ 共有 105 種走法」 & 
+原書節點誤植為上標「$A^3$」，茲據文意與圖 2-1 標記校正為下標「$A_3$」． \\ \hline
+
+\hyperref[note:b5-ch2-linear-perm]{§ II-2 頁 69 乙段標題} & 
+「乙、線形排列」 & 
+原書標題及內文作「線形排列」，即現行通稱之「直線排列」或「線性排列」，保留原文並加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p72-go-stones]{§ II-2 頁 72 論例 7(ii)} & 
+「白子 5 個，黑子 5 點」 & 
+原書作「5 點」，即「5 個（顆）」之意，保留原文並加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p72-surjection-period]{§ II-2 頁 72 論例 7(ii)} & 
+「則映射到黑子，白子各 5 次的蓋射個數。」 & 
+解答句末贅印句號，予以註記說明． \\ \hline
+
+\hyperref[note:b5-ch2-p74-ex14]{§ II-2 頁 74 土風舞引述} & 
+「例如在例 14 (ii) 中跳土風舞時」 & 
+實為第 70 頁之〔例 11〕(ii)，此處係原書例題編號錯參，特加註校訂． \\ \hline
+
+\hyperref[note:b5-ch2-p75-q6-quote]{§ II-2 頁 75 習題 II-2 第 6 題} & 
+「某社區巷道如右圖，‘早晨派報時」 & 
+「如右圖」後贅印單引號「‘」，正文予以刪除並加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p75-q7-crayon]{§ II-2 頁 75 習題 II-2 第 7 題} & 
+「小明有 12 色臘筆」 & 
+「臘」通「蠟」，即蠟筆，保留原文並加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p75-eq]{§ II-3 頁 75 定理 7 釋例} & 
+「例如 $C_2^5 == \frac{5!}{(5-2)! 2!}$」 & 
+原書多印一個等號「$==$」，茲更正為單個等號「$=$」． \\ \hline
+
+\hyperref[note:b5-ch2-p76-east6]{§ II-3 頁 76 走法組合分析} & 
+「向東段及向北 3 段」 & 
+原書漏印數字「6」，依上下文「共走九小段」校補為「向東 6 段及向北 3 段」． \\ \hline
+
+\hyperref[note:b5-ch2-p76-thm8-dots]{§ II-3 頁 76 定理 8} & 
+「$|B| = n$，\dots 及 $C = \{0, 1\}$」 & 
+此處省略號「\dots」為原書原文，疑為承接前段排版遺留，保留原文並加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p77-cb]{§ II-3 頁 77 映射個數} & 
+「$|C^B| = |C^n| = 2^n \mid$」 & 
+原書符號印刷雜訊，末尾豎線疑為雜點，且集合之勢實為 $|C|^n$，加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p77-pn]{§ II-3 頁 77 冪集式 (3)} & 
+「$|\mathscr{P}(B)| = |C^n| = 2^n$」 & 
+原書若將映射集合視為笛卡兒積 $C^n$，其勢記為 $|C^n|$，即 $|C|^n = 2^n$，加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p83-zhankai]{§ II-3 頁 83 論例 10} & 
+「如將 $(x_1 + \dots + x_n)^m$ 展開式 $m$ 次齊次式」 & 
+原書作「展開式」，依文意校正為「展開成 $m$ 次齊次式」． \\ \hline
+
+\hyperref[note:b5-ch2-p83-gongyong]{§ II-3 頁 83 習題 II-3 第 2 題} & 
+「共用幾種可能派法？」 & 
+原書作「共用」，疑為「共有」之誤植，保留原文並加註說明． \\ \hline
+
+\hyperref[note:b5-ch2-p85-expand]{§ II-4 頁 85 展開項次序} & 
+「$xx\cdots xx + xx\cdots xy + xx\cdots xyx + \cdots$」 & 
+照原書字典順序展開排印並加註說明省略項次序． \\ \hline
+
+\hyperref[note:b5-ch2-p90-binom]{§ II-4 頁 90 式 (4) 展開} & 
+雙重求和內原印作「$\binom{n}{k} \binom{k}{j}$」 & 
+其中「$\binom{n}{k}$」顯係「$\binom{m}{k}$」之印刷訛誤，茲更正為 $\binom{m}{k}$． \\ \hline
+
+\hyperref[note:b5-ch2-p90-ex11-typo]{§ II-4 頁 90 論例 11} & 
+「將 $(x+y+y)^4$ 展開」 & 
+原書誤植第二個 $y$，顯係「$(x+y+z)^4$」之訛誤，更正為 $(x+y+z)^4$． \\ \hline
+
+\hyperref[note:b5-ch2-p90-ex11-y4]{§ II-4 頁 90 論例 11 解答} & 
+括弧內印作「$(x^4 + x^4 + z^4)$」 & 
+第二項「$x^4$」顯係「$y^4$」之誤，茲更正為 $x^4 + y^4 + z^4$． \\ \hline
+
+\hyperref[note:b5-ch2-p90-disc10]{§ II-4 頁 90 論例 11 說明} & 
+「由論例 10 知上式有 $H_4^3 = 15$ 個不同類項」 & 
+加註指明引用前節（§ II-3 重複組合）之論例 10． \\ \hline
+
+\hyperref[note:b5-ch2-p91-eq5]{§ II-4 頁 91 定理 11} & 
+定理 11 右端漏印公式標號 & 
+後文推導明確稱「如在 (5) 中令 $x_1 = \cdots = x_n = 1$」，依文意補上編號 (5)． \\ \hline
+
+\hyperref[note:b5-ch2-p91-p1]{§ II-4 頁 91 定理 11 證明} & 
+「故應用 $P!$ 去除」 & 
+漏印足標 1，依文義校訂為「$P_1!$」． \\ \hline
+
+\hyperref[note:b5-ch2-p91-pm]{§ II-4 頁 91 定理 11 證明} & 
+分母末項印作「$P_m!$」 & 
+依變數個數 $n$ 應為「$P_n!$」，更正為 $P_n!$． \\ \hline
+
+\hyperref[note:b5-ch2-p91-right]{§ II-4 頁 91 定理 11 說明} & 
+「左邊為...重複排列總數，左邊的各項則為...」 & 
+第二個「左邊」顯為「右邊」之筆誤，茲更正為「右邊」． \\ \hline
+
+\hyperref[note:b5-ch2-p92-q3-3]{§ II-4 頁 92 習題 II-4 第 3(3) 題} & 
+「$\left(2x^2 + \frac{3}{x}\right)^5$ 中 $x^3$ 的係數」 & 
+展開式各項指數為 $10-3k \ne 3$，不存在 $x^3$ 項（係數為 0），保留原文並加註說明． \\ \hline
+
+\end{xltabular}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter2}
+
+\end{document}

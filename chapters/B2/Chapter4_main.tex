@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 2 冊}
+  \fancyhead[L]{\small 第 4 章\quad 指數函數與對數函數}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第二冊}
+\fancyhead[RO]{\small 第四章\quad 指數函數與對數函數}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第二冊}\\[0.5em] \Large\textbf{第四章\quad 指數函數與對數函數}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第二冊》（高一下）第四章「指數函數與對數函數」掃描原件轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b2-ch4-p81-duplicate]{§ 1-1 頁 81 【例】(ii)} & 
+「$(a^{-3})^2 = (1/a^3)^2 = \frac{1}{(a^3)^2} = \frac{1}{(a^3)^2} = 1/a^6$」 & 
+算式中「$\frac{1}{(a^3)^2}$」重複排印兩次，係鉛字排版之重植贅墨。正文忠實保留原刊印文字，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch4-p81-comma]{§ 1-1 頁 81 習題 4-1 第 2 題} & 
+「$(a, b)^n = a^n \cdot b^n$」 & 
+乘積運算符號誤植為逗號（或鉛字點號浮墨），文義顯係 $(a\cdot b)^n$ 或 $(ab)^n$。正文照原刊印字樣錄入並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch4-p91-monotonicity]{§ 2 頁 91 單調性「注意」段} & 
+「$\alpha > \beta \implies g(\alpha) \le g(\beta)$ 叫做單調遞增」及「$\alpha < \beta \implies g(\alpha) \ge g(\beta)$ 叫做單調遞減」 & 
+不等號方向排印倒置（非嚴格遞增應為 $\alpha > \beta \implies g(\alpha) \ge g(\beta)$，遞減應為 $\le$）。正文忠實保留原書排印文字，特予說明。 \\ \hline
+
+\hyperref[note:b2-ch4-p92-missing-f]{§ 2 頁 92 定理 2 證明 (i) 第 6 行} & 
+「$f(0)\cdot f(\beta) = (0+\beta) = f(\beta)$」 & 
+中間等式脫漏函數記號 $f$（漏印為 $(0+\beta)$），文義實為 $f(0+\beta)$。正文忠實照錄原印文字並在此備註。 \\ \hline
+
+\hyperref[note:b2-ch4-p98-log-base]{§ 3-2 頁 98 習題 4-5 第 1(v) 題} & 
+「$\log 1000^{\frac{1}{10}}$」 & 
+同題其他小題皆標明底數（如 $\log_5, \log_3$ 等），此小題脫漏底數標籤 10（即常用對數 $\log_{10}$）。正文忠實照錄原印字樣。 \\ \hline
+
+\hyperref[note:b2-ch4-p106-surjcetion]{§ 4-1 頁 106 蓋射定義} & 
+「蓋射 (surjcetion)」 & 
+英文術語拼寫字母倒置誤植為「surjcetion」（正確為 surjection）。正文維持原書鉛字排印並在此考釋。 \\ \hline
+
+\hyperref[note:b2-ch4-p109-index-x]{§ 4-2 頁 109 定理 7 證明第 11 行} & 
+「$x_n < a_1 < x_0,\; x = 1, 2, 3, \dots$」 & 
+式中變數符號 $x$ 顯為數列指標符號 $n$ 之誤植（應為 $n = 1, 2, 3, \dots$）。正文照錄原書文字並予備註說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter4.tex}
+
+\end{document}

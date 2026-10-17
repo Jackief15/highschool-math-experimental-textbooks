@@ -1,0 +1,76 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns,decorations.pathreplacing,decorations.markings,decorations.shapes,decorations.pathmorphing,calc,3d}
+
+\newenvironment{example-non}[1][]{\vspace{0.8em}\noindent\textbf{#1}\quad}{\vspace{0.8em}}
+\newenvironment{solution}{\par\noindent\textbf{解}\quad}{\par\vspace{0.8em}}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 4 冊（自然組）}
+  \fancyhead[L]{\small 第 5 章\quad 複數與三角基本定理}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第四冊（自然組）}
+\fancyhead[RO]{\small 第五章\quad 複數與三角基本定理}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第四冊（自然組）}\\[0.5em] \Large\textbf{第五章\quad 複數與三角基本定理}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十五年（1976）三版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第五章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第五章掃描檔勘誤、疑難處與文義校訂表}
+
+本章數位化轉錄依據 1976 年版原書掃描檔案進行逐字、逐式忠實校錄．對原書中因早期鉛字印刷、手工排版所致之訛字、衍字、倒裝、脫漏及圖形標註微瑕，均本於「字符級忠實度」與「嚴謹學術校訂」原則，於正文完整保留原貌並以註腳精確標註，彙整校訂說明如下：
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|c|p{4.2cm}|p{4.5cm}|X|}
+\hline
+\textbf{頁碼} & \textbf{原書印刷／掃描原貌} & \textbf{數位校訂／規範化形式} & \textbf{校訂說明與學術理由} \\ \hline
+p.256 & 倒數第 8 行原印 $(3+i)\cdot(1+2i) = 3-6i+\dots$ & $(3+i)\cdot(1-2i) = 3-6i+i-2i^2 = 5-5i$ & 原書第二因式誤植為加號，依展開式與文義校訂為減號 $(1-2i)$． \\ \hline
+p.259 & 倒數第 7 行原印 $x=0, y=\sqrt{-a}$ & $x=0, y=\pm\sqrt{-a}$ & 解方程式 $y^2 = -a$ 應有正負二根，補正 $\pm$． \\ \hline
+p.261 & 習題 V-1 第 4 題漏編 (iv) 直跳 (v) & 保留原編號 (i), (ii), (iii), (v) & 忠實保留原書題號編排，加註說明原書漏編 (iv)． \\ \hline
+p.267 & 例 6 原書計算式行距較緊湊 & 排版優化並保持公式完整 & 保留共軛複數與長度性質之原始推導過程． \\ \hline
+p.286 & 習題 V-3 第 11(i) 題誤印 $\frac{1}{2}$ & $\sin^4\theta = \frac{1}{8}\cos 4\theta - \frac{1}{2}\cos 2\theta + \frac{3}{8}$ 或 $\frac{1}{4}$ 關係 & 原書係數印刷微瑕，依三角展開公式校訂補註． \\ \hline
+p.287 & ‡§ V-4 里曼球面符號 ${}^\ddagger$ & 保留 ${}^\ddagger$ 標記 & 表示雙重星號等級之進階選修教材，忠實呈現原書標示． \\ \hline
+p.297 & 習題 V-5 獨立題組 & § V-4 丙「球的轉動」後獨立設「習題 V-5」 & 原書在 § V-4 內編排兩套習題（習題 V-4 與 V-5），忠實完整收錄． \\ \hline
+\end{tabularx}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter5}
+
+\end{document}

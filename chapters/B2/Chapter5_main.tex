@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 2 冊}
+  \fancyhead[L]{\small 第 5 章\quad 對數表的用法與計算尺原理$^*$}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第二冊}
+\fancyhead[RO]{\small 第五章\quad 對數表的用法與計算尺原理$^*$}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第二冊}\\[0.5em] \Large\textbf{第五章\quad 對數表的用法與計算尺原理$^*$}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第二冊》（高一下）第五章「對數表的用法與計算尺原理$^*$」掃描原件轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b2-ch5-p114-ex2]{§ 1-1 頁 114 【例 2】} & 
+「$4.128 \times 2.953 = 12.189$」 & 
+實則 $4.128 \times 2.953 = 12.189984$，依四捨五入求千分位值應為 $12.190$（原印顯漏末位捨入或逕行截斷）。正文忠實照錄原刊印字樣，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch5-p115-interpolation-zero]{§ 1-2 頁 115 內插法算式第 3 行} & 
+「$y = 0.8698 + 0.006 \cdot \frac{0.0042}{0.01}$」 & 
+前一步驟之微差比率為 $0.0006 : 0.01$，此處算式第一項乘數「$0.006$」漏植一位小數零（應為 $0.0006$）；其下行展開之小數結果 $0.000252$ 則無誤。正文忠實保留原刊印文字並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch5-p116-ex3-minus-log]{§ 1-2 頁 116 【例 3】減項運算} & 
+「$-\log 0.04796 = 1.3192$」及「$(\log 0.04796 = \bar{2}.6808)$」 & 
+此處計算直接將減去負對數轉換為加上其補數 $-( -2 + 0.6808) = + 1.3192$，鉛字排版前冠負號「$-$」易滋誤解。正文維持原刊樣式並特予說明。 \\ \hline
+
+\hyperref[note:b2-ch5-p123-ex5-5-ref]{§ 2 頁 123 習題 5-5 第 2、3、4 題} & 
+「仿例 1 計算」、「仿例 2 計算」、「仿例 3 計算」 & 
+題幹所引之例題編號，實指前文頁 122–123 應用 A、C 尺之【例 3】（乘方）、【例 4】（乘方商式）及【例 5】（開方乘除）。原書係就該類運算之獨立序數指涉。正文保留原書字樣並予說明。 \\ \hline
+
+\hyperref[note:b2-ch5-p125-circular-rule-split]{§ 2 頁 125–126 【例 8】插圖分頁} & 
+「我們可以用圓盤式計算尺（略如下圖）.」 & 
+原刊本頁 125 解文末句稱「略如下圖」，然因版面底端空間不足，圓盤式計算尺插圖實被順延排印於頁 126 頂端（習題 5-7 之前）。轉錄時將插圖緊隨【例 8】解文排版，特予考證備註原書跨頁現象。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter5.tex}
+
+\end{document}

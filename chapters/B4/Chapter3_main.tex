@@ -1,0 +1,74 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 4 冊（自然組）}
+  \fancyhead[L]{\small 第 3 章\quad 二次幾何\quad 第二部分：標準式}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第四冊（自然組）}
+\fancyhead[RO]{\small 第三章\quad 二次幾何\quad 第二部分：標準式}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第四冊（自然組）}\\[0.5em] \Large\textbf{第三章\quad 二次幾何\quad 第二部分：標準式}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十五年（1976）三版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第三章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第三章掃描檔勘誤、疑難處與文義校訂表}
+
+本章數位化轉錄依據 1976 年版原書掃描檔案進行逐字、逐式忠實校錄．對原書中因早期鉛字印刷、手工排版所致之訛字、衍字、倒裝、脫漏及圖形標註微瑕，均本於「字符級忠實度」與「嚴謹學術校訂」原則，於正文完整保留原貌並以註腳精確標註，彙整校訂說明如下：
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|c|p{4.2cm}|p{4.5cm}|X|}
+\hline
+\textbf{頁碼} & \textbf{原書印刷／掃描原貌} & \textbf{數位校訂／規範化形式} & \textbf{校訂說明與學術理由} \\ \hline
+p.98 & 標準友程式 & 標準方程式 & 鉛字字模排印訛字，依文義校訂． \\ \hline
+p.98 & 三杰典線 & 二次曲線 & 字模磨損殘缺，校訂為「二次曲線」． \\ \hline
+p.98 & 線供 標幾何 / 上魚三次標幾何 & 線性座標幾何 / 平面上的二次座標幾何 & 早期鉛字脫落磨損，依第三冊內容及對稱文義校訂． \\ \hline
+p.98 & § II-2 & § III-2 & 原書小節交叉參照引號誤植，校訂對齊． \\ \hline
+p.98 & 8II-4 & § III-4 & 節符號印刷訛字，校訂為 § III-4． \\ \hline
+p.101 & 討論圓 & 稍後將特別討論圓 & 原書註解句末斷截，文義校訂流暢． \\ \hline
+p.115 & 且其 與準線的距離為 7 & 且其焦點與準線的距離為 7 & 習題 III-1 第 1(iii) 題，原書脫漏「焦點」二字，茲予補正． \\ \hline
+p.129 & 定理 II（部分印刷模糊） & 定理 III & 雙曲線準線定理，接續定理 I 與定理 II，校勘確立為「定理 III」． \\ \hline
+p.134 & $3x^2 - 6x + y^2 = 0$ & $3x^2 - 6x + y^2 = 0$（加註說明） & 習題 III-2 第 1(iv) 題式中 $y^2$ 前為正號，配方後實為橢圓，疑為 $-y^2$ 排印誤植，正文存真並加註． \\ \hline
+p.149 & 焦點 $V(-2,0)$ & 焦點 $V(-2,0)$（加註說明） & 習題 III-3 第 6(iv) 題符號 $V$ 通常標示頂點，正文照錄並加註． \\ \hline
+p.175 & *§ III-6 圓的正交與鏡射 & *§ III-6 圓的正交與鏡射 & 星號表示選修內容，忠實保留． \\ \hline
+p.182 & 定理 VII（字模重疊） & 定理 VIII & 圓鏡射映圓定理，接續 p.180 定理 VII，確認為「定理 VIII」． \\ \hline
+\end{tabularx}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter3}
+
+\end{document}

@@ -1,0 +1,108 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+\newenvironment{example-non}[1][]{\vspace{0.8em}\noindent\textbf{#1}\quad}{\vspace{0.8em}}
+\newenvironment{solution}{\par\noindent\textbf{解}\quad}{\par\vspace{0.8em}}
+
+\usepackage{xltabular}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns,arrows.meta,calc}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 5 冊（自然組）}
+  \fancyhead[L]{\small 第 4 章\quad 有限機率空間}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第五冊（自然組）}
+\fancyhead[RO]{\small 第四章\quad 有限機率空間}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第五冊（自然組）}\\[0.5em] \Large\textbf{第四章\quad 有限機率空間}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b5_ch4}
+
+本章依據 1975 年再版《高中數學實驗教材 第五冊（自然組）》（高三上）第四章「有限機率空間」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{xltabular}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\caption{第四章掃描檔勘誤、疑難處與文義校訂表}\label{tab:errata_b5_ch4} \\
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endfirsthead
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endhead
+\hline
+\endfoot
+
+\hyperref[note:b5-ch4-p116-meiyou]{§ IV-1 頁 116 〔注意〕第 4 點} & 
+「這表示樣本空間 $S$ 中設有機率為 0 的非空事件」 & 
+依前句 $P(A) = 0 \Longrightarrow A = \phi$ 及後文「不可能發生的基本事件都被排除」、「在無限的情形就會有機率為 0 的非空事件」，「設有」顯為「沒有」之排版訛誤，茲予校訂． \\ \hline
+
+\hyperref[note:b5-ch4-p121-calc]{§ IV-1 頁 121 〔例 3〕計算式} & 
+$= \frac{25}{72} + \frac{25}{72} - \frac{1}{9} = \frac{31}{36}$ & 
+經計算 $\frac{50}{72} - \frac{8}{72} = \frac{42}{72} = \frac{7}{12}$（約分前亦作 $\frac{21}{36}$），原書「$\frac{31}{36}$」顯為計算或排印訛誤，茲更正為 $\frac{7}{12}$ 並加註說明． \\ \hline
+
+\hyperref[note:b5-ch4-p123-q8]{§ IV-1 頁 123 習題 IV-1 第 ** 9 題} & 
+題號由 7. 直接跳至「** 9.」 & 
+原書題目編號漏編第 8 題，正文忠實保留「** 9.」並加註說明． \\ \hline
+
+\hyperref[note:b5-ch4-ex9-ge]{§ IV-2 頁 130 〔例 9〕內文} & 
+「在其中連續取出（每次立即放回）$n$ 紅球」 & 
+原書漏量詞「個」，依現代中文語法補「個」字作「$n$ 個紅球」以臻通順． \\ \hline
+
+\hyperref[note:b5-ch4-bayes-typo]{§ IV-2 頁 131 【定理 5】貝氏定理內文} & 
+「則每對於個自然數 $k$」 & 
+原書作「則每對於個自然數 $k$」，疑為「則對於每個自然數 $k$」之字序倒錯，茲予以校正． \\ \hline
+
+\hyperref[note:b5-ch4-p136-fig-num]{§ IV-2 頁 136 〔例 18〕街道圖圖號} & 
+圖名印作「3-1」 & 
+按第四章圖號編次疑應為「圖 4-1」，正文忠實存其舊並予註記說明． \\ \hline
+
+\hyperref[note:b5-ch4-p138-f-font]{附錄 頁 138 機率測度公理 1) 與 2)} & 
+條件敘述中印為普通斜體「$F$」 & 
+前後文定義 $\sigma$-體皆用花體「$\mathscr{F}$」，此處統一校訂為「$\mathscr{F}$」． \\ \hline
+
+\hyperref[note:b5-ch4-p139-geom-ex-num]{附錄 頁 139 幾何機率引用例題} & 
+「例 9 $S=\{x \mid 0 \le x \le 1\}$」、「例 11 的正方形」、「例 12 的長方形」 & 
+核對第三章 *§ III-3 幾何機率之例題，實數區間 $[0,1]$ 為〔例 10〕，約會問題之正方形區域為〔例 12〕，擲針問題之長方形區域為〔例 13〕．疑引用早期草稿編號所致，正文存其舊並予註記說明． \\ \hline
+
+\end{xltabular}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter4}
+
+\end{document}

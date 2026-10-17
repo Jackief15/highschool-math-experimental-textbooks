@@ -1,0 +1,108 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+\newenvironment{example-non}[1][]{\vspace{0.8em}\noindent\textbf{#1}\quad}{\vspace{0.8em}}
+\newenvironment{solution}{\par\noindent\textbf{解}\quad}{\par\vspace{0.8em}}
+
+\usepackage{xltabular}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns,arrows.meta,calc}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 5 冊（自然組）}
+  \fancyhead[L]{\small 第 3 章\quad 直觀機率}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第五冊（自然組）}
+\fancyhead[RO]{\small 第三章\quad 直觀機率}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第五冊（自然組）}\\[0.5em] \Large\textbf{第三章\quad 直觀機率}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第三章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第三章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b5_ch3}
+
+本章依據 1975 年再版《高中數學實驗教材 第五冊（自然組）》（高三上）第三章「直觀機率」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{xltabular}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\caption{第三章掃描檔勘誤、疑難處與文義校訂表}\label{tab:errata_b5_ch3} \\
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endfirsthead
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endhead
+\hline
+\endfoot
+
+\hyperref[note:b5-ch3-p99-pa]{§ III-1 頁 99 【論例 2】計算式} & 
+$P(A) = P(A') = 1 - \frac{125}{216} = \frac{91}{216}$ & 
+原書第二個等號左側漏印「$1-$」，顯為排版脫漏，茲更正為 $P(A) = 1 - P(A') = 1 - \frac{125}{216} = \frac{91}{216}$． \\ \hline
+
+\hyperref[note:b5-ch3-p104-q4]{§ III-1 頁 104 習題 III-1 第 4 題} & 
+「擲五粒骰子，兩粒出現都不是 6 點的機率是多少？至少有一粒是 6 點的機率是多少？」 & 
+前題第 3 題為五枚硬幣之對偶互補問題，第 4 題中「至少有一粒是 6 點」之餘事件應為「各粒皆非 6 點」；「兩粒」疑為「各粒」或「五粒」之排版訛誤（亦或題首原擬為「擲兩粒骰子」）。正文保留原刊本字樣並予註記說明． \\ \hline
+
+\hyperref[note:b5-ch3-p104-q5]{§ III-1 頁 104 習題 III-1 第 5 題 (2)} & 
+「一個橘子有三種缺點之一的機率是多少？」 & 
+依題意脈絡與集合排容原理，意指「至少具有三種缺陷中之一種」（即聯集事件 $A \cup B \cup C$ 之機率），正文保留原文並附註說明供讀者明辨． \\ \hline
+
+\hyperref[note:b5-ch3-p105-q6]{§ III-1 頁 105 習題 III-1 第 6 題} & 
+「0.06\% $X, Y, Z$ 三種缺陷均有」 & 
+按題幹 1000 件成品計算，0.06\% 相當於 0.6 件；此處百分比疑為獨立不良率統計數據或筆誤，正文忠實保留原刊本數值並加註說明． \\ \hline
+
+\hyperref[note:b5-ch3-p110-q6-subnum]{§ III-2 頁 110 習題 III-2 第 6 題} & 
+子題序號印為「(1) ... (3) ... (3)」 & 
+原書出現兩個 (3)，且第三小題敘述「(2)中若引擎故障...」明指前一小題為第 (2) 題，顯係排印編號訛誤，茲更正為 (2)． \\ \hline
+
+\hyperref[note:b5-ch3-p111-2pia]{*§ III-3 頁 111 〔例 11〕公式分母} & 
+分母字模破損作「$2\text{--}a$」 & 
+依圓周長公式 $2\pi a$ 及上下文弧長比與面積比，校訂為 $2\pi a$． \\ \hline
+
+\hyperref[note:b5-ch3-p113-phi]{*§ III-3 頁 113 **〔例 13〕符號排印} & 
+次行印為「$0 \le \psi < \pi$」 & 
+原書首行明定「夾角為 $\varphi$」，圖 3-5-1 及圖 3-5-2 均標為 $\varphi$，次行誤用字模 $\psi$，茲統一校訂為 $\varphi$． \\ \hline
+
+\hyperref[note:b5-ch3-p113-fig-num]{*§ III-3 頁 113 圖號標記} & 
+圖名印作「圖 3-5-1」與「圖 3-5-2」 & 
+本節節次為 §III-3，圖號卻為 3-5-1 與 3-5-2，疑承襲原教材早期草稿節次編號；正文存其舊並予註記說明． \\ \hline
+
+\end{xltabular}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter3}
+
+\end{document}

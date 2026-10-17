@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[L]{\small 《高中數學實驗教材》第三冊（自然組）}
+  \fancyhead[R]{\small 附錄一\quad 希耳伯特歐氏空間的公理幾何}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第三冊（自然組）}
+\fancyhead[RO]{\small 附錄一\quad 希耳伯特歐氏空間的公理幾何}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第三冊（自然組）}\\[0.5em] \Large\textbf{附錄一\quad 希耳伯特 (Hilbert) 歐氏空間的公理幾何}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】附錄一掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】附錄一掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b3_a1}
+
+本附錄依據 1975 年再版《高中數學實驗教材 第三冊（自然組）》（高二上）附錄一「希耳伯特 (Hilbert) 歐氏空間的公理幾何」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b3-a1-p261-order]{§ 1 頁 261 語序顛倒} & 
+推論 2 (iii) 印作「$P \cap l = l$ 亦即 $l$ 完全包含 $P$ 在中」 & 
+依數學包含關係定義，實為「$l$ 完全包含在 $P$ 中」（或「$P$ 完全包含 $l$」）。正文忠實保留原刊字樣並加註說明。 \\ \hline
+
+\hyperref[note:b3-a1-p263-point]{§ 2 頁 263 印刷油墨殘污/訛字} & 
+術語定義印作「某一黠位於其餘兩點之間」 & 
+「黠」顯為「點」字之字模破殘或印刷油墨污損。正文忠實保留原文並加註說明。 \\ \hline
+
+\hyperref[note:b3-a1-p266-de]{§ 2 頁 266 助詞印錯} & 
+平面分隔重述印作「而分別屬於不同部分得兩點所決定的線段」 & 
+「得」實為助詞「的」之排版訛字。正文忠實保留原刊字樣並加註說明。 \\ \hline
+
+\hyperref[note:b3-a1-p268-xian]{§ 3 頁 268 衍字印刷訛誤} & 
+甲第二行印作「讓我們先生舉幾個淺顯常見的例子」 & 
+多植一「生」字，實為「先舉」。正文照原刊字樣錄入並加註。 \\ \hline
+
+\hyperref[note:b3-a1-p273-sec]{§ 4 頁 273 章節編號引述} & 
+乙第一行印作「在 \S 1-2 中我們提到一個極有意思的經驗性質」 & 
+實指第一冊第一章引言或第三冊第一章高斯測量大三角形內角和之歷史背景（§ 1-1 / § 1-2）。正文保留原印字樣並備註說明。 \\ \hline
+
+\hyperref[note:b3-a1-p276-ten]{§ 5 頁 276 數字誤植為「十」} & 
+點列極限定義前印作「也可看成是直線上的十個點列」 & 
+依前後文理實指「一個點列」，字模「一」與「十」印刷誤植。正文照原刊字樣錄入並加註。 \\ \hline
+
+\hyperref[note:b3-a1-p277-ic]{§ 5 頁 277 公理子標號漏印} & 
+綜合基本性質列表印作「$\mathrm{I}$：過空間不共線三點」 & 
+漏印字母「c」，前文及前後文對應條目均為「$\mathrm{I}_c$」。正文校訂為「$\mathrm{I}_c$」並加註說明。 \\ \hline
+
+\hyperref[note:b3-a1-p278-l3p]{§ 5 頁 278 角射線代號異寫} & 
+綜合性質列表 $\mathrm{III}_b$ 第 3 行印作「$l_2'$ 和 $l_3'$」 & 
+前文頁 271 正式條文及對應插圖標號均為「$l_2'$ 和 $l_2''$」。正文忠實保留原印字樣並加註說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Appendix1.tex}
+
+\end{document}

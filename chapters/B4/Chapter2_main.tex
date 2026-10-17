@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 4 冊（自然組）}
+  \fancyhead[L]{\small 第 2 章\quad 二次幾何\quad 第一部分：錐線的演變}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第四冊（自然組）}
+\fancyhead[RO]{\small 第二章\quad 二次幾何\quad 第一部分：錐線的演變}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第四冊（自然組）}\\[0.5em] \Large\textbf{第二章\quad 二次幾何\quad 第一部分：錐線的演變}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十五年（1976）三版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b4_ch2}
+
+本章依據 1976 年三版《高中數學實驗教材 第四冊（自然組）》（高二下）第二章「二次幾何 第一部分：錐線的演變」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[sec:b4-2-1]{§ II-1 頁 66 彗星軌道引述} & 
+「受到其他星體的吸引而改鍵初衷」 & 
+「改鍵」二字實為「改變」之排版訛字（鉛字「變」誤植為「鍵」）。正文予以校訂並備註。 \\ \hline
+
+\hyperref[sec:b4-2-3]{§ II-3 頁 74 截面圖號體例} & 
+插圖標為「圖 3-1」、「圖 3-2」等 & 
+原書圖號採以小節號「§ II-3」作為首碼之歷史編排體例。正文忠實保留原刊編號並加註說明。 \\ \hline
+
+\hyperref[sec:b4-2-4]{§ II-4 頁 79 丹德林雙球定理} & 
+內切球切點與焦點一致性推導 & 
+轉錄時以現代立體向量與 TikZ 向量繪圖高解析度重繪丹德林雙球模型，文字完全忠實原文。 \\ \hline
+
+\hyperref[sec:b4-2-5]{§ II-5 頁 88 準線觀點選授標記} & 
+目次標註「$\ddagger$ § II-5 準線觀點」 & 
+原書目次加註「$\ddagger$」，正文章末附註標註「**」，依目次「注意 1」規範為選授進階幾何內容。 \\ \hline
+
+\hyperref[note:b4-ch2-p96-appendix-note]{§ II-5 頁 96 章末附註三垂線證明} & 
+定理 4 補充證明中 $AM \perp p$ & 
+正文完整重現三垂線定理之立體幾何嚴格推導與作圖，補足正文論述之嚴謹性。 \\ \hline
+
+\end{tabularx}
+\caption{第二章掃描檔勘誤、疑難處與文義校訂表}
+\label{tab:errata_b4_ch2}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter2}
+
+\end{document}

@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 2 冊}
+  \fancyhead[L]{\small 第 3 章\quad 實數系及其基本性質}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第二冊}
+\fancyhead[RO]{\small 第三章\quad 實數系及其基本性質}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第二冊}\\[0.5em] \Large\textbf{第三章\quad 實數系及其基本性質}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第二冊》（高一下）第三章「實數系及其基本性質」掃描原件轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b2-ch3-ceng]{§ 1 頁 59 導言} & 
+「我們會簡略地說明了幾個數系間的包含關係」 & 
+「會」字實為「曾」之音近通假或訛誤（指第一冊第三章中「我們曾簡略地說明……」），正文忠實保留原書文字，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-1-q4-xy]{§ 1-4 頁 62 習題 3-1 第 4 題} & 
+「使得 $a < x < y$」 & 
+題幹前設有理數 $a, b$ 且 $a < b$，結論不等式右端之變數 $y$ 顯係 $b$ 之誤植（應為 $a < x < b$）。正文維持原刊文字 $a < x < y$ 並在此校訂備註。 \\ \hline
+
+\hyperref[note:b2-ch3-prop-iv-prime]{§ 3-1 頁 68 性質 (IV$'$)} & 
+「$a > b \implies a+c < b+c$」 & 
+不等號方向排印反向，正確應為 $a+c > b+c$。正文忠實保留原書排印文字，特予說明。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-3-q3-nc-d]{§ 3-4 頁 70 習題 3-3 第 3 題} & 
+「使得 $nc > d$」 & 
+題幹前設為「$a > 0$，$b$ 任意實數」，末句推論結論卻印為「使得 $nc > d$」，符號 $c, d$ 脫離前設，實為「$na > b$」之誤植。正文維持原刊印文字並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch3-lim-bn]{§ 4-1 頁 72 定理 1 證明倒數第 2 行} & 
+「$\lim_{n\to\infty} f(a_n) \ge 0 \text{ 和 } \lim_{n\to\infty} (b_n) \le 0$」 & 
+第二個極限式脫漏函數記號 $f$（漏印為 $\lim (b_n) \le 0$），依前後文文義及次頁推導，實為 $\lim_{n\to\infty} f(b_n) \le 0$。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-4-q2-roots]{§ 4-2 頁 75 習題 3-4 第 2 題} & 
+「$a, b$ 是兩個實根，而且 $a < b$，$f(a) < f(b)$」 & 
+若 $a, b$ 為方程式之實根，則依定義 $f(a) = f(b) = 0$，不可能出現 $f(a) < f(b)$ 且中間介有 $c$；文義顯係「$a, b$ 是兩個實數」。正文保留原印「兩個實根」，特予考證。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-5-q5-sign]{§ 5-2 頁 78 習題 3-5 第 5(ii) 題} & 
+「除了 $x = \frac{b}{a}$ 外連續」 & 
+函數為 $y = \frac{1}{ax+b}$，其不連續點（分母為 0 之處）為 $x = -\frac{b}{a}$，原刊印漏除號之負號，且漏「以」字（印為「外連續」而非「以外連續」）。正文維持原刊字樣並在此說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter3.tex}
+
+\end{document}

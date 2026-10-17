@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 3 冊（自然組）}
+  \fancyhead[L]{\small 第 2 章\quad 直觀幾何與三角函數}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第三冊（自然組）}
+\fancyhead[RO]{\small 第二章\quad 直觀幾何與三角函數}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第三冊（自然組）}\\[0.5em] \Large\textbf{第二章\quad 直觀幾何與三角函數}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b3_ch2}
+
+本章依據 1975 年再版《高中數學實驗教材 第三冊（自然組）》（高二上）第二章「直觀幾何與三角函數」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b3-ch2-p37-fig2-25-2]{§ 2-2 頁 37 圖 2-25-2 說明} & 
+「(此圖 $-\frac{3\pi}{2} < \theta < \pi$; $x<0, y>0$)」 & 
+右端「$\pi$」實為「$-\pi$」（順時針負角旋轉對應第二象限實為 $-\frac{3\pi}{2} < \theta < -\pi$）。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch2-p41-ex4-typo]{§ 2-2 頁 41 例 4 題幹} & 
+「已知 $\alpha = 1230^\circ$，求 $\sin\alpha, \cos\alpha, \text{tara }\alpha$ 之值」 & 
+「tara $\alpha$」顯為「$\tan\alpha$」之印刷訛字。正文照原印字樣錄入並註記。 \\ \hline
+
+\hyperref[note:b3-ch2-p41-ref-fig31]{§ 2-2 頁 41 例 4 末行插圖} & 
+「則終邊 $\mathbf{r}_2$ 落在第二象限 $\mathrm{II}$（如圖 2-31）」 & 
+圖 2-31 實為前文割線函數圖形，本題對應之旋轉終邊圖印於次頁圖 2-32。正文保留原書字樣。 \\ \hline
+
+\hyperref[note:b3-ch2-p60-ex12-data]{§ 2-5 頁 60 例 12 題幹} & 
+「$b = 1000\sqrt{6}$ 公尺」 & 
+解文中計算代入數值為 $100\sqrt{6}$ 公尺，算得結果 $467.5$ 公尺，題幹數值多植一零。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch2-p61-ex13-sir]{§ 2-5 頁 61 例 13 算式} & 
+「$a\text{ sir}(\frac{\pi}{2} - 28^\circ 40')$」 & 
+英文正弦函數記號「$\sin$」誤植為「sir」。正文照原刊字樣錄入並註記。 \\ \hline
+
+\hyperref[note:b3-ch2-p66-homework16-deg]{§ 2-5 頁 66 作業 16} & 
+「$\angle CAB = 120$」 & 
+題幹漏印度數符號「$^\circ$」，實為 $120^\circ$。正文照原印樣式錄入並備註說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter2.tex}
+
+\end{document}

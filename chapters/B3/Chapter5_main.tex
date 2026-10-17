@@ -1,0 +1,115 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 3 冊（自然組）}
+  \fancyhead[L]{\small 第 5 章\quad 進一步的申述}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第三冊（自然組）}
+\fancyhead[RO]{\small 第五章\quad 進一步的申述}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第三冊（自然組）}\\[0.5em] \Large\textbf{第五章\quad 進一步的申述}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第五章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第五章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b3_ch5}
+
+本章依據 1975 年再版《高中數學實驗教材 第三冊（自然組）》（高二上）第五章「進一步的申述」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b3-ch5-p224-sec-ref]{引言 頁 224 節號指涉} & 
+「從第三節所談到的一些實際的極小問題中」 & 
+極小問題實際討論於本章第四節 § 5-4。正文忠實保留原刊字樣並加註說明。 \\ \hline
+
+\hyperref[note:b3-ch5-p230-2alpha-typo]{§ 5-1 頁 230 算式未知數印刷訛字} & 
+方程組第二式印作「$2x = 0$」 & 
+前文設定純量未知係數為 $\alpha, \beta, \gamma$，實指「$2\alpha = 0$」。正文校訂補正為 $2\alpha = 0$ 並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p231-ex3-points]{§ 5-1 頁 231 題幹點數敘述} & 
+「有下五點：$A, B, C, D, E, F$」 & 
+文字敘述作五點，實際列出 $A, B, C, D, E, F$ 共六點。正文忠實保留原文並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p236-bd-prime]{§ 5-2 頁 236 向量標記多印撇號} & 
+印作「$\mathbf{a} \cdot \vec{BD}' = 0$」 & 
+向量代入明確為 $\vec{BD} = (3, 2, 3)$，上撇為油墨瑕疵或誤植。正文校訂為 $\vec{BD}$ 並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p238-fig-ref]{§ 5-2 頁 238 作業 7 圖號指涉} & 
+「如圖 5-17，求此一平行六面體之體積」 & 
+本頁下方對應平行六面體插圖印刷標號為「圖 5-13」。正文保留原刊字樣並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p240-fig-ref]{§ 5-2 頁 240 命題 3 圖號指涉} & 
+「（如圖 5-19）其中 $\beta_1, \beta_2$ 為未定...」 & 
+上一頁對應公垂線幾何圖實際印刷編號為「圖 5-15」。正文保留原刊字樣並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p242-fig-ref]{§ 5-2 頁 242 例 6 圖號指涉} & 
+「如圖 5-21，設 $P_1$ 與 $P_2$ 為互相平行...」 & 
+本頁右側兩面牆與橫樑插圖實際印刷編號為「圖 5-17」。正文保留原刊字樣並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p247-sec-ref]{§ 5-3 頁 247 論例 5 章節引述} & 
+「則由 §4-6 論例知」 & 
+重心向量性質 $\vec{WA} + \vec{WB} + \vec{WC} = \mathbf{0}$ 實敘述於 § 4-7 命題 3。正文保留原字樣並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p249-double-minus]{§ 5-3 頁 249 算式多印負號} & 
+印作「$+(\beta--1)(\alpha-\gamma)\vec{OR} = \mathbf{0}$」 & 
+連印兩個減號，實為減號「$-$」。正文校訂為單一減號並註記。 \\ \hline
+
+\hyperref[note:b3-ch5-p249-fig-ref]{§ 5-3 頁 249 作業 10 圖號指涉} & 
+「若（如圖 5-7）$2\vec{OM} = \vec{OA} + \vec{OB}$」 & 
+本頁下方對應分點插圖印刷標號為「圖 5-22」。正文保留原刊字樣並加註。 \\ \hline
+
+\hyperref[note:b3-ch5-p251-sec-title]{§ 5-4 頁 251 小節標題字模錯置} & 
+印作「八、到三定點的最小距離和」 & 
+依前「甲、光的反射」與後「丙、連結三角形...」，此處實為「乙」。正文保留原刊字樣並加註說明。 \\ \hline
+
+\hyperref[note:b3-ch5-p255-mirror-line]{§ 5-4 頁 255 鏡像邊代號誤植} & 
+「$A_1, A_2$ 分別為 $A'$ 對於 $CA, BC$ 的鏡像點」 & 
+前文與圖 5-29 明確為對 $AC$ 與 $AB$ 兩邊之鏡像點。正文忠實保留原文並加註說明。 \\ \hline
+
+\end{tabularx}
+\caption{第五章掃描檔勘誤、疑難處與文義校訂表}
+\label{tab:errata_b3_ch5}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter5}
+
+\end{document}

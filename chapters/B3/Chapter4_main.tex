@@ -1,0 +1,98 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 3 冊（自然組）}
+  \fancyhead[L]{\small 第 4 章\quad 座標幾何}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第三冊（自然組）}
+\fancyhead[RO]{\small 第四章\quad 座標幾何}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第三冊（自然組）}\\[0.5em] \Large\textbf{第四章\quad 座標幾何}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b3_ch4}
+
+本章依據 1975 年再版《高中數學實驗教材 第三冊（自然組）》（高二上）第四章「座標幾何」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b3-ch4-p132-tilde-pronounce]{§ 4-1 頁 132 英文波浪號拼寫} & 
+「〔“$\sim$”讀音如 tilda〕」 & 
+英文波浪號常用拼寫為 tilde。正文忠實保留原刊字樣並加註說明。 \\ \hline
+
+\hyperref[note:b3-ch4-p136-fig4-4-a-scale]{§ 4-1 頁 136 圖 4-4-a 刻度比例} & 
+圖 4-4-a 印作「$|\tilde{\mathbf{e}}_1|=2, |\tilde{\mathbf{e}}_2|=4$」 & 
+下文行文說明作「$|\tilde{\mathbf{e}}_1|=1, |\tilde{\mathbf{e}}_2|=2$」，相差二倍刻度。正文忠實保留原文對比並備註。 \\ \hline
+
+\hyperref[note:b3-ch4-p177-l1-l2-subscripts]{§ 4-4 頁 177 論例 5 下標漏印} & 
+常數項均印作「$+c$」 & 
+解文中代入明確為「$+c_1$」與「$+c_2$」。正文校訂補齊下標並註記。 \\ \hline
+
+\hyperref[note:b3-ch4-p193-formula-ref]{§ 4-6 頁 193 公式編號指涉} & 
+「若 $L$ 可寫成 (1) 式...」 & 
+此處實指上一頁之共點直線系方程式 (36)。正文予以校訂並加註。 \\ \hline
+
+\hyperref[note:b3-ch4-p203-ceva-ref]{§ 4-7 頁 203 命題 3 公式引用} & 
+「(31) 式成立，亦卽...」 & 
+原書印作 (31) 式，實指本節西瓦定理之式 (40)。正文予以校訂並備註。 \\ \hline
+
+\hyperref[note:b3-ch4-p207-theorem-ref]{§ 4-7 頁 207 內心證明定理引用} & 
+「由本節定理 6，知...」 & 
+三線共點行列式條件實為 § 4-5 定理 2（定理 6 為西瓦定理）。正文保留原字樣並註記。 \\ \hline
+
+\hyperref[note:b3-ch4-p213-equation-ref]{§ 4-8 頁 213 公式編號缺字} & 
+「當我們遇到 (4) 式這樣...」 & 
+第二個數字漏印，實指三元一次平面方程 (44)（或式 (47)）。正文予以校訂並加註。 \\ \hline
+
+\hyperref[note:b3-ch4-p221-subscript-typo]{§ 4-8 頁 221 第 8 題下標誤植} & 
+比例式分子印作「$y - y_5$」 & 
+此處實為「$y - y_0$」。正文予以校訂並註記。 \\ \hline
+\end{tabularx}
+\caption{第四章掃描檔勘誤、疑難處與文義校訂表}
+\label{tab:errata_b3_ch4}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter4}
+
+\end{document}

@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 3 冊（自然組）}
+  \fancyhead[L]{\small 第 1 章\quad 實際世界——幾何與代數}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第三冊（自然組）}
+\fancyhead[RO]{\small 第一章\quad 實際世界——幾何與代數}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第三冊（自然組）}\\[0.5em] \Large\textbf{第一章\quad 實際世界——幾何與代數}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第一章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第一章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b3_ch1}
+
+本章依據 1975 年再版《高中數學實驗教材 第三冊（自然組）》（高二上）第一章「實際世界——幾何與代數」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b3-ch1-p3-ex1-ceng]{§ 1-1 頁 3 例 1 導言} & 
+「我們成就我們已學過的舉幾個例子」 & 
+「成就」二字疑為「先就」之排版訛字（鉛字「先」誤植為「成」）。依原書文字忠實保留，特予校記備查。 \\ \hline
+
+\hyperref[note:b3-ch1-p5-typhoon-map]{§ 1-1 頁 5 氣象動向圖} & 
+「圖向動風颱莉畢」及右至左文字標註 & 
+原圖為翻拍當時中央氣象局傳真氣象圖，圖中註記（如「置位心中時八晚昨」）採歷史由右向左橫排。轉錄時重繪高解析度向量圖形並忠實再現氣象圖站名與暴風半徑。 \\ \hline
+
+\hyperref[note:b3-ch1-p7-flowchart-sqrt2]{§ 1-1 頁 7 例 4 流程圖} & 
+「解 $10t^2 - 119t + 396 = 0$ 之一元二次方程式」 & 
+流程圖代數方框中一次項係數漏印根號 $\sqrt{2}$（前文頁 6 式 (1) 及推導明確為 $10t^2 - 119\sqrt{2}t + 396 = 0$）。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b3-ch1-p9-hilbert-name]{§ 1-1 頁 9 觀點圖示} & 
+「1. 希爾伯特 (Hilbert) 公理化幾何」 & 
+此處項目 1 印作「希爾伯特」，前文頁 8 正文及附錄一標題均寫作「希耳伯特」，兩者為同一人名 David Hilbert 之譯名異寫，正文照原印字樣錄入。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter1.tex}
+
+\end{document}

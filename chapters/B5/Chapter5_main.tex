@@ -1,0 +1,148 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+\newenvironment{example-non}[1][]{\vspace{0.8em}\noindent\textbf{#1}\quad}{\vspace{0.8em}}
+\newenvironment{solution}{\par\noindent\textbf{解}\quad}{\par\vspace{0.8em}}
+
+\usepackage{xltabular}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns,arrows.meta,calc}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 5 冊（自然組）}
+  \fancyhead[L]{\small 第 5 章\quad 隨機變數}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第五冊（自然組）}
+\fancyhead[RO]{\small 第五章\quad 隨機變數}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第五冊（自然組）}\\[0.5em] \Large\textbf{第五章\quad 隨機變數}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第五章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第五章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b5_ch5}
+
+本章依據 1975 年再版《高中數學實驗教材 第五冊（自然組）》（高三上）第五章「隨機變數」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{xltabular}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\caption{第五章掃描檔勘誤、疑難處與文義校訂表}\label{tab:errata_b5_ch5} \\
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endfirsthead
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endhead
+\hline
+\endfoot
+
+\hyperref[note:b5-ch5-p145-75]{§ V-1 頁 145 論例 1 分組次數表} & 
+實際成績印為「79 78 78 75 75 75 75 76 78 79 77」 & 
+原書僅印出 11 個成績，漏印一個 75 分；核對第 144 頁原始成績，75 分實有 5 位同學，該組頻數亦記為 12，故校正補入一個 75 分以符實際． \\ \hline
+
+\hyperref[note:b5-ch5-p150-fxstar]{§ V-1 頁 150 例 7 分佈對照表} & 
+表頭印作「$f^{X*}(k)$」 & 
+為「$f_X^*(k)$」排版字模微異之記號，茲予規範化為 $f_X^*(k)$． \\ \hline
+
+\hyperref[note:b5-ch5-p151-px6]{§ V-1 頁 151 例 8 解題公式} & 
+印作「$P_X(6) = \left(\frac{5}{6}\right)^5 \left(\frac{1}{6}\right)$」 & 
+係指隨機變數 $X$ 之機率函數值，依全書符號體系宜作 $f_X(6)$，茲予校訂． \\ \hline
+
+\hyperref[note:b5-ch5-p153-q6]{§ V-1 頁 153 習題 V-1 第 6 題} & 
+僅有小題標號「(1)」 & 
+題號下無 (2)，正文忠實保留原書標號 (1) 並予加註． \\ \hline
+
+\hyperref[note:b5-ch5-p155-doubled-comma]{§ V-2 頁 155 期望值記號說明} & 
+印作「（有時亦記爲 $\mu$,, 卽 $\mu=E(X)$」 & 
+原書有重疊逗號，茲更正為單個逗號． \\ \hline
+
+\hyperref[note:b5-ch5-p157-fangcha]{§ V-2 頁 157 方差記號引言} & 
+印作「來表示 $X$」 & 
+頁末未完句且漏標點，次頁首直接承接式 (7) 進行展開化簡，依上下文語意補足為「來表示 $X$ 的方差」． \\ \hline
+
+\hyperref[note:b5-ch5-p160-fenpei]{§ V-2 頁 160 習題 V-2 第 1 題} & 
+印作「分取到三個箱子中」 & 
+依文義及後句「分配後空箱子的個數」，顯為「分配」之訛，茲予校訂． \\ \hline
+
+\hyperref[note:b5-ch5-p160-typo]{*§ V-3 頁 160 引言} & 
+「幾個基本的有用的定理」 & 
+疑為「幾個基本而有用的定理」之筆誤，正文照錄存真並予說明． \\ \hline
+
+\hyperref[note:b5-ch5-p164-comma]{*§ V-3 頁 164 大數法則說明} & 
+印作「取 $n = N$，，」 & 
+原書多一逗號，校正為單個逗號． \\ \hline
+
+\hyperref[note:b5-ch5-p164-strip]{*§ V-3 頁 164 帶狀區域符號} & 
+「落在帶 $L_1 L_2$ 之外」 & 
+圖中未標注符號 $L_1, L_2$，依文義係指由直線 $y = p \pm \varepsilon$ 界定之水平帶狀區域． \\ \hline
+
+\hyperref[note:b5-ch5-p164-rv]{*§ V-3 頁 164 機率算式} & 
+隨機變數誤印為小寫 $x_i$ & 
+算式 $P(p-\varepsilon < \frac{1}{N}\sum x_i < p+\varepsilon)$ 依前後文校訂為大寫 $X_i$． \\ \hline
+
+\hyperref[note:b5-ch5-p164-xi]{*§ V-3 頁 164 實現值記號} & 
+印作「$\bar{x}^i$」 & 
+指各組試驗之實現比值 $\bar{x}^{(1)}, \dots, \bar{x}^{(m)}$，正文存其舊並予加註． \\ \hline
+
+\hyperref[note:b5-ch5-p165-extra]{*§ V-3 頁 165 例 17 歷史試驗} & 
+印作「他在另一次值試驗」 & 
+多一贅字「值」，茲予校除． \\ \hline
+
+\hyperref[note:b5-ch5-p165-p]{*§ V-3 頁 165 理論機率記號} & 
+印作大寫「$P = 0.5$」且句末漏標點 & 
+校訂為小寫機率參數「$p = 0.5$」並補上句點． \\ \hline
+
+\hyperref[note:b5-ch5-p166-ineq1]{*§ V-3 頁 166 引用不等式} & 
+印作「柴比雪夫不等(1)式」 & 
+漏「式」字且式號倒錯，校訂為「柴比雪夫不等式 (1)」． \\ \hline
+
+\hyperref[note:b5-ch5-p166-wlln]{*§ V-3 頁 166 弱大數法則形式} & 
+式 (6) $P\{|\frac{X}{n}-p| \ge \varepsilon\} \le \frac{pq}{n\varepsilon^2}$ & 
+補充說明當 $n \to \infty$ 時此上界趨於 0，即弱大數法則之定量上界形式． \\ \hline
+
+\hyperref[note:b5-ch5-p166-p]{*§ V-3 頁 166 習題式號機率記號} & 
+例 18(i) 題幹印作大寫「$P = \frac{1}{2}$」 & 
+校訂為小寫「$p = \frac{1}{2}$」以符前後統一． \\ \hline
+
+\hyperref[note:b5-ch5-p167-p]{*§ V-3 頁 167 結語機率記號} & 
+「$\frac{X}{n}$ 與 $P$ 卽已非常接近」 & 
+大寫「$P$」依文義校為機率參數小寫「$p$」． \\ \hline
+
+\end{xltabular}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter5}
+
+\end{document}

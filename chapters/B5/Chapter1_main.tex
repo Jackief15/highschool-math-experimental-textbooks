@@ -1,0 +1,145 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+\newenvironment{example-non}[1][]{\vspace{0.8em}\noindent\textbf{#1}\quad}{\vspace{0.8em}}
+\newenvironment{solution}{\par\noindent\textbf{解}\quad}{\par\vspace{0.8em}}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns,decorations.pathreplacing,decorations.markings,decorations.shapes,decorations.pathmorphing,calc,3d}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 5 冊（自然組）}
+  \fancyhead[L]{\small 第 1 章\quad 極座標}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第五冊（自然組）}
+\fancyhead[RO]{\small 第一章\quad 極座標}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第五冊（自然組）}\\[0.5em] \Large\textbf{第一章\quad 極座標}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第一章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第一章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b5_ch1}
+
+本章依據 1975 年再版《高中數學實驗教材 第五冊（自然組）》（高三上）第一章「極座標」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b5-ch1-p2-zi]{§ I-1 頁 2 方位敘述} & 
+「若目 $O$ 向東走 $\sqrt{3}$ 單位」 & 
+原書「自」字頂筆漏印作「目」，據文意與後文「自東逆時針」校訂為「自」． \\ \hline
+
+\hyperref[note:b5-ch1-p4-ge0]{§ I-1 頁 4 向徑非負條件} & 
+「$r = \overline{OP} \ge O$」 & 
+不等式右端之數字「$0$」誤排為英文字母「$O$」，據下文「$r > 0$」、「$r = 0$」校訂為數字「$0$」． \\ \hline
+
+\hyperref[note:b5-ch1-p4-pingfang]{§ I-1 頁 4 座標轉換推導} & 
+「兩式分別个力後取和得」 & 
+原書「平方」二字鉛字磨損漏印，殘存字跡作「个力」，據下式 $x^2+y^2=r^2$ 校訂補全為「平方」． \\ \hline
+
+\hyperref[note:b5-ch1-p16bottom]{§ I-2 頁 16 丙段首段末行} & 
+「$v = \tan x$」、「$: = y$ 軸」 & 
+原書 $y = \tan x$ 之 $y$ 下筆漏印似 $v$，末行左緣 $x = y$ 軸之 $x$ 印損，茲校訂復原． \\ \hline
+
+\hyperref[note:b5-ch1-fig2-10b]{§ I-2 頁 17 圖 2-10b 標籤} & 
+「$y = \tan^{-1}$ 的主值」 & 
+圖中首行漏印自變數 $x$（次行印有 $= \operatorname{Tan}^{-1} x$），校補為「$y = \tan^{-1} x$ 的主值」． \\ \hline
+
+\hyperref[note:b5-ch1-p19pi]{§ I-2 頁 19--20 例 1 與例 3} & 
+「$\theta = n\tau + \theta_0$」、「$n\tau + \frac{\pi}{3}$」 & 
+原書數處 $n\pi$ 之希臘字母 $\pi$ 左豎筆漏印而形似 $\tau$，依通解公式校訂為 $n\pi$． \\ \hline
+
+\hyperref[note:b5-ch1-p22-ex1]{§ I-3 頁 22 例 1 極方程式} & 
+「（或寫成 $r - 2^{\frac{0}{2\pi}} = 0$）」 & 
+括號內指數分子 $\theta$ 中橫斷筆印作 $0$，依前式 $r = 2^{\frac{\theta}{2\pi}}$ 校訂為 $\theta$． \\ \hline
+
+\hyperref[note:b5-ch1-p23-table]{§ I-3 頁 23 例 1 描點表} & 
+「$-2n\tau$」、「$2.4$」 & 
+表內 $-2n\pi$ 之 $\pi$ 印損似 $\tau$，且 $r$ 列「$2, 4$」間之逗號誤印為圓點，茲予校訂． \\ \hline
+
+\hyperref[note:b5-ch1-p25-hw8]{§ I-3 頁 25 作業 8 提示} & 
+「〔如 (i) 須 $\pi$〕」 & 
+(i) 四瓣玫瑰線 $r=\cos 2\theta$ 須歷經 $2\pi$，(ii) 三瓣玫瑰線 $r=\cos 3\theta$ 僅須 $\pi$；保留原文並加註說明． \\ \hline
+
+\hyperref[note:b5-ch1-p26-note]{§ I-3 頁 26 注意 (ii)} & 
+「（關係如 (2) 式）」 & 
+同一點各極座標間之關係式實為第 25 頁命題 4 之 (3) 式；保留原貌並加註說明． \\ \hline
+
+\hyperref[note:b5-ch1-p28-fn]{§ I-3 頁 28 頁底註釋標記} & 
+頁底印有「〔註〕...」惟正文漏印標記 & 
+依文義將該註釋綴於第 28 頁「注意」段末討論圓之良性極方程式處並加註說明． \\ \hline
+
+\hyperref[note:b5-ch1-p41-gamma]{§ I-4 頁 41 交集符號印損} & 
+「考慮 $\Lambda_{2n} \cap 1$ 與 $\Lambda^*_{2n+1} \cap \Gamma$」 & 
+「$\Lambda_{2n} \cap \Gamma$」之 $\Gamma$ 頂部橫畫漏印形似 $1$，依上下文校訂為 $\Lambda_{2n} \cap \Gamma$． \\ \hline
+
+\hyperref[note:b5-ch1-p43-eq6]{§ I-4 頁 42--43 公式編號 (6)} & 
+定理 1 與頁 43 聯立式重複編號為 (6) & 
+原書兩處聯立方程式重複使用編號 (6)，保留原書編號並附註說明指涉對象． \\ \hline
+
+\hyperref[note:b5-ch1-p44-paren]{§ I-4 頁 44 習題 I-4 第 1 題} & 
+「$\gamma(\Lambda \cap \Gamma) = \gamma(\Lambda \cap \gamma(\Gamma)?$」 & 
+等號右側 $\gamma(\Lambda)$ 漏印右括號，校補為 $\gamma(\Lambda \cap \Gamma) = \gamma(\Lambda) \cap \gamma(\Gamma)?$． \\ \hline
+
+\hyperref[note:b5-ch1-p45-alpha]{§ I-4 頁 45 習題 I-4 第 3 題} & 
+「$\alpha^*_{2n}(\Lambda) = \Lambda$ 成立」 & 
+奇數平移鏡射映射下標誤印為 $2n$，依前文定義校訂為 $\alpha^*_{2n+1}(\Lambda) = \Lambda$． \\ \hline
+
+\hyperref[note:b5-ch1-p47-fig52]{§ I-5 頁 47 圖 5-2 標註} & 
+極軸下方括弧標註「$\cos\theta$」 & 
+因 $\overline{OP}=r$，水平投影長實為 $r\cos\theta$（對應正文 $\overline{PT}=r\cos\theta+p$），茲予補正並加註． \\ \hline
+
+\hyperref[note:b5-ch1-p48-hw15]{§ I-5 頁 48 作業 15 第二解} & 
+「有兩解 $(\frac{pe}{1-e}, 0)$ 與 $(\frac{pe}{1+e}, 0)$」 & 
+第二解當角度記為 $0$ 時向徑 $r$ 為負值（卽 $[-\frac{pe}{1+e}, 0]$），原書漏印負號，保留原文並加註說明． \\ \hline
+
+\hyperref[note:b5-ch1-p51-eq]{§ I-5 頁 51 丁段旋轉極方程式} & 
+「$r = r_1 - \frac{pe}{1 - e\cos\theta_1}$」 & 
+$r_1$ 後之等號上橫漏印似減號，依上下文校訂為等號「$=$」． \\ \hline
+
+\end{tabularx}
+\caption{第一章掃描檔勘誤、疑難處與文義校訂表}
+\label{tab:errata_b5_ch1}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter1}
+
+\end{document}

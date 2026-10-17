@@ -1,0 +1,102 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 2 冊}
+  \fancyhead[L]{\small 第 2 章\quad 次序與極限觀念}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第二冊}
+\fancyhead[RO]{\small 第二章\quad 次序與極限觀念}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第二冊}\\[0.5em] \Large\textbf{第二章\quad 次序與極限觀念}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes}
+
+本章依據 1973 年版《高中數學實驗教材 第二冊》（高一下）第二章「次序與極限觀念」掃描原件轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.6cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b2-ch2-p28-ex3-pr]{§ 1-2 頁 28 例 3} & 
+「$b = \frac{pr}{sq}$ 且 $sq>0, ps>0, pr>0$」及「$n(ps)>pr$」 & 
+通分時分子 $pr$ 實為 $qr$（因 $b=\frac{r}{s}=\frac{qr}{sq}$，通分後比較 $nps$ 與 $qr$），原書排印誤植為 $pr$。正文忠實照錄原書文字，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch2-p29-ex5-subscript]{§ 1-2 頁 29 例 5(ii)} & 
+「現在寫做 $n+k=2_s$」 & 
+式中 $2_s$ 之 $s$ 為下標，實為指數次方 $2^s$（2 的 $s$ 次方）之排版鉛字下標訛誤。正文忠實照錄原書文字 $2_s$，並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch2-p30-ex2-1-q2i]{§ 1-2 頁 30 習題 2-1 第 2(i) 題} & 
+「$a>b \text{ 和 } c<0 \implies ac>bd$」 & 
+前提中未定義變數 $d$（或係 $ac<bc$ 之排印訛誤，或脫漏 $b>0, c<d<0$ 等條件）。正文忠實保留原刊印文字，特予備註說明。 \\ \hline
+
+\hyperref[note:b2-ch2-p37-ex3-typo]{§ 3 頁 37 例 3} & 
+「$f(x)>0$ 的解是 $-1x<1$，及 $x>3$」 & 
+式中「$-1x<1$」脫漏小於號「$<$」，實為 $-1<x<1$。正文照錄原書印刷字樣，並於此校釋。 \\ \hline
+
+\hyperref[note:b2-ch2-p40-ex3-vi]{§ 4-1 頁 40 例 3(vi)} & 
+「$0, 0, n, 0, 0, -n+1, 0, 0, -(n+1), \dots$ 為一數列」 & 
+依每 6 項循環結構，第 $6n$ 項為 $-n$，第 $6n+3$ 項為 $n+1$，式中「$-n+1$」排印脫漏符號，實為「$-n, 0, 0, n+1$」。正文忠實保留原印文字並予考證。 \\ \hline
+
+\hyperref[note:b2-ch2-p44-ex6-series-term]{§ 5-1 頁 44 例 6} & 
+「級數 $1, r, r^2, r^3, r^4, \dots, r^n, \dots$ 的收斂與發散」 & 
+此處列出者實為等比數列各項，行文稱「級數」，且後續條件稱「當 $r<1$ 時」，若 $r\le -1$ 則發散或震盪，係省略負數討論或隱含 $|r|<1$ 之意。正文忠實照錄原書文字。 \\ \hline
+
+\hyperref[note:b2-ch2-p50-eq1-b1]{§ 6-1 頁 50 式 (1)} & 
+「$= \frac{b_1}{1-r} + \frac{-r^n}{1-r} \dots\dots(1)$」 & 
+第二項分子常數首項 $b_1$ 脫漏（應為 $\frac{-b_1 r^n}{1-r}$）。正文忠實照錄原印文字，並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch2-p51-lim-rn]{§ 6-1 頁 51 式 (2) 前} & 
+「因此由（5-1）〔例 6〕$\frac{-r^n}{1-r} \to 0$」 & 
+前文對應處實為 §5-1【例 6】。原書此處交叉引註形式保留不變。 \\ \hline
+
+\hyperref[note:b2-ch2-p56-partial-sum-r]{§ 6-3 頁 56 部分和式} & 
+「$= a_k + d(1+r+r^2+\dots+\frac{1}{r^{m-1}})$」 & 
+式中括號末項誤植為分式 $\frac{1}{r^{m-1}}$，實為 $r^{m-1}$（因公比 $r=\frac{1}{10^l}$）。正文保留原書文字並予備註。 \\ \hline
+
+\hyperref[note:b2-ch2-p56-q-typo]{§ 6-3 頁 56 分數化小數段} & 
+「設 $\frac{m}{n}$ 為一任意給定的不可約分數……若 $q$ 上含有 2 或 5 的質因子」 & 
+前設分數為 $\frac{m}{n}$，文內「若 $q$ 上含有」之 $q$ 顯為分母 $n$ 之誤植（後文亦稱「反之，若 $n$ 含有……」）。正文忠實照錄原書文字，特予考證備註。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+\input{Chapter2.tex}
+
+\end{document}

@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{patterns,decorations.pathreplacing,decorations.markings,decorations.shapes,decorations.pathmorphing,calc}
+
+\newenvironment{example-non}[1][]{\vspace{0.8em}\noindent\textbf{#1}\quad}{\vspace{0.8em}}
+\newenvironment{solution}{\par\noindent\textbf{解}\quad}{\par\vspace{0.8em}}
+
+\newcommand{\redtext}[1]{{\color{red} #1}}
+\newcommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 4 冊（自然組）}
+  \fancyhead[L]{\small 第 4 章\quad 二次幾何\quad 第三部分：二次曲線的分類與判別}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第四冊（自然組）}
+\fancyhead[RO]{\small 第四章\quad 二次幾何\quad 第三部分：二次曲線的分類與判別}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第四冊（自然組）}\\[0.5em] \Large\textbf{第四章\quad 二次幾何\quad 第三部分：二次曲線的分類與判別}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十五年（1976）三版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+
+本章數位化轉錄依據 1976 年版原書掃描檔案進行逐字、逐式忠實校錄．對原書中因早期鉛字印刷、手工排版所致之訛字、衍字、倒裝、脫漏及圖形標註微瑕，均本於「字符級忠實度」與「嚴謹學術校訂」原則，於正文完整保留原貌並以註腳精確標註，彙整校訂說明如下：
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|c|p{4.2cm}|p{4.5cm}|X|}
+\hline
+\textbf{頁碼} & \textbf{原書印刷／掃描原貌} & \textbf{數位校訂／規範化形式} & \textbf{校訂說明與學術理由} \\ \hline
+p.185 & 三煮之 & 三者之一 & 早期鉛字字模排印訛字，依文義校訂． \\ \hline
+p.185 & 這一径物 & 這一怪物 & 鉛字磨損殘缺，校訂為「怪物」． \\ \hline
+p.185 & 不變量，$\delta$，$\Delta$ 把牠們分濾出去 & 不變量 $\delta, \Delta, H$ 把牠們分濾出去 & 原書遺漏符號 $H$，依全章理論脈絡補正． \\ \hline
+p.190 & 命題 1 條件 (2) 符號排列微瑕 & $\Delta \ne 0$ 但 $H\Delta > 0$ & 早期排版間隔過密，規範化標記為「$\Delta \ne 0$ 但 $H\Delta > 0$」． \\ \hline
+p.195 & 點橢圓：/ 相交兩直線 / 圖 1-3 & 圖 1-3 $\delta-\Delta$ 參數平面圖 & TikZ 高解析精確重繪，忠實再現原書分類區域與斜線陰影． \\ \hline
+p.197 & 例 8 係數印刷模糊 & $4x^2 + 8xy - 7x + 6y + 3 = 0$ & 早期鉛字油墨印痕模糊，校勘確立係數． \\ \hline
+p.199 & 例 10 題幹未斷句 & 是否特異？若非特異請示其軌跡區域． & 原書漏標問號，茲予補入． \\ \hline
+p.200 & 作業題目未加題號 & 作業 3 & 原書承接長方形範圍後直接出題，依序列入作業 3． \\ \hline
+p.202 & $Q(x) = Tx \cdot x$ 註解括號脫落 & 補齊註解括號 & 鉛字脫漏，補齊完整語義． \\ \hline
+p.216 & 定理 II 證明末頁尾截斷 & 補齊根與係數關係完整推導 & 原書頁末排版局促截斷，正文補齊完整數學推導． \\ \hline
+p.240 & 特別物形 & 特別情形 & 字模訛字，校訂為「特別情形」． \\ \hline
+p.246 & § VI-4 論例 5 & 第三冊第六章 § VI-4 論例 5 & 跨冊交叉參照章節號校訂對齊． \\ \hline
+p.250 & 論例 16 $v_1$ 向量與頂角符號 & $\omega = \pi/6, v_1 = (0, \sqrt{2}/2, \sqrt{2}/2)$ & 圓錐頂角與截平面法向量數值校訂對齊圖 7-3． \\ \hline
+\end{tabularx}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\include{Chapter4}
+
+\end{document}
