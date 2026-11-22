@@ -1,0 +1,155 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{styles/preamble.tex}
+\input{styles/Chinese_math_style.tex}
+\input{styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第四冊（自然組）}
+\fancyhead[RO]{\small \leftmark}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第四冊（自然組）}\\[0.5em] \Large\textbf{全冊 \LaTeX{} 數位轉錄版}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十五年（1976）三版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% =========================================================================
+% 各章掃描檔勘誤、文字校訂與疑難處彙整表（整理於目錄之前）
+% =========================================================================
+\section*{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\addcontentsline{toc}{section}{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\label{sec:master_errata_notes_b4}
+
+本冊依據 1976 年三版《高中數學實驗教材 第四冊（自然組）》（高二下）各章與附錄掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第一章\quad 座標變換與線性映射}} \\ \hline
+
+\hyperref[note:b4-ch1-p16-lorentz]{§ I-2 頁 16 相對論選授標記} & 
+「**【論例 2】（相對性原理）」 & 
+對應原書目次「注意 1」提及「節段前加『**』指示可以不講授的部份」。正文忠實再現並加註說明。 \\ \hline
+
+\hyperref[note:b4-ch1-p57-appendix-note]{§ I-5 頁 57 章末附註現代術語} & 
+嵌射（injective）、蓋射（surjective）、對射（bijective） & 
+轉錄時忠實保留 1970 年代現代數學結構之原有名詞與定義，同時附錄其現代通稱（單射、全射、雙射）。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第二章\quad 二次幾何 第一部分：錐線的演變}} \\ \hline
+
+\hyperref[sec:b4-2-1]{§ II-1 頁 66 彗星軌道引述} & 
+「受到其他星體的吸引而改鍵初衷」 & 
+「改鍵」二字實為「改變」之排版訛字（鉛字「變」誤植為「鍵」）。正文予以校訂並備註。 \\ \hline
+
+\hyperref[sec:b4-2-3]{§ II-3 頁 74 截面圖號體例} & 
+插圖標為「圖 3-1」、「圖 3-2」等 & 
+原書圖號採以小節號「§ II-3」作為首碼之歷史編排體例。正文忠實保留原刊編號並加註說明。 \\ \hline
+
+\hyperref[sec:b4-2-4]{§ II-4 頁 79 丹德林雙球定理} & 
+內切球切點與焦點一致性推導 & 
+轉錄時以現代立體向量與 TikZ 向量繪圖高解析度重繪丹德林雙球模型，文字完全忠實原文。 \\ \hline
+
+\hyperref[sec:b4-2-5]{§ II-5 頁 88 準線觀點選授標記} & 
+目次標註「$\ddagger$ § II-5 準線觀點」 & 
+原書目次加註「$\ddagger$」，正文章末附註標註「**」，依目次「注意 1」規範為選授進階幾何內容。 \\ \hline
+
+\hyperref[note:b4-ch2-p96-appendix-note]{§ II-5 頁 96 章末附註三垂線證明} & 
+定理 4 補充證明中 $AM \perp p$ & 
+正文完整重現三垂線定理之立體幾何嚴格推導與作圖，補足正文論述之嚴謹性。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第三章\quad 二次幾何 第二部分：標準式}} \\ \hline
+
+p.98 導言 & 標準友程式 & 鉛字字模排印訛字，校訂為「標準方程式」。 \\ \hline
+p.98 導言 & 三杰典線 & 字模磨損殘缺，校訂為「二次曲線」。 \\ \hline
+p.98 導言 & 線供 標幾何 / 上魚三次標幾何 & 線性座標幾何 / 平面上的二次座標幾何，依對稱文義校訂。 \\ \hline
+p.98 導言 & § II-2 / 8II-4 & 原書小節交叉參照引號誤植，校訂對齊為 § III-2 與 § III-4。 \\ \hline
+p.101 註釋 & 討論圓 & 原書註解句末斷截，文義校訂為「稍後將特別討論圓」。 \\ \hline
+p.115 習題 & 且其 與準線的距離為 7 & 習題 III-1 第 1(iii) 題，原書脫漏「焦點」二字，茲予補正。 \\ \hline
+p.129 定理 & 定理 II（部分印刷模糊） & 雙曲線準線定理，接續定理 I 與 II，校勘確立為「定理 III」。 \\ \hline
+p.134 習題 & $3x^2 - 6x + y^2 = 0$ & 習題 III-2 第 1(iv) 題式中 $y^2$ 前為正號，正文存真並加註。 \\ \hline
+p.149 習題 & 焦點 $V(-2,0)$ & 習題 III-3 第 6(iv) 題符號 $V$ 通常標示頂點，正文照錄並加註。 \\ \hline
+p.175 標題 & *§ III-6 圓的正交與鏡射 & 星號表示選修內容，忠實保留。 \\ \hline
+p.182 定理 & 定理 VII（字模重疊） & 圓鏡射映圓定理，接續 p.180 定理 VII，確認為「定理 VIII」。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第四章\quad 二次幾何 第三部分：二次曲線的分類與判別}} \\ \hline
+
+p.185 導言 & 三煮之 & 早期鉛字字模排印訛字，校訂為「三者之一」。 \\ \hline
+p.185 導言 & 這一径物 & 鉛字磨損殘缺，校訂為「這一怪物」。 \\ \hline
+p.185 導言 & 不變量，$\delta$，$\Delta$ 把牠們分濾出去 & 原書遺漏符號 $H$，依全章理論脈絡補正為不變量 $\delta, \Delta, H$。 \\ \hline
+p.190 命題 1 & 條件 (2) 符號排列微瑕 & 早期排版間隔過密，規範化標記為「$\Delta \ne 0$ 但 $H\Delta > 0$」。 \\ \hline
+p.195 圖 1-3 & 點橢圓：/ 相交兩直線 / 圖 1-3 & TikZ 高解析精確重繪，忠實再現原書分類區域與斜線陰影。 \\ \hline
+p.197 例 8 & 係數印刷模糊 & $4x^2 + 8xy - 7x + 6y + 3 = 0$，校勘確立係數。 \\ \hline
+p.199 例 10 & 題幹未斷句 & 原書漏標問號，補正為「是否特異？若非特異請示其軌跡區域。」。 \\ \hline
+p.200 作業 & 作業題目未加題號 & 原書承接長方形範圍後直接出題，依序列入作業 3。 \\ \hline
+p.202 內文 & $Q(x) = Tx \cdot x$ 註解括號脫落 & 鉛字脫漏，補齊完整語義。 \\ \hline
+p.216 定理 II & 證明末頁尾截斷 & 原書頁末排版局促截斷，正文補齊根與係數關係完整數學推導。 \\ \hline
+p.240 § IV-6 & 特別物形 & 字模訛字，校訂為「特別情形」。 \\ \hline
+p.246 § IV-7 & § VI-4 論例 5 & 跨冊交叉參照章節號校訂對齊為第三冊第六章 § VI-4 論例 5。 \\ \hline
+p.250 § IV-7 & 論例 16 $v_1$ 向量與頂角符號 & 圓錐頂角與截平面法向量數值校訂對齊圖 7-3。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第五章\quad 複數與三角基本定理}} \\ \hline
+
+p.256 內文 & 倒數第 8 行原印 $(3+i)\cdot(1+2i) = 3-6i+\dots$ & 第二因式誤植為加號，依展開式與文義校訂為減號 $(1-2i)$。 \\ \hline
+p.259 內文 & 倒數第 7 行原印 $x=0, y=\sqrt{-a}$ & 解方程式 $y^2 = -a$ 應有正負二根，補正為 $x=0, y=\pm\sqrt{-a}$。 \\ \hline
+p.261 習題 & 習題 V-1 第 4 題漏編 (iv) 直跳 (v) & 忠實保留原書題號編排，加註說明原書漏編 (iv)。 \\ \hline
+p.286 習題 & 習題 V-3 第 11(i) 題誤印 $\frac{1}{2}$ & 原書係數印刷微瑕，依三角展開公式校訂補註。 \\ \hline
+p.287 標題 & ‡§ V-4 里曼球面符號 ${}^\ddagger$ & 保留 ${}^\ddagger$ 標記，表示雙重星號等級之進階選修教材。 \\ \hline
+p.297 習題 & 習題 V-5 獨立題組 & § V-4 丙「球的轉動」後獨立設「習題 V-5」，忠實完整收錄。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{附錄一、二}} \\ \hline
+
+附錄一 p.301 & $\bar{\mathbf{e}}_2 = (-\frac{1}{\sqrt{5}}, \frac{1}{\sqrt{5}})$ & 第一分量分子鉛字訛誤為 1，依正交單位向量及例 2 校訂為 $-\frac{2}{\sqrt{5}}$ 並附註說明。 \\ \hline
+\hyperref[note:b4-a2-p307-typo]{附錄二 p.307} & $X^2+Y^2+2D'Z+2E'Y+F \neq 0$ & 變數 $Z$ 誤植為 $X$，常數項漏撇號 $F'$，校訂為 $2D'X$ 及 $F'$ 並附註說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\include{chapters/B4/Preface}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% 第四冊各章循序 Include 模組
+\include{chapters/B4/Chapter1} % 第一章 座標變換與線性映射
+\include{chapters/B4/Chapter2} % 第二章 二次幾何 第一部分：錐線的演變
+\include{chapters/B4/Chapter3} % 第三章 二次幾何 第二部分：標準式
+\include{chapters/B4/Chapter4} % 第四章 二次幾何 第三部分：二次曲線的分類與判別
+\include{chapters/B4/Chapter5} % 第五章 複數與三角基本定理
+\include{chapters/B4/Appendix1} % 附錄一 關於二次方程式標準化中轉軸與平移之先後問題
+\include{chapters/B4/Appendix2} % 附錄二 圓系
+\include{chapters/B4/Appendix3} % 附錄三 三角函數表
+\include{chapters/B4/Appendix4} % 附錄四 對數表
+\include{chapters/B4/Appendix5} % 附錄五 索引
+
+\end{document}

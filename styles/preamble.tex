@@ -1,0 +1,93 @@
+\usepackage{xeCJK}
+\setCJKmainfont{Songti TC}
+\setCJKfamilyfont{kai}{Songti TC}
+\newcommand{\kai}{\CJKfamily{kai}} % 用 \kai{使用楷書}
+
+\usepackage{lmodern}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath, amsthm, amssymb, amsfonts, mathrsfs}
+\usepackage{upgreek} % 直立的希臘字母
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage[colorlinks]{hyperref}
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{bm}
+\usepackage{bbm} % for \mathbbm{1} (indicator function)
+\usepackage{centernot}
+\usepackage{mdframed}
+\usepackage{xltabular}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\usepackage{tikz}
+\usetikzlibrary{patterns, arrows.meta, positioning, calc, decorations.pathmorphing, decorations.pathreplacing, decorations.markings, decorations.shapes, angles, quotes, 3d, matrix}
+\usepackage[nameinlink, capitalise]{cleveref}
+\usepackage{diagbox}
+\usepackage{booktabs}
+\usepackage{multirow,array}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\usepackage{indentfirst} % 首段 indent
+\setlength{\parindent}{2em}
+\usepackage{cancel} % 數學式子畫線槓掉
+\newcommand\mcancel[2][red]{\setbox0=\hbox{$#2$}%
+\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2}
+\setcounter{MaxMatrixCols}{20}
+\usepackage{datetime2}
+\usepackage{paracol}
+
+\makeatletter
+\def\tiangan#1{\expandafter\@tiangan\csname c@#1\endcsname}
+\def\@tiangan#1{%
+  \ifcase#1\or (甲)\or (乙)\or (丙)\or (丁)\or (戊)\or (己)\or (庚)\or (辛)\or (壬)\or (癸)\else(?)\fi
+}
+\AddEnumerateCounter{\tiangan}{\@tiangan}{(甲)}
+\makeatother
+
+% 支援 \wideparen 圓弧記號（若未載入 yhmath，可用此巨集穩定渲染）
+\providecommand{\wideparen}[1]{\overset{\frown}{#1}}
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\AtBeginDocument{%
+ \setlength{\abovedisplayskip}{6pt}
+ \setlength{\belowdisplayskip}{6pt}
+ \setlength{\abovedisplayshortskip}{4pt}
+ \setlength{\belowdisplayshortskip}{4pt}
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+ backgroundcolor=\color{backcolour},
+ commentstyle=\color{codegreen},
+ keywordstyle=\color{magenta},
+ numberstyle=\tiny\color{codegray},
+ stringstyle=\color{codepurple},
+ basicstyle=\ttfamily\footnotesize,
+ breakatwhitespace=false,
+ breaklines=true,
+ captionpos=b,
+ keepspaces=true,
+ numbers=left,
+ numbersep=5pt,
+ showspaces=false,
+ showstringspaces=false,
+ showtabs=false,
+ tabsize=2
+}
+\lstset{style=mystyle}
+
+\hypersetup{citecolor=blue, linkcolor=blue, urlcolor=blue}

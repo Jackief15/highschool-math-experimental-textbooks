@@ -1,0 +1,106 @@
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\skewness}{Skewness}
+\DeclareMathOperator{\DU}{D-U}
+\DeclareMathOperator{\CU}{C-U}
+\DeclareMathOperator{\Geo}{Geo}
+\DeclareMathOperator{\Pois}{Pois}
+\DeclareMathOperator{\Gam}{Gam}
+\DeclareMathOperator{\LN}{LogN}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\mP}{\mathbb{P}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\1}{\mathbbm{1}}
+\newcommand{\Poi}{\text{Poi}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\as}{\text{a.s.}}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\paren}[1]{\left({#1}\right)}
+\newcommand{\brk}[1]{\left[{#1}\right]}
+\newcommand{\curl}[1]{\left\{{#1}\right\}}
+\providecommand{\lambdaup}{\uplambda}
+\renewcommand{\lambda}{\lambdaup}
+\providecommand{\wideparen}[1]{\overset{\frown}{#1}}
+
+\theoremstyle{definition} % 定理環境 style 改用正體
+\newtheorem{theorem}{定理}
+\newtheorem*{theorem*}{定理}
+\newtheorem{definition}{定義}
+\newtheorem*{definition*}{定義}
+\newtheorem{example}{例子}
+\newtheorem*{example*}{例子}
+\newtheorem{exercise}{練習}
+\newtheorem*{exercise*}{練習}
+\newtheorem{corollary}{推論}
+\newtheorem*{corollary*}{推論}
+\newtheorem{property}{性質}
+\newtheorem*{property*}{性質}
+\newtheorem{prop}{命題}
+\newtheorem*{prop*}{命題}
+\newtheorem{proposition}[prop]{命題}
+\newtheorem*{proposition*}{命題}
+\newtheorem{lemma}{引理}
+\newtheorem*{lemma*}{引理}
+\newtheorem{problem}{問題}
+\newtheorem*{problem*}{問題}
+\newtheorem*{remark}{註}
+\newtheorem{discussion}{論例}
+\newtheorem*{discussion*}{論例}
+\newtheorem{homework}{作業}
+\newtheorem*{homework*}{作業}
+\newtheorem{example-non}{例}
+
+% 讓 \begin{solution} 與 \begin{solution*} 皆可用，並以 # 或 \square 結尾
+\newtheorem*{solution}{【解】}
+\AtEndEnvironment{solution}{\hfill$\#$}
+
+% 每章（\section）自動重置定理、例題、論例、命題、公式等計數器，確保全冊與單章編譯編號完全一致
+\makeatletter
+\@addtoreset{theorem}{section}
+\@addtoreset{definition}{section}
+\@addtoreset{example}{section}
+\@addtoreset{exercise}{section}
+\@addtoreset{corollary}{section}
+\@addtoreset{property}{section}
+\@addtoreset{prop}{section}
+\@addtoreset{lemma}{section}
+\@addtoreset{problem}{section}
+\@addtoreset{discussion}{section}
+\@addtoreset{homework}{section}
+\@addtoreset{example-non}{section}
+\@addtoreset{equation}{section}
+\makeatother
+
+% 當原書該章各節（§ X-Y）獨立重新起算定理、例題、論例、公式編號時，於 \subsection 後呼叫 \resetsectcounters
+\newcommand{\resetsectcounters}{%
+  \setcounter{theorem}{0}%
+  \setcounter{definition}{0}%
+  \setcounter{example}{0}%
+  \setcounter{exercise}{0}%
+  \setcounter{corollary}{0}%
+  \setcounter{property}{0}%
+  \setcounter{prop}{0}%
+  \setcounter{lemma}{0}%
+  \setcounter{problem}{0}%
+  \setcounter{discussion}{0}%
+  \setcounter{homework}{0}%
+  \setcounter{example-non}{0}%
+  \setcounter{equation}{0}%
+}
+
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+
+% 統一勘誤表返回連結巨集：各單章主檔與全冊主檔皆於勘誤表標題處定義 \label{sec:current_errata}
+\providecommand{\errataref}{\hyperref[sec:current_errata]{目錄前勘誤表}}

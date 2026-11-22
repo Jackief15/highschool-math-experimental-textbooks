@@ -1,0 +1,411 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{styles/preamble.tex}
+\input{styles/Chinese_math_style.tex}
+\input{styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第五冊（自然組）}
+\fancyhead[RO]{\small \leftmark}
+\fancyfoot[C]{\thepage}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第五冊（自然組）}\\[0.5em] \Large\textbf{全冊 \LaTeX{} 數位轉錄版}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% =========================================================================
+% 各章掃描檔勘誤、文字校訂與疑難處彙整表（整理於目錄之前）
+% =========================================================================
+\section*{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\addcontentsline{toc}{section}{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\label{sec:master_errata_notes_b5}
+\markboth{各章掃描檔勘誤與文義校訂彙整表}{各章掃描檔勘誤與文義校訂彙整表}
+
+本冊依據 1975 年再版《高中數學實驗教材 第五冊（自然組）》（高三上）各章與附錄掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{xltabular}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\caption{全冊各章掃描檔勘誤、疑難處與文義校訂彙整表}\label{tab:errata_b5_master} \\
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endfirsthead
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endhead
+\hline
+\endfoot
+\multicolumn{3}{|c|}{\textbf{第一章\quad 極座標}} \\ \hline
+\hyperref[note:b5-ch1-p2-zi]{§ I-1 頁 2 方位敘述} & 
+「若目 $O$ 向東走 $\sqrt{3}$ 單位」 & 
+原書「自」字頂筆漏印作「目」，據文意與後文「自東逆時針」校訂為「自」。 \\
+\hline
+\hyperref[note:b5-ch1-p4-ge0]{§ I-1 頁 4 向徑非負條件} & 
+「$r = \overline{OP} \ge O$」 & 
+不等式右端之數字「$0$」誤排為英文字母「$O$」，據下文「$r > 0$」、「$r = 0$」校訂為數字「$0$」。 \\
+\hline
+\hyperref[note:b5-ch1-p4-pingfang]{§ I-1 頁 4 座標轉換推導} & 
+「兩式分別个力後取和得」 & 
+原書「平方」二字鉛字磨損漏印，殘存字跡作「个力」，據下式 $x^2+y^2=r^2$ 校訂補全為「平方」。 \\
+\hline
+\hyperref[note:b5-ch1-p16bottom]{§ I-2 頁 16 丙段首段末行} & 
+「$v = \tan x$」、「$: = y$ 軸」 & 
+原書 $y = \tan x$ 之 $y$ 下筆漏印似 $v$，末行左緣 $x = y$ 軸之 $x$ 印損，茲校訂復原。 \\
+\hline
+\hyperref[note:b5-ch1-fig2-10b]{§ I-2 頁 17 圖 2-10b 標籤} & 
+「$y = \tan^{-1}$ 的主值」 & 
+圖中首行漏印自變數 $x$（次行印有 $= \operatorname{Tan}^{-1} x$），校補為「$y = \tan^{-1} x$ 的主值」。 \\
+\hline
+\hyperref[note:b5-ch1-p18ex1]{§ I-2 頁 18 例 1(i)} & 
+「這其實也就是函數的用意」 & 
+按文脈與本節甲段標題，實指「反函數的用意」，正文保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch1-p19pi]{§ I-2 頁 19--20 例 1 與例 3} & 
+「$\theta = n\tau + \theta_0$」、「$n\tau + \frac{\pi}{3}$」 & 
+原書數處 $n\pi$ 之希臘字母 $\pi$ 左豎筆漏印而形似 $\tau$，依通解公式校訂為 $n\pi$。 \\
+\hline
+\hyperref[note:b5-ch1-p21ex10a]{§ I-2 頁 21 習題 I-2 第 10(a) 題} & 
+「$2\cot^{-1} 1 + \cos^{-1}\frac{3}{5}$」處墨跡 & 
+「$1$」與「$+$」間有細微豎跡似重影，依三角恆等式驗證確認該數為 $1$。 \\
+\hline
+\hyperref[note:b5-ch1-p22-ex1]{§ I-3 頁 22 例 1 極方程式} & 
+「（或寫成 $r - 2^{\frac{0}{2\pi}} = 0$）」 & 
+括號內指數分子 $\theta$ 中橫斷筆印作 $0$，依前式 $r = 2^{\frac{\theta}{2\pi}}$ 校訂為 $\theta$。 \\
+\hline
+\hyperref[note:b5-ch1-p23-table]{§ I-3 頁 23 例 1 描點表} & 
+「$-2n\tau$」、「$2.4$」 & 
+表內 $-2n\pi$ 之 $\pi$ 印損似 $\tau$，且 $r$ 列「$2, 4$」間之逗號誤印為圓點，茲予校訂。 \\
+\hline
+\hyperref[note:b5-ch1-p25-hw8]{§ I-3 頁 25 作業 8 提示} & 
+「〔如 (i) 須 $\pi$〕」 & 
+(i) 四瓣玫瑰線 $r=\cos 2\theta$ 須歷經 $2\pi$，(ii) 三瓣玫瑰線 $r=\cos 3\theta$ 僅須 $\pi$；保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch1-p26-note]{§ I-3 頁 26 注意 (ii)} & 
+「（關係如 (2) 式）」 & 
+同一點各極座標間之關係式實為第 25 頁命題 4 之 (3) 式；保留原貌並加註說明。 \\
+\hline
+\hyperref[note:b5-ch1-p28-fn]{§ I-3 頁 28 頁底註釋標記} & 
+頁底印有「〔註〕...」惟正文漏印標記 & 
+依文義將該註釋綴於第 28 頁「注意」段末討論圓之良性極方程式處並加註說明。 \\
+\hline
+\hyperref[note:b5-ch1-p29-ex3]{§ I-3 頁 29 例 3 符號代換} & 
+「$1 - 2a\cos\alpha = 0$，及 $1 - a\sin\alpha = 0$」 & 
+由 $\rho^2 = a^2$（取 $\rho = a > 0$）直接將 $\rho$ 寫作 $a$，加註說明推導脈絡。 \\
+\hline
+\hyperref[note:b5-ch1-p38-exp]{§ I-4 頁 38 例 4 (iii)} & 
+「$2^{(\theta + 2n\pi)/2\pi}$」指數墨跡 & 
+指數分子處有重印墨跡，意指無論平移多少週期，指數函數恆正不為 $0$，加註說明。 \\
+\hline
+\hyperref[note:b5-ch1-p41-gamma]{§ I-4 頁 41 交集符號印損} & 
+「考慮 $\Lambda_{2n} \cap 1$ 與 $\Lambda^*_{2n+1} \cap \Gamma$」 & 
+「$\Lambda_{2n} \cap \Gamma$」之 $\Gamma$ 頂部橫畫漏印形似 $1$，依上下文校訂為 $\Lambda_{2n} \cap \Gamma$。 \\
+\hline
+\hyperref[note:b5-ch1-p43-eq6]{§ I-4 頁 42--43 公式編號 (6)} & 
+定理 1 與頁 43 聯立式重複編號為 (6) & 
+原書兩處聯立方程式重複使用編號 (6)，保留原書編號並附註說明指涉對象。 \\
+\hline
+\hyperref[note:b5-ch1-p44-paren]{§ I-4 頁 44 習題 I-4 第 1 題} & 
+「$\gamma(\Lambda \cap \Gamma) = \gamma(\Lambda \cap \gamma(\Gamma)?$」 & 
+等號右側 $\gamma(\Lambda)$ 漏印右括號，校補為 $\gamma(\Lambda \cap \Gamma) = \gamma(\Lambda) \cap \gamma(\Gamma)?$。 \\
+\hline
+\hyperref[note:b5-ch1-p45-alpha]{§ I-4 頁 45 習題 I-4 第 3 題} & 
+「$\alpha^*_{2n}(\Lambda) = \Lambda$ 成立」 & 
+奇數平移鏡射映射下標誤印為 $2n$，依前文定義校訂為 $\alpha^*_{2n+1}(\Lambda) = \Lambda$。 \\
+\hline
+\hyperref[note:b5-ch1-p46-rho]{§ I-5 頁 46 準線符號辨析} & 
+準線 $\rho$ 與距離 $p$ 字形相近 & 
+原書以希臘字母 $\rho$ 表示準線、斜體拉丁字母 $p$ 表示極點至準線距離，正文嚴格區分並加註。 \\
+\hline
+\hyperref[note:b5-ch1-p46-paren]{§ I-5 頁 46--47 跨頁括號} & 
+「（此處 $[r, \theta]$ 為相關於 $(O; \vec{OX})$ 的極座標」 & 
+跨頁接次頁首行時漏印右括號「）」，茲予補齊。 \\
+\hline
+\hyperref[note:b5-ch1-p47-fig52]{§ I-5 頁 47 圖 5-2 標註} & 
+極軸下方括弧標註「$\cos\theta$」 & 
+因 $\overline{OP}=r$，水平投影長實為 $r\cos\theta$（對應正文 $\overline{PT}=r\cos\theta+p$），此處依原圖忠實重現並附註說明。 \\
+\hline
+\hyperref[note:b5-ch1-p48-hw15]{§ I-5 頁 48 作業 15 第二解} & 
+「有兩解 $(\frac{pe}{1-e}, 0)$ 與 $(\frac{pe}{1+e}, 0)$」 & 
+第二解當角度記為 $0$ 時向徑 $r$ 為負值（卽 $[-\frac{pe}{1+e}, 0]$），原書漏印負號，保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch1-p51-eq]{§ I-5 頁 51 丁段旋轉極方程式} & 
+「$r = r_1 - \frac{pe}{1 - e\cos\theta_1}$」 & 
+$r_1$ 後之等號上橫漏印似減號，依上下文校訂為等號「$=$」。 \\
+\hline
+\multicolumn{3}{|c|}{\textbf{第二章\quad 排列組合}} \\ \hline
+\hyperref[note:b5-ch2-p58-k]{§ II-1 頁 58 基本計數原則} & 
+「如果 $A_1, A_2, \cdots, A_k$ 是個有限集合」 & 
+原書漏印集合個數「$k$」，脫漏作「是個有限集合」，茲據文義校補為「是 $k$ 個有限集合」。 \\
+\hline
+\hyperref[note:b5-ch2-p60-a3]{§ II-1 頁 60 路線走法說明} & 
+「由 $A_0$ 經 $A_1, A_2$ 到 $A^3$ 共有 105 種走法」 & 
+原書節點誤植為上標「$A^3$」，茲據文意與圖 2-1 標記校正為下標「$A_3$」。 \\
+\hline
+\hyperref[note:b5-ch2-linear-perm]{§ II-2 頁 69 乙段標題} & 
+「乙、線形排列」 & 
+原書標題及內文作「線形排列」，即現行通稱之「直線排列」或「線性排列」，保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p72-go-stones]{§ II-2 頁 72 論例 7(ii)} & 
+「白子 5 個，黑子 5 點」 & 
+原書作「5 點」，即「5 個（顆）」之意，保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p72-surjection-period]{§ II-2 頁 72 論例 7(ii)} & 
+「則映射到黑子，白子各 5 次的蓋射個數。」 & 
+解答句末贅印句號，予以註記說明。 \\
+\hline
+\hyperref[note:b5-ch2-p74-ex14]{§ II-2 頁 74 土風舞引述} & 
+「例如在例 14 (ii) 中跳土風舞時」 & 
+實為第 70 頁之〔例 11〕(ii)，此處係原書例題編號錯參，特加註校訂。 \\
+\hline
+\hyperref[note:b5-ch2-p75-q6-quote]{§ II-2 頁 75 習題 II-2 第 6 題} & 
+「某社區巷道如右圖，‘早晨派報時」 & 
+「如右圖」後贅印單引號「‘」，正文予以刪除並加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p75-q7-crayon]{§ II-2 頁 75 習題 II-2 第 7 題} & 
+「小明有 12 色臘筆」 & 
+「臘」通「蠟」，即蠟筆，保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p75-eq]{§ II-3 頁 75 定理 7 釋例} & 
+「例如 $C_2^5 == \frac{5!}{(5-2)! 2!}$」 & 
+原書多印一個等號「$==$」，茲更正為單個等號「$=$」。 \\
+\hline
+\hyperref[note:b5-ch2-p76-east6]{§ II-3 頁 76 走法組合分析} & 
+「向東段及向北 3 段」 & 
+原書漏印數字「6」，依上下文「共走九小段」校補為「向東 6 段及向北 3 段」。 \\
+\hline
+\hyperref[note:b5-ch2-p76-thm8-dots]{§ II-3 頁 76 定理 8} & 
+「$|B| = n$，\dots 及 $C = \{0, 1\}$」 & 
+此處省略號「\dots」為原書原文，疑為承接前段排版遺留，保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p77-cb]{§ II-3 頁 77 映射個數} & 
+「$|C^B| = |C^n| = 2^n \mid$」 & 
+原書符號印刷雜訊，末尾豎線疑為雜點，且集合之勢實為 $|C|^n$，加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p77-pn]{§ II-3 頁 77 冪集式 (3)} & 
+「$|\mathscr{P}(B)| = |C^n| = 2^n$」 & 
+原書若將映射集合視為笛卡兒積 $C^n$，其勢記為 $|C^n|$，即 $|C|^n = 2^n$，加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p83-zhankai]{§ II-3 頁 83 論例 10} & 
+「如將 $(x_1 + \dots + x_n)^m$ 展開式 $m$ 次齊次式」 & 
+原書作「展開式」，依文意校正為「展開成 $m$ 次齊次式」。 \\
+\hline
+\hyperref[note:b5-ch2-p83-gongyong]{§ II-3 頁 83 習題 II-3 第 2 題} & 
+「共用幾種可能派法？」 & 
+原書作「共用」，疑為「共有」之誤植，保留原文並加註說明。 \\
+\hline
+\hyperref[note:b5-ch2-p85-expand]{§ II-4 頁 85 展開項次序} & 
+「$xx\cdots xx + xx\cdots xy + xx\cdots xyx + \cdots$」 & 
+照原書字典順序展開排印並加註說明省略項次序。 \\
+\hline
+\hyperref[note:b5-ch2-p90-binom]{§ II-4 頁 90 式 (4) 展開} & 
+雙重求和內原印作「$\binom{n}{k} \binom{k}{j}$」 & 
+其中「$\binom{n}{k}$」顯係「$\binom{m}{k}$」之印刷訛誤，茲更正為 $\binom{m}{k}$。 \\
+\hline
+\hyperref[note:b5-ch2-p90-ex11-typo]{§ II-4 頁 90 論例 11} & 
+「將 $(x+y+y)^4$ 展開」 & 
+原書誤植第二個 $y$，顯係「$(x+y+z)^4$」之訛誤，更正為 $(x+y+z)^4$。 \\
+\hline
+\hyperref[note:b5-ch2-p90-ex11-y4]{§ II-4 頁 90 論例 11 解答} & 
+括弧內印作「$(x^4 + x^4 + z^4)$」 & 
+第二項「$x^4$」顯係「$y^4$」之誤，茲更正為 $x^4 + y^4 + z^4$。 \\
+\hline
+\hyperref[note:b5-ch2-p90-disc10]{§ II-4 頁 90 論例 11 說明} & 
+「由論例 10 知上式有 $H_4^3 = 15$ 個不同類項」 & 
+加註指明引用前節（§ II-3 重複組合）之論例 10。 \\
+\hline
+\hyperref[note:b5-ch2-p91-eq5]{§ II-4 頁 91 定理 11} & 
+定理 11 右端漏印公式標號 & 
+後文推導明確稱「如在 (5) 中令 $x_1 = \cdots = x_n = 1$」，依文意補上編號 (5)。 \\
+\hline
+\hyperref[note:b5-ch2-p91-p1]{§ II-4 頁 91 定理 11 證明} & 
+「故應用 $P!$ 去除」 & 
+漏印足標 1，依文義校訂為「$P_1!$」。 \\
+\hline
+\hyperref[note:b5-ch2-p91-pm]{§ II-4 頁 91 定理 11 證明} & 
+分母末項印作「$P_m!$」 & 
+依變數個數 $n$ 應為「$P_n!$」，更正為 $P_n!$。 \\
+\hline
+\hyperref[note:b5-ch2-p91-right]{§ II-4 頁 91 定理 11 說明} & 
+「左邊為...重複排列總數，左邊的各項則為...」 & 
+第二個「左邊」顯為「右邊」之筆誤，茲更正為「右邊」。 \\
+\hline
+\hyperref[note:b5-ch2-p92-q3-3]{§ II-4 頁 92 習題 II-4 第 3(3) 題} & 
+「$\left(2x^2 + \frac{3}{x}\right)^5$ 中 $x^3$ 的係數」 & 
+展開式各項指數為 $10-3k \ne 3$，不存在 $x^3$ 項（係數為 0），保留原文並加註說明。 \\
+\hline
+\multicolumn{3}{|c|}{\textbf{第三章\quad 直觀機率}} \\ \hline
+\hyperref[note:b5-ch3-p99-pa]{§ III-1 頁 99 【論例 2】計算式} & 
+$P(A) = P(A') = 1 - \frac{125}{216} = \frac{91}{216}$ & 
+原書第二個等號左側漏印「$1-$」，顯為排版脫漏，茲更正為 $P(A) = 1 - P(A') = 1 - \frac{125}{216} = \frac{91}{216}$。 \\
+\hline
+\hyperref[note:b5-ch3-p100-152]{§ III-1 頁 100 【論例 2】和事件算式} & 
+$= \frac{91}{216} + \frac{91}{216} - \frac{30}{216} = \frac{151}{216}$ & 
+經核算 $91+91-30=152$，原書「$\frac{151}{216}$」顯為計算或排印訛誤，茲更正為 $\frac{152}{216}$（約分得 $\frac{19}{27}$）並加註說明。 \\
+\hline
+\hyperref[note:b5-ch3-p104-q4]{§ III-1 頁 104 習題 III-1 第 4 題} & 
+「擲五粒骰子，兩粒出現都不是 6 點的機率是多少？至少有一粒是 6 點的機率是多少？」 & 
+前題第 3 題為五枚硬幣之對偶互補問題，第 4 題中「至少有一粒是 6 點」之餘事件應為「各粒皆非 6 點」；「兩粒」疑為「各粒」或「五粒」之排版訛誤（亦或題首原擬為「擲兩粒骰子」）。正文保留原刊本字樣並予註記說明。 \\
+\hline
+\hyperref[note:b5-ch3-p104-q5]{§ III-1 頁 104 習題 III-1 第 5 題 (2)} & 
+「一個橘子有三種缺點之一的機率是多少？」 & 
+依題意脈絡與集合排容原理，意指「至少具有三種缺陷中之一種」（即聯集事件 $A \cup B \cup C$ 之機率），正文保留原文並附註說明供讀者明辨。 \\
+\hline
+\hyperref[note:b5-ch3-p105-q6]{§ III-1 頁 105 習題 III-1 第 6 題} & 
+「0.06\% $X, Y, Z$ 三種缺陷均有」 & 
+按題幹 1000 件成品計算，0.06\% 相當於 0.6 件；此處百分比疑為獨立不良率統計數據或筆誤，正文忠實保留原刊本數值並加註說明。 \\
+\hline
+\hyperref[note:b5-ch3-p110-q6-subnum]{§ III-2 頁 110 習題 III-2 第 6 題} & 
+子題序號印為「(1) ... (3) ... (3)」 & 
+原書出現兩個 (3)，且第三小題敘述「(2)中若引擎故障...」明指前一小題為第 (2) 題，顯係排印編號訛誤，茲更正為 (2)。 \\
+\hline
+\hyperref[note:b5-ch3-p111-2pia]{*§ III-3 頁 111 〔例 11〕公式分母} & 
+分母字模破損作「$2\text{--}a$」 & 
+依圓周長公式 $2\pi a$ 及上下文弧長比與面積比，校訂為 $2\pi a$。 \\
+\hline
+\hyperref[note:b5-ch3-p113-phi]{*§ III-3 頁 113 **〔例 13〕符號排印} & 
+次行印為「$0 \le \psi < \pi$」 & 
+原書首行明定「夾角為 $\varphi$」，圖 3-5-1 及圖 3-5-2 均標為 $\varphi$，次行誤用字模 $\psi$，茲統一校訂為 $\varphi$。 \\
+\hline
+\hyperref[note:b5-ch3-p113-fig-num]{*§ III-3 頁 113 圖號標記} & 
+圖名印作「圖 3-5-1」與「圖 3-5-2」 & 
+本節節次為 §III-3，圖號卻為 3-5-1 與 3-5-2，疑承襲原教材早期草稿節次編號；正文存其舊並予註記說明。 \\
+\hline
+\multicolumn{3}{|c|}{\textbf{第四章\quad 有限機率空間}} \\ \hline
+\hyperref[note:b5-ch4-p116-meiyou]{§ IV-1 頁 116 〔注意〕第 4 點} & 
+「這表示樣本空間 $S$ 中設有機率為 0 的非空事件」 & 
+依前句 $P(A) = 0 \Longrightarrow A = \phi$ 及後文「不可能發生的基本事件都被排除」、「在無限的情形就會有機率為 0 的非空事件」，「設有」顯為「沒有」之排版訛誤，茲予校訂。 \\
+\hline
+\hyperref[note:b5-ch4-p121-calc]{§ IV-1 頁 121 〔例 3〕計算式} & 
+$= \frac{25}{72} + \frac{25}{72} - \frac{1}{9} = \frac{31}{36}$ & 
+經計算 $\frac{50}{72} - \frac{8}{72} = \frac{42}{72} = \frac{7}{12}$（約分前亦作 $\frac{21}{36}$），原書「$\frac{31}{36}$」顯為計算或排印訛誤，茲更正為 $\frac{7}{12}$ 並加註說明。 \\
+\hline
+\hyperref[note:b5-ch4-p123-q8]{§ IV-1 頁 123 習題 IV-1 第 ** 9 題} & 
+題號由 7. 直接跳至「** 9.」 & 
+原書題目編號漏編第 8 題，正文忠實保留「** 9.」並加註說明。 \\
+\hline
+\hyperref[note:b5-ch4-ex9-ge]{§ IV-2 頁 130 〔例 9〕內文} & 
+「在其中連續取出（每次立即放回）$n$ 紅球」 & 
+原書漏量詞「個」，依現代中文語法補「個」字作「$n$ 個紅球」以臻通順。 \\
+\hline
+\hyperref[note:b5-ch4-bayes-typo]{§ IV-2 頁 131 【定理 5】貝氏定理內文} & 
+「則每對於個自然數 $k$」 & 
+原書作「則每對於個自然數 $k$」，疑為「則對於每個自然數 $k$」之字序倒錯，茲予以校正。 \\
+\hline
+\hyperref[note:b5-ch4-p136-fig-num]{§ IV-2 頁 136 〔例 18〕街道圖圖號} & 
+圖名印作「3-1」 & 
+按第四章圖號編次疑應為「圖 4-1」，正文忠實存其舊並予註記說明。 \\
+\hline
+\hyperref[note:b5-ch4-p138-f-font]{附錄 頁 138 機率測度公理 1) 與 2)} & 
+條件敘述中印為普通斜體「$F$」 & 
+前後文定義 $\sigma$-體皆用花體「$\mathscr{F}$」，此處統一校訂為「$\mathscr{F}$」。 \\
+\hline
+\hyperref[note:b5-ch4-p139-geom-ex-num]{附錄 頁 139 幾何機率引用例題} & 
+「例 9 $S=\{x \mid 0 \le x \le 1\}$」、「例 11 的正方形」、「例 12 的長方形」 & 
+核對第三章 *§ III-3 幾何機率之例題，實數區間 $[0,1]$ 為〔例 10〕，約會問題之正方形區域為〔例 12〕，擲針問題之長方形區域為〔例 13〕。疑引用早期草稿編號所致，正文存其舊並予註記說明。 \\
+\hline
+\multicolumn{3}{|c|}{\textbf{第五章\quad 隨機變數}} \\ \hline
+\hyperref[note:b5-ch5-p145-75]{§ V-1 頁 145 論例 1 分組次數表} & 
+實際成績印為「79 78 78 75 75 75 75 76 78 79 77」 & 
+原書僅印出 11 個成績，漏印一個 75 分；核對第 144 頁原始成績，75 分實有 5 位同學，該組頻數亦記為 12，故校正補入一個 75 分以符實際。 \\
+\hline
+\hyperref[note:b5-ch5-p150-fxstar]{§ V-1 頁 150 例 7 分佈對照表} & 
+表頭印作「$f^{X*}(k)$」 & 
+為「$f_X^*(k)$」排版字模微異之記號，茲予規範化為 $f_X^*(k)$。 \\
+\hline
+\hyperref[note:b5-ch5-p151-px6]{§ V-1 頁 151 例 8 解題公式} & 
+印作「$P_X(6) = \left(\frac{5}{6}\right)^5 \left(\frac{1}{6}\right)$」 & 
+係指隨機變數 $X$ 之機率函數值，依全書符號體系宜作 $f_X(6)$，茲予校訂。 \\
+\hline
+\hyperref[note:b5-ch5-p153-q6]{§ V-1 頁 153 習題 V-1 第 6 題} & 
+僅有小題標號「(1)」 & 
+題號下無 (2)，正文忠實保留原書標號 (1) 並予加註。 \\
+\hline
+\hyperref[note:b5-ch5-p155-doubled-comma]{§ V-2 頁 155 期望值記號說明} & 
+印作「（有時亦記爲 $\mu$,, 卽 $\mu=E(X)$」 & 
+原書有重疊逗號，茲更正為單個逗號。 \\
+\hline
+\hyperref[note:b5-ch5-p157-fangcha]{§ V-2 頁 157 方差記號引言} & 
+印作「來表示 $X$」 & 
+頁末未完句且漏標點，次頁首直接承接式 (7) 進行展開化簡，依上下文語意補足為「來表示 $X$ 的方差」。 \\
+\hline
+\hyperref[note:b5-ch5-p160-fenpei]{§ V-2 頁 160 習題 V-2 第 1 題} & 
+印作「分取到三個箱子中」 & 
+依文義及後句「分配後空箱子的個數」，顯為「分配」之訛，茲予校訂。 \\
+\hline
+\hyperref[note:b5-ch5-p160-typo]{*§ V-3 頁 160 引言} & 
+「幾個基本的有用的定理」 & 
+疑為「幾個基本而有用的定理」之筆誤，正文照錄存真並予說明。 \\
+\hline
+\hyperref[note:b5-ch5-p164-comma]{*§ V-3 頁 164 大數法則說明} & 
+印作「取 $n = N$，，」 & 
+原書多一逗號，校正為單個逗號。 \\
+\hline
+\hyperref[note:b5-ch5-p164-strip]{*§ V-3 頁 164 帶狀區域符號} & 
+「落在帶 $L_1 L_2$ 之外」 & 
+圖中未標注符號 $L_1, L_2$，依文義係指由直線 $y = p \pm \varepsilon$ 界定之水平帶狀區域。 \\
+\hline
+\hyperref[note:b5-ch5-p164-rv]{*§ V-3 頁 164 機率算式} & 
+隨機變數誤印為小寫 $x_i$ & 
+算式 $P(p-\varepsilon < \frac{1}{N}\sum x_i < p+\varepsilon)$ 依前後文校訂為大寫 $X_i$。 \\
+\hline
+\hyperref[note:b5-ch5-p164-xi]{*§ V-3 頁 164 實現值記號} & 
+印作「$\bar{x}^i$」 & 
+指各組試驗之實現比值 $\bar{x}^{(1)}, \dots, \bar{x}^{(m)}$，正文存其舊並予加註。 \\
+\hline
+\hyperref[note:b5-ch5-p165-extra]{*§ V-3 頁 165 例 17 歷史試驗} & 
+印作「他在另一次值試驗」 & 
+多一贅字「值」，茲予校除。 \\
+\hline
+\hyperref[note:b5-ch5-p165-p]{*§ V-3 頁 165 理論機率記號} & 
+印作大寫「$P = 0.5$」且句末漏標點 & 
+校訂為小寫機率參數「$p = 0.5$」並補上句點。 \\
+\hline
+\hyperref[note:b5-ch5-p166-ineq1]{*§ V-3 頁 166 引用不等式} & 
+印作「柴比雪夫不等(1)式」 & 
+漏「式」字且式號倒錯，校訂為「柴比雪夫不等式 (1)」。 \\
+\hline
+\hyperref[note:b5-ch5-p166-wlln]{*§ V-3 頁 166 弱大數法則形式} & 
+式 (6) $P\{|\frac{X}{n}-p| \ge \varepsilon\} \le \frac{pq}{n\varepsilon^2}$ & 
+補充說明當 $n \to \infty$ 時此上界趨於 0，即弱大數法則之定量上界形式。 \\
+\hline
+\hyperref[note:b5-ch5-p166-p]{*§ V-3 頁 166 習題式號機率記號} & 
+例 18(i) 題幹印作大寫「$P = \frac{1}{2}$」 & 
+校訂為小寫「$p = \frac{1}{2}$」以符前後統一。 \\
+\hline
+\hyperref[note:b5-ch5-p167-p]{*§ V-3 頁 167 結語機率記號} & 
+「$\frac{X}{n}$ 與 $P$ 卽已非常接近」 & 
+大寫「$P$」依文義校為機率參數小寫「$p$」。 \\
+\hline
+\end{xltabular}
+\clearpage
+\renewcommand{\contentsname}{目\qquad 次}
+\markboth{目次}{目次}
+\tableofcontents
+\newpage
+
+% 第五冊各章循序 Include 模組
+\include{chapters/B5/Chapter1} % 第一章 極座標
+\include{chapters/B5/Chapter2} % 第二章 排列組合
+\include{chapters/B5/Chapter3} % 第三章 直觀機率
+\include{chapters/B5/Chapter4} % 第四章 有限機率空間
+\include{chapters/B5/Chapter5} % 第五章 隨機變數
+\include{chapters/B5/Appendix1} % 附錄 階乘、二項係數表
+\include{chapters/B5/Appendix2} % 附錄 索引
+
+\end{document}

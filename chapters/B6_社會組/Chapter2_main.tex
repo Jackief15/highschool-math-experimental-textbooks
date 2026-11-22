@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 6 冊（社會組）}
+  \fancyhead[L]{\small 第 2 章\quad 方程式論}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第六冊（社會組）}
+\fancyhead[RO]{\small 第二章\quad 方程式論}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第六冊（社會組）}\\[0.5em] \Large\textbf{第二章\quad 方程式論}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第二章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b6_ch2}
+\label{sec:current_errata}
+
+本章依據 1975 年初版《高中數學實驗教材 第六冊（社會組）》（高三下）第二章「方程式論」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b6s-ch2-p95-trace]{§ II-3 頁 95 作業 7(i)} & 
+「諸根之和為 $-(a_{11}+a_{22}+a_{33})$」 & 
+原書特徵方程式展開後最高兩項為 $(-x)^3 + (a_{11}+a_{22}+a_{33})x^2$，依根與係數關係根之和應為首項係數除次高項係數取負，即 $a_{11}+a_{22}+a_{33}$，原書漏消負號，據此校訂。 \\ \hline
+
+\hyperref[note:b6s-ch2-p117-cubic-ineq]{§ II-5 頁 117 習題 II-5 第 6 題} & 
+「$-4p^3r > 27r$」 & 
+依三次方程式判別式 $\Delta = -4p^3 - 27r^2 > 0 \iff -4p^3 > 27r^2$，原書右式漏平方且左式印有雜訊 $r$，據實根條件加註說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\newpage
+\renewcommand{\contentsname}{目\qquad 次}
+\tableofcontents
+\newpage
+
+\setcounter{section}{1}
+\include{Chapter2}
+
+\end{document}

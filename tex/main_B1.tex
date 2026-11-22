@@ -1,0 +1,257 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{styles/preamble.tex}
+\input{styles/Chinese_math_style.tex}
+\input{styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第一冊}
+\fancyhead[RO]{\small \leftmark}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第一冊}\\[0.5em] \Large\textbf{全冊 \LaTeX{} 數位轉錄版}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）修訂版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% =========================================================================
+% 各章掃描檔勘誤、文字校訂與疑難處彙整表（依規則 6 整理於目錄之前）
+% =========================================================================
+\section*{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\addcontentsline{toc}{section}{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\label{sec:master_errata_notes}
+
+本冊依據 1973 年版《高中數學實驗教材 第一冊》（高一上）各章掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{xltabular}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{原書印刷現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endfirsthead
+\hline
+\textbf{章節位置} & \textbf{原書印刷現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endhead
+\hline
+\endfoot
+
+\multicolumn{3}{|c|}{\textbf{第一章\quad 引言}} \\ \hline
+
+\hyperref[fn:sqrt2]{§ 1-1 甲 註釋與插圖} & 
+原書線段 $\overline{LM}$、$\overline{LN}$ 與等腰直角三角形 $\triangle LNM$ 尺度圖示 & 
+依原書第 2 頁掃描圖原樣重繪向量尺規圖，保留 $\overline{AB}$、$\overline{EF}$、$\overline{GH}$、$\overline{LM}$ 記號與畢氏定理 $\sqrt{2}$ 無理數註釋。 \\ \hline
+
+\hyperref[fig:elasticity]{§ 1-1 乙 虎克定律與彈性限度圖} & 
+原書第 4--5 頁彈簧實驗裝置圖與 $15\times 15$ 方格彈性曲線圖（含彈性限度點 $A$ 彎折段） & 
+依原書掃描圖以 TikZ 向量重繪實驗裝置與彈性限度曲線，並忠實保留「所增之長」等原書用語。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第二章\quad 符號用法、基本數學語句及集合的概念}} \\ \hline
+
+\hyperref[subsec:2-3-a]{§ 2-3 甲 康托生卒年} & 
+「康托(George Cantor, 11845-1918)所著」 & 
+原書出生年份「11845」多排一個「1」字模，校正為「1845--1918」。 \\ \hline
+
+\hyperref[subsec:2-3-d]{§ 2-3 丁 例 4 擲骰子兩次} & 
+內文敘述印為「便有 35 種可能的情形」 & 
+原書第 31 頁此處排印誤植「35」，下文即敘明「令 $W$ 為以上 36 種情形所成的集合」，正文已校訂為 36 並加註。 \\ \hline
+
+\hyperref[subsec:2-3-f]{§ 2-3 己 例 1 新生社團} & 
+題目文字印為「357人三樣都參加」 & 
+題目敘述中之「357人」與下文文氏圖、排容算式「$35$ 人」及總人數「$762$ 人」矛盾，顯為鉛字排印誤植「7」字。依算式邏輯校訂為「35 人三樣都參加」。 \\ \hline
+
+\hyperref[sec:ex2-3]{習題 2-3 頁首書眉} & 
+書眉印為「第二章 符號用法,基本數學語句及集各的概念」 & 
+「集各」為「集合」之排印訛字，正文與書眉校補為「集合」。 \\ \hline
+
+\hyperref[sec:ex2-4]{習題 2-4 第 3(i) 題} & 
+「$\triangle ABC, \angle B=90^\circ$ 的充分必要條件是 $AC^2+BC^2=AC^2$」 & 
+算式中重複出現 $AC^2$，依畢氏定理斜邊應為 $AC$、兩股為 $AB, BC$，校正為 $AB^2+BC^2=AC^2$。 \\ \hline
+
+\hyperref[subsec:2-4-d]{§ 2-4 丁 補集符號} & 
+原書同時使用「$\sim A$」與「$\sim \alpha$」表示補集與否定 & 
+維持原書「$\sim A$」及「$\sim \alpha$」之特殊符號風格，精確反映 1970 年代實驗教材之符號體系。 \\ \hline
+
+\hyperref[sec:ch2-appendix]{附錄：羅馬乘法} & 
+羅馬數字繁複分配律乘法演算 & 
+依原書第 45 頁附錄完整收錄並以對齊數學環境重現，展示印度--阿拉伯記數系統相對於羅馬數字之優越性。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第三章\quad 數的概念}} \\ \hline
+
+\hyperref[subsec:plus_one]{§ 3-1 甲、「+1」運算} & 
+「所以『+1』(加工)是自然中最原始的運算」 & 
+「加工」顯為鉛字「加一」印刷斷筆殘印所致，校正為「加一」。 \\ \hline
+
+\hyperref[subsec:nat_axioms]{§ 3-2 乙、自然數系基本性質} & 
+「對律」 & 
+原書鉛字「對消律」脫漏「消」字，依代數學名詞體系補正為「對消律」。 \\ \hline
+
+\hyperref[prop:nat_xii]{§ 3-2 丁、性質 XII 證明} & 
+「由，可知 a=b」 & 
+原書引用前述性質標籤時字模殘缺脫漏（漏排「性質 VIII」），正文已校補為「性質 VIII」。 \\ \hline
+
+\hyperref[ex:powers_of_two_sum]{§ 3-2 戊、等比級數求和} & 
+賭博表格第 14、15 列中文字排版斷落 & 
+指數上標損毀為一般數字，校訂重繪為規範指數對齊表格。 \\ \hline
+
+\hyperref[subsec:int_generation]{§ 3-3 甲、整數的產生} & 
+「記 x=-c, 讀成『負 a』」 & 
+「-c」為鉛字「-a」印損模糊，正文更正為「$x = -a$」。 \\ \hline
+
+\hyperref[subsec:fractions]{§ 3-4 甲、分數的表法} & 
+「叫做的分」 & 
+「的分」為鉛字「約分」之缺漏字模，校補為「約分」。 \\ \hline
+
+\hyperref[sec:ex3-8]{習題 3-8 第 (v), (vi) 題} & 
+絕對值不等式印刷斷裂模糊 & 
+考證為絕對值與開閉區間之充要條件，校正為「$|x| < \delta \iff -\delta < x < \delta$」與「$|x| \ge \delta \iff x \ge \delta \text{ 或 } x \le -\delta$」。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第四章\quad 一次方程式}} \\ \hline
+
+\hyperref[sec:ch4]{第四章 導言} & 
+「例如「龜兔問題」」 & 
+原書印為「龜兔問題」，實指常見之「雞兔問題（龜亦為四足，與雞兔同籠算理相通）」，忠實保留原書文字並加考證。 \\ \hline
+
+\hyperref[item:ex4-1-4]{習題 4-1 第 4 題} & 
+「十位與個位數置相換後」 & 
+「數置」顯為「位置」之排印字模訛誤（或「數位」之倒誤），正文保留並加註說明。 \\ \hline
+
+\hyperref[subsec:4-2-b2]{§ 4-2 乙、第二段小標} & 
+第 80 頁已有「乙、一元一次方程式的解法」，第 82 頁重複使用「乙、運用數系的通性去解方程式」 & 
+此為原書小標題層級編號排印之重複瑕疵，正文如實保留原書標題文字，並在此註記。 \\ \hline
+
+\hyperref[item:ex4-2-5-1]{習題 4-2 第 5(i) 題} & 
+式子印為 {\footnotesize\texttt{'\{[(5x+8)4+7x]}}\allowbreak{\footnotesize\texttt{3+9x\}4=5x}} & 
+最左側帶有鉛字破損雜點 \texttt{'}，考證其括號層級為標準之大、中、小三層嵌套，剔除雜點並以規範數學乘號排版。 \\ \hline
+
+\hyperref[ex:4-3-6]{§ 4-3 乙 例 3 解法} & 
+「由 $(1)+(2)+(3)$，即得」 & 
+原書該例三式編號實為 $(4), (5), (6)$，此處「$(1)+(2)+(3)$」為沿用前例之編號筆誤，正文已校訂並加註說明。 \\ \hline
+
+\hyperref[ex:4-3-5]{§ 4-3 乙 例 2 討論} & 
+展開誤為 $4a^2-4$，並稱「當 $a=1$ 時，(1)、(2) 式可寫成 $x+y=-1$，故有無窮多組解」 & 
+原書展開漏算 $+4a$（實為 $4a^2+4a-4$）；且當 $a=1$ 時，式 (1) 為 $x+y=-1$，式 (2) 為 $x+y=-\frac{1}{3}$，兩者矛盾無解。正文保留原書文字並於註腳揭示此重大歷史編算訛誤。 \\ \hline
+
+\hyperref[item:ex4-4-1-2]{習題 4-4 第 1(2) 題} & 
+第一式印為 $(x-a)(a+b) = (u-b)(y-a)$ & 
+出現未定義之字母 $u$。依一次方程無交叉項之結構，字母 $u$ 實為 $a$ 字模磨損缺頂之誤（即 $(a-b)(y-a)$），特予備註考證。 \\ \hline
+
+\hyperref[item:ex4-4-1-4]{習題 4-4 第 1(4) 題} & 
+第二式印為 $\frac{x-y}{xy} = i$ & 
+字母 $i$ 實為阿拉伯數字「$1$」之字模印損殘跡（本冊尚未引進複數），解得整潔實數解 $x=1, y=\frac{1}{2}$，正文校補為 $1$。 \\ \hline
+
+\hyperref[thm:cramer3]{§ 4-4 乙 定理 2 後說明} & 
+「若 $\Delta=0$，則上式有解的充分必要條件為 $\Delta_x=\Delta_y=\Delta_z=0$」 & 
+此為中學克拉瑪法則常見之「偽定理」：當三平面平行或兩兩交線互相平行（稜柱形）時，$\Delta=\Delta_x=\Delta_y=\Delta_z=0$ 依然無解。此條件僅為必要條件而非充分條件，特加註考證。 \\ \hline
+
+\hyperref[ex:4-4-5]{§ 4-4 乙 例 3 計算} & 
+解 $x$ 與 $z$ 時中間等式寫成 $\frac{-3}{9} = -\frac{1}{3}$ & 
+分母為 $-9$，分子實為 $+3$，原書將分母負號移至分子但誤寫分母為正，最終答案正確，正文校訂其分母符號。 \\ \hline
+
+\hyperref[sec:ex4-7]{習題 4-7 原書頁首書眉} & 
+原書第 105 頁頁首印為「第四篇 一次方程式」 & 
+「篇」為「章」之排印訛字，重排時統一修正為「第四章」。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第五章\quad 多項式及其運算}} \\ \hline
+
+\hyperref[subsec:5-1-a]{§ 5-1 甲 (iii) 單項式} & 
+文字出現紅色塗抹雜跡 & 
+原書流傳過程中讀者之歷史紅筆塗畫墨跡，正文中已予剔除，恢復「$a$ 是個數」之原始正文字樣。 \\ \hline
+
+\hyperref[sec:ex5-1]{習題 5-1 第 2 題} & 
+式中印為「$-60xyy$」 & 
+此項尚未合併同類項，鉛字直接排為 $xyy$（即 $xy^2$），正文忠實貼緊原書文字，特加註記。 \\ \hline
+
+\hyperref[subsec:5-2-b]{§ 5-2 乙 註三 卷積記號} & 
+多項式乘積項係數記為 $\sum_{i+j=k} a_i b_j$ & 
+此為現代抽象代數標準之 Cauchy 乘積求和記號，正文忠實排版並於註腳說明 $\sum$ 求和意義。 \\ \hline
+
+\hyperref[item:ex5-3-1-5]{習題 5-3 第 1(5) 題} & 
+題號印為 \texttt{'5)} & 
+左括號印損斷裂，正文中規範化為標準題號 (5)。 \\ \hline
+
+\hyperref[item:ex5-5-1]{習題 5-5 第 1 題} & 
+式子印為 $y=f(x)=x^3+5x^2--3x-2$ & 
+「$--$」顯為排字工人重複置放減號字模之印刷訛誤，正文校正為單減號「$-3x$」。 \\ \hline
+
+\hyperref[item:ex5-5-8]{習題 5-5 第 8 題} & 
+$f(x)$ 第三段定義域印為「當 $3 \le x \le 0$ 時」 & 
+區間下限 3 大於上限 0，為空集合，顯為排版字模倒置或誤植（推測原意為 $3 \le x \le 6$ 等實數區間），正文保留原書字樣並註記。 \\ \hline
+
+\hyperref[subsec:5-4-d]{§ 5-4 丁 綜合除法符號} & 
+「新式綜合除法」與「舊式綜合除法」正負號對照 & 
+原書特別列出兩套綜合除法算法之加減號轉換機制，正文以雙欄直式陣列完整忠實呈現。 \\ \hline
+
+\hyperref[sec:ex5-7]{習題 5-7 第 1 題與第 8(i) 題} & 
+第 1 題印「能被 $x-a$ 整除」（實應為不能被或整除條件有誤）；第 8(i) 題右端含 $+e$ 而題幹僅問 $a,b,c,d$ & 
+正文皆忠實保留原書題目文字，並於註腳中考證說明其原書疏漏。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第六章\quad 整數的因子分解}} \\ \hline
+
+\hyperref[note:ch6-double-equal]{第六章 引言算式} & 
+式中印為「$311467==97 \cdot 3211$」 & 
+原書此處鉛字排版多排一個等號字模，正文校正為單一等號「$=$」，特予備註。 \\ \hline
+
+\hyperref[item:ex6-1-8]{習題 6-1 第 *8 題} & 
+題幹「滿足」後遺漏條件（背頁透印「$0 \le r_2 < 5$」之反面印跡） & 
+原書在「滿足」與逗號之間排版脫漏不等式條件，底層僅見背頁透印之鏡像文字，正文忠實貼緊原書文字並加註說明。 \\ \hline
+
+\hyperref[item:ex6-1-13-2]{習題 6-1 第 13(ii) 題} & 
+式中印為「如果 $a$ 的顯然因素 $a$ 及 1 也算在內」 & 
+「因素」實為「因數」之排印字模異寫（鉛字排為「素」），正文忠實保留原書文字並加註。 \\ \hline
+
+\hyperref[note:ch6-why-euclid]{§ 6-2 乙 原理證明末} & 
+「因此 $(a, b) = (r, b)$。（何故？）」 & 
+忠實保留原書作者啟發學生反思「何故」之設問式對話語句。 \\ \hline
+
+\hyperref[note:ch6-gcd-bracket]{§ 6-2 丙 輔助定理 1} & 
+右端使用方括號記號 $[(a_1, \dots), \dots]$ & 
+此處方括號非指最小公倍數，而係分組後最大公因數再取公因數之結合記號，正文忠實還原。 \\ \hline
+
+\hyperref[note:ch6-prime91]{§ 6-4 質數列表重大訛誤} & 
+1 到 100 的質數列表中印有「91」 & 
+內文列舉 1 到 100 之質數包含「91」，然而 $91 = 7 \times 13$ 實為合數，此為原書重大歷史數學疏漏，正文忠實保留 1973 年原書文字並於註腳及此表詳細考證。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第七章\quad 多項式的因子分解}} \\ \hline
+
+\hyperref[ex:7-1-6]{§ 7-1 乙 例 4 與例 5(ii)} & 
+例 4 印「最高公因式為 $x+2$」「$x+c$ 為 $g(x)$ 之因式」；例 5(ii) 展開印 $(x^2-x-1)F(x)$ & 
+例 4 依上下文應皆為 $x+2c$，已於正文校正並加註；例 5(ii) 正確展開係數應為 $(x^2-x+1)F(x)$，從而 $m(x)=\frac{1}{2}(x^2-x+1)$，正文保留原書並註記。 \\ \hline
+
+\hyperref[note:ch7-cx-plus-d]{§ 7-3 乙 例 5 待定係數式} & 
+第一行待定係數印為 $\frac{(x+1)}{x^2-x+1}$ & 
+此處為排印誤植，下文通分展開與聯立方程皆為一次式 $Cx+D$，正文依算式邏輯校正為 $Cx+D$ 並加註。 \\ \hline
+
+\hyperref[note:ch7-const-term]{§ 7-3 乙 例 5 常數項漏項與解誤} & 
+展開常數項漏列 $-A+B$ 而僅作 $+D$，且對照左式 $-3$ 誤作 $D=3$，解得 $A=5, B=-2, C=-5, D=3$ & 
+正確展開常數項應為 $-A+B+D=-3$，聯立求解得 $A=4, B=-1, C=-4, D=2$。正文保留原書推導並於註腳揭示此原書計算疏漏。 \\ \hline
+
+\end{xltabular}
+\endgroup
+
+\clearpage
+\tableofcontents
+\newpage
+
+% 各章循序 Include 模組
+\include{chapters/B1/Chapter1} % 第一章 引言
+\include{chapters/B1/Chapter2} % 第二章 符號用法、基本數學語句及集合的概念
+\include{chapters/B1/Chapter3} % 第三章 數的概念
+\include{chapters/B1/Chapter4} % 第四章 一次方程式
+\include{chapters/B1/Chapter5} % 第五章 多項式及其運算
+\include{chapters/B1/Chapter6} % 第六章 整數的因子分解
+\include{chapters/B1/Chapter7} % 第七章 多項式的因子分解
+
+\end{document}
+

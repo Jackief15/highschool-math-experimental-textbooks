@@ -1,0 +1,266 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{styles/preamble.tex}
+\input{styles/Chinese_math_style.tex}
+\input{styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第二冊}
+\fancyhead[RO]{\small \leftmark}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第二冊}\\[0.5em] \Large\textbf{全冊 \LaTeX{} 數位轉錄版}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十二年（1973）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% =========================================================================
+% 各章掃描檔勘誤、文字校訂與疑難處彙整表（依規則整理於目錄之前）
+% =========================================================================
+\section*{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\addcontentsline{toc}{section}{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\label{sec:master_errata_notes_b2}
+
+本冊依據 1973 年版《高中數學實驗教材 第二冊》（高一下）各章掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第一章\quad 二次方程式}} \\ \hline
+
+\hyperref[note:b2-ch1-intro-ceng]{§ 1 頁 1 導言} & 
+「我們會討論一次方程式及其應用」 & 
+「會」字實為「曾」之音近通假或訛字（指第一冊第四章中「我們曾討論……」），正文依原書文字忠實保留，特予備註說明。 \\ \hline
+
+\hyperref[note:b2-ch1-ex3]{§ 1-1 頁 2 例 3} & 
+「在例三中，因為 $g(x)\cdot h(x)$ 有 $(x+1)^2$ 因子……」 & 
+原書例題標籤採用阿拉伯數字「【例3】」，末段行文稱「例三」，正文保留原書行文習慣。 \\ \hline
+
+\hyperref[note:b2-ch1-ex6]{§ 1-1 頁 4 例 6} & 
+「利用配方法（將在 § 2 中說明），上述又可以改寫為」 & 
+教材編者於 § 1-1 提前預告並運用後續 § 1-2 之「配方法」簡化中空方陣方程式，正文忠實照錄前後呼應。 \\ \hline
+
+\hyperref[note:b2-ch1-gravity]{§ 1-1 頁 8 習題 1-1 第 3 題} & 
+「$S = -490t^2 + 16.8t$」 & 
+垂直上拋運動位移公式為 $S = v_0 t - \frac{1}{2}gt^2$。公尺制下 $g \approx 9.8\text{ m/s}^2$，二次項係數應為 $-4.9$；原書排印為 $-490$（係厘米制數值 $980\text{ cm/s}^2$ 脫漏小數點且未除以 2 之複合訛誤），致使代入 $S=14$ 公尺時無實數解。正文維持原刊文字 $-490t^2+16.8t$，並於此說明物理量瑕疵。 \\ \hline
+
+\hyperref[note:b2-ch1-cor2]{§ 1-2 頁 9 推論 2} & 
+「（證明留做習題）」 & 
+推論 2 之齊次式因式分解證明留於「習題 1-2」第 1 題，前後呼應，正文忠實保留。 \\ \hline
+
+\hyperref[note:b2-ch1-ex1-4-q3]{§ 1-4 頁 18 習題 1-4 第 3 題} & 
+「以線段 $\overline{AB}$ 和 $\overline{PB}$ 為一邊各作一正方形」 & 
+題幹前述「設線段 $\overline{AB}$ 的長是 $a$，在 $\overline{AB}$ 上任取一點 $P$」，欲使兩正方形面積和最小，分割線段應為 $\overline{AP}$ 與 $\overline{PB}$，原書印「$\overline{AB}$」顯係「$\overline{AP}$」之誤植。正文維持原印文字 $\overline{AB}$ 特予備註。 \\ \hline
+
+\hyperref[note:b2-ch1-ex1-4-q4]{§ 1-4 頁 19 習題 1-4 第 4 題} & 
+「將 $AP$ 分為三等分，使其實成一正三角形」 & 
+「使其實成」之「實」字為鉛字「圍」字模嚴重破損磨損之印痕，文義確為「使其圍成一正三角形」，正文忠實照錄「使其實成」。 \\ \hline
+
+\hyperref[note:b2-ch1-ex6-sign]{§ 1-4 頁 21 例 6} & 
+「$z = 5\cdot (\frac{1}{5}) - 14 = -15$」 & 
+式中代入 $y=-\frac{1}{5}$ 時，括號內負號脫漏（漏印為正 $\frac{1}{5}$），惟等號右端計算結果正確得出 $-15$（即 $5(-\frac{1}{5})-14 = -15$）。正文保留原印字樣並在此校釋。 \\ \hline
+
+\hyperref[note:b2-ch1-ex1-5-q1-11]{§ 1-4 頁 23 習題 1-5 第 1(xi) 題} & 
+「$(x+1)(2y+1) = 5x+9y=1$」 & 
+比對聯立方程第二式 $(x+2)(3y+1) = 9x+13y+2$，第一式右端原為一次式結構 $5x+9y+1$，字模排印將加號誤植或磨損為等號「$=1$」。正文忠實保留原刊印文字並在此說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第二章\quad 次序與極限觀念}} \\ \hline
+
+\hyperref[note:b2-ch2-p28-ex3-pr]{§ 1-2 頁 28 例 3} & 
+「$b = \frac{pr}{sq}$ 且 $sq>0, ps>0, pr>0$」及「$n(ps)>pr$」 & 
+通分時分子 $pr$ 實為 $qr$（因 $b=\frac{r}{s}=\frac{qr}{sq}$，通分後比較 $nps$ 與 $qr$），原書排印誤植為 $pr$。正文忠實照錄原書文字，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch2-p29-ex5-subscript]{§ 1-2 頁 29 例 5(ii)} & 
+「現在寫做 $n+k=2_s$」 & 
+式中 $2_s$ 之 $s$ 為下標，實為指數次方 $2^s$（2 的 $s$ 次方）之排版鉛字下標訛誤。正文忠實照錄原書文字 $2_s$，並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch2-p30-ex2-1-q2i]{§ 1-2 頁 30 習題 2-1 第 2(i) 題} & 
+「$a>b \text{ 和 } c<0 \implies ac>bd$」 & 
+前提中未定義變數 $d$（或係 $ac<bc$ 之排印訛誤，或脫漏 $b>0, c<d<0$ 等條件）。正文忠實保留原刊印文字，特予備註說明。 \\ \hline
+
+\hyperref[note:b2-ch2-p37-ex3-typo]{§ 3 頁 37 例 3} & 
+「$f(x)>0$ 的解是 $-1x<1$，及 $x>3$」 & 
+式中「$-1x<1$」脫漏小於號「$<$」，實為 $-1<x<1$。正文照錄原書印刷字樣，並於此校釋。 \\ \hline
+
+\hyperref[note:b2-ch2-p40-ex3-vi]{§ 4-1 頁 40 例 3(vi)} & 
+「$0, 0, n, 0, 0, -n+1, 0, 0, -(n+1), \dots$ 為一數列」 & 
+依每 6 項循環結構，第 $6n$ 項為 $-n$，第 $6n+3$ 項為 $n+1$，式中「$-n+1$」排印脫漏符號，實為「$-n, 0, 0, n+1$」。正文忠實保留原印文字並予考證。 \\ \hline
+
+\hyperref[note:b2-ch2-p44-ex6-series-term]{§ 5-1 頁 44 例 6} & 
+「級數 $1, r, r^2, r^3, r^4, \dots, r^n, \dots$ 的收斂與發散」 & 
+此處列出者實為等比數列各項，行文稱「級數」，且後續條件稱「當 $r<1$ 時」，若 $r\le -1$ 則發散或震盪，係省略負數討論或隱含 $|r|<1$ 之意。正文忠實照錄原書文字。 \\ \hline
+
+\hyperref[note:b2-ch2-p50-eq1-b1]{§ 6-1 頁 50 式 (1)} & 
+「$= \frac{b_1}{1-r} + \frac{-r^n}{1-r} \dots\dots(1)$」 & 
+第二項分子常數首項 $b_1$ 脫漏（應為 $\frac{-b_1 r^n}{1-r}$）。正文忠實照錄原印文字，並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch2-p51-lim-rn]{§ 6-1 頁 51 式 (2) 前} & 
+「因此由（5-1）〔例 6〕$\frac{-r^n}{1-r} \to 0$」 & 
+前文對應處實為 §5-1【例 6】。原書此處交叉引註形式保留不變。 \\ \hline
+
+\hyperref[note:b2-ch2-p56-partial-sum-r]{§ 6-3 頁 56 部分和式} & 
+「$= a_k + d(1+r+r^2+\dots+\frac{1}{r^{m-1}})$」 & 
+式中括號末項誤植為分式 $\frac{1}{r^{m-1}}$，實為 $r^{m-1}$（因公比 $r=\frac{1}{10^l}$）。正文保留原書文字並予備註。 \\ \hline
+
+\hyperref[note:b2-ch2-p56-q-typo]{§ 6-3 頁 56 分數化小數段} & 
+「設 $\frac{m}{n}$ 為一任意給定的不可約分數……若 $q$ 上含有 2 或 5 的質因子」 & 
+前設分數為 $\frac{m}{n}$，文內「若 $q$ 上含有」之 $q$ 顯為分母 $n$ 之誤植（後文亦稱「反之，若 $n$ 含有……」）。正文忠實照錄原書文字，特予考證備註。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第三章\quad 實數系及其基本性質}} \\ \hline
+
+\hyperref[note:b2-ch3-ceng]{§ 1 頁 59 導言} & 
+「我們會簡略地說明了幾個數系間的包含關係」 & 
+「會」字實為「曾」之音近通假或訛誤（指第一冊第三章中「我們曾簡略地說明……」），正文忠實保留原書文字，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-1-q4-xy]{§ 1-4 頁 62 習題 3-1 第 4 題} & 
+「使得 $a < x < y$」 & 
+題幹前設有理數 $a, b$ 且 $a < b$，結論不等式右端之變數 $y$ 顯係 $b$ 之誤植（應為 $a < x < b$）。正文維持原刊文字 $a < x < y$ 並在此校訂備註。 \\ \hline
+
+\hyperref[note:b2-ch3-prop-iv-prime]{§ 3-1 頁 68 性質 (IV$'$)} & 
+「$a > b \implies a+c < b+c$」 & 
+不等號方向排印反向，正確應為 $a+c > b+c$。正文忠實保留原書排印文字，特予說明。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-3-q3-nc-d]{§ 3-4 頁 70 習題 3-3 第 3 題} & 
+「使得 $nc > d$」 & 
+題幹前設為「$a > 0$，$b$ 任意實數」，末句推論結論卻印為「使得 $nc > d$」，符號 $c, d$ 脫離前設，實為「$na > b$」之誤植。正文維持原刊印文字並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch3-lim-bn]{§ 4-1 頁 72 定理 1 證明倒數第 2 行} & 
+「$\lim_{n\to\infty} f(a_n) \ge 0 \text{ 和 } \lim_{n\to\infty} (b_n) \le 0$」 & 
+第二個極限式脫漏函數記號 $f$（漏印為 $\lim (b_n) \le 0$），依前後文文義及次頁推導，實為 $\lim_{n\to\infty} f(b_n) \le 0$。正文照原印字樣錄入並備註說明。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-4-q2-roots]{§ 4-2 頁 75 習題 3-4 第 2 題} & 
+「$a, b$ 是兩個實根，而且 $a < b$，$f(a) < f(b)$」 & 
+若 $a, b$ 為方程式之實根，則依定義 $f(a) = f(b) = 0$，不可能出現 $f(a) < f(b)$ 且中間介有 $c$；文義顯係「$a, b$ 是兩個實數」。正文保留原印「兩個實根」，特予考證。 \\ \hline
+
+\hyperref[note:b2-ch3-ex3-5-q5-sign]{§ 5-2 頁 78 習題 3-5 第 5(ii) 題} & 
+「除了 $x = \frac{b}{a}$ 外連續」 & 
+函數為 $y = \frac{1}{ax+b}$，其不連續點（分母為 0 之處）為 $x = -\frac{b}{a}$，原刊印漏除號之負號，且漏「以」字（印為「外連續」而非「以外連續」）。正文維持原刊字樣並在此說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第四章\quad 指數函數與對數函數}} \\ \hline
+
+\hyperref[note:b2-ch4-p81-duplicate]{§ 1-1 頁 81 【例】(ii)} & 
+「$(a^{-3})^2 = (1/a^3)^2 = \frac{1}{(a^3)^2} = \frac{1}{(a^3)^2} = 1/a^6$」 & 
+算式中「$\frac{1}{(a^3)^2}$」重複排印兩次，係鉛字排版之重植贅墨。正文忠實保留原刊印文字，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch4-p81-comma]{§ 1-1 頁 81 習題 4-1 第 2 題} & 
+「$(a, b)^n = a^n \cdot b^n$」 & 
+乘積運算符號誤植為逗號（或鉛字點號浮墨），文義顯係 $(a\cdot b)^n$ 或 $(ab)^n$。正文照原刊印字樣錄入並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch4-p91-monotonicity]{§ 2 頁 91 單調性「注意」段} & 
+「$\alpha > \beta \implies g(\alpha) \le g(\beta)$ 叫做單調遞增」及「$\alpha < \beta \implies g(\alpha) \ge g(\beta)$ 叫做單調遞減」 & 
+不等號方向排印倒置（非嚴格遞增應為 $\alpha > \beta \implies g(\alpha) \ge g(\beta)$，遞減應為 $\le$）。正文忠實保留原書排印文字，特予說明。 \\ \hline
+
+\hyperref[note:b2-ch4-p92-missing-f]{§ 2 頁 92 定理 2 證明 (i) 第 6 行} & 
+「$f(0)\cdot f(\beta) = (0+\beta) = f(\beta)$」 & 
+中間等式脫漏函數記號 $f$（漏印為 $(0+\beta)$），文義實為 $f(0+\beta)$。正文忠實照錄原印文字並在此備註。 \\ \hline
+
+\hyperref[note:b2-ch4-p98-log-base]{§ 3-2 頁 98 習題 4-5 第 1(v) 題} & 
+「$\log 1000^{\frac{1}{10}}$」 & 
+同題其他小題皆標明底數（如 $\log_5, \log_3$ 等），此小題脫漏底數標籤 10（即常用對數 $\log_{10}$）。正文忠實照錄原印字樣。 \\ \hline
+
+\hyperref[note:b2-ch4-p106-surjcetion]{§ 4-1 頁 106 蓋射定義} & 
+「蓋射 (surjcetion)」 & 
+英文術語拼寫字母倒置誤植為「surjcetion」（正確為 surjection）。正文維持原書鉛字排印並在此考釋。 \\ \hline
+
+\hyperref[note:b2-ch4-p109-index-x]{§ 4-2 頁 109 定理 7 證明第 11 行} & 
+「$x_n < a_1 < x_0,\; x = 1, 2, 3, \dots$」 & 
+式中變數符號 $x$ 顯為數列指標符號 $n$ 之誤植（應為 $n = 1, 2, 3, \dots$）。正文照錄原書文字並予備註說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.0cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第五章\quad 對數表的用法與計算尺原理$^*$}} \\ \hline
+
+\hyperref[note:b2-ch5-p114-ex2]{§ 1-1 頁 114 【例 2】} & 
+「$4.128 \times 2.953 = 12.189$」 & 
+實則 $4.128 \times 2.953 = 12.189984$，依四捨五入求千分位值應為 $12.190$（原印顯漏末位捨入或逕行截斷）。正文忠實照錄原刊印字樣，特予考證備註。 \\ \hline
+
+\hyperref[note:b2-ch5-p115-interpolation-zero]{§ 1-2 頁 115 內插法算式第 3 行} & 
+「$y = 0.8698 + 0.006 \cdot \frac{0.0042}{0.01}$」 & 
+前一步驟之微差比率為 $0.0006 : 0.01$，此處算式第一項乘數「$0.006$」漏植一位小數零（應為 $0.0006$）；其下行展開之小數結果 $0.000252$ 則無誤。正文忠實保留原刊印文字並在此說明。 \\ \hline
+
+\hyperref[note:b2-ch5-p116-ex3-minus-log]{§ 1-2 頁 116 【例 3】減項運算} & 
+「$-\log 0.04796 = 1.3192$」及「$(\log 0.04796 = \bar{2}.6808)$」 & 
+此處計算直接將減去負對數轉換為加上其補數 $-( -2 + 0.6808) = + 1.3192$，鉛字排版前冠負號「$-$」易滋誤解。正文維持原刊樣式並特予說明。 \\ \hline
+
+\hyperref[note:b2-ch5-p123-ex5-5-ref]{§ 2 頁 123 習題 5-5 第 2、3、4 題} & 
+「仿例 1 計算」、「仿例 2 計算」、「仿例 3 計算」 & 
+題幹所引之例題編號，實指前文頁 122–123 應用 A、C 尺之【例 3】（乘方）、【例 4】（乘方商式）及【例 5】（開方乘除）。原書係就該類運算之獨立序數指涉。正文保留原書字樣並予說明。 \\ \hline
+
+\hyperref[note:b2-ch5-p125-circular-rule-split]{§ 2 頁 125–126 【例 8】插圖分頁} & 
+「我們可以用圓盤式計算尺（略如下圖）.」 & 
+原刊本頁 125 解文末句稱「略如下圖」，然因版面底端空間不足，圓盤式計算尺插圖實被順延排印於頁 126 頂端（習題 5-7 之前）。轉錄時將插圖緊隨【例 8】解文排版，特予考證備註原書跨頁現象。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\clearpage
+\tableofcontents
+\newpage
+
+% 第二冊各章循序 Include 模組
+\include{chapters/B2/Chapter1} % 第一章 二次方程式
+\include{chapters/B2/Chapter2} % 第二章 次序與極限觀念
+\include{chapters/B2/Chapter3} % 第三章 實數系及其基本性質
+\include{chapters/B2/Chapter4} % 第四章 指數函數與對數函數
+\include{chapters/B2/Chapter5} % 第五章 對數表的用法與計算尺原理*
+
+\end{document}

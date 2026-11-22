@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 6 冊（自然組）}
+  \fancyhead[L]{\small 第 1 章\quad 行列式}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第六冊（自然組）}
+\fancyhead[RO]{\small 第一章\quad 行列式}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第六冊（自然組）}\\[0.5em] \Large\textbf{第一章\quad 行列式}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十五年（1976）再版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第一章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第一章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b6_ch1}
+\label{sec:current_errata}
+
+本章依據 1976 年再版《高中數學實驗教材 第六冊（自然組）》（高三下）第一章「行列式」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b6-ch1-p19-l-eq]{§ I-1 頁 19 習題 I-1 第 2 題} & 
+「$L = \{ \vec{OP} + \lambda\vec{OQ} \}$」 & 
+原書直線向量參數式印作「$\lambda\vec{OQ}$」，據後文「$x_i = a_i + \lambda(b_i - a_i)$」校訂為方向向量「$\lambda\vec{PQ}$」。 \\ \hline
+
+\hyperref[note:b6-ch1-p22-ex28-s]{§ I-1 頁 22 習題 I-1 第 28 題 (b)} & 
+「求相應之像點 $P', Q', R', S'$」 & 
+原書題目僅給出三點 $P, Q, R$，贅印像點 $S'$，校訂為像點 $P', Q', R'$。 \\ \hline
+
+\hyperref[note:b6-ch1-p24-u]{§ I-2 頁 24 乙段末行} & 
+「取 $\vect{u}=\frac{\vect{a}}{|\vect{a}|}$」 & 
+向量 $\vect{a}$ 漏印下標 1，據上下文及圖 2-2 校訂為單位向量「$\vect{u}=\frac{\vect{a}_1}{|\vect{a}_1|}$」。 \\ \hline
+
+\hyperref[note:b6-ch1-p30-s-coord]{§ I-2 頁 30 習題 I-2 第 6 題} & 
+「$S=(0,0,0($」 & 
+座標右括弧鉛字破損印作左括弧「$($」，校正為閉合圓括弧「$)$」。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\newpage
+\renewcommand{\contentsname}{目\qquad 次}
+\tableofcontents
+\newpage
+
+\include{Chapter1}
+
+\end{document}

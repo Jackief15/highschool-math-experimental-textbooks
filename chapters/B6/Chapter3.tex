@@ -1,0 +1,817 @@
+% !TeX root = Chapter3_main.tex
+% =========================================================================
+% 《高中數學實驗教材》第六冊（自然組）
+% 第三章 高中數學教材的回顧
+% =========================================================================
+\section{高中數學教材的回顧}\label{sec:b6-ch3}\label{sec:b6-3}
+
+\begin{center}
+\begin{minipage}{0.75\textwidth}
+\begin{itemize}[leftmargin=3em, itemsep=0.3em]
+  \item[§ III-1] \textbf{例說逼近}
+  \item[§ III-2] \textbf{進一步的基本模型}
+  \begin{itemize}[leftmargin=2em, itemsep=0.2em]
+    \item[甲、] 有理函數
+    \item[乙、] 三角函數
+    \item[丙、] 指數與對數函數
+  \end{itemize}
+  \item[§ III-3] \textbf{以「逼近」觀點看課程內容}
+  \begin{itemize}[leftmargin=2em, itemsep=0.2em]
+    \item[(A)] 數量化與數
+    \item[(B)] 單變數函數模型
+    \item[(C)] 多變數函數及其基本模型：線性映射與二次式函數
+    \item[(D)] 機率與統計
+  \end{itemize}
+  \item[§ III-4] \textbf{以「轉化」觀點看課程內容}
+  \begin{itemize}[leftmargin=2em, itemsep=0.2em]
+    \item[(E)] 轉化
+    \item[(F)] 兩個系統轉化
+    \item[(G)] 進一步的轉化
+  \end{itemize}
+  \item[§ III-5] \textbf{尾語}
+\end{itemize}
+\end{minipage}
+\end{center}
+
+\begin{center}
+$* \qquad * \qquad * \qquad * \qquad *$
+\end{center}
+
+\subsection{例說逼近}\label{sec:b6-3-1}
+
+高中數學的教材主要是在「逼近」與「轉化」兩種觀點之下交迭推進的。
+
+「逼近」是人類設法要描寫或了解自然（或人文的）現象時，所產生及採用的一種過程：
+
+換句話說，人類在對於較單純的自然現象徹底了解後，把它當作一種「模型」，例如速度 $a$ 一定時，位移 $S$ 與時間 $t$ 的關係，
+\begin{equation}
+S = at + b \qquad (\text{其中 } b \text{ 表 } t=0 \text{ 時已有的位移}) \label{eq:b6-3-1}
+\end{equation}
+又例如圓面積 $A$ 與其半徑 $r$ 間的關係
+\begin{equation}
+A = \pi r^2 \label{eq:b6-3-2}
+\end{equation}
+有了這些「模型」之後，對於一些複雜的實際現象，便將這些模型套上去，看看與實際現象的差距是否夠小？
+
+像 \eqref{eq:b6-3-1} 這種函數，經一般化後，寫成
+\begin{equation}
+y = a_1 x + a_0 \qquad (\text{其中 } a_1, a_0 \text{ 皆為常數}) \label{eq:b6-3-3}
+\end{equation}
+稱為一次函數，而像 \eqref{eq:b6-3-2} 這種函數，則可寫成
+\begin{equation}
+y = a_2 x^2 \qquad (\text{其中 } a_2 \text{ 為常數}) \label{eq:b6-3-4}
+\end{equation}
+將 \eqref{eq:b6-3-3}, \eqref{eq:b6-3-4} 作和，得
+\begin{equation}
+y = a_2 x^2 + a_1 x + a_0 \label{eq:b6-3-5}
+\end{equation}
+稱為一般的二次函數。
+
+再把上述「逼近」的想法重述一番：
+
+我們所謂的「現象」，常以「變量間的關係」這一面目出現，（例如上述 $S$ 與 $t$ 間或 $A$ 與 $r$ 間的關係）。這種「變量間的關係」中，最單純的，可以說是一次函數與二次函數，即
+\[ y = a_2 x^2 + a_1 x + a_0 \qquad (\text{其中 } a_2 \text{ 可}=0, \text{可}\ne 0) \]
+這種較單純的函數，便是我們的「模型」，以下我們舉例來看怎麼利用「模型」來逼近地描寫實際現象：
+
+\begin{discussion}[複選題]\label{ex:b6-3-1}\label{disc:b6-3-1}
+設有某廠商出售衣服，單件價格記為 $x$，其一星期銷售量記為 $y$，由一般常識知：$y$ 隨著 $x$ 而變，即價格 $x$ 越高，銷售量 $y$ 就越小\phantomsection\label{note:b6-ch3-p124-sales}\footnote{【原書校訂】：原書此處印作「價格 $x$ 越高，銷售量 $y$ 就越大」，依經濟學常理及下文調查數據（$x=2$ 時 $y=9$，$x=5$ 時 $y=6$）為負相關，原書「越大」顯係誤植，茲予校訂為「越小」。}。表成函數符號，為 $y=f(x)$。今作一市場調查，得數據如下：
+\[ \text{當 } x=2 \text{ 時 } y=9, \quad \text{又當 } x=5 \text{ 時 } y=6 \]
+若假定 $y$ 為 $x$ 的一次函數，換句話說：
+\[ y = f(x) = a_1 x + a_0 \]
+
+\begin{enumerate}[label=(\Roman*), leftmargin=2.5em]
+  \item 求一滿足上述數據的 $x, y$ 間的關係：
+  \begin{multicols}{2}
+  \begin{enumerate}[label=(\Alph*)]
+    \item $y = x+7$
+    \item $y = 2x+5$
+    \item $y = 9$
+    \item $y = \dfrac{1}{2}x + \dfrac{7}{2}$
+    \item $y = -x+11$
+  \end{enumerate}
+  \end{multicols}
+  請畫出此函數圖形（呈一直線），以便繼續討論：
+
+  \item 根據上述結果來做一推測，欲使銷售量 $y$ 不少於 9.5，則
+  \begin{enumerate}[label=(\Alph*)]
+    \item 價格 $x$ 可訂為 3 而最高不能超過 3
+    \item 價格 $x$ 可訂為 1.5 而最高不能超過 1.5
+    \item 價格 $x$ 可訂為 0.5 而最高不能超過 0.5
+    \item 價格 $x$ 低於 1.1 皆可
+    \item 價格 $x$ 須在 2 到 4 之間
+  \end{enumerate}
+
+  如再作調查，增一新數據為：$x=4$ 時 $y=8$。這時，一次函數已不能滿足 $(x,y)=(2,9), (5,6), (4,8)$ 這三個數據（有時一次函數仍可滿足其他某些的三個數據）。
+
+  現在我們要改用二次函數來估計 $y$ 與 $x$ 的關係，即使設 $y=a_2 x^2 + a_1 x + a_0$ 滿足上述三個數據。（亦即以拋物線代替上述的直線）。
+
+  \item 這 $x$ 與 $y$ 間的關係應表為：
+  \begin{enumerate}[label=(\Alph*)]
+    \item $x^2 + 5x + y - 12 = 0$
+    \item $x^2 + ax + by = 12;\ a+b=-3$
+    \item $x^2 = -y+b;\ b>0$
+    \item $x^2 + ax + by = c;\ a+b+c \ge 9$
+    \item $y = -x+11$
+  \end{enumerate}
+
+  這樣以二次函數來估計 $x$ 與 $y$ 的關係，理論上應比利用一次函數好，道理是它多符合了一個數據。
+
+  \item 今據所得二次函數的估計，價格 $x$ 為 6 時預測銷售量 $y$
+  \begin{multicols}{2}
+  \begin{enumerate}[label=(\Alph*)]
+    \item $4 \le y \le 6$
+    \item $5 \le y \le 7$
+    \item $2 \le y \le 4$
+    \item $0 \le y \le 2$
+    \item $y \le 3$
+  \end{enumerate}
+  \end{multicols}
+\end{enumerate}
+
+\paragraph{【答案】} (I) E, \ (II) B, D, \ (III) B, D, \ (IV) C, E
+\end{discussion}
+
+\subsubsection*{【論例 1 的分析】}
+
+論例 1 中要知道的是單價 $x$ 如何影響銷售量 $y$？
+
+開始我們根據兩週的調查數據，以一次函數
+\[ y = -x+11 \]
+的模型來逼近 $y$ 與 $x$ 間的實際關係，注意這個實際關係，若繪以函數圖形其曲折之形可能相當困難用式子描寫（見圖）。
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|}
+\hline
+$x$ & $y$ \\ \hline
+2 & 9 \\
+5 & 6 \\ \hline
+\end{tabular}
+\end{center}
+
+$y=-x+11$ 的模型，繪以函數圖形，呈一條直線，可以看到圖中原來曲折的實際曲線與這條作為模型的直線，雖有差距，但其趨勢似乎相近。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Stealth, scale=1.0, line cap=round, line join=round]
+  % 坐標軸
+  \draw[->, thick] (-0.5, 0) -- (7.5, 0) node[right] {$X$} node[below=3pt, midway] {（單位價格）};
+  \draw[->, thick] (0, -0.5) -- (0, 11) node[above] {$Y$};
+  \node[left] at (-0.2, 5.5) {\rotatebox{90}{（一週銷售量）}};
+  \node[below left] at (0, 0) {$O$};
+
+  % 實際曲折數據曲線 (通過/靠近 (2,9), (4,8), (5,6))
+  \draw[line width=1.5pt, smooth] plot coordinates {
+    (1.5, 9.8) (1.8, 9.2) (2.0, 9.0) (2.5, 8.7) (3.0, 8.2) (3.5, 8.4)
+    (4.0, 8.0) (4.5, 7.2) (4.8, 6.4) (5.0, 6.0) (5.3, 4.8) (5.8, 2.5) (6.2, 0.0)
+  };
+
+  % 一次函數直線模型 y = -x + 11
+  \draw[thick, dash pattern=on 6pt off 3pt] (1.0, 10.0) -- (6.8, 4.2);
+
+  % 標記點
+  \filldraw[black] (2, 9) circle (2pt) node[above right] {$(2,9)$};
+  \filldraw[black] (4, 8) circle (2pt) node[above right] {$(4,8)$};
+  \filldraw[black] (5, 6) circle (2pt) node[above right] {$(5,6)$};
+\end{tikzpicture}
+\caption{一次函數模型 $y=-x+11$ 與實際銷售趨勢曲線之逼近比較}
+\label{fig:b6-3-linear-model}
+\end{figure}
+
+如果再多作一個星期的調查，得知
+\[ \text{單價 } x=4 \text{ 時，銷售量 } y=8 \]
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|}
+\hline
+$x$ & $y$ \\ \hline
+2 & 9 \\
+5 & 6 \\
+4 & 8 \\ \hline
+\end{tabular}
+\end{center}
+
+想根據這一新數據將上述的「模型」做得更精密，我們可取二次函數，而知要滿足三個星期的調查數據，這個二次函數應為
+\[ y = -\dfrac{1}{2}x^2 + \dfrac{5}{2}x + 6 \]
+其函數圖形為拋物線，在某一有效區段內，約略要比直線更逼近於代表實際現象的曲線。
+
+換句話說，我們的模型從一次函數改進為二次函數，常常較能逼近實際現象。
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Stealth, scale=1.0, line cap=round, line join=round]
+  % 坐標軸
+  \draw[->, thick] (-0.5, 0) -- (7.5, 0) node[right] {$X$};
+  \draw[->, thick] (0, -0.5) -- (0, 11) node[above] {$Y$};
+  \node[below left] at (0, 0) {$O$};
+
+  % 實際曲折數據曲線
+  \draw[line width=1.5pt, smooth] plot coordinates {
+    (1.5, 9.8) (1.8, 9.2) (2.0, 9.0) (2.5, 8.7) (3.0, 8.2) (3.5, 8.4)
+    (4.0, 8.0) (4.5, 7.2) (4.8, 6.4) (5.0, 6.0) (5.3, 4.8) (5.8, 2.5) (6.2, 0.0)
+  };
+
+  % 二次函數拋物線模型 y = -0.5*x^2 + 2.5*x + 6
+  \draw[thick, dash pattern=on 6pt off 3pt, domain=1.5:6.2, samples=60] 
+    plot (\x, {-0.5*\x*\x + 2.5*\x + 6});
+
+  % 標記點
+  \filldraw[black] (2, 9) circle (2pt) node[above right] {$(2,9)$};
+  \filldraw[black] (4, 8) circle (2pt) node[above right] {$(4,8)$};
+  \filldraw[black] (5, 6) circle (2pt) node[above right] {$(5,6)$};
+\end{tikzpicture}
+\caption{二次函數拋物線模型 $y=-\frac{1}{2}x^2+\frac{5}{2}x+6$ 之精準逼近}
+\label{fig:b6-3-parabola-model}
+\end{figure}
+
+很自然地，問題繼續延伸：如果我們作了 $n+1$ 個星期的調查，該用什麼模型來逼近，才能滿足這 $n+1$ 次的調查數據？如此我們引進來一般的一 $n$ 次多項式函數：
+\begin{equation}
+y = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 \label{eq:b6-3-6}
+\end{equation}
+
+總結一下這節的論點：
+
+「自然或人文的現象常以函數的型態出現，這些函數一般時候相當複雜，我們處理的手法是這樣的：
+\begin{enumerate}[label=\Roman*., leftmargin=2em]
+  \item 建立基本模型。
+  \item 以這些基本模型去推測實際現象。
+\end{enumerate}
+這節的例說，解釋了多項式函數
+\begin{equation}
+y = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 \label{eq:b6-3-7}
+\end{equation}
+是一個值得採用的基本模型，也以函數的圖形顯示了「逼近描寫」的意義。
+
+\subsection{進一步的基本模型}\label{sec:b6-3-2}
+
+\subsubsection*{甲、有理函數}\label{subsec:b6-3-2-a}
+
+牛頓的引力定律蘊涵下述的現象：
+
+「一物體所受的地心引力 $y$ 與它到地心距離的平方 $x^2$ 成反比」
+
+表成式子得：
+\begin{equation}
+y = \dfrac{k}{x^2} \qquad (k \text{ 與物體的位置無關}) \label{eq:b6-3-8}
+\end{equation}
+這種函數並不是多項式函數，它是多項式函數 $x^2$ 的倒數，如果我們考慮兩個多項式函數 $P(x)$ 與 $Q(x)$ 的商，即
+\begin{equation}
+y = \dfrac{P(x)}{Q(x)} \label{eq:b6-3-9}
+\end{equation}
+則 \eqref{eq:b6-3-9} 式顯然概括了多項式函數 \eqref{eq:b6-3-7}（此時取 $Q(x)\equiv 1$）與引力現象 \eqref{eq:b6-3-8}（此時取 $P(x)\equiv k, Q(x)\equiv x^2$）。
+
+\eqref{eq:b6-3-9} 式是進一步的代數基本模型，稱為\textbf{有理函數}。
+
+\subsubsection*{乙、三角函數}\label{subsec:b6-3-2-b}
+
+「波動」在自然界到處出現，從彈簧振動到水波，音波、光波、電磁波，都有一個共同的「和諧」的通性。
+
+代數學基本定理（第六冊、第二章）告訴我們多項式函數，（甚至有理函數）相應的方程式最多只能有有限多個根，但波動可延伸成無限次的反覆（即週期性），故上述的代數基本模型無法描寫波動現象。
+
+三角函數
+\begin{equation}
+y = \sin x \quad \text{或} \quad \cos x \quad \text{等} \label{eq:b6-3-10}
+\end{equation}
+之所以值得討論，除為了三角測量的需要外，是因它適巧能描寫這些波動。
+
+因為這個道理，三角函數在近代的科學中被列為一個重要的基本模型。
+
+\subsubsection*{丙、指數函數與對數函數}\label{subsec:b6-3-2-c}
+
+世間有一種所謂「指數現象」是用來描寫人口成長，鈾的衰變等的現象。
+
+這類現象有一個共通性質：
+
+「變量 $y$ 對於時間 $x$ 的變化率與當時的變量 $y$ 本身成正比」。設這類現象以
+\[ y = f(x) \]
+表示，除非這變量原就一成不變（常數），我們都可以算得
+\[ \dfrac{f(x+1)}{f(x)} = \text{不等於 1 的常數，故當 } x \longrightarrow \infty, \text{ 此值並不趨於 1。} \]
+〔註：
+\[ \dfrac{\Delta y}{\Delta x} = \dfrac{f(x+1)-f(x)}{(x+1)-x} = h f(x) \qquad (h \ne 0, \Delta x = 1) \]
+故
+\[ \dfrac{f(x+1)}{f(x)} = h+1 \ne 1 \text{ 〕} \]
+但取任意多項式函數 $P(x)$，則當 $x \longrightarrow \infty$
+\[ \dfrac{P(x+1)}{P(x)} \longrightarrow 1 \]
+故「指數現象」不能以多項式函數來描寫，我們引進來指數函數
+\begin{equation}
+y = a^x \qquad (a > 0) \label{eq:b6-3-11}
+\end{equation}
+也做為一個基本模型。其中特別有用的是取 $a$ 為自然常數 $e$ 時的
+\begin{equation}
+y = e^x \label{eq:b6-3-12}
+\end{equation}
+指數函數還有一個重要性質：它把加法變成乘法即
+\begin{equation}
+e^{x_1+x_2} = e^{x_1} \cdot e^{x_2} \label{eq:b6-3-13}
+\end{equation}
+因此它的反函數（稱對數函數 $\log x$）便把乘法變回到加法，即
+\begin{equation}
+\log(x_1 x_2) = \log x_1 + \log x_2 \label{eq:b6-3-14}
+\end{equation}
+這個性質使得乘法的計算，也能機械性地操作，而成就了計算尺的基本原理。
+
+\newpage
+
+% ==========================================
+% 高中數學概念知識之樹 (Knowledge Tree, 原書 p.131)
+% ==========================================
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  >=Stealth,
+  scale=0.95,
+  line cap=round,
+  line join=round,
+  trunk/.style={line width=2.4pt, gray!75},
+  branch/.style={line width=1.6pt, gray!70},
+  twig/.style={line width=1.1pt, gray!65},
+  link/.style={line width=1.2pt, gray!70},
+  rootbox/.style={draw, rectangle, rounded corners=3pt, fill=white, thick, font=\bfseries\normalsize, inner sep=4pt},
+  catbox/.style={draw, rectangle, rounded corners=2pt, fill=blue!6, align=center, font=\small, inner sep=3pt},
+  transbox/.style={draw, rectangle, rounded corners=2pt, fill=green!6, align=center, font=\small, inner sep=3pt},
+  approxbox/.style={draw, rectangle, rounded corners=2pt, fill=yellow!12, align=center, font=\small, inner sep=3pt},
+  rightbox/.style={draw, rectangle, rounded corners=2pt, fill=red!6, align=center, font=\small, inner sep=3pt},
+  leafbox/.style={draw, rectangle, rounded corners=2pt, fill=white, align=center, font=\small, inner sep=3pt},
+  tagbox/.style={fill=white, font=\bfseries\small, inner sep=2pt}
+]
+
+  % 地面與根部
+  \draw[thick] (-6.5, 0) -- (6.5, 0);
+  \foreach \x in {-6,-5,...,6} {
+    \draw[thin] (\x, 0) -- (\x-0.18, -0.28);
+  }
+  \node[rootbox] (root) at (0, 0) {數\qquad 系};
+
+  % 主幹與兩大主分枝（逼近觀點 vs 轉化觀點）
+  \draw[trunk] (root.north) -- (0, 1.9);
+  \draw[trunk] (0, 1.9) to[out=135, in=-80] (-2.1, 3.6);
+  \draw[trunk] (0, 1.9) to[out=45, in=-110] (3.4, 3.5);
+
+  \node[tagbox] at (-1.55, 2.55) {逼近觀點};
+  \node[tagbox] at (1.95, 2.55) {轉化觀點};
+
+  % ==========================================
+  % 左側：逼近觀點體系（逼近方式 + 基本模型）
+  % ==========================================
+  % 1. 逼近方式（最左枝幹）
+  \draw[branch] (-2.1, 3.6) to[out=155, in=-70] (-5.5, 6.2) to[out=100, in=-90] (-5.7, 9.6);
+  \draw[twig] (-5.7, 9.6) -- (-5.7, 11.2) to[out=90, in=-110] (-5.2, 13.0);
+
+  % 維氏逼近拱枝連接至多項式函數（原書頂部拱門）
+  \draw[branch] (-5.2, 13.0) to[out=70, in=180] (-2.7, 15.0) to[out=0, in=125] (-0.2, 14.3);
+
+  % 2. 基本模型主幹
+  \draw[branch] (-2.1, 3.6) to[out=80, in=-100] (-1.6, 5.2);
+
+  % 2a. 超越基本模型（單變數）
+  \draw[branch] (-1.6, 5.2) to[out=135, in=-70] (-3.3, 7.2);
+  \draw[twig] (-3.3, 7.2) to[out=105, in=-85] (-3.4, 9.6);
+  \draw[twig] (-3.3, 7.2) to[out=65, in=-95] (-2.6, 11.2);
+  % 富氏逼近與三角函數之連枝
+  \draw[link] (-5.7, 9.6) to[out=25, in=155] (-3.4, 9.6);
+
+  % 2b. 代數基本模型（單變數）
+  \draw[branch] (-1.6, 5.2) to[out=45, in=-110] (-0.1, 7.0);
+  \draw[branch] (-0.1, 7.0) -- (-0.1, 14.3);
+  % 一次函數、二次函數、方程式論、有理函數小枝
+  \draw[twig] (-0.1, 8.2) to[out=150, in=-30] (-1.1, 8.7);
+  \draw[twig] (-0.1, 9.3) to[out=35, in=180] (0.9, 9.8);
+  \draw[twig] (-0.1, 12.1) to[out=145, in=-35] (-1.3, 12.5);
+  \draw[twig] (-0.1, 14.0) to[out=35, in=180] (2.4, 14.3);
+
+  % 左側節點（依層次繪製於線段之上，確保完全不重疊）
+  \node[catbox] at (-1.6, 5.2) {基本模型};
+  \node[approxbox] at (-5.5, 6.2) {逼近方式};
+  \node[transbox] at (-3.3, 7.2) {超越基本模型\\（單變數）};
+  \node[catbox] at (-0.1, 7.0) {代數基本模型\\（單變數）};
+
+  \node[leafbox] at (-1.2, 8.7) {一次函數};
+  \node[approxbox] at (-5.7, 9.6) {富氏逼近};
+  \node[leafbox] at (-3.4, 9.6) {三角函數};
+  \node[leafbox] at (0.9, 9.8) {二次函數（配方法）};
+
+  \node[approxbox] at (-5.7, 11.2) {泰勒逼近};
+  \node[leafbox] at (-2.6, 11.2) {指數與對數函數};
+
+  \node[leafbox] at (-1.3, 12.5) {方程式論\\（代數基本定理）};
+  \node[approxbox] at (-5.4, 13.1) {維氏逼近 (Weierstrass)};
+
+  \node[leafbox, font=\bfseries\small] at (-0.2, 14.3) {多項式函數};
+  \node[leafbox] at (2.4, 14.3) {有理函數};
+
+  % ==========================================
+  % 右側：轉化觀點體系（幾何三途混合運用 -> 線性映射）
+  % ==========================================
+  % 下部幾何三枝迴圈（向量幾何、高斯複數平面、座標幾何 -> 混合運用）
+  \draw[branch] (3.4, 3.5) to[out=120, in=-110] (2.5, 5.2) to[out=70, in=-155] (4.5, 6.9);
+  \draw[branch] (3.4, 3.5) to[out=55, in=-115] (4.5, 5.2) to[out=90, in=-90] (4.5, 6.9);
+  \draw[branch] (3.4, 3.5) to[out=10, in=-95] (6.4, 5.2) to[out=95, in=-25] (4.5, 6.9);
+
+  % 上部主幹（混合運用 -> 線性映射的基礎 -> 多變數 -> 線性映射 -> 二次式函數）
+  \draw[branch] (4.5, 6.9) to[out=105, in=-75] (4.0, 8.5)
+    to[out=95, in=-95] (4.0, 10.0)
+    to[out=90, in=-90] (4.0, 11.5)
+    to[out=85, in=-95] (4.2, 13.0);
+  % （一次函數）旁枝
+  \draw[twig] (4.0, 11.5) -- (6.25, 11.5);
+
+  % 右側節點
+  \node[leafbox, font=\footnotesize] at (2.5, 5.2) {向量幾何};
+  \node[leafbox, font=\footnotesize] at (4.5, 5.2) {高斯\\複數平面};
+  \node[leafbox, font=\footnotesize] at (6.4, 5.2) {座標幾何};
+  \node[rightbox] at (4.5, 6.9) {混合運用};
+  \node[rightbox] at (4.0, 8.5) {線性映射的基礎};
+  \node[draw, rectangle, rounded corners=2pt, fill=orange!8, font=\small, inner sep=3pt] at (4.0, 10.0) {（多變數）};
+  \node[rightbox, font=\bfseries\small] at (4.0, 11.5) {線性映射};
+  \node[leafbox, font=\footnotesize] at (6.25, 11.5) {（一次函數）};
+  \node[leafbox, font=\bfseries\small] at (4.2, 13.0) {二次式函數};
+
+\end{tikzpicture}
+\caption{高中數學實驗教材之概念知識架構樹（逼近與轉化）}
+\label{fig:b6-3-knowledge-tree}
+\end{figure}
+
+\newpage
+
+% ==========================================
+% 雙欄並列：課程內容之「逼近」與「轉化」觀點回顧 (pp. 132-141)
+% ==========================================
+\columnratio{0.54, 0.46}
+\setlength{\columnsep}{1.2em}
+\begin{paracol}{2}
+
+\subsection{以「逼近」觀點看課程內容}\label{sec:b6-3-3}
+
+\subsubsection*{(A)\quad 數與數量化：}\label{subsec:b6-3-3-a}
+
+任何能以數學處理的問題都須先化為「量」或「變量」，「變量」是變動中的量。
+
+在真正了解「變量」之前我們先要了解「量」：
+
+「量」如 3 公升的汽油，3 塊新臺幣，3 公里路，……等，經抽象化後，以 3 這個「數」代表。
+
+「數」由簡而繁由粗略而精細，逐步進展，我們了解了：
+\[ \text{\small 自然數} \to \text{\small 整數} \to \text{\small 有理數} \to \text{\small 實數} \to \text{\small 複數。} \]
+這個推展散佈於實驗教材的第一、二、四冊。
+
+\subsubsection*{(B)\quad 函數模型：}\label{subsec:b6-3-3-b}
+
+另一方面，在還未認識複數甚至還未十分了解實數之前我們已可以考慮簡單的變量間的關係，這「變量間的關係」經抽象化後稱為\textbf{函數}。
+
+簡單的函數模型，像一次函數，是國中討論的範圍，到了高中第一冊又對它所相應的一次方程式重作討論。二次函數，多項式函數以及指數、對數函數、三角函數這些基本模型在第一、二、三冊中途層引入。
+
+\switchcolumn
+
+\small
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\textbf{基本觀點} & \textbf{課\quad 程\quad 目\quad 次} \\ \hline
+\multirow{3}{*}{逼近} & (A) 數與數量化 \\
+& (B)（單變數）函數模型 \\
+& (C) 多變數函數及其基本模型 \\
+& \quad (I) 數的序組與平面或空間 \\
+& \quad (II) 基本模型 \\
+& (D) 機率與統計 \\ \hline
+\multirow{3}{*}{轉化} & (E) 轉化 \\
+& (F) 兩個系統轉化 \\
+& (G) 進一步的轉化 \\ \hline
+\end{tabularx}
+
+\vspace{0.6em}
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\textbf{第\quad 一\quad 冊}} \\ \hline
+\multirow{3}{*}{\shortstack{逼近}} & \textbf{第一章\quad 引言} \\
+& § 1-1 數學題材 \\
+& § 1-2 數學方法 \\
+& § 1-3 中學數學教育的目的 \\
+& § 1-4 學習態度及把握要點 \\ \hline
+\multirow{3}{*}{\shortstack{逼近}} & \textbf{第二章\quad 符號用法與集合概念} \\
+& § 2-1 符號在數學中的用法 \\
+& § 2-2 數學符號運用的要領 \\
+& § 2-3 集合 \\
+& § 2-4 簡易邏輯及基本數學語句 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(A)數}} & \textbf{第三章\quad 數的概念} \\
+& § 3-1 數的源起 \\
+& § 3-2 自然數系的基本性質 \\
+& § 3-3 整數系 \\
+& § 3-4 有理數系 \\
+& § 3-5 實數 \\ \hline
+\end{tabularx}
+
+\switchcolumn*
+
+\subsubsection*{(C)\quad 多變數函數與其基本模型：}\label{subsec:b6-3-3-c}
+
+如果函數的自變量不只一個，函數的處理頓時變成相當複雜，例如，米，麵的銷售量 $u, v$ 與米，麵的單位價格 $x, y$ 間也存在著一定的關係，米的銷售量 $u$ 不只與米價 $x$ 有關與麵價 $y$ 也有關，米價 $x$ 高固然會使米銷售量 $u$ 降低，但米價 $x$ 不變而維持在一定價格，單單麵價 $y$ 降低，消費者也會少吃米而多吃麵，致使米銷售量 $u$ 減少，換句話說：
+$u$ 不祇是 $x$ 的函數，$u$ 應該是 $x$ 與 $y$ 的函數而表成
+\[ u = f_1(x, y) \]
+同理
+\[ v = f_2(x, y) \]
+這兩對變量 $(x,y)$ 與 $(u,v)$ 的關係，可簡記成
+\[ (u, v) = f(x, y) \]
+或
+\[ \begin{cases} u = f_1(x, y) \\ v = f_2(x, y) \end{cases} \]
+
+想描述這個關係與單變量的情形一樣我們要：
+\begin{enumerate}[label=(\arabic*), leftmargin=2em]
+  \item 先了解 $(x,y)$ 序對的全體 $\mathbb{R}^2 \equiv \{ (x,y) \mid x, y \in \mathbb{R} \}$
+  \item 建立一些多變量函數的基本模型
+\end{enumerate}
+
+\paragraph{(1) $(x,y)$ 序對的全體 $\mathbb{R}^2$：} 若採用笛卡兒座標的轉化觀點 $\mathbb{R}^2$ 其實就是平面。為了要十分了解 $\mathbb{R}^2$，常常我們須藉用平面的幾何性質。關於「轉化」我們會在下節作進一步的討論。現在我們只強調一回事：
+
+「即使從逼近的觀念，我們也有了解平面的幾何性質（曲線比例）等的需求」。
+
+這部份關於轉化的內容主要在第三冊，書中強調平面上「點，向量與序對 $(x,y)$」三者間存在著良好的對應，這也就是第三冊「向量幾何」與「座標幾何」的基礎。
+
+\switchcolumn
+
+\small
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\textbf{第\quad 一\quad 冊（續）}} \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(B)模型}} & \textbf{第四章\quad 一次方程式} \\
+& § 4-1 四則問題與一次方程式 \\
+& § 4-2 「未知數」原理 \\
+& § 4-3 二元一次聯立方程式 \\
+& § 4-4 行列式與聯立方程式 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(B)模型}} & \textbf{第五章\quad 多項式及其運算} \\
+& § 5-1 不定元及多項式 \\
+& § 5-2 單元多項式運算 \\
+& § 5-3 變數與多項式函數 \\
+& § 5-4 除法，餘式定理 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(B)模型}} & \textbf{第六章\quad 整數的因子分解} \\
+& § 6-1 因數、質數、公因數 \\
+& § 6-2 輾轉相除法 \\
+& § 6-3 質因數分解唯一性 \\
+& § 6-4 質數個數無限 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(B)模型}} & \textbf{第七章\quad 多項式因子分解} \\
+& § 7-1 有理係數多項式因式分解 \\
+& § 7-2 整係數多項式因式分解 \\
+& § 7-3 分式與分項分式 \\ \hline
+\end{tabularx}
+
+\switchcolumn*
+
+\paragraph{(2) 一些基本模型的建立：}
+
+最簡單的還是「一次函數」，這裡面的「一次函數」是多變量的一次函數。例如：上述的米、麵銷售量 $u, v$ 與其價格 $x, y$ 間的關係，在經濟學上我們時常假設它呈如
+\begin{equation}
+\begin{cases} u = -3x + 2y + 7 \\ v = x - 4y + 5 \end{cases} \label{eq:b6-3-15}
+\end{equation}
+的關係來處理。（逼近地）
+
+將 \eqref{eq:b6-3-15} 式一般化後得一次函數的一般型：
+\begin{equation}
+\begin{cases} u = a_1 x + b_1 y + c_1 \\ v = a_2 x + b_2 y + c_2 \end{cases} \label{eq:b6-3-16}
+\end{equation}
+由於 $c_1, c_2$ 是常數，若取
+\[ U = u - c_1, \quad V = v - c_2 \]
+則
+\begin{equation}
+\begin{cases} U = a_1 x + b_1 y \\ V = a_2 x + b_2 y \end{cases} \label{eq:b6-3-17}
+\end{equation}
+我們知道 \eqref{eq:b6-3-17} 式所相應的函數便是\textbf{線性映射}，線性映射是一次函數的特殊情形。（亦即 \eqref{eq:b6-3-17} 式可看成 \eqref{eq:b6-3-16} 式的特殊情形）。這裏所以稱「一次」與單變數的道理一樣，是由於 \eqref{eq:b6-3-16} 式中任何 $x, y$ 與 $u, v$ 的次數最多是一次。
+
+關於線性映射，幾何化以後，我們能很清楚的掌握，例如設 $f$ 表線性映射 \eqref{eq:b6-3-17} 亦即
+\[ f(x, y) = (a_1 x + b_1 y, a_2 x + b_2 y) \qquad (\text{即 } (U, V)) \]
+則 $f$ 可看成由
+\[ S = \{ (x,y) \mid x, y \in \mathbb{R} \} \]
+到
+\[ T = \{ (U,V) \mid U, V \in \mathbb{R} \} \]
+的一個映射，($S$ 與 $T$ 其實都可看成是平面)，而這個映射 $f$ 有下述的特徵性質：
+\begin{enumerate}[label=(\roman*), leftmargin=2em]
+  \item $f$ 把直線帶到直線上，亦即設 $L$ 為平面 $S$ 中一條直線，則 $f(L)$ 亦落在 $T$ 中一條直線上。
+  \item 共線三點 $A, B, C$ 的間距比例在 $f$ 下不變，亦即設 $A, B, C$ 為任意共線之點，而
+  \[ A' = f(A), \quad B' = f(B), \quad C' = f(C) \]
+  則
+  \[ \dfrac{\overline{AB}}{\overline{BC}} = \dfrac{\overline{A'B'}}{\overline{B'C'}} \]
+  \item 原點經 $f$ 帶到原點，亦即設 $O=(0,0)$ 與 $O'=(0,0)$ 分別為 $S$ 與 $T$ 中的原點，則
+  \[ f(O) = O' \]
+\end{enumerate}
+
+我們引進「矩陣」來描述「線性映射」，基於兩個線性映射的合成，我們找到兩矩陣間的自然乘積。
+
+線性映射的理論可以說相當完整，這是多變量函數最簡單的基本模型。
+
+\switchcolumn
+
+\small
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\textbf{第\quad 二\quad 冊}} \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(B)模型}} & \textbf{第一章\quad 二次方程式} \\
+& § 1-1 二次方程式解法 \\
+& § 1-2 配方與公式解 \\
+& § 1-3 根與係數，判別式 \\
+& § 1-4 應用 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(A)數}} & \textbf{第二章\quad 次序與極限觀念} \\
+& § 2-1 次序與不等式 \\
+& § 2-2 直線坐標化 \\
+& § 2-3 不等式 \\
+& § 2-4 數列觀念與例子 \\
+& § 2-5 極限觀念及性質 \\
+& § 2-6 無窮級數與循環小數 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(A)數\\實數系}} & \textbf{第三章\quad 實數系基本性質} \\
+& § 3-1 有理數系與實數系 \\
+& § 3-2 二分逼近法 \\
+& § 3-3 實數系完備性 \\
+& § 3-4 中間值定理 \\
+& § 3-5 連續函數 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(B)模型}} & \textbf{第四章\quad 指數與對數函數} \\
+& § 4-1 指數定則與推廣 \\
+& § 4-2 指數函數 \\
+& § 4-3 對數函數 \\
+& § 4-4 反函數 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(B)模型}} & \textbf{第五章\quad 對數表與計算尺} \\
+& § 5-1 對數表 \\
+& § 5-2 計算尺原理 \\ \hline
+\end{tabularx}
+
+\switchcolumn*
+
+二次式函數是更進一步的基本模型：
+\begin{equation}
+U = Ax^2 + 2Bxy + Cy^2 + 2Dx + 2Ey + F \label{eq:b6-3-18}
+\end{equation}
+關於它的分類（尤其「自變量」增到三個或三個以上時）基本上我們是利用線性映射，換句話說，二次式函數的二次項可以看成 $(x,y)$ 經一線性映射後所得的向量
+\[ (Ax+By, Bx+Cy) \]
+再與 $(x,y)$ 作內積，亦即
+\begin{equation}
+(Ax+By, Bx+Cy)\cdot(x,y) = Ax^2 + 2Bxy + Cy^2 \label{eq:b6-3-19}
+\end{equation}
+這個 \eqref{eq:b6-3-19} 式是了解二次式函數的關鍵，它把線性映射的理論搬過來利用。固有值理論這時候便扮演了重要角色。
+
+多變量函數進一步的基本模型如三次或三次以上的多項式函數，目前還沒有完妥的結果。
+
+上述多變量函數的基本模型是第四冊廣泛討論的主題。
+
+\subsubsection*{(D)\quad 機率與統計}\label{subsec:b6-3-3-d}
+
+第五冊的機率與統計也採用「逼近」的觀點，世間現象的機率分布通常可以相當複雜，因此須建立一些基本模型如：
+\[ \text{二項分布，布阿松分布，常態分布。} \]
+等來作為逼近的基礎。
+
+\switchcolumn
+
+\small
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\textbf{第\quad 三\quad 冊}} \\ \hline
+\multirow{2}{*}{\shortstack{轉化\\(C)多變\\(E)轉化}} & \textbf{第一章\quad 幾何與代數} \\
+& § 1-1 處理實際問題過程 \\
+& § 1-2 座標與向量幾何比較 \\
+& § 1-3 代數工具複習提要 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(B)三角\\(C)多變}} & \textbf{第二章\quad 直觀幾何與三角} \\
+& § 2-1 有向線段與有向角 \\
+& § 2-2 三角函數定義 \\
+& § 2-3 簡易恆等式 \\
+& § 2-4 幾何量的定理 \\
+& § 2-5 三角測量 \\ \hline
+\multirow{4}{*}{\shortstack{轉化\\(F)向量\\幾何}} & \textbf{第三章\quad 向量幾何運算體系} \\
+& § 3-1 座標與距離 \\
+& § 3-2 各種觀點看向量 \\
+& § 3-3 向量加減法 \\
+& § 3-4 向量係數積 \\
+& § 3-5 向量內積 \\
+& § 3-6 內積導出和角公式 \\
+& § 3-7 行列式與體積 \\ \hline
+\multirow{3}{*}{\shortstack{轉化\\(F)座標\\幾何}} & \textbf{第四章\quad 座標幾何} \\
+& § 4-1 方程式與軌跡 \\
+& § 4-2 直線參數式與兩點式 \\
+& § 4-3 直線一般式與法線式 \\
+& § 4-4 三線共點與線性聯立 \\
+& § 4-5 直線系與自由度 \\
+& § 4-6 座標與向量混合典型 \\
+& § 4-7 空間中線性座標幾何 \\ \hline
+\multirow{2}{*}{\shortstack{轉化\\(F)系統}} & \textbf{第五章\quad 進一步的申述} \\
+& § 5-1 線性相關與共線共面 \\
+& § 5-2 距離與極值問題 \\ \hline
+\end{tabularx}
+
+\switchcolumn*
+
+\subsection{以「轉化」觀點看課程內容}\label{sec:b6-3-4}
+
+\subsubsection*{(E)\quad 轉化}\label{subsec:b6-3-4-e}
+
+轉化的需要緊緊伴隨於數學的起源，換句話說一個問題，一個圖象，要想了解首先須將它化成數（量），函數（變量）或相應的方程式等代數或分析的對象來處理。
+
+關於轉化的意義，第三冊第一章已有了詳細的說明。
+
+我們側重的是系統性的轉化，幾何與代數之間兩個系統性的轉化：
+\[ \text{向量幾何與座標幾何} \]
+這些在第三冊中已作了詳細的討論，其效用一直貫穿到第六冊的行列式矩陣與方程式論。
+
+\subsubsection*{(F)\quad 兩個系統轉化}\label{subsec:b6-3-4-f}
+
+向量幾何之優於座標幾何是利用向量處理可以不受維數的重大限制。比如一條空間中的直線，仍與在平面上的直線一樣，可用直線參數式
+\[ (1-t)\vect{a} + t\vect{b} \]
+來描寫，但利用座標幾何空間的一條直線就不能像在平面上那樣簡潔，換句話說，座標幾何中單要考慮空間的一條直線，就須取為兩平面的交線來看，而化成
+\[ \begin{cases} a_1 x + b_1 y + c_1 z = d_1 \\ a_2 x + b_2 y + c_2 z = d_2 \end{cases} \]
+的聯立方程式來描寫。
+
+如果維數再提高，其困難更急劇增加。
+
+此外向量幾何可反過來將複雜的代數問題化成清晰的幾何問題來想，這事表現在很多方面，例如行列式的幾何意義（體積），例如高階舒瓦茲不等式的證明，又例如聯立方程式的求解問題（見第三冊附錄二 63年版）。
+
+\subsubsection*{(G)\quad 進一步的轉化（線性映射與矩陣）}\label{subsec:b6-3-4-g}
+
+轉化在第三冊以後也仍一再出現。
+
+平常矩陣理論常脫離線性映射，獨立去討論，致使矩陣乘積等的來源非常困擾，在轉化的觀點下，矩陣是屬於代數，它描寫幾何範疇下的線性映射。
+
+兩矩陣的乘積便相應於兩線性映射的合成，在這個層次上矩陣的運算才活躍起來。
+
+\switchcolumn
+
+\small
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\textbf{第\quad 四\quad 冊}} \\ \hline
+\multirow{3}{*}{\shortstack{轉化\\(C)多變\\(G)映射}} & \textbf{第一章\quad 座標變換與線性映射} \\
+& § 1-1 座標變換 \\
+& § 1-2 平面上線性映射 \\
+& § 1-3 剛性運動與正交映射 \\
+& § 1-4 正交座標變換 \\ \hline
+\multirow{2}{*}{\shortstack{轉化\\(F)二次}} & \textbf{第二章\quad 二次幾何：錐線演變} \\
+& § 2-1 圓錐曲線與離心率 \\
+& § 2-2 焦點與準線觀點 \\ \hline
+\multirow{2}{*}{\shortstack{轉化\\(F)二次}} & \textbf{第三章\quad 二次幾何：標準式} \\
+& § 3-1 橢圓、雙曲線、拋物線 \\
+& § 3-2 錐線切線與光學性質 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(C)二次}} & \textbf{第四章\quad 二次曲線分類與判別} \\
+& § 4-1 固有值理論 \\
+& § 4-2 二次式標準化與不變量 \\
+& § 4-3 二次曲線分類 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(A)複數}} & \textbf{第五章\quad 複數與三角基本定理} \\
+& § 5-1 高斯平面與複數性質 \\
+& § 5-2 里曼球面 \\ \hline
+\end{tabularx}
+
+\vspace{0.6em}
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\textbf{第\quad 五\quad 冊}} \\ \hline
+\multirow{3}{*}{\shortstack{轉化\\(E)\\極座標}} & \textbf{第一章\quad 極座標} \\
+& § 1-1 極座標與極方程式 \\
+& § 1-2 反三角函數 \\
+& § 1-3 二次曲線極方程式 \\
+& § 1-4 面積變化率 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(D)機率}} & \textbf{第二章\quad 排列組合} \\
+& § 2-1 有限集合 \\
+& § 2-2 排列與組合 \\
+& § 2-3 二項式定理 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(D)機率}} & \textbf{第三章\quad 直觀機率} \\
+& § 3-1 機率定義與求法 \\
+& § 3-2 幾何機率 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(D)機率}} & \textbf{第四章\quad 有限機率空間} \\
+& § 4-1 條件機率與獨立事件 \\ \hline
+\multirow{2}{*}{\shortstack{逼近\\(D)統計}} & \textbf{第五章\quad 隨機變數} \\
+& § 5-1 期望值與方差 \\
+& § 5-2 大數法則 \\ \hline
+\end{tabularx}
+
+\switchcolumn*
+
+\subsection{尾語}\label{sec:b6-3-5}
+
+一千片散落在地上的葉子要一片片地檢起，一片片地認識，果真是件難事。一千片太多了。但如果這一千片葉子是長在掛在一棵大樹上，則它們片片有脈絡可尋，一千片便也不覺太多。
+
+實驗教材的精神一直是在撐在這棵大樹上，在某些地方，它是稍呈深入地討論一些事物，但來龍去脈交代清楚了，接受吸收也就大大化簡。
+
+以上的回顧，把這棵大樹勾劃出來，藉著這棵大樹的根莖，枝椏，盼讀者重將三年來學過的知識作一番整理。
+
+\switchcolumn
+
+\small
+\noindent
+\begin{tabularx}{\linewidth}{|p{1.35cm}|X|}
+\hline
+\multicolumn{2}{|c|}{\textbf{第\quad 六\quad 冊}} \\ \hline
+\multirow{5}{*}{\shortstack{轉化\\(G)矩陣}} & \textbf{第一章\quad 行列式} \\
+& § 1-1 $n$ 維空間與線性映射 \\
+& § 1-2 有向體積與行列式 \\
+& § 1-3 置換與符號函數 \\
+& § 1-4 行列式性質與計算 \\
+& § 1-5 線性映射與行列式 \\
+& § 1-6 一次聯立方程式 \\
+& 附錄 I：外積 \\
+& 附錄 II：行列式補遺 \\ \hline
+\multirow{3}{*}{\shortstack{逼近\\(B)多項\\(E)代數}} & \textbf{第二章\quad 方程式論} \\
+& § 2-1 概要 \\
+& § 2-2 代數基本定理 \\
+& § 2-3 根與係數關係 \\
+& § 2-4 多項式導函數 \\
+& § 2-5 三次與四次方程式解法 \\ \hline
+\end{tabularx}
+
+\end{paracol}

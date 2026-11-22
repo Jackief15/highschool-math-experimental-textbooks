@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{../../styles/preamble.tex}
+\input{../../styles/Chinese_math_style.tex}
+\input{../../styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[R]{\small《高中數學實驗教材》第 6 冊（社會組）}
+  \fancyhead[L]{\small 第 4 章\quad 綜合分析}
+  \fancyfoot[C]{\thepage}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第六冊（社會組）}
+\fancyhead[RO]{\small 第四章\quad 綜合分析}
+\fancyfoot[C]{\thepage}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第六冊（社會組）}\\[0.5em] \Large\textbf{第四章\quad 綜合分析}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+% ==========================================
+% 掃描檔勘誤、文字校訂與疑難處說明（依規則整理於目錄之前）
+% ==========================================
+\section*{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+\addcontentsline{toc}{section}{【說明】第四章掃描檔勘誤、疑難處與文義校訂表}
+\label{sec:errata_notes_b6_ch4}
+\label{sec:current_errata}
+
+本章依據 1975 年初版《高中數學實驗教材 第六冊（社會組）》（高三下）第四章「綜合分析」掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+
+\hyperref[note:b6s-ch4-p172-prob-dup]{§ 4 頁 172 綜合分析第 31* 題} & 
+連續兩題編號皆印為「31」 & 
+原書排版時將第 31 題（旋轉矩陣乘法）與接續之截球面圓面積題皆編為「31」，致使題號重複，茲在正文加星號註記「31*」並保留考證說明。 \\ \hline
+
+\hyperref[note:b6s-app4-p205-sin]{附錄 IV § 4 頁 205 作業 7} & 
+「$\sin k\pi$」 & 
+原書該處誤印為「當 $k$ 為偶數時 $\sin k\pi$ 為極大值，當 $k$ 為奇數時 $\sin k\pi$ 為極小值」，對照前文例 22（$y=\sin x$ 之極值點為 $x=\frac{\pi}{2}+k\pi$），顯應為「$\sin\left(\dfrac{\pi}{2}+k\pi\right)$」，茲予校訂並加註說明。 \\ \hline
+
+\end{tabularx}
+\end{table}
+
+\newpage
+\renewcommand{\contentsname}{目\qquad 次}
+\tableofcontents
+\newpage
+
+\setcounter{section}{3}
+\include{Chapter4}
+
+\end{document}

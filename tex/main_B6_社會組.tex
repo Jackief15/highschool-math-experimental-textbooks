@@ -1,0 +1,118 @@
+\documentclass[a4paper,12pt,twoside]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\input{styles/preamble.tex}
+\input{styles/Chinese_math_style.tex}
+\input{styles/math_style.tex}
+
+\providecommand{\redtext}[1]{{\color{red} #1}}
+\providecommand{\bluetext}[1]{{\color{blue} #1}}
+
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[LE]{\small 《高中數學實驗教材》第六冊（社會組）}
+\fancyhead[RO]{\small \leftmark}
+\fancyfoot[C]{\thepage}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\title{\LARGE\textbf{《高中數學實驗教材》第六冊（社會組）}\\[0.5em] \Large\textbf{全冊 \LaTeX{} 數位轉錄版}}
+\author{\textbf{高中數學實驗教材編輯小組}\quad 編著}
+\date{民國六十四年（1975）初版}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% =========================================================================
+% 各章掃描檔勘誤、文字校訂與疑難處彙整表（整理於目錄之前）
+% =========================================================================
+\section*{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\addcontentsline{toc}{section}{【說明】各章掃描檔勘誤、疑難處與文義校訂彙整表}
+\label{sec:master_errata_notes_b6s}
+\label{sec:current_errata}
+\markboth{各章掃描檔勘誤與文義校訂彙整表}{各章掃描檔勘誤與文義校訂彙整表}
+
+本冊依據 1975 年初版《高中數學實驗教材 第六冊（社會組）》（高三下）各章與附錄掃描原件完整轉錄為 \LaTeX{} 格式。為忠實反映教材原始內容並兼顧排版品質與嚴謹性，依作業規範將掃描檔中出現之印刷訛誤、符號缺漏、字模損毀、歷史印記雜訊及文義疑難處詳細考證彙整於下表。讀者可點擊表格中之章節連結直接跳至正文對應位置：
+
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{xltabular}{\textwidth}{|p{3.2cm}|p{3.8cm}|X|}
+\caption{全冊各章掃描檔勘誤、疑難處與文義校訂彙整表}\label{tab:errata_b6s_master} \\
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endfirsthead
+\hline
+\textbf{章節位置} & \textbf{掃描檔原始現象 / 誤植} & \textbf{考證說明與校訂處理} \\ \hline
+\endhead
+\hline
+\endfoot
+
+\multicolumn{3}{|c|}{\textbf{第一章\quad 行列式}} \\ \hline
+\hyperref[note:b6s-ch1-p19-l-eq]{§ I-1 頁 19 習題 I-1 第 2 題} & 
+「$L = \{ \vec{OP} + \lambda\vec{OQ} \}$」 & 
+原書直線向量參數式印作「$\lambda\vec{OQ}$」，據後文「$x_i = a_i + \lambda(b_i - a_i)$」校訂為方向向量「$\lambda\vec{PQ}$」。 \\ \hline
+
+\hyperref[note:b6s-ch1-p22-ex28-s]{§ I-1 頁 22 習題 I-1 第 27 題 (b)} & 
+「求相應之像點 $P', Q', R', S'$」 & 
+原書題目僅給出三點 $P, Q, R$，贅印像點 $S'$，校訂為像點 $P', Q', R'$。 \\ \hline
+
+\hyperref[note:b6s-ch1-p24-u]{§ I-2 頁 24 乙段末行} & 
+「取 $\vect{u}=\frac{\vect{a}}{|\vect{a}|}$」 & 
+向量 $\vect{a}$ 漏印下標 1，據上下文及圖 2-2 校訂為單位向量「$\vect{u}=\frac{\vect{a}_1}{|\vect{a}_1|}$」。 \\ \hline
+
+\hyperref[note:b6s-ch1-p30-s-coord]{§ I-2 頁 30 習題 I-2 第 6 題} & 
+「$S=(0,0,0($」 & 
+座標右括弧鉛字破損印作左括弧「$($」，校正為閉合圓括弧「$)$」。 \\ \hline
+
+\hyperref[note:b6s-ch1-p66-ex8]{§ I-7 頁 66 例 8 頁末截斷} & 
+「解 $|\begin{smallmatrix} 1 & 2 \\ -1 & 1 \end{smallmatrix}| = 3, A_{11}$」 & 
+1975 年初版第 66 頁頁末於 $A_{11}$ 處排版截斷，次頁逕接「*〔例 9〕」。正文忠實照錄原刊字樣，並於註腳補記完整反方陣演算結果。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第二章\quad 方程式論}} \\ \hline
+\hyperref[note:b6s-ch2-p95-trace]{§ II-3 頁 93 作業 7(i)} & 
+「諸根之和為 $-(a_{11}+a_{22}+a_{33})$」 & 
+原書特徵方程式展開後最高兩項為 $(-x)^3 + (a_{11}+a_{22}+a_{33})x^2$，依根與係數關係根之和應為首項係數除次高項係數取負，即 $a_{11}+a_{22}+a_{33}$，原書漏消負號，據此校訂。 \\ \hline
+
+\hyperref[note:b6s-ch2-p117-cubic-ineq]{§ II-5 頁 115 習題 II-5 第 6 題} & 
+「$-4p^3r > 27r$」 & 
+依三次方程式判別式 $\Delta = -4p^3 - 27r^2 > 0 \iff -4p^3 > 27r^2$，原書右式漏平方且左式印有雜訊 $r$，據實根條件加註說明。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第三章\quad 高中數學教材的回顧}} \\ \hline
+\hyperref[note:b6s-ch3-p124-sales]{§ III-1 頁 122 論例 1} & 
+「價格 $x$ 越高，銷售量 $y$ 就越大」 & 
+依市場經濟常理與題設下文數據（$x=2$ 時 $y=9$，$x=5$ 時 $y=6$），價格與需求銷售量呈負相關，原書「越大」顯係筆誤，校訂為「越小」並加註說明。 \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{第四章\quad 綜合分析（含附錄 IV 導數）}} \\ \hline
+\hyperref[note:b6s-ch4-p172-prob-dup]{§ 4 頁 170 綜合分析第 31* 題} & 
+連續兩題編號皆印為「31」 & 
+原書排版時將第 31 題（旋轉矩陣乘法）與接續之截球面圓面積題皆編為「31」，致使題號重複，茲在正文加星號註記「31*」並保留考證說明。 \\ \hline
+
+\hyperref[note:b6s-app4-p205-sin]{附錄 IV § 4 頁 203 作業 7} & 
+「$\sin k\pi$」 & 
+原書該處誤印為「當 $k$ 為偶數時 $\sin k\pi$ 為極大值，當 $k$ 為奇數時 $\sin k\pi$ 為極小值」，對照前文例 22（$y=\sin x$ 之極值點為 $x=\frac{\pi}{2}+k\pi$），顯應為「$\sin\left(\dfrac{\pi}{2}+k\pi\right)$」，茲予校訂並加註說明。 \\ \hline
+
+\end{xltabular}
+\clearpage
+
+\renewcommand{\contentsname}{目\qquad 次}
+\markboth{目次}{目次}
+\tableofcontents
+
+\vspace{1em}
+\noindent\textbf{註：}「$\ddagger$」號表節內有不需講授的材料，「$*$」表示較難部分，供參考。
+\newpage
+
+% 第六冊各章循序 Include 模組
+\include{chapters/B6_社會組/Chapter1} % 第一章 行列式
+\include{chapters/B6_社會組/Chapter2} % 第二章 方程式論
+\include{chapters/B6_社會組/Chapter3} % 第三章 高中數學教材的回顧
+\include{chapters/B6_社會組/Chapter4} % 第四章 綜合分析（含附錄 IV 導數）
+\include{chapters/B6_社會組/Appendix1} % 第六冊 索引
+
+\end{document}
